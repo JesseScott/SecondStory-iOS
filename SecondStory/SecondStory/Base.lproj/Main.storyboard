@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="120" y="155"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome-->
         <scene sceneID="fRU-Eo-RzG">
             <objects>
-                <viewController id="Vuc-oS-ZNc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Welcome" title="Welcome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vuc-oS-ZNc" userLabel="Welcome" customClass="WelcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rVK-x1-HXz"/>
                         <viewControllerLayoutGuide type="bottom" id="gfx-wC-K5m"/>
@@ -42,12 +42,60 @@
                     <view key="view" contentMode="scaleToFill" id="gn5-w2-xmK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTm-b5-sHK">
+                                <rect key="frame" x="100" y="269" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[remote]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7s-Vo-9Ae">
+                                <rect key="frame" x="100" y="325" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSu-Ab-Vd1">
+                                <rect key="frame" x="262" y="518" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="skip">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skip:" destination="Vuc-oS-ZNc" eventType="touchUpInside" id="qwB-ul-xf4"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="remote_label" destination="v7s-Vo-9Ae" id="KMU-W2-JXL"/>
+                        <segue destination="ZRS-bL-Z9C" kind="modal" identifier="segue_welcome2camera" id="dAj-Ux-Zcj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q84-cS-QwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="634" y="155"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="5u8-cv-7LP">
+            <objects>
+                <viewController storyboardIdentifier="Camera" title="Camera" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZRS-bL-Z9C" userLabel="Camera" customClass="VideoPlaybackViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qmH-9W-1C1"/>
+                        <viewControllerLayoutGuide type="bottom" id="W33-90-mrD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N1O-Ig-yPy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="saO-D5-wRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1179" y="155"/>
         </scene>
     </scenes>
     <resources>

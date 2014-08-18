@@ -56,6 +56,16 @@
 		2DE8491719A185B60019053E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8491519A185B60019053E /* WelcomeViewController.m */; };
 		2DE8491E19A18BF10019053E /* WhiteRaccoon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8491D19A18BF10019053E /* WhiteRaccoon.m */; };
 		2DE8491F19A18BF10019053E /* WhiteRaccoon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8491D19A18BF10019053E /* WhiteRaccoon.m */; };
+		2DE8492919A1AD8D0019053E /* SampleMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8492119A1AD8D0019053E /* SampleMath.cpp */; };
+		2DE8492A19A1AD8D0019053E /* SampleMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8492119A1AD8D0019053E /* SampleMath.cpp */; };
+		2DE8492B19A1AD8D0019053E /* VideoPlaybackEAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8492419A1AD8D0019053E /* VideoPlaybackEAGLView.mm */; };
+		2DE8492C19A1AD8D0019053E /* VideoPlaybackEAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8492419A1AD8D0019053E /* VideoPlaybackEAGLView.mm */; };
+		2DE8492D19A1AD8D0019053E /* VideoPlaybackViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8492619A1AD8D0019053E /* VideoPlaybackViewController.mm */; };
+		2DE8492E19A1AD8D0019053E /* VideoPlaybackViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8492619A1AD8D0019053E /* VideoPlaybackViewController.mm */; };
+		2DE8492F19A1AD8D0019053E /* VideoPlayerHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8492819A1AD8D0019053E /* VideoPlayerHelper.mm */; };
+		2DE8493019A1AD8D0019053E /* VideoPlayerHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8492819A1AD8D0019053E /* VideoPlayerHelper.mm */; };
+		2DE8493319A1AD980019053E /* VideoPlaybackViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8493219A1AD980019053E /* VideoPlaybackViewController.mm */; };
+		2DE8493419A1AD980019053E /* VideoPlaybackViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8493219A1AD980019053E /* VideoPlaybackViewController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +118,16 @@
 		2DE8491519A185B60019053E /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeViewController.m; path = Classes/ViewControllers/WelcomeViewController.m; sourceTree = "<group>"; };
 		2DE8491C19A18BF10019053E /* WhiteRaccoon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteRaccoon.h; sourceTree = "<group>"; };
 		2DE8491D19A18BF10019053E /* WhiteRaccoon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteRaccoon.m; sourceTree = "<group>"; };
+		2DE8492119A1AD8D0019053E /* SampleMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SampleMath.cpp; sourceTree = "<group>"; };
+		2DE8492219A1AD8D0019053E /* SampleMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleMath.h; sourceTree = "<group>"; };
+		2DE8492319A1AD8D0019053E /* VideoPlaybackEAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlaybackEAGLView.h; sourceTree = "<group>"; };
+		2DE8492419A1AD8D0019053E /* VideoPlaybackEAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoPlaybackEAGLView.mm; sourceTree = "<group>"; };
+		2DE8492519A1AD8D0019053E /* VideoPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlaybackViewController.h; sourceTree = "<group>"; };
+		2DE8492619A1AD8D0019053E /* VideoPlaybackViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoPlaybackViewController.mm; sourceTree = "<group>"; };
+		2DE8492719A1AD8D0019053E /* VideoPlayerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerHelper.h; sourceTree = "<group>"; };
+		2DE8492819A1AD8D0019053E /* VideoPlayerHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoPlayerHelper.mm; sourceTree = "<group>"; };
+		2DE8493119A1AD980019053E /* VideoPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoPlaybackViewController.h; path = Classes/ViewControllers/VideoPlaybackViewController.h; sourceTree = "<group>"; };
+		2DE8493219A1AD980019053E /* VideoPlaybackViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VideoPlaybackViewController.mm; path = Classes/ViewControllers/VideoPlaybackViewController.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +239,7 @@
 		2DE848A019A17B3A0019053E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2DE8492019A1AD8D0019053E /* QCAR */,
 				2DE848FB19A17FF20019053E /* Delegate */,
 				2DE848FC19A17FFB0019053E /* ViewControllers */,
 				2DE848FF19A185550019053E /* Networking */,
@@ -277,6 +298,8 @@
 		2DE848FC19A17FFB0019053E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2DE8493119A1AD980019053E /* VideoPlaybackViewController.h */,
+				2DE8493219A1AD980019053E /* VideoPlaybackViewController.mm */,
 				2DE8487F19A173710019053E /* SplashViewController.h */,
 				2DE8488019A173710019053E /* SplashViewController.m */,
 				2DE8491419A185B60019053E /* WelcomeViewController.h */,
@@ -293,6 +316,22 @@
 			);
 			name = Networking;
 			path = Classes/Networking;
+			sourceTree = "<group>";
+		};
+		2DE8492019A1AD8D0019053E /* QCAR */ = {
+			isa = PBXGroup;
+			children = (
+				2DE8492119A1AD8D0019053E /* SampleMath.cpp */,
+				2DE8492219A1AD8D0019053E /* SampleMath.h */,
+				2DE8492319A1AD8D0019053E /* VideoPlaybackEAGLView.h */,
+				2DE8492419A1AD8D0019053E /* VideoPlaybackEAGLView.mm */,
+				2DE8492519A1AD8D0019053E /* VideoPlaybackViewController.h */,
+				2DE8492619A1AD8D0019053E /* VideoPlaybackViewController.mm */,
+				2DE8492719A1AD8D0019053E /* VideoPlayerHelper.h */,
+				2DE8492819A1AD8D0019053E /* VideoPlayerHelper.mm */,
+			);
+			name = QCAR;
+			path = Classes/QCAR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,9 +466,14 @@
 			files = (
 				2DE8488119A173710019053E /* SplashViewController.m in Sources */,
 				2DE8491E19A18BF10019053E /* WhiteRaccoon.m in Sources */,
+				2DE8492F19A1AD8D0019053E /* VideoPlayerHelper.mm in Sources */,
+				2DE8493319A1AD980019053E /* VideoPlaybackViewController.mm in Sources */,
 				2DE8487B19A173710019053E /* AppDelegate.m in Sources */,
+				2DE8492D19A1AD8D0019053E /* VideoPlaybackViewController.mm in Sources */,
+				2DE8492919A1AD8D0019053E /* SampleMath.cpp in Sources */,
 				2DE8491619A185B60019053E /* WelcomeViewController.m in Sources */,
 				2DE8487719A173700019053E /* main.m in Sources */,
+				2DE8492B19A1AD8D0019053E /* VideoPlaybackEAGLView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +484,11 @@
 				2DE8489619A173710019053E /* SecondStoryTests.m in Sources */,
 				2DE8491F19A18BF10019053E /* WhiteRaccoon.m in Sources */,
 				2DE8491719A185B60019053E /* WelcomeViewController.m in Sources */,
+				2DE8493419A1AD980019053E /* VideoPlaybackViewController.mm in Sources */,
+				2DE8492E19A1AD8D0019053E /* VideoPlaybackViewController.mm in Sources */,
+				2DE8493019A1AD8D0019053E /* VideoPlayerHelper.mm in Sources */,
+				2DE8492C19A1AD8D0019053E /* VideoPlaybackEAGLView.mm in Sources */,
+				2DE8492A19A1AD8D0019053E /* SampleMath.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
