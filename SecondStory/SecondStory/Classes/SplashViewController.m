@@ -1,29 +1,28 @@
 //
-//  ViewController.m
+//  SplashViewController.m
 //  SecondStory
 //
 //  Created by Jesse Scott on 2014-08-17.
 //  Copyright (c) 2014 The Only Animal. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SplashViewController.h"
 
-@interface ViewController ()
 
-@end
-
-@implementation ViewController
+@implementation SplashViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    // 
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
