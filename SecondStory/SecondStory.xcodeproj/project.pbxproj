@@ -52,16 +52,10 @@
 		2DE848F919A17D3C0019053E /* splash_screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE848F819A17D3C0019053E /* splash_screen@2x.png */; };
 		2DE848FA19A17D3C0019053E /* splash_screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE848F819A17D3C0019053E /* splash_screen@2x.png */; };
 		2DE848FE19A184F10019053E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE848FD19A184F10019053E /* CFNetwork.framework */; };
-		2DE8490A19A185550019053E /* CreateDirController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490119A185550019053E /* CreateDirController.m */; };
-		2DE8490B19A185550019053E /* CreateDirController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490119A185550019053E /* CreateDirController.m */; };
-		2DE8490C19A185550019053E /* GetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490319A185550019053E /* GetController.m */; };
-		2DE8490D19A185550019053E /* GetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490319A185550019053E /* GetController.m */; };
-		2DE8490E19A185550019053E /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490519A185550019053E /* ListController.m */; };
-		2DE8490F19A185550019053E /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490519A185550019053E /* ListController.m */; };
-		2DE8491019A185550019053E /* PutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490719A185550019053E /* PutController.m */; };
-		2DE8491119A185550019053E /* PutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490719A185550019053E /* PutController.m */; };
-		2DE8491219A185550019053E /* URLGetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490919A185550019053E /* URLGetController.m */; };
-		2DE8491319A185550019053E /* URLGetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490919A185550019053E /* URLGetController.m */; };
+		2DE8491619A185B60019053E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8491519A185B60019053E /* WelcomeViewController.m */; };
+		2DE8491719A185B60019053E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8491519A185B60019053E /* WelcomeViewController.m */; };
+		2DE8491E19A18BF10019053E /* WhiteRaccoon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8491D19A18BF10019053E /* WhiteRaccoon.m */; };
+		2DE8491F19A18BF10019053E /* WhiteRaccoon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8491D19A18BF10019053E /* WhiteRaccoon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,16 +104,10 @@
 		2DE848DA19A17D220019053E /* VuforiaSizzleReel_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VuforiaSizzleReel_2.png; sourceTree = "<group>"; };
 		2DE848F819A17D3C0019053E /* splash_screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_screen@2x.png"; sourceTree = "<group>"; };
 		2DE848FD19A184F10019053E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		2DE8490019A185550019053E /* CreateDirController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDirController.h; sourceTree = "<group>"; };
-		2DE8490119A185550019053E /* CreateDirController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDirController.m; sourceTree = "<group>"; };
-		2DE8490219A185550019053E /* GetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetController.h; sourceTree = "<group>"; };
-		2DE8490319A185550019053E /* GetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetController.m; sourceTree = "<group>"; };
-		2DE8490419A185550019053E /* ListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListController.h; sourceTree = "<group>"; };
-		2DE8490519A185550019053E /* ListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListController.m; sourceTree = "<group>"; };
-		2DE8490619A185550019053E /* PutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PutController.h; sourceTree = "<group>"; };
-		2DE8490719A185550019053E /* PutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PutController.m; sourceTree = "<group>"; };
-		2DE8490819A185550019053E /* URLGetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLGetController.h; sourceTree = "<group>"; };
-		2DE8490919A185550019053E /* URLGetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLGetController.m; sourceTree = "<group>"; };
+		2DE8491419A185B60019053E /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeViewController.h; path = Classes/ViewControllers/WelcomeViewController.h; sourceTree = "<group>"; };
+		2DE8491519A185B60019053E /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeViewController.m; path = Classes/ViewControllers/WelcomeViewController.m; sourceTree = "<group>"; };
+		2DE8491C19A18BF10019053E /* WhiteRaccoon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteRaccoon.h; sourceTree = "<group>"; };
+		2DE8491D19A18BF10019053E /* WhiteRaccoon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteRaccoon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +279,8 @@
 			children = (
 				2DE8487F19A173710019053E /* SplashViewController.h */,
 				2DE8488019A173710019053E /* SplashViewController.m */,
+				2DE8491419A185B60019053E /* WelcomeViewController.h */,
+				2DE8491519A185B60019053E /* WelcomeViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -298,16 +288,8 @@
 		2DE848FF19A185550019053E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2DE8490019A185550019053E /* CreateDirController.h */,
-				2DE8490119A185550019053E /* CreateDirController.m */,
-				2DE8490219A185550019053E /* GetController.h */,
-				2DE8490319A185550019053E /* GetController.m */,
-				2DE8490419A185550019053E /* ListController.h */,
-				2DE8490519A185550019053E /* ListController.m */,
-				2DE8490619A185550019053E /* PutController.h */,
-				2DE8490719A185550019053E /* PutController.m */,
-				2DE8490819A185550019053E /* URLGetController.h */,
-				2DE8490919A185550019053E /* URLGetController.m */,
+				2DE8491C19A18BF10019053E /* WhiteRaccoon.h */,
+				2DE8491D19A18BF10019053E /* WhiteRaccoon.m */,
 			);
 			name = Networking;
 			path = Classes/Networking;
@@ -444,13 +426,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DE8488119A173710019053E /* SplashViewController.m in Sources */,
+				2DE8491E19A18BF10019053E /* WhiteRaccoon.m in Sources */,
 				2DE8487B19A173710019053E /* AppDelegate.m in Sources */,
-				2DE8491019A185550019053E /* PutController.m in Sources */,
+				2DE8491619A185B60019053E /* WelcomeViewController.m in Sources */,
 				2DE8487719A173700019053E /* main.m in Sources */,
-				2DE8491219A185550019053E /* URLGetController.m in Sources */,
-				2DE8490E19A185550019053E /* ListController.m in Sources */,
-				2DE8490A19A185550019053E /* CreateDirController.m in Sources */,
-				2DE8490C19A185550019053E /* GetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,12 +437,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DE8491119A185550019053E /* PutController.m in Sources */,
 				2DE8489619A173710019053E /* SecondStoryTests.m in Sources */,
-				2DE8491319A185550019053E /* URLGetController.m in Sources */,
-				2DE8490D19A185550019053E /* GetController.m in Sources */,
-				2DE8490B19A185550019053E /* CreateDirController.m in Sources */,
-				2DE8490F19A185550019053E /* ListController.m in Sources */,
+				2DE8491F19A18BF10019053E /* WhiteRaccoon.m in Sources */,
+				2DE8491719A185B60019053E /* WelcomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
