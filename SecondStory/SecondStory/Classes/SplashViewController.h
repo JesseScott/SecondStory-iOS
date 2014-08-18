@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SplashViewController : UIViewController
+@interface SplashViewController : UIViewController {
+
+}
+
+@property (nonatomic, retain) NSTimer *timer;
 
 @end

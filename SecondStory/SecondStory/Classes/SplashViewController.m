@@ -15,14 +15,21 @@
 {
     [super viewDidLoad];
 	
-    // 
+    // Timer
+    if(self.timer == nil) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(segue) userInfo:nil repeats:NO];
+    }
     
     
 }
 
-- (void)didReceiveMemoryWarning
+- (void) segue
 {
-    [super didReceiveMemoryWarning];
+    // Segue
+    [self performSegueWithIdentifier:@"segue_splash2welcome" sender:self];
+    
+    // Kill Timer
+    self.timer = nil;
 }
 
 @end

@@ -207,10 +207,8 @@
 		2DE848A019A17B3A0019053E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2DE8487919A173710019053E /* AppDelegate.h */,
-				2DE8487A19A173710019053E /* AppDelegate.m */,
-				2DE8487F19A173710019053E /* SplashViewController.h */,
-				2DE8488019A173710019053E /* SplashViewController.m */,
+				2DE848FB19A17FF20019053E /* Delegate */,
+				2DE848FC19A17FFB0019053E /* ViewControllers */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -252,6 +250,24 @@
 			);
 			name = jssb;
 			path = Assets/jssb;
+			sourceTree = "<group>";
+		};
+		2DE848FB19A17FF20019053E /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				2DE8487919A173710019053E /* AppDelegate.h */,
+				2DE8487A19A173710019053E /* AppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		2DE848FC19A17FFB0019053E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2DE8487F19A173710019053E /* SplashViewController.h */,
+				2DE8488019A173710019053E /* SplashViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
