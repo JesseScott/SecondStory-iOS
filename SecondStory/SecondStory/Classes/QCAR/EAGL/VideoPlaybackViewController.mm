@@ -46,10 +46,10 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
-    [vapp release];
-    [eaglView release];
+    //[vapp release];
+    //[eaglView release];
     
-    [super dealloc];
+    //[super dealloc];
 }
 
 - (void) setNavigationController:(UINavigationController *) theNavController {
@@ -59,14 +59,14 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 - (void)loadView
 {
     // Create the EAGLView
-    eaglView = [[[VideoPlaybackEAGLView alloc] initWithFrame:viewFrame  rootViewController:self appSession:vapp] autorelease];
+    eaglView = [[VideoPlaybackEAGLView alloc] initWithFrame:viewFrame  rootViewController:self appSession:vapp];
     [self setView:eaglView];
     
     CGRect mainBounds = [[UIScreen mainScreen] bounds];
     CGRect indicatorBounds = CGRectMake(mainBounds.size.width / 2 - 12,
                                         mainBounds.size.height / 2 - 12, 24, 24);
-    UIActivityIndicatorView *loadingIndicator = [[[UIActivityIndicatorView alloc]
-                                          initWithFrame:indicatorBounds]autorelease];
+    UIActivityIndicatorView *loadingIndicator = [[UIActivityIndicatorView alloc]
+                                          initWithFrame:indicatorBounds];
     
     loadingIndicator.tag  = 1;
     loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
@@ -119,11 +119,11 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     [self prepareMenu];
     
     
-    UITapGestureRecognizer *doubleTap = [[[UITapGestureRecognizer alloc] initWithTarget: self action:@selector(handleDoubleTap:)] autorelease];
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget: self action:@selector(handleDoubleTap:)];
     doubleTap.numberOfTapsRequired = 2;
     [self.view addGestureRecognizer:doubleTap];
     
-    UITapGestureRecognizer *tap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)]autorelease];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     tap.delegate = (id<UIGestureRecognizerDelegate>)self;
     [self.view addGestureRecognizer:tap];
     [tap requireGestureRecognizerToFail:doubleTap];
