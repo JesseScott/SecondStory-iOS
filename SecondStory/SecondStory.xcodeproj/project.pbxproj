@@ -51,6 +51,17 @@
 		2DE848F619A17D220019053E /* VuforiaSizzleReel_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE848DA19A17D220019053E /* VuforiaSizzleReel_2.png */; };
 		2DE848F919A17D3C0019053E /* splash_screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE848F819A17D3C0019053E /* splash_screen@2x.png */; };
 		2DE848FA19A17D3C0019053E /* splash_screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE848F819A17D3C0019053E /* splash_screen@2x.png */; };
+		2DE848FE19A184F10019053E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE848FD19A184F10019053E /* CFNetwork.framework */; };
+		2DE8490A19A185550019053E /* CreateDirController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490119A185550019053E /* CreateDirController.m */; };
+		2DE8490B19A185550019053E /* CreateDirController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490119A185550019053E /* CreateDirController.m */; };
+		2DE8490C19A185550019053E /* GetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490319A185550019053E /* GetController.m */; };
+		2DE8490D19A185550019053E /* GetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490319A185550019053E /* GetController.m */; };
+		2DE8490E19A185550019053E /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490519A185550019053E /* ListController.m */; };
+		2DE8490F19A185550019053E /* ListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490519A185550019053E /* ListController.m */; };
+		2DE8491019A185550019053E /* PutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490719A185550019053E /* PutController.m */; };
+		2DE8491119A185550019053E /* PutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490719A185550019053E /* PutController.m */; };
+		2DE8491219A185550019053E /* URLGetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490919A185550019053E /* URLGetController.m */; };
+		2DE8491319A185550019053E /* URLGetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8490919A185550019053E /* URLGetController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,11 +83,11 @@
 		2DE8487419A173700019053E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2DE8487619A173700019053E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DE8487819A173700019053E /* SecondStory-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SecondStory-Prefix.pch"; sourceTree = "<group>"; };
-		2DE8487919A173710019053E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
-		2DE8487A19A173710019053E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
+		2DE8487919A173710019053E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/Delegate/AppDelegate.h; sourceTree = "<group>"; };
+		2DE8487A19A173710019053E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/Delegate/AppDelegate.m; sourceTree = "<group>"; };
 		2DE8487D19A173710019053E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2DE8487F19A173710019053E /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SplashViewController.h; path = Classes/SplashViewController.h; sourceTree = "<group>"; };
-		2DE8488019A173710019053E /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SplashViewController.m; path = Classes/SplashViewController.m; sourceTree = "<group>"; };
+		2DE8487F19A173710019053E /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SplashViewController.h; path = Classes/ViewControllers/SplashViewController.h; sourceTree = "<group>"; };
+		2DE8488019A173710019053E /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SplashViewController.m; path = Classes/ViewControllers/SplashViewController.m; sourceTree = "<group>"; };
 		2DE8488219A173710019053E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2DE8488819A173710019053E /* SecondStoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecondStoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE8488919A173710019053E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -98,6 +109,17 @@
 		2DE848D919A17D220019053E /* VuforiaSizzleReel_2.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = VuforiaSizzleReel_2.m4v; sourceTree = "<group>"; };
 		2DE848DA19A17D220019053E /* VuforiaSizzleReel_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VuforiaSizzleReel_2.png; sourceTree = "<group>"; };
 		2DE848F819A17D3C0019053E /* splash_screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_screen@2x.png"; sourceTree = "<group>"; };
+		2DE848FD19A184F10019053E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2DE8490019A185550019053E /* CreateDirController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDirController.h; sourceTree = "<group>"; };
+		2DE8490119A185550019053E /* CreateDirController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDirController.m; sourceTree = "<group>"; };
+		2DE8490219A185550019053E /* GetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetController.h; sourceTree = "<group>"; };
+		2DE8490319A185550019053E /* GetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetController.m; sourceTree = "<group>"; };
+		2DE8490419A185550019053E /* ListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListController.h; sourceTree = "<group>"; };
+		2DE8490519A185550019053E /* ListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListController.m; sourceTree = "<group>"; };
+		2DE8490619A185550019053E /* PutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PutController.h; sourceTree = "<group>"; };
+		2DE8490719A185550019053E /* PutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PutController.m; sourceTree = "<group>"; };
+		2DE8490819A185550019053E /* URLGetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLGetController.h; sourceTree = "<group>"; };
+		2DE8490919A185550019053E /* URLGetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLGetController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE848FE19A184F10019053E /* CFNetwork.framework in Frameworks */,
 				2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */,
 				2DE8486F19A173700019053E /* UIKit.framework in Frameworks */,
 				2DE8486B19A173700019053E /* Foundation.framework in Frameworks */,
@@ -146,6 +169,7 @@
 		2DE8486919A173700019053E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2DE848FD19A184F10019053E /* CFNetwork.framework */,
 				2DE8486A19A173700019053E /* Foundation.framework */,
 				2DE8486C19A173700019053E /* CoreGraphics.framework */,
 				2DE8486E19A173700019053E /* UIKit.framework */,
@@ -209,6 +233,7 @@
 			children = (
 				2DE848FB19A17FF20019053E /* Delegate */,
 				2DE848FC19A17FFB0019053E /* ViewControllers */,
+				2DE848FF19A185550019053E /* Networking */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -268,6 +293,24 @@
 				2DE8488019A173710019053E /* SplashViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2DE848FF19A185550019053E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2DE8490019A185550019053E /* CreateDirController.h */,
+				2DE8490119A185550019053E /* CreateDirController.m */,
+				2DE8490219A185550019053E /* GetController.h */,
+				2DE8490319A185550019053E /* GetController.m */,
+				2DE8490419A185550019053E /* ListController.h */,
+				2DE8490519A185550019053E /* ListController.m */,
+				2DE8490619A185550019053E /* PutController.h */,
+				2DE8490719A185550019053E /* PutController.m */,
+				2DE8490819A185550019053E /* URLGetController.h */,
+				2DE8490919A185550019053E /* URLGetController.m */,
+			);
+			name = Networking;
+			path = Classes/Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,7 +445,12 @@
 			files = (
 				2DE8488119A173710019053E /* SplashViewController.m in Sources */,
 				2DE8487B19A173710019053E /* AppDelegate.m in Sources */,
+				2DE8491019A185550019053E /* PutController.m in Sources */,
 				2DE8487719A173700019053E /* main.m in Sources */,
+				2DE8491219A185550019053E /* URLGetController.m in Sources */,
+				2DE8490E19A185550019053E /* ListController.m in Sources */,
+				2DE8490A19A185550019053E /* CreateDirController.m in Sources */,
+				2DE8490C19A185550019053E /* GetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +458,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE8491119A185550019053E /* PutController.m in Sources */,
 				2DE8489619A173710019053E /* SecondStoryTests.m in Sources */,
+				2DE8491319A185550019053E /* URLGetController.m in Sources */,
+				2DE8490D19A185550019053E /* GetController.m in Sources */,
+				2DE8490B19A185550019053E /* CreateDirController.m in Sources */,
+				2DE8490F19A185550019053E /* ListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
