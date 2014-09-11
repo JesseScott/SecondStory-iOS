@@ -27,6 +27,8 @@
 		2D35BFAE19C235D9003731E7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFA919C235D9003731E7 /* Default.png */; };
 		2D35BFAF19C235D9003731E7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFAA19C235D9003731E7 /* Default@2x.png */; };
 		2D35BFB019C235D9003731E7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFAA19C235D9003731E7 /* Default@2x.png */; };
+		2D35BFB319C2369C003731E7 /* menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFB219C2369C003731E7 /* menu_bg.png */; };
+		2D35BFB419C2369C003731E7 /* menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFB219C2369C003731E7 /* menu_bg.png */; };
 		2DE8486B19A173700019053E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486A19A173700019053E /* Foundation.framework */; };
 		2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486C19A173700019053E /* CoreGraphics.framework */; };
 		2DE8486F19A173700019053E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486E19A173700019053E /* UIKit.framework */; };
@@ -146,6 +148,7 @@
 		2D35BFA819C235D9003731E7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2D35BFA919C235D9003731E7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2D35BFAA19C235D9003731E7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2D35BFB219C2369C003731E7 /* menu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_bg.png; sourceTree = "<group>"; };
 		2DE8486719A173700019053E /* SecondStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE8486A19A173700019053E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DE8486C19A173700019053E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -311,6 +314,15 @@
 			path = Assets/launch;
 			sourceTree = "<group>";
 		};
+		2D35BFB119C2369C003731E7 /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				2D35BFB219C2369C003731E7 /* menu_bg.png */,
+			);
+			name = menu;
+			path = Assets/menu;
+			sourceTree = "<group>";
+		};
 		2DE8485E19A173700019053E = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +409,7 @@
 		2DE8489F19A17B220019053E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2D35BFB119C2369C003731E7 /* menu */,
 				2D35BFA719C235D9003731E7 /* launch */,
 				2D35BFA019C2337A003731E7 /* fonts */,
 				2D35BF8F19C232F7003731E7 /* icons */,
@@ -645,6 +658,7 @@
 				2DE848F319A17D220019053E /* VuforiaSizzleReel_2.m4v in Resources */,
 				2D35BFAD19C235D9003731E7 /* Default.png in Resources */,
 				2D35BF9E19C232F7003731E7 /* splash_logo@2x.png in Resources */,
+				2D35BFB319C2369C003731E7 /* menu_bg.png in Resources */,
 				2D35BF9A19C232F7003731E7 /* icon-splotlight-ios7@2x.png in Resources */,
 				2DE8499C19A1B2080019053E /* SampleAppAboutViewController.xib in Resources */,
 				2DE8499419A1B2080019053E /* Simple.fragsh in Resources */,
@@ -701,6 +715,7 @@
 				2DE848E419A17D220019053E /* start_large_press.png in Resources */,
 				2D35BF9D19C232F7003731E7 /* splash_bg@2x.png in Resources */,
 				2DE8499D19A1B2080019053E /* SampleAppAboutViewController.xib in Resources */,
+				2D35BFB419C2369C003731E7 /* menu_bg.png in Resources */,
 				2DE8499319A1B2080019053E /* Line.vertsh in Resources */,
 				2DE848EA19A17D220019053E /* StonesAndChips.dat in Resources */,
 				2DE848F219A17D220019053E /* VuforiaSizzleReel_1.png in Resources */,

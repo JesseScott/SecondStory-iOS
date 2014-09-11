@@ -26,7 +26,7 @@
 - (void) segue
 {
     // Segue
-    [self performSegueWithIdentifier:@"segue_splash2welcome" sender:self];
+    [self performSegueWithIdentifier:@"segue_splash2menu" sender:self];
     
     // Kill Timer
     self.timer = nil;
