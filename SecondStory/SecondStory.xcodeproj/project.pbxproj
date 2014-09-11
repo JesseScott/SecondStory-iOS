@@ -73,7 +73,6 @@
 		2DE8498119A1B2080019053E /* SampleMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8495C19A1B2080019053E /* SampleMath.cpp */; };
 		2DE8498219A1B2080019053E /* VideoPlaybackEAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8495F19A1B2080019053E /* VideoPlaybackEAGLView.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2DE8498319A1B2080019053E /* VideoPlaybackEAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8495F19A1B2080019053E /* VideoPlaybackEAGLView.mm */; };
-		2DE8498419A1B2080019053E /* VideoPlaybackViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8496119A1B2080019053E /* VideoPlaybackViewController.mm */; };
 		2DE8498519A1B2080019053E /* VideoPlaybackViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8496119A1B2080019053E /* VideoPlaybackViewController.mm */; };
 		2DE8498619A1B2080019053E /* VideoPlayerHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8496319A1B2080019053E /* VideoPlayerHelper.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2DE8498719A1B2080019053E /* VideoPlayerHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8496319A1B2080019053E /* VideoPlayerHelper.mm */; };
@@ -638,7 +637,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DE8498419A1B2080019053E /* VideoPlaybackViewController.mm in Sources */,
 				2DE8498A19A1B2080019053E /* SampleApplicationSession.mm in Sources */,
 				2DE8499E19A1B2080019053E /* SampleAppLeftMenuViewController.m in Sources */,
 				2DE8498E19A1B2080019053E /* SampleApplicationUtils.cpp in Sources */,
@@ -738,7 +736,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -762,7 +761,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "88672906-D0E3-41AF-B64C-D495F8732583";
+				PROVISIONING_PROFILE = "8113716d-9fd4-4640-b552-9f4a1e4d1b3e";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -783,7 +782,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -800,7 +800,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
-				PROVISIONING_PROFILE = "88672906-D0E3-41AF-B64C-D495F8732583";
+				PROVISIONING_PROFILE = "8113716d-9fd4-4640-b552-9f4a1e4d1b3e";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -827,7 +827,7 @@
 					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "88672906-D0E3-41AF-B64C-D495F8732583";
+				PROVISIONING_PROFILE = "8113716d-9fd4-4640-b552-9f4a1e4d1b3e";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -853,7 +853,7 @@
 					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "88672906-D0E3-41AF-B64C-D495F8732583";
+				PROVISIONING_PROFILE = "8113716d-9fd4-4640-b552-9f4a1e4d1b3e";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
