@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="666" y="-301"/>
         </scene>
-        <!--View Controller - Menu-->
+        <!--Menu-->
         <scene sceneID="2FH-Np-MUI">
             <objects>
-                <viewController storyboardIdentifier="Menu" title="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e9K-T6-6W8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Menu" title="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e9K-T6-6W8" userLabel="Menu" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AqG-90-i2L"/>
                         <viewControllerLayoutGuide type="bottom" id="ow3-ed-Umq"/>
@@ -138,6 +138,9 @@
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="zYn-Cj-DIP" kind="push" id="lKn-3c-1Lf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBk-b8-7wf">
                                 <rect key="frame" x="0.0" y="208" width="320" height="60"/>
@@ -148,6 +151,9 @@
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="R6f-Jg-64d" kind="push" id="JBm-bP-k2m"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUq-DK-6ze">
                                 <rect key="frame" x="0.0" y="276" width="320" height="60"/>
@@ -158,6 +164,9 @@
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ISD-ts-acC" kind="push" id="DEL-OO-zLU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -186,10 +195,10 @@
             </objects>
             <point key="canvasLocation" x="1211" y="-301"/>
         </scene>
-        <!--View Controller - Guide-->
+        <!--Guide-->
         <scene sceneID="QVf-2j-p38">
             <objects>
-                <viewController storyboardIdentifier="Guide" title="Guide" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Biq-Qy-Yep" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Guide" title="Guide" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Biq-Qy-Yep" userLabel="Guide" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n3E-4V-S0v"/>
                         <viewControllerLayoutGuide type="bottom" id="xdO-s8-UEn"/>
@@ -261,11 +270,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="LjX-X0-93Y"/>
+                    <navigationItem key="navigationItem" title="GUIDE" id="LjX-X0-93Y"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CY-zJ-0u7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737" y="421"/>
+            <point key="canvasLocation" x="2189" y="-495"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C7Y-me-HyL">
@@ -285,14 +294,138 @@
             </objects>
             <point key="canvasLocation" x="666" y="421"/>
         </scene>
+        <!--Maps-->
+        <scene sceneID="YhC-ne-EWv">
+            <objects>
+                <viewController storyboardIdentifier="Maps" title="Maps" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zYn-Cj-DIP" userLabel="Maps" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QKV-w5-II1"/>
+                        <viewControllerLayoutGuide type="bottom" id="awc-2Z-iTy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="21o-j4-r3O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="1BZ-Y7-fwD" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vlo-oQ-4ZT" userLabel="map pin 1">
+                                <rect key="frame" x="61" y="383" width="23" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="clJ-gK-naP" userLabel="map pin 2">
+                                <rect key="frame" x="98" y="383" width="23" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="ivq-SQ-h5r" userLabel="map pin 3">
+                                <rect key="frame" x="67" y="335" width="23" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="AHK-Ch-NPF" userLabel="map pin 4">
+                                <rect key="frame" x="126" y="316" width="23" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="UU6-0i-jft" userLabel="map pin 5">
+                                <rect key="frame" x="91" y="272" width="23" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="EkL-4r-0md" userLabel="map pin 6">
+                                <rect key="frame" x="84" y="241" width="23" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="uMi-g7-F52" userLabel="map pin 7">
+                                <rect key="frame" x="106" y="233" width="23" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="MNl-U9-H4A" userLabel="map pin 8">
+                                <rect key="frame" x="137" y="246" width="23" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="BgC-Nw-bW1" userLabel="map pin 9">
+                                <rect key="frame" x="149" y="197" width="23" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="MAPS" id="fYx-Ri-Qle"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfX-a0-G0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2189" y="171"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="Kfp-yf-qtC">
+            <objects>
+                <viewController storyboardIdentifier="About" title="About" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R6f-Jg-64d" userLabel="About" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="emx-Q7-HfG"/>
+                        <viewControllerLayoutGuide type="bottom" id="rnN-ih-gye"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LKx-O5-B3U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="wzF-F8-Itp" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ABOUT" id="qpU-Yk-Fqr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MKp-RF-vB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2189" y="827"/>
+        </scene>
+        <!--Feedback-->
+        <scene sceneID="WjL-fe-XxQ">
+            <objects>
+                <viewController storyboardIdentifier="Feedback" title="Feedback" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ISD-ts-acC" userLabel="Feedback" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cdc-su-6kg"/>
+                        <viewControllerLayoutGuide type="bottom" id="nlS-0Q-Kg9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XH1-rZ-3iE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="D72-3Z-dSr" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGg-wA-ekn">
+                                <rect key="frame" x="20" y="254" width="280" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="GIVE FEEDBACK">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="FEEDBACK" id="Cdq-wz-aBB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V1s-XU-7Xn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2189" y="1502"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="about_bg.png" width="1080" height="1920"/>
         <image name="guide_bg.png" width="1080" height="1920"/>
         <image name="guide_cars_icon.png" width="94" height="75"/>
         <image name="guide_device_icon.png" width="53" height="75"/>
         <image name="guide_ear_icon.png" width="47" height="75"/>
         <image name="guide_explore_icon.png" width="158" height="75"/>
         <image name="guide_live_icon.png" width="80" height="75"/>
+        <image name="map_bg.png" width="1080" height="1920"/>
+        <image name="map_pin.png" width="45" height="45"/>
         <image name="menu_bg.png" width="1080" height="1920"/>
         <image name="splash_bg.png" width="320" height="569"/>
         <image name="splash_logo.png" width="300" height="228"/>

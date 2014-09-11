@@ -51,6 +51,8 @@
 		2D35BFD619C238E2003731E7 /* map_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFD119C238E2003731E7 /* map_bg.png */; };
 		2D35BFD719C238E2003731E7 /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFD219C238E2003731E7 /* map_pin.png */; };
 		2D35BFD819C238E2003731E7 /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFD219C238E2003731E7 /* map_pin.png */; };
+		2D35BFDB19C23CE5003731E7 /* about_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFDA19C23CE5003731E7 /* about_bg.png */; };
+		2D35BFDC19C23CE5003731E7 /* about_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFDA19C23CE5003731E7 /* about_bg.png */; };
 		2DE8486B19A173700019053E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486A19A173700019053E /* Foundation.framework */; };
 		2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486C19A173700019053E /* CoreGraphics.framework */; };
 		2DE8486F19A173700019053E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486E19A173700019053E /* UIKit.framework */; };
@@ -182,6 +184,7 @@
 		2D35BFCF19C238E2003731E7 /* global_back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = global_back_icon.png; sourceTree = "<group>"; };
 		2D35BFD119C238E2003731E7 /* map_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_bg.png; sourceTree = "<group>"; };
 		2D35BFD219C238E2003731E7 /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin.png; sourceTree = "<group>"; };
+		2D35BFDA19C23CE5003731E7 /* about_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_bg.png; sourceTree = "<group>"; };
 		2DE8486719A173700019053E /* SecondStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE8486A19A173700019053E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DE8486C19A173700019053E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -391,6 +394,15 @@
 			path = Assets/map;
 			sourceTree = "<group>";
 		};
+		2D35BFD919C23CE5003731E7 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				2D35BFDA19C23CE5003731E7 /* about_bg.png */,
+			);
+			name = about;
+			path = Assets/about;
+			sourceTree = "<group>";
+		};
 		2DE8485E19A173700019053E = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +489,7 @@
 		2DE8489F19A17B220019053E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2D35BFD919C23CE5003731E7 /* about */,
 				2D35BFCE19C238E2003731E7 /* global */,
 				2D35BFD019C238E2003731E7 /* map */,
 				2D35BFB519C238C6003731E7 /* guide */,
@@ -756,6 +769,7 @@
 				2D35BFC219C238C6003731E7 /* guide_device_icon.png in Resources */,
 				2D35BFC619C238C6003731E7 /* guide_explore_icon.png in Resources */,
 				2D35BF9C19C232F7003731E7 /* splash_bg@2x.png in Resources */,
+				2D35BFDB19C23CE5003731E7 /* about_bg.png in Resources */,
 				2DE848EF19A17D220019053E /* VuforiaSizzleReel_1.m4v in Resources */,
 				2D35BFD719C238E2003731E7 /* map_pin.png in Resources */,
 				2DE8487519A173700019053E /* InfoPlist.strings in Resources */,
@@ -800,6 +814,7 @@
 				2DE848E819A17D220019053E /* start_medium_press.png in Resources */,
 				2DE848E019A17D220019053E /* icon_play.png in Resources */,
 				2DE848F619A17D220019053E /* VuforiaSizzleReel_2.png in Resources */,
+				2D35BFDC19C23CE5003731E7 /* about_bg.png in Resources */,
 				2DE848EC19A17D220019053E /* StonesAndChips.xml in Resources */,
 				2D35BFC919C238C6003731E7 /* guide_live_icon.png in Resources */,
 				2DE848E619A17D220019053E /* start_medium.png in Resources */,
