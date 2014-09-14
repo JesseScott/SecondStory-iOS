@@ -8,34 +8,28 @@
 
 #import "GuideViewController.h"
 
-@interface GuideViewController ()
 
-@end
 
 @implementation GuideViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    // Nav Bar
+    //self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor
+                                                      colorWithRed:(106/255.f)
+                                                      green:(108/255.f)
+                                                      blue:(89/255.f)
+                                                      alpha:(255/255.f)];
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -44,6 +38,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

@@ -63,6 +63,7 @@
 		2D4D629419C5FABE007A75C2 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D629219C5FABE007A75C2 /* AboutViewController.m */; };
 		2D4D629719C5FACD007A75C2 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */; };
 		2D4D629819C5FACD007A75C2 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */; };
+		2D4D629919C5FD5F007A75C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DE8487C19A173710019053E /* Main.storyboard */; };
 		2DE8486B19A173700019053E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486A19A173700019053E /* Foundation.framework */; };
 		2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486C19A173700019053E /* CoreGraphics.framework */; };
 		2DE8486F19A173700019053E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486E19A173700019053E /* UIKit.framework */; };
@@ -845,6 +846,7 @@
 				2DE848E019A17D220019053E /* icon_play.png in Resources */,
 				2DE848F619A17D220019053E /* VuforiaSizzleReel_2.png in Resources */,
 				2D35BFDC19C23CE5003731E7 /* about_bg.png in Resources */,
+				2D4D629919C5FD5F007A75C2 /* Main.storyboard in Resources */,
 				2DE848EC19A17D220019053E /* StonesAndChips.xml in Resources */,
 				2D35BFC919C238C6003731E7 /* guide_live_icon.png in Resources */,
 				2DE848E619A17D220019053E /* start_medium.png in Resources */,

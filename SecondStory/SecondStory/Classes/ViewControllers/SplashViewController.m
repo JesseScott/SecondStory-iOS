@@ -20,13 +20,6 @@
         self.timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(segue) userInfo:nil repeats:NO];
     }
     
-    // Nav Bar
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.view.backgroundColor = [UIColor clearColor];
-    
-    
 }
 
 - (void) segue
