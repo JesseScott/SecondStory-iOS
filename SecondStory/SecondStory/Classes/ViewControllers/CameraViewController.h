@@ -11,7 +11,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 #import "SampleApplicationSession.h"
 #import <QCAR/DataSet.h>
 
-@interface VideoPlaybackViewController : UIViewController <SampleApplicationControl, SampleAppMenuCommandProtocol>{
+@interface CameraViewController : UIViewController <SampleApplicationControl, SampleAppMenuCommandProtocol>{
     CGRect viewFrame;
     VideoPlaybackEAGLView* eaglView;
     QCAR::DataSet*  dataSet;

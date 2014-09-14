@@ -5,7 +5,7 @@ Vuforia is a trademark of QUALCOMM Incorporated, registered in the United States
 and other countries. Trademarks of QUALCOMM Incorporated are used with permission.
 ===============================================================================*/
 
-#import "VideoPlaybackViewController.h"
+#import "CameraViewController.h"
 #import <QCAR/QCAR.h>
 #import <QCAR/TrackerManager.h>
 #import <QCAR/ImageTracker.h>
@@ -13,11 +13,11 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 #import <QCAR/Trackable.h>
 #import <QCAR/CameraDevice.h>
 
-@interface VideoPlaybackViewController ()
+@interface CameraViewController ()
 
 @end
 
-@implementation VideoPlaybackViewController
+@implementation CameraViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
