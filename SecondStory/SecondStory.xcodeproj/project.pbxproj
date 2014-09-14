@@ -53,6 +53,16 @@
 		2D35BFD819C238E2003731E7 /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFD219C238E2003731E7 /* map_pin.png */; };
 		2D35BFDB19C23CE5003731E7 /* about_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFDA19C23CE5003731E7 /* about_bg.png */; };
 		2D35BFDC19C23CE5003731E7 /* about_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFDA19C23CE5003731E7 /* about_bg.png */; };
+		2D4D628719C5FA82007A75C2 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D628619C5FA82007A75C2 /* MenuViewController.m */; };
+		2D4D628819C5FA82007A75C2 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D628619C5FA82007A75C2 /* MenuViewController.m */; };
+		2D4D628B19C5FAA0007A75C2 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D628A19C5FAA0007A75C2 /* GuideViewController.m */; };
+		2D4D628C19C5FAA0007A75C2 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D628A19C5FAA0007A75C2 /* GuideViewController.m */; };
+		2D4D628F19C5FAAF007A75C2 /* MapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D628E19C5FAAF007A75C2 /* MapsViewController.m */; };
+		2D4D629019C5FAAF007A75C2 /* MapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D628E19C5FAAF007A75C2 /* MapsViewController.m */; };
+		2D4D629319C5FABE007A75C2 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D629219C5FABE007A75C2 /* AboutViewController.m */; };
+		2D4D629419C5FABE007A75C2 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D629219C5FABE007A75C2 /* AboutViewController.m */; };
+		2D4D629719C5FACD007A75C2 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */; };
+		2D4D629819C5FACD007A75C2 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */; };
 		2DE8486B19A173700019053E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486A19A173700019053E /* Foundation.framework */; };
 		2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486C19A173700019053E /* CoreGraphics.framework */; };
 		2DE8486F19A173700019053E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486E19A173700019053E /* UIKit.framework */; };
@@ -185,6 +195,16 @@
 		2D35BFD119C238E2003731E7 /* map_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_bg.png; sourceTree = "<group>"; };
 		2D35BFD219C238E2003731E7 /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin.png; sourceTree = "<group>"; };
 		2D35BFDA19C23CE5003731E7 /* about_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_bg.png; sourceTree = "<group>"; };
+		2D4D628519C5FA82007A75C2 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Classes/ViewControllers/MenuViewController.h; sourceTree = "<group>"; };
+		2D4D628619C5FA82007A75C2 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Classes/ViewControllers/MenuViewController.m; sourceTree = "<group>"; };
+		2D4D628919C5FAA0007A75C2 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuideViewController.h; path = Classes/ViewControllers/GuideViewController.h; sourceTree = "<group>"; };
+		2D4D628A19C5FAA0007A75C2 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuideViewController.m; path = Classes/ViewControllers/GuideViewController.m; sourceTree = "<group>"; };
+		2D4D628D19C5FAAF007A75C2 /* MapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapsViewController.h; path = Classes/ViewControllers/MapsViewController.h; sourceTree = "<group>"; };
+		2D4D628E19C5FAAF007A75C2 /* MapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapsViewController.m; path = Classes/ViewControllers/MapsViewController.m; sourceTree = "<group>"; };
+		2D4D629119C5FABE007A75C2 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = Classes/ViewControllers/AboutViewController.h; sourceTree = "<group>"; };
+		2D4D629219C5FABE007A75C2 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = Classes/ViewControllers/AboutViewController.m; sourceTree = "<group>"; };
+		2D4D629519C5FACD007A75C2 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedbackViewController.h; path = Classes/ViewControllers/FeedbackViewController.h; sourceTree = "<group>"; };
+		2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedbackViewController.m; path = Classes/ViewControllers/FeedbackViewController.m; sourceTree = "<group>"; };
 		2DE8486719A173700019053E /* SecondStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE8486A19A173700019053E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DE8486C19A173700019053E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -562,6 +582,16 @@
 				2DE8488019A173710019053E /* SplashViewController.m */,
 				2DE8491419A185B60019053E /* WelcomeViewController.h */,
 				2DE8491519A185B60019053E /* WelcomeViewController.m */,
+				2D4D628519C5FA82007A75C2 /* MenuViewController.h */,
+				2D4D628619C5FA82007A75C2 /* MenuViewController.m */,
+				2D4D628919C5FAA0007A75C2 /* GuideViewController.h */,
+				2D4D628A19C5FAA0007A75C2 /* GuideViewController.m */,
+				2D4D628D19C5FAAF007A75C2 /* MapsViewController.h */,
+				2D4D628E19C5FAAF007A75C2 /* MapsViewController.m */,
+				2D4D629119C5FABE007A75C2 /* AboutViewController.h */,
+				2D4D629219C5FABE007A75C2 /* AboutViewController.m */,
+				2D4D629519C5FACD007A75C2 /* FeedbackViewController.h */,
+				2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -845,18 +875,23 @@
 				2DE8499E19A1B2080019053E /* SampleAppLeftMenuViewController.m in Sources */,
 				2DE8498E19A1B2080019053E /* SampleApplicationUtils.cpp in Sources */,
 				2DE8488119A173710019053E /* SplashViewController.m in Sources */,
+				2D4D628719C5FA82007A75C2 /* MenuViewController.m in Sources */,
 				2DE8498619A1B2080019053E /* VideoPlayerHelper.mm in Sources */,
 				2DE849A019A1B2080019053E /* SampleAppMenu.m in Sources */,
 				2DE8491E19A18BF10019053E /* WhiteRaccoon.m in Sources */,
+				2D4D629319C5FABE007A75C2 /* AboutViewController.m in Sources */,
 				2DE8499A19A1B2080019053E /* SampleAppAboutViewController.m in Sources */,
 				2DE8498219A1B2080019053E /* VideoPlaybackEAGLView.mm in Sources */,
 				2DE8498019A1B2080019053E /* SampleMath.cpp in Sources */,
+				2D4D628F19C5FAAF007A75C2 /* MapsViewController.m in Sources */,
 				2DE8493319A1AD980019053E /* VideoPlaybackViewController.mm in Sources */,
 				2DE8487B19A173710019053E /* AppDelegate.m in Sources */,
 				2DE8491619A185B60019053E /* WelcomeViewController.m in Sources */,
 				2DE8499819A1B2080019053E /* Texture.mm in Sources */,
+				2D4D629719C5FACD007A75C2 /* FeedbackViewController.m in Sources */,
 				2DE8498819A1B2080019053E /* SampleApplication3DModel.m in Sources */,
 				2DE8498C19A1B2080019053E /* SampleApplicationShaderUtils.m in Sources */,
+				2D4D628B19C5FAA0007A75C2 /* GuideViewController.m in Sources */,
 				2DE8487719A173700019053E /* main.m in Sources */,
 				2DE849A219A1B2080019053E /* SampleAppSlidingMenuController.m in Sources */,
 			);
@@ -867,7 +902,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DE8498719A1B2080019053E /* VideoPlayerHelper.mm in Sources */,
+				2D4D628819C5FA82007A75C2 /* MenuViewController.m in Sources */,
 				2DE8498519A1B2080019053E /* VideoPlaybackViewController.mm in Sources */,
+				2D4D629419C5FABE007A75C2 /* AboutViewController.m in Sources */,
+				2D4D629019C5FAAF007A75C2 /* MapsViewController.m in Sources */,
+				2D4D629819C5FACD007A75C2 /* FeedbackViewController.m in Sources */,
 				2DE849A119A1B2080019053E /* SampleAppMenu.m in Sources */,
 				2DE8499B19A1B2080019053E /* SampleAppAboutViewController.m in Sources */,
 				2DE8498919A1B2080019053E /* SampleApplication3DModel.m in Sources */,
@@ -880,6 +919,7 @@
 				2DE8499919A1B2080019053E /* Texture.mm in Sources */,
 				2DE849A319A1B2080019053E /* SampleAppSlidingMenuController.m in Sources */,
 				2DE8491719A185B60019053E /* WelcomeViewController.m in Sources */,
+				2D4D628C19C5FAA0007A75C2 /* GuideViewController.m in Sources */,
 				2DE8493419A1AD980019053E /* VideoPlaybackViewController.mm in Sources */,
 				2DE8498B19A1B2080019053E /* SampleApplicationSession.mm in Sources */,
 				2DE8498D19A1B2080019053E /* SampleApplicationShaderUtils.m in Sources */,
@@ -965,7 +1005,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "8113716d-9fd4-4640-b552-9f4a1e4d1b3e";
+				PROVISIONING_PROFILE = "ab8de86a-eadb-49e0-90c3-fdbf474155bc";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1004,7 +1044,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
-				PROVISIONING_PROFILE = "8113716d-9fd4-4640-b552-9f4a1e4d1b3e";
+				PROVISIONING_PROFILE = "ab8de86a-eadb-49e0-90c3-fdbf474155bc";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1030,7 +1070,7 @@
 					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8113716d-9fd4-4640-b552-9f4a1e4d1b3e";
+				PROVISIONING_PROFILE = "ab8de86a-eadb-49e0-90c3-fdbf474155bc";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1055,7 +1095,7 @@
 					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8113716d-9fd4-4640-b552-9f4a1e4d1b3e";
+				PROVISIONING_PROFILE = "ab8de86a-eadb-49e0-90c3-fdbf474155bc";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

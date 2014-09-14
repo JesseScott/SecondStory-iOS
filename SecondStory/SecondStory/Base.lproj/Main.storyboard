@@ -94,7 +94,7 @@
         <!--Menu-->
         <scene sceneID="2FH-Np-MUI">
             <objects>
-                <viewController storyboardIdentifier="Menu" title="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e9K-T6-6W8" userLabel="Menu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Menu" title="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e9K-T6-6W8" userLabel="Menu" customClass="MenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AqG-90-i2L"/>
                         <viewControllerLayoutGuide type="bottom" id="ow3-ed-Umq"/>
@@ -198,7 +198,7 @@
         <!--Guide-->
         <scene sceneID="QVf-2j-p38">
             <objects>
-                <viewController storyboardIdentifier="Guide" title="Guide" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Biq-Qy-Yep" userLabel="Guide" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Guide" title="Guide" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Biq-Qy-Yep" userLabel="Guide" customClass="GuideViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n3E-4V-S0v"/>
                         <viewControllerLayoutGuide type="bottom" id="xdO-s8-UEn"/>
@@ -297,7 +297,7 @@
         <!--Maps-->
         <scene sceneID="YhC-ne-EWv">
             <objects>
-                <viewController storyboardIdentifier="Maps" title="Maps" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zYn-Cj-DIP" userLabel="Maps" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Maps" title="Maps" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zYn-Cj-DIP" userLabel="Maps" customClass="MapsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QKV-w5-II1"/>
                         <viewControllerLayoutGuide type="bottom" id="awc-2Z-iTy"/>
@@ -358,7 +358,7 @@
         <!--About-->
         <scene sceneID="Kfp-yf-qtC">
             <objects>
-                <viewController storyboardIdentifier="About" title="About" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R6f-Jg-64d" userLabel="About" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="About" title="About" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R6f-Jg-64d" userLabel="About" customClass="AboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="emx-Q7-HfG"/>
                         <viewControllerLayoutGuide type="bottom" id="rnN-ih-gye"/>
@@ -383,7 +383,7 @@
         <!--Feedback-->
         <scene sceneID="WjL-fe-XxQ">
             <objects>
-                <viewController storyboardIdentifier="Feedback" title="Feedback" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ISD-ts-acC" userLabel="Feedback" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Feedback" title="Feedback" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ISD-ts-acC" userLabel="Feedback" customClass="FeedbackViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cdc-su-6kg"/>
                         <viewControllerLayoutGuide type="bottom" id="nlS-0Q-Kg9"/>
