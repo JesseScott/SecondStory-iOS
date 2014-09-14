@@ -1000,13 +1000,14 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "ab8de86a-eadb-49e0-90c3-fdbf474155bc";
+				PROVISIONING_PROFILE = "a6fc5bbb-fa00-4f55-8b7d-3a2e2286195b";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1044,13 +1045,15 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "ab8de86a-eadb-49e0-90c3-fdbf474155bc";
+				PROVISIONING_PROFILE = "a6fc5bbb-fa00-4f55-8b7d-3a2e2286195b";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -1073,12 +1076,14 @@
 					"$(inherited)",
 					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ab8de86a-eadb-49e0-90c3-fdbf474155bc";
+				PROVISIONING_PROFILE = "a6fc5bbb-fa00-4f55-8b7d-3a2e2286195b";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1102,12 +1107,14 @@
 					"$(inherited)",
 					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ab8de86a-eadb-49e0-90c3-fdbf474155bc";
+				PROVISIONING_PROFILE = "a6fc5bbb-fa00-4f55-8b7d-3a2e2286195b";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
