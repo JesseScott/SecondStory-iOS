@@ -95,7 +95,6 @@
                     </view>
                     <connections>
                         <outlet property="remote_label" destination="v7s-Vo-9Ae" id="KMU-W2-JXL"/>
-                        <segue destination="ZRS-bL-Z9C" kind="modal" identifier="segue_welcome2camera" id="dAj-Ux-Zcj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q84-cS-QwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -126,6 +125,9 @@
                                     <color key="titleColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ZRS-bL-Z9C" kind="modal" id="cuy-TN-XYQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFQ-0X-2Ty">
                                 <rect key="frame" x="0.0" y="72" width="320" height="60"/>
@@ -239,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="saO-D5-wRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1211" y="-301"/>
+            <point key="canvasLocation" x="1192" y="1502"/>
         </scene>
         <!--Guide-->
         <scene sceneID="QVf-2j-p38">
