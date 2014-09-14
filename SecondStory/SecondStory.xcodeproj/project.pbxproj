@@ -64,6 +64,7 @@
 		2D4D629719C5FACD007A75C2 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */; };
 		2D4D629819C5FACD007A75C2 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */; };
 		2D4D629919C5FD5F007A75C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DE8487C19A173710019053E /* Main.storyboard */; };
+		2D4D629A19C60CEC007A75C2 /* VideoPlaybackViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8496119A1B2080019053E /* VideoPlaybackViewController.mm */; };
 		2DE8486B19A173700019053E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486A19A173700019053E /* Foundation.framework */; };
 		2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486C19A173700019053E /* CoreGraphics.framework */; };
 		2DE8486F19A173700019053E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486E19A173700019053E /* UIKit.framework */; };
@@ -887,6 +888,7 @@
 				2DE8498819A1B2080019053E /* SampleApplication3DModel.m in Sources */,
 				2DE8498C19A1B2080019053E /* SampleApplicationShaderUtils.m in Sources */,
 				2D4D628B19C5FAA0007A75C2 /* GuideViewController.m in Sources */,
+				2D4D629A19C60CEC007A75C2 /* VideoPlaybackViewController.mm in Sources */,
 				2DE8487719A173700019053E /* main.m in Sources */,
 				2DE849A219A1B2080019053E /* SampleAppSlidingMenuController.m in Sources */,
 			);
@@ -999,7 +1001,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PROVISIONING_PROFILE = "ab8de86a-eadb-49e0-90c3-fdbf474155bc";
 				SDKROOT = iphoneos;
 			};
@@ -1039,7 +1044,10 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PROVISIONING_PROFILE = "ab8de86a-eadb-49e0-90c3-fdbf474155bc";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1065,7 +1073,10 @@
 					"$(inherited)",
 					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ab8de86a-eadb-49e0-90c3-fdbf474155bc";
 				WRAPPER_EXTENSION = app;
@@ -1091,7 +1102,10 @@
 					"$(inherited)",
 					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ab8de86a-eadb-49e0-90c3-fdbf474155bc";
 				WRAPPER_EXTENSION = app;
