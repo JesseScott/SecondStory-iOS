@@ -11,6 +11,7 @@
 
 @implementation MenuViewController
 
+@synthesize guideBtn, mapsBtn, aboutBtn, feedBtn, liveBtn;
 
 
 - (void)viewDidLoad
@@ -24,6 +25,16 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     
+    // Font
+    buttonFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
+    liveFont = [UIFont fontWithName:@"Din Alternate Black" size:32];
+    
+    [guideBtn.titleLabel setFont:buttonFont];
+    [mapsBtn.titleLabel setFont:buttonFont];
+    [aboutBtn.titleLabel setFont:buttonFont];
+    [feedBtn.titleLabel setFont:buttonFont];
+    
+    [liveBtn.titleLabel setFont:liveFont];
 }
 
 

@@ -11,6 +11,8 @@
 
 @implementation SplashViewController
 
+@synthesize label;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -19,6 +21,10 @@
     if(self.timer == nil) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(segue) userInfo:nil repeats:NO];
     }
+    
+    // Font
+    labelFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
+    label.font = labelFont;
     
 }
 

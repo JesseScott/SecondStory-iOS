@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuViewController : UIViewController
+@interface MenuViewController : UIViewController {
+    // Font
+    UIFont *buttonFont;
+    UIFont *liveFont;
+}
+
+@property (weak, nonatomic) IBOutlet UIButton *guideBtn;
+@property (weak, nonatomic) IBOutlet UIButton *mapsBtn;
+@property (weak, nonatomic) IBOutlet UIButton *aboutBtn;
+@property (weak, nonatomic) IBOutlet UIButton *feedBtn;
+@property (weak, nonatomic) IBOutlet UIButton *liveBtn;
+
 
 @end
