@@ -65,6 +65,14 @@
 		2D4D629819C5FACD007A75C2 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */; };
 		2D4D629919C5FD5F007A75C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DE8487C19A173710019053E /* Main.storyboard */; };
 		2D4D629A19C60CEC007A75C2 /* VideoPlaybackViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8496119A1B2080019053E /* VideoPlaybackViewController.mm */; };
+		2D626A5E19C7B37A00E9E6D7 /* about_pg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D626A5A19C7B37A00E9E6D7 /* about_pg1.png */; };
+		2D626A5F19C7B37A00E9E6D7 /* about_pg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D626A5A19C7B37A00E9E6D7 /* about_pg1.png */; };
+		2D626A6019C7B37A00E9E6D7 /* about_pg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D626A5B19C7B37A00E9E6D7 /* about_pg2.png */; };
+		2D626A6119C7B37A00E9E6D7 /* about_pg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D626A5B19C7B37A00E9E6D7 /* about_pg2.png */; };
+		2D626A6219C7B37A00E9E6D7 /* about_pg3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D626A5C19C7B37A00E9E6D7 /* about_pg3.png */; };
+		2D626A6319C7B37A00E9E6D7 /* about_pg3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D626A5C19C7B37A00E9E6D7 /* about_pg3.png */; };
+		2D626A6419C7B37A00E9E6D7 /* about_pg4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D626A5D19C7B37A00E9E6D7 /* about_pg4.png */; };
+		2D626A6519C7B37A00E9E6D7 /* about_pg4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D626A5D19C7B37A00E9E6D7 /* about_pg4.png */; };
 		2DE8486B19A173700019053E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486A19A173700019053E /* Foundation.framework */; };
 		2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486C19A173700019053E /* CoreGraphics.framework */; };
 		2DE8486F19A173700019053E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486E19A173700019053E /* UIKit.framework */; };
@@ -205,6 +213,10 @@
 		2D4D629219C5FABE007A75C2 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = Classes/ViewControllers/AboutViewController.m; sourceTree = "<group>"; };
 		2D4D629519C5FACD007A75C2 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedbackViewController.h; path = Classes/ViewControllers/FeedbackViewController.h; sourceTree = "<group>"; };
 		2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedbackViewController.m; path = Classes/ViewControllers/FeedbackViewController.m; sourceTree = "<group>"; };
+		2D626A5A19C7B37A00E9E6D7 /* about_pg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_pg1.png; sourceTree = "<group>"; };
+		2D626A5B19C7B37A00E9E6D7 /* about_pg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_pg2.png; sourceTree = "<group>"; };
+		2D626A5C19C7B37A00E9E6D7 /* about_pg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_pg3.png; sourceTree = "<group>"; };
+		2D626A5D19C7B37A00E9E6D7 /* about_pg4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_pg4.png; sourceTree = "<group>"; };
 		2DE8486719A173700019053E /* SecondStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE8486A19A173700019053E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DE8486C19A173700019053E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -415,6 +427,10 @@
 		2D35BFD919C23CE5003731E7 /* about */ = {
 			isa = PBXGroup;
 			children = (
+				2D626A5A19C7B37A00E9E6D7 /* about_pg1.png */,
+				2D626A5B19C7B37A00E9E6D7 /* about_pg2.png */,
+				2D626A5C19C7B37A00E9E6D7 /* about_pg3.png */,
+				2D626A5D19C7B37A00E9E6D7 /* about_pg4.png */,
 				2D35BFDA19C23CE5003731E7 /* about_bg.png */,
 			);
 			name = about;
@@ -780,7 +796,10 @@
 				2D35BFCC19C238C6003731E7 /* guide_toggle_icon.png in Resources */,
 				2D35BF9819C232F7003731E7 /* icon-settings@2x copy.png in Resources */,
 				2D35BFA319C2337A003731E7 /* din alternate black.ttf in Resources */,
+				2D626A5E19C7B37A00E9E6D7 /* about_pg1.png in Resources */,
 				2DE8488319A173710019053E /* Images.xcassets in Resources */,
+				2D626A6219C7B37A00E9E6D7 /* about_pg3.png in Resources */,
+				2D626A6019C7B37A00E9E6D7 /* about_pg2.png in Resources */,
 				2D35BFC419C238C6003731E7 /* guide_ear_icon.png in Resources */,
 				2DE8499619A1B2080019053E /* Simple.vertsh in Resources */,
 				2DE848DF19A17D220019053E /* icon_play.png in Resources */,
@@ -806,6 +825,7 @@
 				2D35BF9619C232F7003731E7 /* icon-retina@2x.png in Resources */,
 				2DE848DB19A17D220019053E /* icon_error.png in Resources */,
 				2D35BFC819C238C6003731E7 /* guide_live_icon.png in Resources */,
+				2D626A6419C7B37A00E9E6D7 /* about_pg4.png in Resources */,
 				2D35BFA519C2337A003731E7 /* din alternate medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -819,6 +839,7 @@
 				2D35BFCD19C238C6003731E7 /* guide_toggle_icon.png in Resources */,
 				2D35BFAE19C235D9003731E7 /* Default.png in Resources */,
 				2DE848F019A17D220019053E /* VuforiaSizzleReel_1.m4v in Resources */,
+				2D626A6519C7B37A00E9E6D7 /* about_pg4.png in Resources */,
 				2DE848DC19A17D220019053E /* icon_error.png in Resources */,
 				2D35BFC719C238C6003731E7 /* guide_explore_icon.png in Resources */,
 				2D35BFC319C238C6003731E7 /* guide_device_icon.png in Resources */,
@@ -847,6 +868,7 @@
 				2DE848E619A17D220019053E /* start_medium.png in Resources */,
 				2DE848E419A17D220019053E /* start_large_press.png in Resources */,
 				2D35BFC519C238C6003731E7 /* guide_ear_icon.png in Resources */,
+				2D626A6119C7B37A00E9E6D7 /* about_pg2.png in Resources */,
 				2D35BFBF19C238C6003731E7 /* guide_bg.png in Resources */,
 				2D35BF9D19C232F7003731E7 /* splash_bg@2x.png in Resources */,
 				2DE8499D19A1B2080019053E /* SampleAppAboutViewController.xib in Resources */,
@@ -855,9 +877,11 @@
 				2DE848EA19A17D220019053E /* StonesAndChips.dat in Resources */,
 				2DE848F219A17D220019053E /* VuforiaSizzleReel_1.png in Resources */,
 				2DE8499719A1B2080019053E /* Simple.vertsh in Resources */,
+				2D626A5F19C7B37A00E9E6D7 /* about_pg1.png in Resources */,
 				2DE848F419A17D220019053E /* VuforiaSizzleReel_2.m4v in Resources */,
 				2D35BF9F19C232F7003731E7 /* splash_logo@2x.png in Resources */,
 				2DE848DE19A17D220019053E /* icon_loading.png in Resources */,
+				2D626A6319C7B37A00E9E6D7 /* about_pg3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

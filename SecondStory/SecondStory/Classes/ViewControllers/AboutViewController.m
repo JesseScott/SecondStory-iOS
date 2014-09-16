@@ -8,42 +8,68 @@
 
 #import "AboutViewController.h"
 
-@interface AboutViewController ()
-
-@end
-
 @implementation AboutViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize slideshow;
+@synthesize slides;
+@synthesize leftSwipe, rightSwipe;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    // Load Images
+    
+    self.slides = [[NSArray alloc] init];
+    self.slides = [NSArray arrayWithObjects:
+                        [UIImage imageNamed:@"about_pg1"],
+                        [UIImage imageNamed:@"about_pg2"],
+                        [UIImage imageNamed:@"about_pg3"],
+                        [UIImage imageNamed:@"about_pg4"],
+                   nil];
+    
+    NSLog(@"SIZE is %i", self.slides.count);
+    
+    // Load Array
+    swipeCount = 0;
+    [slideshow setImage:[self.slides objectAtIndex:swipeCount]];
+    
+    //UIImage *img = [UIImage imageNamed:@"about_pg1"];
+    //slideshow = [[UIImageView alloc] initWithImage:img];
+    //[slideshow setImage:img];
+    
+    // Add Swipe Detection
+    [self.view addGestureRecognizer:self.leftSwipe];
+    [self.view addGestureRecognizer:self.rightSwipe];
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)previousImage:(UISwipeGestureRecognizer *)sender {
+    /*
+    if(swipeCount < self.slides.count - 1) {
+        
+        // Set Index
+        swipeCount = swipeCount + 1;
+        
+        // Set Image
+        // [slideshow setImage:[self.slides objectAtIndex:swipeCount]];
+    }
+     */
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)nextImage:(UISwipeGestureRecognizer *)sender {
+    /*
+    if(swipeCount > 0) {
+        
+        // Set Index
+        swipeCount = swipeCount - 1;
+        
+        // Set Image
+        //[slideshow setImage:[self.slides objectAtIndex:swipeCount]];
+    }
+     */
 }
-*/
+
+
 
 @end

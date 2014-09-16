@@ -427,12 +427,33 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mq6-gW-b9h">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="ABOUT" id="qpU-Yk-Fqr"/>
+                    <connections>
+                        <outlet property="leftSwipe" destination="2CC-VA-Skr" id="mrO-xG-Rxb"/>
+                        <outlet property="rightSwipe" destination="UuA-Wh-zZw" id="xXt-wZ-LhM"/>
+                        <outlet property="slideshow" destination="Mq6-gW-b9h" id="u62-Nj-Q1G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKp-RF-vB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="2CC-VA-Skr">
+                    <connections>
+                        <action selector="previousImage:" destination="R6f-Jg-64d" id="X1b-Uw-X6o"/>
+                        <outlet property="delegate" destination="R6f-Jg-64d" id="ye0-Gx-GA1"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="UuA-Wh-zZw">
+                    <connections>
+                        <action selector="nextImage:" destination="R6f-Jg-64d" id="89K-Ue-Q63"/>
+                        <outlet property="delegate" destination="R6f-Jg-64d" id="KWS-0P-HZH"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2189" y="827"/>
         </scene>
@@ -482,7 +503,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="about_bg.png" width="1080" height="1920"/>
+        <image name="about_bg.png" width="640" height="1138"/>
         <image name="guide_bg.png" width="1080" height="1920"/>
         <image name="guide_cars_icon.png" width="94" height="75"/>
         <image name="guide_device_icon.png" width="53" height="75"/>
