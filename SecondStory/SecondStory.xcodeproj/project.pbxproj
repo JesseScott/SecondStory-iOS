@@ -73,6 +73,24 @@
 		2D626A6319C7B37A00E9E6D7 /* about_pg3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D626A5C19C7B37A00E9E6D7 /* about_pg3.png */; };
 		2D626A6419C7B37A00E9E6D7 /* about_pg4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D626A5D19C7B37A00E9E6D7 /* about_pg4.png */; };
 		2D626A6519C7B37A00E9E6D7 /* about_pg4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D626A5D19C7B37A00E9E6D7 /* about_pg4.png */; };
+		2D7FA8E419C8E5C800F83C76 /* beef.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8DB19C8E5C800F83C76 /* beef.mp4 */; };
+		2D7FA8E519C8E5C800F83C76 /* beef.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8DB19C8E5C800F83C76 /* beef.mp4 */; };
+		2D7FA8E619C8E5C800F83C76 /* bicycles.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8DC19C8E5C800F83C76 /* bicycles.mp4 */; };
+		2D7FA8E719C8E5C800F83C76 /* bicycles.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8DC19C8E5C800F83C76 /* bicycles.mp4 */; };
+		2D7FA8E819C8E5C800F83C76 /* bloodalley.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8DD19C8E5C800F83C76 /* bloodalley.mp4 */; };
+		2D7FA8E919C8E5C800F83C76 /* bloodalley.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8DD19C8E5C800F83C76 /* bloodalley.mp4 */; };
+		2D7FA8EA19C8E5C800F83C76 /* copperthief.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8DE19C8E5C800F83C76 /* copperthief.mp4 */; };
+		2D7FA8EB19C8E5C800F83C76 /* copperthief.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8DE19C8E5C800F83C76 /* copperthief.mp4 */; };
+		2D7FA8EC19C8E5C800F83C76 /* gun.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8DF19C8E5C800F83C76 /* gun.mp4 */; };
+		2D7FA8ED19C8E5C800F83C76 /* gun.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8DF19C8E5C800F83C76 /* gun.mp4 */; };
+		2D7FA8EE19C8E5C800F83C76 /* pennies.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8E019C8E5C800F83C76 /* pennies.mp4 */; };
+		2D7FA8EF19C8E5C800F83C76 /* pennies.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8E019C8E5C800F83C76 /* pennies.mp4 */; };
+		2D7FA8F019C8E5C800F83C76 /* shrooms.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8E119C8E5C800F83C76 /* shrooms.mp4 */; };
+		2D7FA8F119C8E5C800F83C76 /* shrooms.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8E119C8E5C800F83C76 /* shrooms.mp4 */; };
+		2D7FA8F219C8E5C800F83C76 /* sweeping.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8E219C8E5C800F83C76 /* sweeping.mp4 */; };
+		2D7FA8F319C8E5C800F83C76 /* sweeping.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8E219C8E5C800F83C76 /* sweeping.mp4 */; };
+		2D7FA8F419C8E5C800F83C76 /* umbrellas.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8E319C8E5C800F83C76 /* umbrellas.mp4 */; };
+		2D7FA8F519C8E5C800F83C76 /* umbrellas.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7FA8E319C8E5C800F83C76 /* umbrellas.mp4 */; };
 		2DE8486B19A173700019053E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486A19A173700019053E /* Foundation.framework */; };
 		2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486C19A173700019053E /* CoreGraphics.framework */; };
 		2DE8486F19A173700019053E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486E19A173700019053E /* UIKit.framework */; };
@@ -217,6 +235,15 @@
 		2D626A5B19C7B37A00E9E6D7 /* about_pg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_pg2.png; sourceTree = "<group>"; };
 		2D626A5C19C7B37A00E9E6D7 /* about_pg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_pg3.png; sourceTree = "<group>"; };
 		2D626A5D19C7B37A00E9E6D7 /* about_pg4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_pg4.png; sourceTree = "<group>"; };
+		2D7FA8DB19C8E5C800F83C76 /* beef.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = beef.mp4; sourceTree = "<group>"; };
+		2D7FA8DC19C8E5C800F83C76 /* bicycles.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bicycles.mp4; sourceTree = "<group>"; };
+		2D7FA8DD19C8E5C800F83C76 /* bloodalley.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bloodalley.mp4; sourceTree = "<group>"; };
+		2D7FA8DE19C8E5C800F83C76 /* copperthief.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = copperthief.mp4; sourceTree = "<group>"; };
+		2D7FA8DF19C8E5C800F83C76 /* gun.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = gun.mp4; sourceTree = "<group>"; };
+		2D7FA8E019C8E5C800F83C76 /* pennies.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = pennies.mp4; sourceTree = "<group>"; };
+		2D7FA8E119C8E5C800F83C76 /* shrooms.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = shrooms.mp4; sourceTree = "<group>"; };
+		2D7FA8E219C8E5C800F83C76 /* sweeping.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sweeping.mp4; sourceTree = "<group>"; };
+		2D7FA8E319C8E5C800F83C76 /* umbrellas.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = umbrellas.mp4; sourceTree = "<group>"; };
 		2DE8486719A173700019053E /* SecondStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE8486A19A173700019053E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DE8486C19A173700019053E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -437,6 +464,23 @@
 			path = Assets/about;
 			sourceTree = "<group>";
 		};
+		2D7FA8DA19C8E5C800F83C76 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				2D7FA8DB19C8E5C800F83C76 /* beef.mp4 */,
+				2D7FA8DC19C8E5C800F83C76 /* bicycles.mp4 */,
+				2D7FA8DD19C8E5C800F83C76 /* bloodalley.mp4 */,
+				2D7FA8DE19C8E5C800F83C76 /* copperthief.mp4 */,
+				2D7FA8DF19C8E5C800F83C76 /* gun.mp4 */,
+				2D7FA8E019C8E5C800F83C76 /* pennies.mp4 */,
+				2D7FA8E119C8E5C800F83C76 /* shrooms.mp4 */,
+				2D7FA8E219C8E5C800F83C76 /* sweeping.mp4 */,
+				2D7FA8E319C8E5C800F83C76 /* umbrellas.mp4 */,
+			);
+			name = video;
+			path = Assets/video;
+			sourceTree = "<group>";
+		};
 		2DE8485E19A173700019053E = {
 			isa = PBXGroup;
 			children = (
@@ -523,6 +567,7 @@
 		2DE8489F19A17B220019053E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2D7FA8DA19C8E5C800F83C76 /* video */,
 				2D35BFD919C23CE5003731E7 /* about */,
 				2D35BFCE19C238E2003731E7 /* global */,
 				2D35BFD019C238E2003731E7 /* map */,
@@ -778,10 +823,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D7FA8EC19C8E5C800F83C76 /* gun.mp4 in Resources */,
 				2DE848DD19A17D220019053E /* icon_loading.png in Resources */,
 				2D35BFC019C238C6003731E7 /* guide_cars_icon.png in Resources */,
+				2D7FA8F419C8E5C800F83C76 /* umbrellas.mp4 in Resources */,
 				2DE8499219A1B2080019053E /* Line.vertsh in Resources */,
 				2DE848E519A17D220019053E /* start_medium.png in Resources */,
+				2D7FA8F019C8E5C800F83C76 /* shrooms.mp4 in Resources */,
 				2DE848F319A17D220019053E /* VuforiaSizzleReel_2.m4v in Resources */,
 				2D35BFAD19C235D9003731E7 /* Default.png in Resources */,
 				2D35BF9E19C232F7003731E7 /* splash_logo@2x.png in Resources */,
@@ -792,6 +840,7 @@
 				2DE8499419A1B2080019053E /* Simple.fragsh in Resources */,
 				2DE848F519A17D220019053E /* VuforiaSizzleReel_2.png in Resources */,
 				2D35BFBE19C238C6003731E7 /* guide_bg.png in Resources */,
+				2D7FA8EA19C8E5C800F83C76 /* copperthief.mp4 in Resources */,
 				2DE848E119A17D220019053E /* start_large.png in Resources */,
 				2D35BFCC19C238C6003731E7 /* guide_toggle_icon.png in Resources */,
 				2D35BF9819C232F7003731E7 /* icon-settings@2x copy.png in Resources */,
@@ -801,6 +850,7 @@
 				2D626A6219C7B37A00E9E6D7 /* about_pg3.png in Resources */,
 				2D626A6019C7B37A00E9E6D7 /* about_pg2.png in Resources */,
 				2D35BFC419C238C6003731E7 /* guide_ear_icon.png in Resources */,
+				2D7FA8E419C8E5C800F83C76 /* beef.mp4 in Resources */,
 				2DE8499619A1B2080019053E /* Simple.vertsh in Resources */,
 				2DE848DF19A17D220019053E /* icon_play.png in Resources */,
 				2D35BFAF19C235D9003731E7 /* Default@2x.png in Resources */,
@@ -813,13 +863,17 @@
 				2D35BFCA19C238C6003731E7 /* guide_replay_icon.png in Resources */,
 				2D35BFC219C238C6003731E7 /* guide_device_icon.png in Resources */,
 				2D35BFC619C238C6003731E7 /* guide_explore_icon.png in Resources */,
+				2D7FA8E819C8E5C800F83C76 /* bloodalley.mp4 in Resources */,
 				2D35BF9C19C232F7003731E7 /* splash_bg@2x.png in Resources */,
 				2D35BFDB19C23CE5003731E7 /* about_bg.png in Resources */,
+				2D7FA8F219C8E5C800F83C76 /* sweeping.mp4 in Resources */,
 				2DE848EF19A17D220019053E /* VuforiaSizzleReel_1.m4v in Resources */,
+				2D7FA8EE19C8E5C800F83C76 /* pennies.mp4 in Resources */,
 				2D35BFD719C238E2003731E7 /* map_pin.png in Resources */,
 				2DE8487519A173700019053E /* InfoPlist.strings in Resources */,
 				2D35BFAB19C235D9003731E7 /* Default-568h@2x.png in Resources */,
 				2DE848E919A17D220019053E /* StonesAndChips.dat in Resources */,
+				2D7FA8E619C8E5C800F83C76 /* bicycles.mp4 in Resources */,
 				2DE8487E19A173710019053E /* Main.storyboard in Resources */,
 				2DE848F119A17D220019053E /* VuforiaSizzleReel_1.png in Resources */,
 				2D35BF9619C232F7003731E7 /* icon-retina@2x.png in Resources */,
@@ -837,10 +891,13 @@
 				2DE8489419A173710019053E /* InfoPlist.strings in Resources */,
 				2DE8499119A1B2080019053E /* Line.fragsh in Resources */,
 				2D35BFCD19C238C6003731E7 /* guide_toggle_icon.png in Resources */,
+				2D7FA8EB19C8E5C800F83C76 /* copperthief.mp4 in Resources */,
 				2D35BFAE19C235D9003731E7 /* Default.png in Resources */,
+				2D7FA8E919C8E5C800F83C76 /* bloodalley.mp4 in Resources */,
 				2DE848F019A17D220019053E /* VuforiaSizzleReel_1.m4v in Resources */,
 				2D626A6519C7B37A00E9E6D7 /* about_pg4.png in Resources */,
 				2DE848DC19A17D220019053E /* icon_error.png in Resources */,
+				2D7FA8F519C8E5C800F83C76 /* umbrellas.mp4 in Resources */,
 				2D35BFC719C238C6003731E7 /* guide_explore_icon.png in Resources */,
 				2D35BFC319C238C6003731E7 /* guide_device_icon.png in Resources */,
 				2D35BFD819C238E2003731E7 /* map_pin.png in Resources */,
@@ -855,10 +912,15 @@
 				2D35BFA419C2337A003731E7 /* din alternate black.ttf in Resources */,
 				2D35BFD619C238E2003731E7 /* map_bg.png in Resources */,
 				2D35BFB019C235D9003731E7 /* Default@2x.png in Resources */,
+				2D7FA8ED19C8E5C800F83C76 /* gun.mp4 in Resources */,
+				2D7FA8F119C8E5C800F83C76 /* shrooms.mp4 in Resources */,
 				2D35BFCB19C238C6003731E7 /* guide_replay_icon.png in Resources */,
 				2D35BF9719C232F7003731E7 /* icon-retina@2x.png in Resources */,
+				2D7FA8EF19C8E5C800F83C76 /* pennies.mp4 in Resources */,
 				2D35BFA619C2337A003731E7 /* din alternate medium.ttf in Resources */,
+				2D7FA8F319C8E5C800F83C76 /* sweeping.mp4 in Resources */,
 				2DE848E819A17D220019053E /* start_medium_press.png in Resources */,
+				2D7FA8E719C8E5C800F83C76 /* bicycles.mp4 in Resources */,
 				2DE848E019A17D220019053E /* icon_play.png in Resources */,
 				2DE848F619A17D220019053E /* VuforiaSizzleReel_2.png in Resources */,
 				2D35BFDC19C23CE5003731E7 /* about_bg.png in Resources */,
@@ -867,6 +929,7 @@
 				2D35BFC919C238C6003731E7 /* guide_live_icon.png in Resources */,
 				2DE848E619A17D220019053E /* start_medium.png in Resources */,
 				2DE848E419A17D220019053E /* start_large_press.png in Resources */,
+				2D7FA8E519C8E5C800F83C76 /* beef.mp4 in Resources */,
 				2D35BFC519C238C6003731E7 /* guide_ear_icon.png in Resources */,
 				2D626A6119C7B37A00E9E6D7 /* about_pg2.png in Resources */,
 				2D35BFBF19C238C6003731E7 /* guide_bg.png in Resources */,

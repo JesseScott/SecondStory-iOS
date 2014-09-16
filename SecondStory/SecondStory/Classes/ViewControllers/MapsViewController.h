@@ -15,7 +15,9 @@
     BOOL movieIsPlaying;
 }
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIImageView *videoView;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tap;
 
 @property (weak, nonatomic) IBOutlet UIButton *beefButton;
 @property (weak, nonatomic) IBOutlet UIButton *penniesButton;
@@ -36,6 +38,7 @@
 - (IBAction)clickedAlley:(id)sender;
 - (IBAction)clickedBike:(id)sender;
 - (IBAction)clickedGun:(id)sender;
+- (IBAction)tapped:(id)sender;
 
 
 

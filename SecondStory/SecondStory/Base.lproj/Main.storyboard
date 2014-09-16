@@ -466,6 +466,7 @@
                     <navigationItem key="navigationItem" title="MAPS" id="fYx-Ri-Qle"/>
                     <connections>
                         <outlet property="alleyButton" destination="Ykt-3i-A5y" id="jhK-Yf-HL0"/>
+                        <outlet property="backgroundView" destination="1BZ-Y7-fwD" id="0J3-0G-sTu"/>
                         <outlet property="beefButton" destination="Kcl-1v-WxX" id="DHR-m8-t2p"/>
                         <outlet property="bikeButton" destination="j5N-k8-alt" id="Ao1-7T-OCb"/>
                         <outlet property="copperButton" destination="lF3-yk-I4o" id="Qei-3P-X2p"/>
@@ -473,11 +474,17 @@
                         <outlet property="macrameButton" destination="YOm-CX-K5m" id="zOd-4u-nzl"/>
                         <outlet property="penniesButton" destination="CxD-uj-Qsr" id="5hd-gn-YZY"/>
                         <outlet property="sweepingButton" destination="5bm-9E-Jdr" id="iQ6-ut-61l"/>
+                        <outlet property="tap" destination="2NY-5A-8lI" id="r0l-oY-yN3"/>
                         <outlet property="umbrellasButton" destination="lG4-3a-k1J" id="Sbq-Qh-Nk6"/>
                         <outlet property="videoView" destination="VCh-he-C4i" id="0ao-Jy-PoY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfX-a0-G0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2NY-5A-8lI">
+                    <connections>
+                        <action selector="tapped:" destination="zYn-Cj-DIP" id="Iv6-ht-CR4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2189" y="171"/>
         </scene>
