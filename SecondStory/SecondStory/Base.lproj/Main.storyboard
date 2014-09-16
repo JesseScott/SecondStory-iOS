@@ -456,6 +456,10 @@
                                     <action selector="clickedCopper:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="Mqo-ce-rOb"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCh-he-C4i" userLabel="Video View">
+                                <rect key="frame" x="40" y="203" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -470,6 +474,7 @@
                         <outlet property="penniesButton" destination="CxD-uj-Qsr" id="5hd-gn-YZY"/>
                         <outlet property="sweepingButton" destination="5bm-9E-Jdr" id="iQ6-ut-61l"/>
                         <outlet property="umbrellasButton" destination="lG4-3a-k1J" id="Sbq-Qh-Nk6"/>
+                        <outlet property="videoView" destination="VCh-he-C4i" id="0ao-Jy-PoY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfX-a0-G0x" userLabel="First Responder" sceneMemberID="firstResponder"/>

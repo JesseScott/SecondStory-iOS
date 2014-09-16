@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MPMoviePlayerController.h>
 
 @interface MapsViewController : UIViewController {
-    
+    NSString *videoURL;
+    MPMoviePlayerController *moviePlayer;
+    BOOL movieIsPlaying;
 }
+
+@property (weak, nonatomic) IBOutlet UIImageView *videoView;
 
 @property (weak, nonatomic) IBOutlet UIButton *beefButton;
 @property (weak, nonatomic) IBOutlet UIButton *penniesButton;
