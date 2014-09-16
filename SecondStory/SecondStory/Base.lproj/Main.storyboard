@@ -366,46 +366,111 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vlo-oQ-4ZT" userLabel="map pin 1">
-                                <rect key="frame" x="61" y="381" width="23" height="23"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcl-1v-WxX" userLabel="beef">
+                                <rect key="frame" x="231" y="114" width="23" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="clJ-gK-naP" userLabel="map pin 2">
-                                <rect key="frame" x="98" y="381" width="23" height="23"/>
+                                <state key="normal" backgroundImage="map_pin.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedBeef:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="51q-QY-LMq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxD-uj-Qsr" userLabel="pennies">
+                                <rect key="frame" x="149" y="129" width="23" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="ivq-SQ-h5r" userLabel="map pin 3">
-                                <rect key="frame" x="67" y="311" width="23" height="23"/>
+                                <state key="normal" backgroundImage="map_pin.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedPennies:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="ndb-0C-BQD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bm-9E-Jdr" userLabel="sweeping">
+                                <rect key="frame" x="124" y="186" width="23" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="AHK-Ch-NPF" userLabel="map pin 4">
-                                <rect key="frame" x="56" y="358" width="23" height="23"/>
+                                <state key="normal" backgroundImage="map_pin.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedSweeping:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="eoq-uC-R3H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOm-CX-K5m" userLabel="macrame">
+                                <rect key="frame" x="108" y="255" width="23" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="UU6-0i-jft" userLabel="map pin 5">
-                                <rect key="frame" x="91" y="248" width="23" height="23"/>
+                                <state key="normal" backgroundImage="map_pin.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedMacrame:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="6cS-8N-T65"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lG4-3a-k1J" userLabel="umbrellas">
+                                <rect key="frame" x="73" y="301" width="23" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="EkL-4r-0md" userLabel="map pin 6">
-                                <rect key="frame" x="122" y="203" width="23" height="23"/>
+                                <state key="normal" backgroundImage="map_pin.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedUmbrellas:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="LOM-76-9O7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykt-3i-A5y" userLabel="alley">
+                                <rect key="frame" x="93" y="369" width="23" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="uMi-g7-F52" userLabel="map pin 7">
-                                <rect key="frame" x="144" y="195" width="23" height="23"/>
+                                <state key="normal" backgroundImage="map_pin.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedAlley:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="iRL-v9-ckd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5N-k8-alt" userLabel="bike">
+                                <rect key="frame" x="217" y="402" width="23" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="MNl-U9-H4A" userLabel="map pin 8">
-                                <rect key="frame" x="137" y="376" width="23" height="23"/>
+                                <state key="normal" backgroundImage="map_pin.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedBike:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="gq9-wO-XS1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBL-RW-LRE" userLabel="gun">
+                                <rect key="frame" x="177" y="483" width="23" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="BgC-Nw-bW1" userLabel="map pin 9">
-                                <rect key="frame" x="149" y="305" width="23" height="23"/>
+                                <state key="normal" backgroundImage="map_pin.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedGun:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="X3F-de-5ar"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lF3-yk-I4o" userLabel="copper">
+                                <rect key="frame" x="93" y="171" width="23" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" backgroundImage="map_pin.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedCopper:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="Mqo-ce-rOb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="MAPS" id="fYx-Ri-Qle"/>
+                    <connections>
+                        <outlet property="alleyButton" destination="Ykt-3i-A5y" id="jhK-Yf-HL0"/>
+                        <outlet property="beefButton" destination="Kcl-1v-WxX" id="DHR-m8-t2p"/>
+                        <outlet property="bikeButton" destination="j5N-k8-alt" id="Ao1-7T-OCb"/>
+                        <outlet property="copperButton" destination="lF3-yk-I4o" id="Qei-3P-X2p"/>
+                        <outlet property="gunButton" destination="zBL-RW-LRE" id="h3r-LB-07f"/>
+                        <outlet property="macrameButton" destination="YOm-CX-K5m" id="zOd-4u-nzl"/>
+                        <outlet property="penniesButton" destination="CxD-uj-Qsr" id="5hd-gn-YZY"/>
+                        <outlet property="sweepingButton" destination="5bm-9E-Jdr" id="iQ6-ut-61l"/>
+                        <outlet property="umbrellasButton" destination="lG4-3a-k1J" id="Sbq-Qh-Nk6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfX-a0-G0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -423,12 +488,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="wzF-F8-Itp" userLabel="background">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mq6-gW-b9h" userLabel="slideshow">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mq6-gW-b9h">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -436,22 +497,22 @@
                     </view>
                     <navigationItem key="navigationItem" title="ABOUT" id="qpU-Yk-Fqr"/>
                     <connections>
-                        <outlet property="leftSwipe" destination="2CC-VA-Skr" id="mrO-xG-Rxb"/>
+                        <outlet property="leftSwipe" destination="gMQ-mS-TeF" id="Ya5-pR-5Ow"/>
                         <outlet property="rightSwipe" destination="UuA-Wh-zZw" id="xXt-wZ-LhM"/>
                         <outlet property="slideshow" destination="Mq6-gW-b9h" id="u62-Nj-Q1G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKp-RF-vB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="2CC-VA-Skr">
-                    <connections>
-                        <action selector="previousImage:" destination="R6f-Jg-64d" id="X1b-Uw-X6o"/>
-                        <outlet property="delegate" destination="R6f-Jg-64d" id="ye0-Gx-GA1"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="UuA-Wh-zZw">
                     <connections>
-                        <action selector="nextImage:" destination="R6f-Jg-64d" id="89K-Ue-Q63"/>
+                        <action selector="previousImage:" destination="R6f-Jg-64d" id="11W-Om-jlE"/>
                         <outlet property="delegate" destination="R6f-Jg-64d" id="KWS-0P-HZH"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="gMQ-mS-TeF">
+                    <connections>
+                        <action selector="nextImage:" destination="R6f-Jg-64d" id="Vyx-SL-q9P"/>
+                        <outlet property="delegate" destination="R6f-Jg-64d" id="11b-ah-Qtw"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -503,7 +564,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="about_bg.png" width="640" height="1138"/>
         <image name="guide_bg.png" width="1080" height="1920"/>
         <image name="guide_cars_icon.png" width="94" height="75"/>
         <image name="guide_device_icon.png" width="53" height="75"/>

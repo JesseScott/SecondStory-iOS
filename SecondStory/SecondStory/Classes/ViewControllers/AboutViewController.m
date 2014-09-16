@@ -28,46 +28,40 @@
                         [UIImage imageNamed:@"about_pg4"],
                    nil];
     
-    NSLog(@"SIZE is %i", self.slides.count);
-    
     // Load Array
     swipeCount = 0;
     [slideshow setImage:[self.slides objectAtIndex:swipeCount]];
     
-    //UIImage *img = [UIImage imageNamed:@"about_pg1"];
-    //slideshow = [[UIImageView alloc] initWithImage:img];
-    //[slideshow setImage:img];
-    
     // Add Swipe Detection
     [self.view addGestureRecognizer:self.leftSwipe];
+    [self.leftSwipe setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.view addGestureRecognizer:self.rightSwipe];
+    [self.rightSwipe setDirection:UISwipeGestureRecognizerDirectionRight];
+
     
 }
 
 - (IBAction)previousImage:(UISwipeGestureRecognizer *)sender {
-    /*
-    if(swipeCount < self.slides.count - 1) {
-        
-        // Set Index
-        swipeCount = swipeCount + 1;
-        
-        // Set Image
-        // [slideshow setImage:[self.slides objectAtIndex:swipeCount]];
-    }
-     */
-}
-
-- (IBAction)nextImage:(UISwipeGestureRecognizer *)sender {
-    /*
     if(swipeCount > 0) {
         
         // Set Index
         swipeCount = swipeCount - 1;
         
         // Set Image
-        //[slideshow setImage:[self.slides objectAtIndex:swipeCount]];
+        [slideshow setImage:[self.slides objectAtIndex:swipeCount]];
     }
-     */
+
+}
+
+- (IBAction)nextImage:(UISwipeGestureRecognizer *)sender {
+    if(swipeCount < self.slides.count - 1) {
+        
+        // Set Index
+        swipeCount = swipeCount + 1;
+        
+        // Set Image
+        [slideshow setImage:[self.slides objectAtIndex:swipeCount]];
+    }
 }
 
 
