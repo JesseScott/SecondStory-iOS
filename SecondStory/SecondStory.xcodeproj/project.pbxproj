@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2D35BF9619C232F7003731E7 /* icon-retina@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9019C232F7003731E7 /* icon-retina@2x.png */; };
 		2D35BF9719C232F7003731E7 /* icon-retina@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9019C232F7003731E7 /* icon-retina@2x.png */; };
-		2D35BF9819C232F7003731E7 /* icon-settings@2x copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9119C232F7003731E7 /* icon-settings@2x copy.png */; };
 		2D35BF9919C232F7003731E7 /* icon-settings@2x copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9119C232F7003731E7 /* icon-settings@2x copy.png */; };
 		2D35BF9A19C232F7003731E7 /* icon-splotlight-ios7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9219C232F7003731E7 /* icon-splotlight-ios7@2x.png */; };
 		2D35BF9B19C232F7003731E7 /* icon-splotlight-ios7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9219C232F7003731E7 /* icon-splotlight-ios7@2x.png */; };
@@ -843,7 +842,6 @@
 				2D7FA8EA19C8E5C800F83C76 /* copperthief.mp4 in Resources */,
 				2DE848E119A17D220019053E /* start_large.png in Resources */,
 				2D35BFCC19C238C6003731E7 /* guide_toggle_icon.png in Resources */,
-				2D35BF9819C232F7003731E7 /* icon-settings@2x copy.png in Resources */,
 				2D35BFA319C2337A003731E7 /* din alternate black.ttf in Resources */,
 				2D626A5E19C7B37A00E9E6D7 /* about_pg1.png in Resources */,
 				2DE8488319A173710019053E /* Images.xcassets in Resources */,
@@ -1092,7 +1090,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "623726cd-a5a6-4689-988f-0cf2d815befd";
+				PROVISIONING_PROFILE = "a6fc5bbb-fa00-4f55-8b7d-3a2e2286195b";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -1137,7 +1135,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "623726cd-a5a6-4689-988f-0cf2d815befd";
+				PROVISIONING_PROFILE = "a6fc5bbb-fa00-4f55-8b7d-3a2e2286195b";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";
@@ -1150,7 +1148,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "libstdc++";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SecondStory/SecondStory-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1169,7 +1167,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "623726cd-a5a6-4689-988f-0cf2d815befd";
+				PROVISIONING_PROFILE = "a6fc5bbb-fa00-4f55-8b7d-3a2e2286195b";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1181,7 +1179,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "libstdc++";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SecondStory/SecondStory-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1200,7 +1198,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "623726cd-a5a6-4689-988f-0cf2d815befd";
+				PROVISIONING_PROFILE = "a6fc5bbb-fa00-4f55-8b7d-3a2e2286195b";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
