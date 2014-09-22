@@ -1081,7 +1081,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"../../../../Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/include",
+					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/include",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
@@ -1126,7 +1126,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"../../../../Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/include",
+					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/include",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
@@ -1154,7 +1154,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"../../../../Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/include",
+					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/include",
 				);
 				INFOPLIST_FILE = "SecondStory/SecondStory-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1185,7 +1185,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"../../../../Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/include",
+					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/include",
 				);
 				INFOPLIST_FILE = "SecondStory/SecondStory-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
