@@ -291,7 +291,7 @@
 		2DE8494319A1AE470019053E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2DE8494519A1AE520019053E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		2DE8494719A1AE5A0019053E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		2DE8494A19A1AEB70019053E /* libVuforia.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVuforia.a; path = "../../../../Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm/libVuforia.a"; sourceTree = "<group>"; };
+		2DE8494A19A1AEB70019053E /* libVuforia.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVuforia.a; path = "../../../../../Documents/Development/iOS/SDKs/vuforia-sdk-ios/build/lib/arm/libVuforia.a"; sourceTree = "<group>"; };
 		2DE8495C19A1B2080019053E /* SampleMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SampleMath.cpp; sourceTree = "<group>"; };
 		2DE8495D19A1B2080019053E /* SampleMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleMath.h; sourceTree = "<group>"; };
 		2DE8495E19A1B2080019053E /* VideoPlaybackEAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlaybackEAGLView.h; sourceTree = "<group>"; };
@@ -787,7 +787,7 @@
 		2DE8485F19A173700019053E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "The Only Animal";
 				TargetAttributes = {
 					2DE8486619A173700019053E = {
@@ -1084,13 +1084,13 @@
 					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/include",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
-				ONLY_ACTIVE_ARCH = NO;
+				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Development/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "a6fc5bbb-fa00-4f55-8b7d-3a2e2286195b";
+				PROVISIONING_PROFILE = "cafc07dd-23bb-4dcc-b8dc-80f854dbdd24";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -1129,13 +1129,13 @@
 					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/include",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
+				LIBRARY_SEARCH_PATHS = "/Users/jessescott/Documents/Development/iOS/SDKs/vuforia-sdk-ios/build/lib/arm";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "a6fc5bbb-fa00-4f55-8b7d-3a2e2286195b";
+				PROVISIONING_PROFILE = "cafc07dd-23bb-4dcc-b8dc-80f854dbdd24";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";
@@ -1148,18 +1148,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "libstdc++";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SecondStory/SecondStory-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/include",
+					"/Users/jessescott/Documents/Development/iOS/SDKs/vuforia-sdk-ios/build/include",
 				);
 				INFOPLIST_FILE = "SecondStory/SecondStory-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
+					"/Users/jessescott/Documents/Development/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
@@ -1167,7 +1168,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a6fc5bbb-fa00-4f55-8b7d-3a2e2286195b";
+				PROVISIONING_PROFILE = "cafc07dd-23bb-4dcc-b8dc-80f854dbdd24";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1179,18 +1180,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "libstdc++";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SecondStory/SecondStory-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/include",
+					"/Users/jessescott/Documents/Development/iOS/SDKs/vuforia-sdk-ios/build/include",
 				);
 				INFOPLIST_FILE = "SecondStory/SecondStory-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/jessescott/Documents/Programming/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
+					"/Users/jessescott/Documents/Development/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
@@ -1198,7 +1200,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a6fc5bbb-fa00-4f55-8b7d-3a2e2286195b";
+				PROVISIONING_PROFILE = "cafc07dd-23bb-4dcc-b8dc-80f854dbdd24";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
