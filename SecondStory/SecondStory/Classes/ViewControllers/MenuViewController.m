@@ -29,12 +29,33 @@
     buttonFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
     liveFont = [UIFont fontWithName:@"Din Alternate Black" size:32];
     
+    // Colors
+    UIColor *buttonBgColor = [UIColor colorWithRed:(255.0f/255.0f) green:(255.0f/255.0f) blue:(204.0f/255.0f) alpha:(204.0f/255.0f)];
+    UIColor *buttonTextColor = [UIColor colorWithRed:(51.0f/255.0f) green:(51.0f/255.0f) blue:(51.0f/255.0f) alpha:(204.0f/255.0f)];
+
+    
+    // Buttons
     [guideBtn.titleLabel setFont:buttonFont];
+    [guideBtn.titleLabel setTextColor:buttonTextColor];
+    [guideBtn setBackgroundColor:buttonBgColor];
+    
     [mapsBtn.titleLabel setFont:buttonFont];
+    [mapsBtn.titleLabel setTextColor:buttonTextColor];
+    [mapsBtn setBackgroundColor:buttonBgColor];
+    
     [aboutBtn.titleLabel setFont:buttonFont];
+    [aboutBtn.titleLabel setTextColor:buttonTextColor];
+    [aboutBtn setBackgroundColor:buttonBgColor];
+    
     [feedBtn.titleLabel setFont:buttonFont];
+    [feedBtn.titleLabel setTextColor:buttonTextColor];
+    [feedBtn setBackgroundColor:buttonBgColor];
     
     [liveBtn.titleLabel setFont:liveFont];
+    //[liveBtn.titleLabel setTextColor:buttonBgColor];
+    //[liveBtn setBackgroundColor:buttonTextColor];
+    
+    
 }
 
 
