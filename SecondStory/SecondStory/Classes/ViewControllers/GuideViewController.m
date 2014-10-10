@@ -37,9 +37,8 @@
     [self.navigationController.navigationBar setBackgroundColor:bgColor];
     [self.navigationController.navigationBar setTitleTextAttributes:textAttributes];
     
-    playerIsPlaying = NO;
-    [self performSelector:@selector(playAudio) withObject:self afterDelay:2.0 ];
-    //[self playAudio];
+    // Audio
+    [self performSelector:@selector(playAudio) withObject:self afterDelay:2.0];
     
 }
 
@@ -53,7 +52,6 @@
     player.numberOfLoops = 0;
     [player setCurrentTime:0.0];
     [player play];
-    playerIsPlaying = YES;
 }
 
 

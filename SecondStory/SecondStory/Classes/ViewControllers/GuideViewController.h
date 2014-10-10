@@ -12,7 +12,6 @@
 
 @interface GuideViewController : UIViewController {
     AVAudioPlayer *player;
-    BOOL playerIsPlaying;
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *replayBtn;

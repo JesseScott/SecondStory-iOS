@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="uIN-fJ-x3E" userLabel="logo">
-                                <rect key="frame" x="10" y="100" width="300" height="228"/>
+                                <rect key="frame" x="10" y="100" width="300" height="225"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AN AUGMENTED REALITY EXPERIENCE" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="266" translatesAutoresizingMaskIntoConstraints="NO" id="AyB-uF-iaA">
                                 <rect key="frame" x="34" y="437" width="266" height="111"/>
@@ -350,7 +350,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcl-1v-WxX" userLabel="beef">
-                                <rect key="frame" x="231" y="114" width="23" height="23"/>
+                                <rect key="frame" x="243" y="111" width="23" height="23"/>
                                 <state key="normal" backgroundImage="map_pin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -359,7 +359,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxD-uj-Qsr" userLabel="pennies">
-                                <rect key="frame" x="149" y="129" width="23" height="23"/>
+                                <rect key="frame" x="212" y="93" width="23" height="23"/>
                                 <state key="normal" backgroundImage="map_pin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -368,7 +368,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bm-9E-Jdr" userLabel="sweeping">
-                                <rect key="frame" x="124" y="186" width="23" height="23"/>
+                                <rect key="frame" x="177" y="129" width="23" height="23"/>
                                 <state key="normal" backgroundImage="map_pin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -395,7 +395,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykt-3i-A5y" userLabel="alley">
-                                <rect key="frame" x="93" y="369" width="23" height="23"/>
+                                <rect key="frame" x="65" y="402" width="23" height="23"/>
                                 <state key="normal" backgroundImage="map_pin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -404,7 +404,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5N-k8-alt" userLabel="bike">
-                                <rect key="frame" x="217" y="402" width="23" height="23"/>
+                                <rect key="frame" x="149" y="430" width="23" height="23"/>
                                 <state key="normal" backgroundImage="map_pin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -412,17 +412,8 @@
                                     <action selector="clickedBike:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="gq9-wO-XS1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBL-RW-LRE" userLabel="gun">
-                                <rect key="frame" x="177" y="483" width="23" height="23"/>
-                                <state key="normal" backgroundImage="map_pin.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickedGun:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="X3F-de-5ar"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lF3-yk-I4o" userLabel="copper">
-                                <rect key="frame" x="93" y="171" width="23" height="23"/>
+                                <rect key="frame" x="124" y="93" width="23" height="23"/>
                                 <state key="normal" backgroundImage="map_pin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -433,6 +424,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCh-he-C4i" userLabel="Video View">
                                 <rect key="frame" x="40" y="203" width="240" height="128"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBL-RW-LRE" userLabel="gun">
+                                <rect key="frame" x="108" y="517" width="23" height="23"/>
+                                <state key="normal" backgroundImage="map_pin.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedGun:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="X3F-de-5ar"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -546,18 +546,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="guide_bg.png" width="1080" height="1920"/>
+        <image name="guide_bg.png" width="640" height="1136"/>
         <image name="guide_cars_icon.png" width="94" height="75"/>
         <image name="guide_device_icon.png" width="53" height="75"/>
         <image name="guide_ear_icon.png" width="47" height="75"/>
         <image name="guide_explore_icon.png" width="158" height="75"/>
         <image name="guide_live_icon.png" width="80" height="75"/>
         <image name="guide_replay_icon.png" width="22" height="19"/>
-        <image name="map_bg.png" width="1080" height="1920"/>
+        <image name="map_bg.png" width="640" height="1136"/>
         <image name="map_pin.png" width="45" height="45"/>
         <image name="menu_bg.png" width="1080" height="1920"/>
         <image name="splash_bg.png" width="320" height="569"/>
-        <image name="splash_logo.png" width="300" height="228"/>
+        <image name="splash_logo.png" width="300" height="225"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
