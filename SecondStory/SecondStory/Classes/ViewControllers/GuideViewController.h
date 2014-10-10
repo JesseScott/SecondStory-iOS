@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface GuideViewController : UIViewController
+@interface GuideViewController : UIViewController {
+    AVAudioPlayer *player;
+    BOOL playerIsPlaying;
+}
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *replayBtn;
+- (IBAction)replayAudio:(id)sender;
+
 
 @end

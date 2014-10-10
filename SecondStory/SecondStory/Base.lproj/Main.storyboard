@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -112,7 +113,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywB-xf-b1A">
-                                <rect key="frame" x="0.0" y="400" width="320" height="150"/>
+                                <rect key="frame" x="0.0" y="400" width="320" height="168"/>
                                 <color key="backgroundColor" white="0.25" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <state key="normal" title="LIVE VIEW">
@@ -201,7 +202,7 @@
                             <constraint firstItem="kj2-jJ-DwK" firstAttribute="leading" secondItem="XBk-b8-7wf" secondAttribute="leading" id="UYM-iK-1J5"/>
                             <constraint firstAttribute="bottom" secondItem="Idq-d0-yvd" secondAttribute="bottom" id="Xxr-UW-H09"/>
                             <constraint firstItem="Idq-d0-yvd" firstAttribute="top" secondItem="dgq-GU-IWK" secondAttribute="top" id="cKG-bb-MlS"/>
-                            <constraint firstAttribute="bottom" secondItem="ywB-xf-b1A" secondAttribute="bottom" constant="18" id="coG-J2-IPq"/>
+                            <constraint firstAttribute="bottom" secondItem="ywB-xf-b1A" secondAttribute="bottom" id="coG-J2-IPq"/>
                             <constraint firstItem="ywB-xf-b1A" firstAttribute="leading" secondItem="dgq-GU-IWK" secondAttribute="leading" id="dCT-3e-MMX"/>
                             <constraint firstItem="XBk-b8-7wf" firstAttribute="leading" secondItem="dgq-GU-IWK" secondAttribute="leading" id="dL0-en-Ico"/>
                             <constraint firstItem="ywB-xf-b1A" firstAttribute="top" secondItem="SUq-DK-6ze" secondAttribute="bottom" constant="64" id="kaa-2b-bV9"/>
@@ -209,7 +210,9 @@
                             <constraint firstItem="SUq-DK-6ze" firstAttribute="top" secondItem="XBk-b8-7wf" secondAttribute="bottom" constant="8" symbolic="YES" id="v9w-VX-WWQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4n2-8X-RhM"/>
+                    <navigationItem key="navigationItem" id="4n2-8X-RhM">
+                        <barButtonItem key="backBarButtonItem" title=" " id="z5E-Bw-JCv"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="aboutBtn" destination="XBk-b8-7wf" id="G3Z-v1-Fr1"/>
                         <outlet property="feedBtn" destination="SUq-DK-6ze" id="OLI-rv-IBF"/>
@@ -298,7 +301,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="GUIDE" id="LjX-X0-93Y"/>
+                    <navigationItem key="navigationItem" title="GUIDE" id="LjX-X0-93Y">
+                        <barButtonItem key="rightBarButtonItem" image="guide_replay_icon.png" style="plain" id="bug-kw-S5m">
+                            <connections>
+                                <action selector="replayAudio:" destination="Biq-Qy-Yep" id="CGM-MP-eXK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="replayBtn" destination="bug-kw-S5m" id="nBg-qf-CIe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CY-zJ-0u7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -540,6 +552,7 @@
         <image name="guide_ear_icon.png" width="47" height="75"/>
         <image name="guide_explore_icon.png" width="158" height="75"/>
         <image name="guide_live_icon.png" width="80" height="75"/>
+        <image name="guide_replay_icon.png" width="22" height="19"/>
         <image name="map_bg.png" width="1080" height="1920"/>
         <image name="map_pin.png" width="45" height="45"/>
         <image name="menu_bg.png" width="1080" height="1920"/>
