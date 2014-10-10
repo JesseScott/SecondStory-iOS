@@ -13,6 +13,10 @@
 
 @synthesize guideBtn, mapsBtn, aboutBtn, feedBtn, liveBtn;
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 
 - (void)viewDidLoad
 {
@@ -21,9 +25,11 @@
     
     // Nav Bar
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    //self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
+    
     
     // Font
     buttonFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
