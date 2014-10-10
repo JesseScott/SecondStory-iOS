@@ -58,36 +58,27 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 
 - (void)loadView
 {
-    // Create the EAGLView
-    eaglView = [[VideoPlaybackEAGLView alloc] initWithFrame:viewFrame  rootViewController:self appSession:vapp];
-    [self setView:eaglView];
+    // From InitWIthNib
+    vapp = [[SampleApplicationSession alloc] initWithDelegate:self];
     
-    CGRect mainBounds = [[UIScreen mainScreen] bounds];
-    CGRect indicatorBounds = CGRectMake(mainBounds.size.width / 2 - 12,
-                                        mainBounds.size.height / 2 - 12, 24, 24);
-    UIActivityIndicatorView *loadingIndicator = [[UIActivityIndicatorView alloc]
-                                          initWithFrame:indicatorBounds];
+    // Custom initialization
+    self.title = @"Video Playback";
+    // Create the EAGLView with the screen dimensions
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    viewFrame = screenBounds;
     
-    loadingIndicator.tag  = 1;
-    loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
-    [eaglView addSubview:loadingIndicator];
-    [loadingIndicator startAnimating];
+    // If this device has a retina display, scale the view bounds that will
+    // be passed to QCAR; this allows it to calculate the size and position of
+    // the viewport correctly when rendering the video background
+    if (YES == vapp.isRetinaDisplay) {
+        viewFrame.size.width *= 2.0;
+        viewFrame.size.height *= 2.0;
+    }
+    fullScreenPlayerPlaying = NO;
     
-    [vapp initAR:QCAR::GL_20 ARViewBoundsSize:viewFrame.size orientation:UIInterfaceOrientationPortrait];
+    /* https://developer.vuforia.com/forum/ios/video-playback-integration */
     
-    // we use the iOS notification to pause/resume the AR when the application goes (or come back from) background
-    
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(pauseAR)
-     name:UIApplicationWillResignActiveNotification
-     object:nil];
-    
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(resumeAR)
-     name:UIApplicationDidBecomeActiveNotification
-     object:nil];
+
 }
 
 - (void) pauseAR {
@@ -115,6 +106,41 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // From loadView
+    // Create the EAGLView
+    eaglView = [[VideoPlaybackEAGLView alloc] initWithFrame:viewFrame  rootViewController:self appSession:vapp];
+    [self setView:eaglView];
+    
+    CGRect mainBounds = [[UIScreen mainScreen] bounds];
+    CGRect indicatorBounds = CGRectMake(mainBounds.size.width / 2 - 12,
+                                        mainBounds.size.height / 2 - 12, 24, 24);
+    UIActivityIndicatorView *loadingIndicator = [[UIActivityIndicatorView alloc]
+                                                 initWithFrame:indicatorBounds];
+    
+    loadingIndicator.tag  = 1;
+    loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    [eaglView addSubview:loadingIndicator];
+    [loadingIndicator startAnimating];
+    
+    [vapp initAR:QCAR::GL_20 ARViewBoundsSize:viewFrame.size orientation:UIInterfaceOrientationPortrait];
+    
+    // we use the iOS notification to pause/resume the AR when the application goes (or come back from) background
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(pauseAR)
+     name:UIApplicationWillResignActiveNotification
+     object:nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(resumeAR)
+     name:UIApplicationDidBecomeActiveNotification
+     object:nil];
+    
+    /* https://developer.vuforia.com/forum/ios/video-playback-integration */
+    
     [eaglView prepare];
     [self prepareMenu];
     
