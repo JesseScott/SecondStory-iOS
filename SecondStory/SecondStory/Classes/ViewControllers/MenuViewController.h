@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuViewController : UIViewController {
-    // Font
     UIFont *buttonFont;
     UIFont *liveFont;
 }

@@ -30,8 +30,8 @@
     liveFont = [UIFont fontWithName:@"Din Alternate Black" size:32];
     
     // Colors
-    UIColor *buttonBgColor = [UIColor colorWithRed:(255.0f/255.0f) green:(255.0f/255.0f) blue:(204.0f/255.0f) alpha:(204.0f/255.0f)];
-    UIColor *buttonTextColor = [UIColor colorWithRed:(51.0f/255.0f) green:(51.0f/255.0f) blue:(51.0f/255.0f) alpha:(204.0f/255.0f)];
+    UIColor *buttonBgColor = [UIColor colorWithRed:(255/255.0f) green:(255/255.0f) blue:(204/255.0f) alpha:(204/255.0f)];
+    UIColor *buttonTextColor = [UIColor colorWithRed:(51/255.0f) green:(51/255.0f) blue:(51/255.0f) alpha:(204/255.0f)];
 
     
     // Buttons

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -112,7 +111,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Idq-d0-yvd" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywB-xf-b1A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywB-xf-b1A">
                                 <rect key="frame" x="0.0" y="400" width="320" height="150"/>
                                 <color key="backgroundColor" white="0.25" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
@@ -195,17 +194,17 @@
                             <constraint firstItem="XBk-b8-7wf" firstAttribute="leading" secondItem="SUq-DK-6ze" secondAttribute="leading" id="Gad-sB-0OD"/>
                             <constraint firstItem="SUq-DK-6ze" firstAttribute="centerX" secondItem="ywB-xf-b1A" secondAttribute="centerX" id="IhK-xa-dg3"/>
                             <constraint firstItem="kj2-jJ-DwK" firstAttribute="top" secondItem="qFQ-0X-2Ty" secondAttribute="bottom" constant="8" symbolic="YES" id="J3F-Li-eH3"/>
-                            <constraint firstAttribute="trailing" secondItem="ywB-xf-b1A" secondAttribute="trailing" constant="20" symbolic="YES" id="Q8r-0R-mX8"/>
+                            <constraint firstAttribute="trailing" secondItem="ywB-xf-b1A" secondAttribute="trailing" id="Q8r-0R-mX8"/>
                             <constraint firstAttribute="trailing" secondItem="Idq-d0-yvd" secondAttribute="trailing" id="Qyh-Ue-WE1"/>
                             <constraint firstItem="qFQ-0X-2Ty" firstAttribute="top" secondItem="AqG-90-i2L" secondAttribute="bottom" constant="8" id="RYe-3E-Yr3"/>
                             <constraint firstItem="SUq-DK-6ze" firstAttribute="trailing" secondItem="Idq-d0-yvd" secondAttribute="trailing" id="TYX-4T-qUf"/>
                             <constraint firstItem="kj2-jJ-DwK" firstAttribute="leading" secondItem="XBk-b8-7wf" secondAttribute="leading" id="UYM-iK-1J5"/>
                             <constraint firstAttribute="bottom" secondItem="Idq-d0-yvd" secondAttribute="bottom" id="Xxr-UW-H09"/>
                             <constraint firstItem="Idq-d0-yvd" firstAttribute="top" secondItem="dgq-GU-IWK" secondAttribute="top" id="cKG-bb-MlS"/>
-                            <constraint firstAttribute="bottom" secondItem="ywB-xf-b1A" secondAttribute="bottom" constant="20" symbolic="YES" id="coG-J2-IPq"/>
-                            <constraint firstItem="ywB-xf-b1A" firstAttribute="leading" secondItem="dgq-GU-IWK" secondAttribute="leading" constant="20" symbolic="YES" id="dCT-3e-MMX"/>
+                            <constraint firstAttribute="bottom" secondItem="ywB-xf-b1A" secondAttribute="bottom" constant="18" id="coG-J2-IPq"/>
+                            <constraint firstItem="ywB-xf-b1A" firstAttribute="leading" secondItem="dgq-GU-IWK" secondAttribute="leading" id="dCT-3e-MMX"/>
                             <constraint firstItem="XBk-b8-7wf" firstAttribute="leading" secondItem="dgq-GU-IWK" secondAttribute="leading" id="dL0-en-Ico"/>
-                            <constraint firstItem="ywB-xf-b1A" firstAttribute="top" secondItem="SUq-DK-6ze" secondAttribute="bottom" constant="62" id="kaa-2b-bV9"/>
+                            <constraint firstItem="ywB-xf-b1A" firstAttribute="top" secondItem="SUq-DK-6ze" secondAttribute="bottom" constant="64" id="kaa-2b-bV9"/>
                             <constraint firstItem="kj2-jJ-DwK" firstAttribute="trailing" secondItem="XBk-b8-7wf" secondAttribute="trailing" id="lIs-Ne-Y3n"/>
                             <constraint firstItem="SUq-DK-6ze" firstAttribute="top" secondItem="XBk-b8-7wf" secondAttribute="bottom" constant="8" symbolic="YES" id="v9w-VX-WWQ"/>
                         </constraints>
@@ -293,11 +292,6 @@
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Find and follow stories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="ptn-fM-3f6" userLabel="explore label">
                                 <rect key="frame" x="20" y="429" width="280" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enjoy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="kVw-cf-ccM" userLabel="enjoy label">
-                                <rect key="frame" x="20" y="458" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
