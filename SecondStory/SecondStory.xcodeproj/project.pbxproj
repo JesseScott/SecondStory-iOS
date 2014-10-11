@@ -1178,7 +1178,7 @@
 					"/Users/jessescott/Documents/Development/iOS/SDKs/vuforia-sdk-ios/build/include",
 				);
 				INFOPLIST_FILE = "SecondStory/SecondStory-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/jessescott/Documents/Development/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",
@@ -1210,7 +1210,7 @@
 					"/Users/jessescott/Documents/Development/iOS/SDKs/vuforia-sdk-ios/build/include",
 				);
 				INFOPLIST_FILE = "SecondStory/SecondStory-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/jessescott/Documents/Development/iOS/SDKs/vuforia-sdk-ios/build/lib/arm",

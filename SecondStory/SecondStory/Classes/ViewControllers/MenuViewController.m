@@ -23,11 +23,6 @@
     [super viewDidLoad];
     
     
-    // Nav Bar
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
-    
     // Font
     buttonFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
     liveFont = [UIFont fontWithName:@"Din Alternate Black" size:32];
