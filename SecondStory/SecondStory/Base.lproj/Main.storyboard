@@ -74,7 +74,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="progress" destination="rbm-Sk-V92" id="Fya-bl-aXF"/>
+                        <outlet property="progressView" destination="rbm-Sk-V92" id="vuR-gn-E52"/>
                         <segue destination="cDE-ux-JJx" kind="modal" identifier="segue_welcome2menu" id="2A6-92-HKe"/>
                     </connections>
                 </viewController>

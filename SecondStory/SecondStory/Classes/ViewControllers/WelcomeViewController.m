@@ -17,7 +17,7 @@
 #pragma mark SYNTHESIZE
 
 // Synthesize
-@synthesize progress;
+@synthesize progressView;
 @synthesize backgroundSession, defaultSession, ephemeralSession;
 
 #pragma mark VIEW
@@ -40,6 +40,8 @@
     
     // SESSION
     [self setupURLSessions];
+    
+    [self.progressView setHidden:YES];
     
 }
 
@@ -250,7 +252,7 @@
                 for (int i = 0; i < [REMOTE_MEDIA_LIST count]; i++) {
                     NSLog(@"FILE %i IS %@", i, [REMOTE_MEDIA_LIST objectAtIndex:i]);
                 }
-                [self getFile:[REMOTE_MEDIA_LIST objectAtIndex:0]];
+                //[self getFile:[REMOTE_MEDIA_LIST objectAtIndex:0]];
             }]
      resume];
 }
@@ -264,38 +266,51 @@
     NSURL *url = [NSURL URLWithString:fullPathToFile];
     NSURLSessionDownloadTask *downloadTask = [self.backgroundSession downloadTaskWithURL: url];
     [downloadTask resume];
+    
+    [self.progressView setHidden:NO];
 }
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
 {
     NSLog(@"Session %@ download task %@ finished downloading to URL %@\n", session, downloadTask, location);
     
-    [self.progress setHidden:YES];
+    [self.progressView setHidden:YES];
     
     // Get the documents directory URL
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:LOCAL_MEDIA_PATH];
-    NSURL *customDirectory = [[NSURL alloc] initWithString:dataPath];
+    //NSURL *customDirectory = [[NSURL alloc] initWithString:dataPath];
+    NSURL *customDirectory = [NSURL fileURLWithPath:dataPath];
     
     // Get the file name and create a destination URL
     NSString *sendingFileName = [downloadTask.originalRequest.URL lastPathComponent];
     NSURL *destinationUrl = [customDirectory URLByAppendingPathComponent:sendingFileName];
     
     // Hold this file as an NSData and write it to the new location
-    NSData *fileData = [NSData dataWithContentsOfURL:location];
-    [fileData writeToURL:destinationUrl atomically:NO];
+    //NSData *fileData = [NSData dataWithContentsOfURL:location];
+    //[fileData writeToURL:destinationUrl atomically:NO];
+    
+    // Move the file
+    NSError *error = nil;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager moveItemAtURL:location toURL:destinationUrl error: &error]) {
+        NSLog(@"Moving File To %@", destinationUrl);
+        /* Store some reference to the new URL */
+    } else {
+        /* Handle the error. */
+        NSLog(@"Damn. Error %@", error);
+    }
     
 }
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
 {
-    NSLog(@"Session %@ download task %@ wrote an additional %lld bytes (total %lld bytes) out of an expected %lld bytes.\n",
-          session, downloadTask, bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
+    //NSLog(@"Session %@ download task %@ wrote an additional %lld bytes (total %lld bytes) out of an expected %lld bytes.\n", session, downloadTask, bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
     
     float progress = (double)totalBytesWritten / (double)totalBytesExpectedToWrite;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.progress setProgress:progress];
+        [self.progressView setProgress:progress];
     });
 }
 
@@ -303,6 +318,10 @@
 {
     NSLog(@"Session %@ download task %@ resumed at offset %lld bytes out of an expected %lld bytes.\n",
           session, downloadTask, fileOffset, expectedTotalBytes);
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
+    NSLog(@"SessionTask %@ gave error %@.\n", task, error);
 }
 
 

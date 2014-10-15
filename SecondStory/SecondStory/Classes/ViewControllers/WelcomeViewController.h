@@ -23,7 +23,7 @@
 @property NSURLSession *backgroundSession;
 @property NSURLSession *defaultSession;
 @property NSURLSession *ephemeralSession;
-@property (weak, nonatomic) IBOutlet UIProgressView *progress;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 
 @end
