@@ -20,10 +20,10 @@
     NSURLSessionConfiguration *ephemeralConfigObject;
 }
 
-@property (strong, nonatomic) ALAssetsLibrary *assetsLibrary;
 @property NSURLSession *backgroundSession;
 @property NSURLSession *defaultSession;
 @property NSURLSession *ephemeralSession;
+@property (weak, nonatomic) IBOutlet UIProgressView *progress;
 
 
 @end

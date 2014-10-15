@@ -67,10 +67,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-ce-ZLW" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rbm-Sk-V92">
+                                <rect key="frame" x="85" y="283" width="150" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="progress" destination="rbm-Sk-V92" id="Fya-bl-aXF"/>
                         <segue destination="cDE-ux-JJx" kind="modal" identifier="segue_welcome2menu" id="2A6-92-HKe"/>
                     </connections>
                 </viewController>

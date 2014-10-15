@@ -17,7 +17,7 @@
 #pragma mark SYNTHESIZE
 
 // Synthesize
-@synthesize assetsLibrary;
+@synthesize progress;
 @synthesize backgroundSession, defaultSession, ephemeralSession;
 
 #pragma mark VIEW
@@ -221,7 +221,7 @@
     if ([self checkForSpace]) {
         NSLog(@"HAVE SPACE : CHECKING DIRECTORY");
         if ([self createCustomDirectory]) {
-            NSLog(@"HACE DIRECTORY : STARTING DOWNLOAD");
+            NSLog(@"HAVE DIRECTORY : STARTING DOWNLOAD");
             [self getMediaList];
         }
         else {
@@ -270,8 +270,13 @@
 {
     NSLog(@"Session %@ download task %@ finished downloading to URL %@\n", session, downloadTask, location);
     
+    [self.progress setHidden:YES];
+    
     // Get the documents directory URL
-    NSURL *customDirectory = [[NSURL alloc] initWithString:LOCAL_MEDIA_PATH];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:LOCAL_MEDIA_PATH];
+    NSURL *customDirectory = [[NSURL alloc] initWithString:dataPath];
     
     // Get the file name and create a destination URL
     NSString *sendingFileName = [downloadTask.originalRequest.URL lastPathComponent];
@@ -287,6 +292,11 @@
 {
     NSLog(@"Session %@ download task %@ wrote an additional %lld bytes (total %lld bytes) out of an expected %lld bytes.\n",
           session, downloadTask, bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
+    
+    float progress = (double)totalBytesWritten / (double)totalBytesExpectedToWrite;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.progress setProgress:progress];
+    });
 }
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes
