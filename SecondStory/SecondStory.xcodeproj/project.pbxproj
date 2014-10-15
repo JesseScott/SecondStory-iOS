@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D0E230719EE2D0B00C61E82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8487A19A173710019053E /* AppDelegate.m */; };
 		2D35BF9619C232F7003731E7 /* icon-retina@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9019C232F7003731E7 /* icon-retina@2x.png */; };
 		2D35BF9719C232F7003731E7 /* icon-retina@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9019C232F7003731E7 /* icon-retina@2x.png */; };
 		2D35BF9919C232F7003731E7 /* icon-settings@2x copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9119C232F7003731E7 /* icon-settings@2x copy.png */; };
@@ -1004,6 +1005,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D0E230719EE2D0B00C61E82 /* AppDelegate.m in Sources */,
 				2DE8498719A1B2080019053E /* VideoPlayerHelper.mm in Sources */,
 				2D4D628819C5FA82007A75C2 /* MenuViewController.m in Sources */,
 				2DE8498519A1B2080019053E /* VideoPlaybackViewController.mm in Sources */,
@@ -1111,7 +1113,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "bf28c334-dc86-4e01-ad82-754a20789233";
+				PROVISIONING_PROFILE = "cafc07dd-23bb-4dcc-b8dc-80f854dbdd24";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -1156,7 +1158,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "bf28c334-dc86-4e01-ad82-754a20789233";
+				PROVISIONING_PROFILE = "cafc07dd-23bb-4dcc-b8dc-80f854dbdd24";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";
@@ -1190,7 +1192,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bf28c334-dc86-4e01-ad82-754a20789233";
+				PROVISIONING_PROFILE = "cafc07dd-23bb-4dcc-b8dc-80f854dbdd24";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1223,7 +1225,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bf28c334-dc86-4e01-ad82-754a20789233";
+				PROVISIONING_PROFILE = "cafc07dd-23bb-4dcc-b8dc-80f854dbdd24";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
