@@ -25,9 +25,9 @@
 {
     [super viewDidLoad];
     
-    // GLOBALS
-    //AppDelegate *appDelegate = (AppDelegate*)[[[UIApplication sharedApplication] delegate];
-    MEDIA_PATH = @"/SecondStory/BloodAlley/MEDIA";
+    // PATHS
+    LOCAL_MEDIA_PATH = @"/SecondStory/BloodAlley/MEDIA";
+    REMOTE_MEDIA_PATH = @"http://jesses.co.tt/projects/second_story/blood_alley/media/";
     
     // CHECK
     if ([self checkForContent]) {
@@ -73,7 +73,7 @@
             [self segue];
         }
         else if(buttonIndex == 1) { // Download
-            [self getFiles];
+            [self prepDownload];
         }
     }
 }
@@ -84,7 +84,7 @@
 - (BOOL) checkForContent {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:MEDIA_PATH];
+    NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:LOCAL_MEDIA_PATH];
     BOOL isDir;
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:dataPath isDirectory:&isDir]) {
@@ -124,7 +124,7 @@
 - (void) listCustomDirectory {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:MEDIA_PATH];
+    NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:LOCAL_MEDIA_PATH];
 
     NSError *error = nil;
     NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dataPath error:&error];
@@ -138,7 +138,7 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:MEDIA_PATH];
+    NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:LOCAL_MEDIA_PATH];
     NSError *error = nil;
     if (![[NSFileManager defaultManager] fileExistsAtPath:dataPath]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:dataPath withIntermediateDirectories:YES attributes:nil error:&error];
@@ -192,16 +192,16 @@
 #pragma mark FTP
 
 
-- (void) getFiles {
+- (void) prepDownload {
     if ([self checkForSpace]) {
         NSLog(@"HAVE SPACE : CHECKING DIRECTORY");
         if ([self createCustomDirectory]) {
             NSLog(@"HACE DIRECTORY : STARTING DOWNLOAD");
+            [self getMediaList];
         }
         else {
             NSLog(@"PROBLEM CREATING DIRECTORY");
         }
-        // [self segue];
     }
     else {
         [self showNotEnoughSpaceDialog];
@@ -209,16 +209,31 @@
 }
 
 - (void) getMediaList {
-    NSString *list = @"http://api.openweathermap.org/data/2.5/weather?q=London,uk";
-    //NSString *list = @"http://ftp.memelab.ca/public_html/jessescott/projects/second_story/blood_alley/settings/media_list.txt";
+
+    NSString *list = @"http://jesses.co.tt/projects/second_story/blood_alley/settings/media_list.txt";
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:[NSURL URLWithString:list]
-            completionHandler:^(NSData *data,
-                                NSURLResponse *response,
-                                NSError *error) {
-                // handle response
+            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                NSLog(@"Got response %@ with error %@.\n", response, error);
                 
-            }] resume];
+                NSString *stringFromData = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+                NSLog(@"DATA:\n%@\nEND DATA\n", stringFromData);
+                
+                REMOTE_MEDIA_LIST = [stringFromData componentsSeparatedByString:@"\n"];
+                NSLog(@"THERE ARE %i MEDIA FILES", [REMOTE_MEDIA_LIST count]);
+                for (int i = 0; i < [REMOTE_MEDIA_LIST count]; i++) {
+                    NSLog(@"FILE %i IS %@", i, [REMOTE_MEDIA_LIST objectAtIndex:i]);
+                }
+                [self getFile:[REMOTE_MEDIA_LIST objectAtIndex:0]];
+            }]
+     resume];
+}
+
+- (void) getFile : (NSString*) file {
+    NSLog(@"PASSED FILE IS %@", file);
+    NSString *fullPathToFile = REMOTE_MEDIA_PATH;
+    fullPathToFile = [fullPathToFile stringByAppendingString:file];
+    NSLog(@"FULL PATH IS %@", fullPathToFile);
 }
 
 

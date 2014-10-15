@@ -12,9 +12,9 @@
 #import "AssetsLibrary/AssetsLibrary.h"
 
 @interface WelcomeViewController : UIViewController {
-    NSString *MEDIA_PATH;
-    uint64_t NECESSARY_SPACE;
-    uint64_t AVAILABLE_SPACE;
+    NSString *LOCAL_MEDIA_PATH;
+    NSArray  *REMOTE_MEDIA_LIST;
+    NSString *REMOTE_MEDIA_PATH;
 }
 
 @property (strong, nonatomic) ALAssetsLibrary *assetsLibrary;
