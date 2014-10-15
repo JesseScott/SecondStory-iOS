@@ -45,12 +45,11 @@
                     <connections>
                         <outlet property="label" destination="AyB-uF-iaA" id="IR3-34-Aim"/>
                         <segue destination="Vuc-oS-ZNc" kind="modal" identifier="segue_splash2welcome" id="zOZ-5o-SMj"/>
-                        <segue destination="cDE-ux-JJx" kind="modal" identifier="segue_splash2menu" id="AnO-DK-MQi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="167"/>
+            <point key="canvasLocation" x="-302" y="421"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="fRU-Eo-RzG">
@@ -64,7 +63,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-ce-ZLW" userLabel="background">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-ce-ZLW" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rbm-Sk-V92">
@@ -80,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q84-cS-QwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="666" y="-301"/>
+            <point key="canvasLocation" x="198" y="421"/>
         </scene>
         <!--Menu-->
         <scene sceneID="2FH-Np-MUI">
@@ -226,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="saO-D5-wRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192" y="1502"/>
+            <point key="canvasLocation" x="1192" y="1419"/>
         </scene>
         <!--Guide-->
         <scene sceneID="QVf-2j-p38">
@@ -299,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CY-zJ-0u7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2189" y="-495"/>
+            <point key="canvasLocation" x="2197" y="-578"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C7Y-me-HyL">
@@ -444,7 +443,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2189" y="171"/>
+            <point key="canvasLocation" x="2197" y="88"/>
         </scene>
         <!--About-->
         <scene sceneID="Kfp-yf-qtC">
@@ -485,7 +484,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2189" y="827"/>
+            <point key="canvasLocation" x="2197" y="744"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="WjL-fe-XxQ">
@@ -499,7 +498,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="D72-3Z-dSr" userLabel="background">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="D72-3Z-dSr" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGg-wA-ekn">
@@ -517,8 +516,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="D72-3Z-dSr" firstAttribute="leading" secondItem="Cdc-su-6kg" secondAttribute="leading" id="EGT-lW-mjf"/>
                             <constraint firstItem="KGg-wA-ekn" firstAttribute="leading" secondItem="XH1-rZ-3iE" secondAttribute="leading" constant="20" symbolic="YES" id="M4j-Xt-iMD"/>
-                            <constraint firstItem="KGg-wA-ekn" firstAttribute="centerX" secondItem="D72-3Z-dSr" secondAttribute="centerX" id="Yab-Gs-WqK"/>
+                            <constraint firstItem="D72-3Z-dSr" firstAttribute="top" secondItem="XH1-rZ-3iE" secondAttribute="top" id="NJG-B8-ZoQ"/>
+                            <constraint firstItem="D72-3Z-dSr" firstAttribute="bottom" secondItem="nlS-0Q-Kg9" secondAttribute="top" id="YDr-Za-wp5"/>
                             <constraint firstAttribute="trailing" secondItem="KGg-wA-ekn" secondAttribute="trailing" constant="20" symbolic="YES" id="cp9-cC-BHa"/>
                             <constraint firstItem="KGg-wA-ekn" firstAttribute="top" secondItem="Cdc-su-6kg" secondAttribute="bottom" constant="170" id="viP-bn-FG7"/>
                         </constraints>
@@ -527,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1s-XU-7Xn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2189" y="1502"/>
+            <point key="canvasLocation" x="2197" y="1419"/>
         </scene>
     </scenes>
     <resources>
@@ -549,7 +550,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="2A6-92-HKe"/>
-    </inferredMetricsTieBreakers>
 </document>
