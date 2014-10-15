@@ -18,7 +18,7 @@
 
 // Synthesize
 @synthesize progressView;
-@synthesize backgroundSession, defaultSession, ephemeralSession;
+@synthesize backgroundSession;
 
 #pragma mark VIEW
 
@@ -200,22 +200,7 @@
 
 - (void) setupURLSessions {
     backgroundConfigObject = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier: @"SecondStoryBackgroundSessionIdentifier"];
-    defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
-    ephemeralConfigObject = [NSURLSessionConfiguration ephemeralSessionConfiguration];
-    
-    NSString *cachePath = @"/MyCacheDirectory";
-    NSArray *myPathList = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *myPath    = [myPathList  objectAtIndex:0];
-    NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
-    NSString *fullCachePath = [[myPath stringByAppendingPathComponent:bundleIdentifier] stringByAppendingPathComponent:cachePath];
-    NSLog(@"CACHE PATH: %@\n", fullCachePath);
-    NSURLCache *myCache = [[NSURLCache alloc] initWithMemoryCapacity: 16384 diskCapacity: 268435456 diskPath: cachePath];
-    defaultConfigObject.URLCache = myCache;
-    defaultConfigObject.requestCachePolicy = NSURLRequestUseProtocolCachePolicy;
-    
-    self.defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
     self.backgroundSession = [NSURLSession sessionWithConfiguration: backgroundConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
-    self.ephemeralSession = [NSURLSession sessionWithConfiguration: ephemeralConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
 }
 
 
@@ -239,8 +224,7 @@
 
     NSString *list = @"http://jesses.co.tt/projects/second_story/blood_alley/settings/media_list.txt";
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
-    [[delegateFreeSession dataTaskWithURL:[NSURL URLWithString:list]
+    [[session dataTaskWithURL:[NSURL URLWithString:list]
             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                 NSLog(@"Got response %@ with error %@.\n", response, error);
                 
