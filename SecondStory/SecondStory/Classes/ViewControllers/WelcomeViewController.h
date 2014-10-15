@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 #import "WhiteRaccoon.h"
+#import "AssetsLibrary/AssetsLibrary.h"
 
 @interface WelcomeViewController : UIViewController {
-    
+    NSString *MEDIA_PATH;
+    uint64_t NECESSARY_SPACE;
+    uint64_t AVAILABLE_SPACE;
 }
 
+@property (strong, nonatomic) ALAssetsLibrary *assetsLibrary;
 
-@property (weak, nonatomic) IBOutlet UILabel *remote_label;
 
-- (IBAction)skip:(id)sender;
 
 @end
