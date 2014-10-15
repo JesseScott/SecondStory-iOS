@@ -18,6 +18,7 @@
 
 // Synthesize
 @synthesize assetsLibrary;
+@synthesize backgroundSession, defaultSession, ephemeralSession;
 
 #pragma mark VIEW
 
@@ -36,6 +37,10 @@
     else {
         [self showStreamOrDownloadDialog];
     }
+    
+    // SESSION
+    [self setupURLSessions];
+    
 }
 
 - (void) segue {
@@ -189,7 +194,27 @@
 }
 
 
-#pragma mark FTP
+#pragma mark NET
+
+- (void) setupURLSessions {
+    backgroundConfigObject = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier: @"SecondStoryBackgroundSessionIdentifier"];
+    defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+    ephemeralConfigObject = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+    
+    NSString *cachePath = @"/MyCacheDirectory";
+    NSArray *myPathList = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *myPath    = [myPathList  objectAtIndex:0];
+    NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+    NSString *fullCachePath = [[myPath stringByAppendingPathComponent:bundleIdentifier] stringByAppendingPathComponent:cachePath];
+    NSLog(@"CACHE PATH: %@\n", fullCachePath);
+    NSURLCache *myCache = [[NSURLCache alloc] initWithMemoryCapacity: 16384 diskCapacity: 268435456 diskPath: cachePath];
+    defaultConfigObject.URLCache = myCache;
+    defaultConfigObject.requestCachePolicy = NSURLRequestUseProtocolCachePolicy;
+    
+    self.defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
+    self.backgroundSession = [NSURLSession sessionWithConfiguration: backgroundConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
+    self.ephemeralSession = [NSURLSession sessionWithConfiguration: ephemeralConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
+}
 
 
 - (void) prepDownload {
@@ -212,7 +237,8 @@
 
     NSString *list = @"http://jesses.co.tt/projects/second_story/blood_alley/settings/media_list.txt";
     NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithURL:[NSURL URLWithString:list]
+    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
+    [[delegateFreeSession dataTaskWithURL:[NSURL URLWithString:list]
             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                 NSLog(@"Got response %@ with error %@.\n", response, error);
                 
@@ -234,7 +260,41 @@
     NSString *fullPathToFile = REMOTE_MEDIA_PATH;
     fullPathToFile = [fullPathToFile stringByAppendingString:file];
     NSLog(@"FULL PATH IS %@", fullPathToFile);
+    
+    NSURL *url = [NSURL URLWithString:fullPathToFile];
+    NSURLSessionDownloadTask *downloadTask = [self.backgroundSession downloadTaskWithURL: url];
+    [downloadTask resume];
 }
+
+-(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
+{
+    NSLog(@"Session %@ download task %@ finished downloading to URL %@\n", session, downloadTask, location);
+    
+    // Get the documents directory URL
+    NSURL *customDirectory = [[NSURL alloc] initWithString:LOCAL_MEDIA_PATH];
+    
+    // Get the file name and create a destination URL
+    NSString *sendingFileName = [downloadTask.originalRequest.URL lastPathComponent];
+    NSURL *destinationUrl = [customDirectory URLByAppendingPathComponent:sendingFileName];
+    
+    // Hold this file as an NSData and write it to the new location
+    NSData *fileData = [NSData dataWithContentsOfURL:location];
+    [fileData writeToURL:destinationUrl atomically:NO];
+    
+}
+
+-(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
+{
+    NSLog(@"Session %@ download task %@ wrote an additional %lld bytes (total %lld bytes) out of an expected %lld bytes.\n",
+          session, downloadTask, bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
+}
+
+-(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes
+{
+    NSLog(@"Session %@ download task %@ resumed at offset %lld bytes out of an expected %lld bytes.\n",
+          session, downloadTask, fileOffset, expectedTotalBytes);
+}
+
 
 
 

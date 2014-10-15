@@ -11,14 +11,19 @@
 #import "WhiteRaccoon.h"
 #import "AssetsLibrary/AssetsLibrary.h"
 
-@interface WelcomeViewController : UIViewController {
+@interface WelcomeViewController : UIViewController <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate> {
     NSString *LOCAL_MEDIA_PATH;
     NSArray  *REMOTE_MEDIA_LIST;
     NSString *REMOTE_MEDIA_PATH;
+    NSURLSessionConfiguration *backgroundConfigObject;
+    NSURLSessionConfiguration *defaultConfigObject;
+    NSURLSessionConfiguration *ephemeralConfigObject;
 }
 
 @property (strong, nonatomic) ALAssetsLibrary *assetsLibrary;
-
+@property NSURLSession *backgroundSession;
+@property NSURLSession *defaultSession;
+@property NSURLSession *ephemeralSession;
 
 
 @end
