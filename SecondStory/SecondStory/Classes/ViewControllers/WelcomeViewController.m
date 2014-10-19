@@ -276,8 +276,6 @@
     [downloadTask resume];
     
     [self.progressView setHidden:NO];
-    
-    // http://stackoverflow.com/questions/25762034/ios-7-nsurlsession-download-multiple-files-in-background
 }
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
@@ -290,7 +288,6 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:LOCAL_MEDIA_PATH];
-    //NSURL *customDirectory = [[NSURL alloc] initWithString:dataPath];
     NSURL *customDirectory = [NSURL fileURLWithPath:dataPath];
     
     // Get the file name and create a destination URL
@@ -318,7 +315,7 @@
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
 {
-    //NSLog(@"Session %@ download task %@ wrote an additional %lld bytes (total %lld bytes) out of an expected %lld bytes.\n", session, downloadTask, bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
+    NSLog(@"Session %@ download task %@ wrote an additional %lld bytes (total %lld bytes) out of an expected %lld bytes.\n", session, downloadTask, bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
     
     float progress = (double)totalBytesWritten / (double)totalBytesExpectedToWrite;
     dispatch_async(dispatch_get_main_queue(), ^{
