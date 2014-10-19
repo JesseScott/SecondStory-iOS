@@ -38,8 +38,8 @@
         [self showStreamOrDownloadDialog];
     }
     
-    // SESSION
-    [self setupURLSessions];
+    // Counter
+    downloadCounter = 0;
     
     [self.progressView setHidden:YES];
     
@@ -101,12 +101,12 @@
             NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dataPath error:&error];
             if (error == nil) {
                 NSInteger files = [contents count];
-                if (files > 0) {
+                if (files > 5) {
                     NSLog(@"DIRECTORY HAS %i FILES", [contents count]);
                     return YES;
                 }
                 else {
-                    NSLog(@"NO FILES EXIST");
+                    NSLog(@"ONLY %i FILES EXIST", files);
                     return NO;
                 }
             }
@@ -198,9 +198,28 @@
 
 #pragma mark NET
 
-- (void) setupURLSessions {
+- (void) setupURLSessions : (int) index {
+    
     backgroundConfigObject = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier: @"SecondStoryBackgroundSessionIdentifier"];
     self.backgroundSession = [NSURLSession sessionWithConfiguration: backgroundConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
+}
+
+- (void) instantiateURLSessions : (int) size {
+    
+    NSMutableArray *configurations = [NSMutableArray array];
+    NSMutableArray *sessions = [NSMutableArray array];
+    
+    for (int i = 0; i < size; i++) {
+        NSString *index = [NSString stringWithFormat:@"%i", i];
+        NSString *UniqueIdentifier = @"SecondStoryBackgroundSessionIdentifier_";
+        UniqueIdentifier = [UniqueIdentifier stringByAppendingString:index];
+        
+        [configurations addObject: [NSURLSessionConfiguration backgroundSessionConfiguration:UniqueIdentifier]];
+        [sessions addObject:[NSURLSession sessionWithConfiguration: [configurations objectAtIndex:i]  delegate: self delegateQueue: [NSOperationQueue mainQueue]]];
+    }
+    
+    NSURL_BACKGROUND_CONFIGURATIONS = [NSArray arrayWithArray:configurations];
+    NSURL_BACKGROUND_SESSIONS = [NSArray arrayWithArray:sessions];
 }
 
 
@@ -231,24 +250,29 @@
                 NSString *stringFromData = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
                 NSLog(@"DATA:\n%@\nEND DATA\n", stringFromData);
                 
+                // Populate Arrays
                 REMOTE_MEDIA_FILE_PATHS = [stringFromData componentsSeparatedByString:@"\n"];
+                [self instantiateURLSessions:[REMOTE_MEDIA_FILE_PATHS count]];
+                 
                 NSLog(@"THERE ARE %i MEDIA FILES", [REMOTE_MEDIA_FILE_PATHS count]);
                 for (int i = 0; i < [REMOTE_MEDIA_FILE_PATHS count]; i++) {
                     NSLog(@"FILE %i IS %@", i, [REMOTE_MEDIA_FILE_PATHS objectAtIndex:i]);
                 }
-                //[self getFile:[REMOTE_MEDIA_LIST objectAtIndex:0]];
+                
+                // Start First File
+                [self getFile:[REMOTE_MEDIA_FILE_PATHS objectAtIndex:downloadCounter]:downloadCounter];
             }]
      resume];
 }
 
-- (void) getFile : (NSString*) file {
+- (void) getFile : (NSString*) file :(int) index {
     NSLog(@"PASSED FILE IS %@", file);
     NSString *fullPathToFile = REMOTE_MEDIA_PATH;
     fullPathToFile = [fullPathToFile stringByAppendingString:file];
     NSLog(@"FULL PATH IS %@", fullPathToFile);
     
     NSURL *url = [NSURL URLWithString:fullPathToFile];
-    NSURLSessionDownloadTask *downloadTask = [self.backgroundSession downloadTaskWithURL: url];
+    NSURLSessionDownloadTask *downloadTask = [[NSURL_BACKGROUND_SESSIONS objectAtIndex:index ] downloadTaskWithURL: url];
     [downloadTask resume];
     
     [self.progressView setHidden:NO];
@@ -273,18 +297,20 @@
     NSString *sendingFileName = [downloadTask.originalRequest.URL lastPathComponent];
     NSURL *destinationUrl = [customDirectory URLByAppendingPathComponent:sendingFileName];
     
-    // Hold this file as an NSData and write it to the new location
-    //NSData *fileData = [NSData dataWithContentsOfURL:location];
-    //[fileData writeToURL:destinationUrl atomically:NO];
-    
     // Move the file
     NSError *error = nil;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager moveItemAtURL:location toURL:destinationUrl error: &error]) {
         NSLog(@"Moving File To %@", destinationUrl);
-        /* Store some reference to the new URL */
-    } else {
-        /* Handle the error. */
+        
+        // Increment Counter
+        downloadCounter++;
+        NSLog(@"Ready to start File #%i", downloadCounter);
+        
+        // Start Next File
+        [self getFile:[REMOTE_MEDIA_FILE_PATHS objectAtIndex:downloadCounter]:downloadCounter];
+    }
+    else {
         NSLog(@"Damn. Error %@", error);
     }
     
