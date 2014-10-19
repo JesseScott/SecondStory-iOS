@@ -198,7 +198,6 @@
 
 #pragma mark NET
 
-- (void) setupURLSessions : (int) index {
     
     backgroundConfigObject = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier: @"SecondStoryBackgroundSessionIdentifier"];
     self.backgroundSession = [NSURLSession sessionWithConfiguration: backgroundConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
