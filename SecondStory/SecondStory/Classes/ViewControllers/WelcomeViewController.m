@@ -297,7 +297,7 @@
         // List
         [self listCustomDirectory];
         
-        if(downloadCounter < [REMOTE_MEDIA_FILE_PATHS count]) {
+        if(downloadCounter < [REMOTE_MEDIA_FILE_PATHS count] -1) {
             // Increment Counter
             downloadCounter++;
             NSLog(@"Ready to start File #%i", downloadCounter);
