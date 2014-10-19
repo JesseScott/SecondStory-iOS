@@ -26,6 +26,12 @@
 {
     [super viewDidLoad];
     
+    [self.progressView setHidden:YES];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
     // PATHS
     LOCAL_MEDIA_PATH = @"/SecondStory/BloodAlley/MEDIA";
     REMOTE_MEDIA_PATH = @"http://jesses.co.tt/projects/second_story/blood_alley/media/";
@@ -41,9 +47,9 @@
     // Counter
     downloadCounter = 0;
     
-    [self.progressView setHidden:YES];
-    
 }
+
+
 
 - (void) segue {
     [self performSegueWithIdentifier:@"segue_welcome2menu" sender:self];
