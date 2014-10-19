@@ -11,15 +11,25 @@
 
 @implementation SplashViewController
 
+@synthesize label;
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
     // Timer
     if(self.timer == nil) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(segue) userInfo:nil repeats:NO];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(segue) userInfo:nil repeats:NO];
     }
     
+    // Font
+    labelFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
+    label.font = labelFont;
     
 }
 

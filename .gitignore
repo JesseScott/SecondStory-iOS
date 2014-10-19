@@ -5,6 +5,10 @@
 SecondStory/SecondStory.xcodeproj/project.xcworkspace/*
 SecondStory/SecondStory.xcodeproj/xcuserdata/*
 
+# CUSTOM
+
+
+SecondStory/SecondStory/Assets/video/*
 
 # OSX
 
