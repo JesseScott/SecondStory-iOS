@@ -231,10 +231,10 @@
                 NSString *stringFromData = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
                 NSLog(@"DATA:\n%@\nEND DATA\n", stringFromData);
                 
-                REMOTE_MEDIA_LIST = [stringFromData componentsSeparatedByString:@"\n"];
-                NSLog(@"THERE ARE %i MEDIA FILES", [REMOTE_MEDIA_LIST count]);
-                for (int i = 0; i < [REMOTE_MEDIA_LIST count]; i++) {
-                    NSLog(@"FILE %i IS %@", i, [REMOTE_MEDIA_LIST objectAtIndex:i]);
+                REMOTE_MEDIA_FILE_PATHS = [stringFromData componentsSeparatedByString:@"\n"];
+                NSLog(@"THERE ARE %i MEDIA FILES", [REMOTE_MEDIA_FILE_PATHS count]);
+                for (int i = 0; i < [REMOTE_MEDIA_FILE_PATHS count]; i++) {
+                    NSLog(@"FILE %i IS %@", i, [REMOTE_MEDIA_FILE_PATHS objectAtIndex:i]);
                 }
                 //[self getFile:[REMOTE_MEDIA_LIST objectAtIndex:0]];
             }]

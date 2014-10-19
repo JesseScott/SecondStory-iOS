@@ -9,14 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @interface WelcomeViewController : UIViewController <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate> {
+    
     NSString *LOCAL_MEDIA_PATH;
-    NSArray  *REMOTE_MEDIA_LIST;
     NSString *REMOTE_MEDIA_PATH;
+    
+    NSArray  *REMOTE_MEDIA_FILE_PATHS;
+
+    NSArray  *NSURL_BACKGROUND_SESSIONS;
+    NSArray  *NSURL_BACKGROUND_CONFIGURATIONS;
     NSURLSessionConfiguration *backgroundConfigObject;
+    int downloadsSuccessfulCounter;
 }
 
 @property NSURLSession *backgroundSession;
-@property (nonatomic) int downloadsSuccessfulCounter;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 
