@@ -214,7 +214,7 @@
         NSString *UniqueIdentifier = @"SecondStoryBackgroundSessionIdentifier_";
         UniqueIdentifier = [UniqueIdentifier stringByAppendingString:index];
         
-        [configurations addObject: [NSURLSessionConfiguration backgroundSessionConfiguration:UniqueIdentifier]];
+        [configurations addObject: [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:UniqueIdentifier]];
         [sessions addObject:[NSURLSession sessionWithConfiguration: [configurations objectAtIndex:i]  delegate: self delegateQueue: [NSOperationQueue mainQueue]]];
     }
     
