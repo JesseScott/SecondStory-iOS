@@ -198,10 +198,6 @@
 
 #pragma mark NET
 
-    backgroundConfigObject = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier: @"SecondStoryBackgroundSessionIdentifier"];
-    self.backgroundSession = [NSURLSession sessionWithConfiguration: backgroundConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
-}
-
 - (void) instantiateURLSessions : (int) size {
     
     NSMutableArray *configurations = [NSMutableArray array];
@@ -298,12 +294,21 @@
     if ([fileManager moveItemAtURL:location toURL:destinationUrl error: &error]) {
         NSLog(@"Moving File To %@", destinationUrl);
         
-        // Increment Counter
-        downloadCounter++;
-        NSLog(@"Ready to start File #%i", downloadCounter);
+        // List
+        [self listCustomDirectory];
         
-        // Start Next File
-        [self getFile:[REMOTE_MEDIA_FILE_PATHS objectAtIndex:downloadCounter]:downloadCounter];
+        if(downloadCounter < [REMOTE_MEDIA_FILE_PATHS count]) {
+            // Increment Counter
+            downloadCounter++;
+            NSLog(@"Ready to start File #%i", downloadCounter);
+        
+            // Start Next File
+            [self getFile:[REMOTE_MEDIA_FILE_PATHS objectAtIndex:downloadCounter]:downloadCounter];
+        }
+        else {
+            NSLog(@"ALL DONE !!");
+            [self segue];
+        }
     }
     else {
         NSLog(@"Damn. Error %@", error);
