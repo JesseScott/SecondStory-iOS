@@ -252,6 +252,8 @@
     [downloadTask resume];
     
     [self.progressView setHidden:NO];
+    
+    // http://stackoverflow.com/questions/25762034/ios-7-nsurlsession-download-multiple-files-in-background
 }
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location

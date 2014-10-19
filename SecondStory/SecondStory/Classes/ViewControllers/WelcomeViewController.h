@@ -16,6 +16,7 @@
 }
 
 @property NSURLSession *backgroundSession;
+@property (nonatomic) int downloadsSuccessfulCounter;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 
