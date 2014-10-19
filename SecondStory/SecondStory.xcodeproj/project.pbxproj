@@ -140,8 +140,6 @@
 		2DE848FE19A184F10019053E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE848FD19A184F10019053E /* CFNetwork.framework */; };
 		2DE8491619A185B60019053E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8491519A185B60019053E /* WelcomeViewController.m */; };
 		2DE8491719A185B60019053E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8491519A185B60019053E /* WelcomeViewController.m */; };
-		2DE8491E19A18BF10019053E /* WhiteRaccoon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8491D19A18BF10019053E /* WhiteRaccoon.m */; };
-		2DE8491F19A18BF10019053E /* WhiteRaccoon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8491D19A18BF10019053E /* WhiteRaccoon.m */; };
 		2DE8493619A1ADF60019053E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8493519A1ADF60019053E /* MediaPlayer.framework */; };
 		2DE8493819A1AE020019053E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8493719A1AE020019053E /* AudioToolbox.framework */; };
 		2DE8493A19A1AE0F0019053E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8493919A1AE0F0019053E /* QuartzCore.framework */; };
@@ -286,8 +284,6 @@
 		2DE848FD19A184F10019053E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		2DE8491419A185B60019053E /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeViewController.h; path = Classes/ViewControllers/WelcomeViewController.h; sourceTree = "<group>"; };
 		2DE8491519A185B60019053E /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeViewController.m; path = Classes/ViewControllers/WelcomeViewController.m; sourceTree = "<group>"; };
-		2DE8491C19A18BF10019053E /* WhiteRaccoon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteRaccoon.h; sourceTree = "<group>"; };
-		2DE8491D19A18BF10019053E /* WhiteRaccoon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteRaccoon.m; sourceTree = "<group>"; };
 		2DE8493519A1ADF60019053E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2DE8493719A1AE020019053E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2DE8493919A1AE0F0019053E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -604,7 +600,6 @@
 			children = (
 				2DE848FB19A17FF20019053E /* Delegate */,
 				2DE848FC19A17FFB0019053E /* ViewControllers */,
-				2DE848FF19A185550019053E /* Networking */,
 				2DE8495A19A1B2080019053E /* QCAR */,
 			);
 			name = Classes;
@@ -668,16 +663,6 @@
 				2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		2DE848FF19A185550019053E /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				2DE8491C19A18BF10019053E /* WhiteRaccoon.h */,
-				2DE8491D19A18BF10019053E /* WhiteRaccoon.m */,
-			);
-			name = Networking;
-			path = Classes/Networking;
 			sourceTree = "<group>";
 		};
 		2DE8494919A1AE9C0019053E /* External */ = {
@@ -982,7 +967,6 @@
 				2D4D628719C5FA82007A75C2 /* MenuViewController.m in Sources */,
 				2DE8498619A1B2080019053E /* VideoPlayerHelper.mm in Sources */,
 				2DE849A019A1B2080019053E /* SampleAppMenu.m in Sources */,
-				2DE8491E19A18BF10019053E /* WhiteRaccoon.m in Sources */,
 				2D4D629319C5FABE007A75C2 /* AboutViewController.m in Sources */,
 				2DE8499A19A1B2080019053E /* SampleAppAboutViewController.m in Sources */,
 				2DE8498219A1B2080019053E /* VideoPlaybackEAGLView.mm in Sources */,
@@ -1020,7 +1004,6 @@
 				2DE8498319A1B2080019053E /* VideoPlaybackEAGLView.mm in Sources */,
 				2DE8499F19A1B2080019053E /* SampleAppLeftMenuViewController.m in Sources */,
 				2DE8498F19A1B2080019053E /* SampleApplicationUtils.cpp in Sources */,
-				2DE8491F19A18BF10019053E /* WhiteRaccoon.m in Sources */,
 				2DE8499919A1B2080019053E /* Texture.mm in Sources */,
 				2DE849A319A1B2080019053E /* SampleAppSlidingMenuController.m in Sources */,
 				2DE8491719A185B60019053E /* WelcomeViewController.m in Sources */,
