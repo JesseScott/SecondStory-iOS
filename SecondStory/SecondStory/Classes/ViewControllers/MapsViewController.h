@@ -12,7 +12,12 @@
 @interface MapsViewController : UIViewController {
     NSString *videoURL;
     MPMoviePlayerController *moviePlayer;
+    
     BOOL movieIsPlaying;
+    BOOL shouldPlayLocal;
+    
+    NSString *LOCAL_MEDIA_PATH;
+    NSString *LOCAL_FILE;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;

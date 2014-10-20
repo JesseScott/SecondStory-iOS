@@ -11,6 +11,8 @@
 
 @implementation MapsViewController
 
+# pragma mark SYNTHESIZE
+
 @synthesize beefButton;
 @synthesize penniesButton;
 @synthesize sweepingButton;
@@ -25,9 +27,22 @@
 @synthesize backgroundView;
 @synthesize tap;
 
+# pragma mark VIEW
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // PATHS
+    NSString *customPath = @"/SecondStory/BloodAlley/MEDIA";
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    LOCAL_MEDIA_PATH = [documentsDirectory stringByAppendingPathComponent:customPath];
+    
+    shouldPlayLocal = YES;
+    if([self returnSizeOfDirectory] == 0) {
+        shouldPlayLocal = NO;
+    }
 
     // Hide Video View
     [self.view addSubview:self.videoView];
@@ -62,6 +77,8 @@
 }
 
 
+# pragma mark VIDEO
+
 - (void)LoadVideo: (NSURL*) videoUrl {
     
     // Show View
@@ -93,16 +110,62 @@
     [self.videoView setHidden:YES];
 }
 
+# pragma mark FILE
+
 - (BOOL) videoIsLocal: (int) index {
-    
-    
-    return YES;
+
+    NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:nil];
+    if([contents count] < index) {
+        return NO;
+    }
+    else  {
+        return YES;
+    }
 }
+
+- (NSURL*) returnPathofFileForIndex :(int) index {
+    NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:nil];
+    NSString *file = [LOCAL_MEDIA_PATH stringByAppendingString:@"/"];
+    file = [file stringByAppendingString:[contents objectAtIndex:index]];
+    
+    NSURL *url = [NSURL URLWithString:file];
+    return url;
+}
+
+- (void) listCustomDirectory {
+    
+    NSError *error = nil;
+    NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:&error];
+    NSLog(@"DIRECTORY HAS %i FILES", [contents count]);
+    for (int i = 0; i < [contents count]; i++) {
+        NSLog(@"Item #%i is %@", i, [contents objectAtIndex:i]);
+    }
+}
+
+- (int) returnSizeOfDirectory {
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:LOCAL_MEDIA_PATH];
+    NSError *error = nil;
+    NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dataPath error:&error];
+    
+    return [contents count];
+}
+
+
+# pragma mark IBACTION
 
 
 - (IBAction)clickedBeef:(id)sender {
     if(!movieIsPlaying) {
-        NSURL *url = [[NSBundle mainBundle] URLForResource:@"beef" withExtension:@"mp4"];
+        NSURL *url;
+        if(![self videoIsLocal:0] && shouldPlayLocal == YES) {
+            url = [[NSBundle mainBundle] URLForResource:@"beef" withExtension:@"mp4"];
+        }
+        else {
+            url = [self returnPathofFileForIndex:0];
+        }
         [self LoadVideo:url];
     }
     else {
