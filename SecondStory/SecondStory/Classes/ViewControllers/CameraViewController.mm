@@ -1,17 +1,10 @@
 
 
 
-#import "VideoPlaybackViewController.h"
-/*
-#import <QCAR/QCAR.h>
-#import <QCAR/TrackerManager.h>
-#import <QCAR/ImageTracker.h>
-#import <QCAR/DataSet.h>
-#import <QCAR/Trackable.h>
-#import <QCAR/CameraDevice.h>
-*/
+#import "CameraViewController.h"
 
-@implementation VideoPlaybackViewController
+
+@implementation CameraViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

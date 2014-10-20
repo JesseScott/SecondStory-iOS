@@ -18,7 +18,7 @@
     NSArray  *NSURL_BACKGROUND_SESSIONS;
     NSArray  *NSURL_BACKGROUND_CONFIGURATIONS;
     NSURLSessionConfiguration *backgroundConfigObject;
-    int downloadsSuccessfulCounter;
+    int downloadCounter;
 }
 
 @property NSURLSession *backgroundSession;
