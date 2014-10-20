@@ -93,6 +93,12 @@
     [self.videoView setHidden:YES];
 }
 
+- (BOOL) videoIsLocal: (int) index {
+    
+    
+    return YES;
+}
+
 
 - (IBAction)clickedBeef:(id)sender {
     if(!movieIsPlaying) {
