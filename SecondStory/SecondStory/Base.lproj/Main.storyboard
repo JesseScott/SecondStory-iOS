@@ -74,7 +74,7 @@
                     </view>
                     <connections>
                         <outlet property="progressView" destination="rbm-Sk-V92" id="vuR-gn-E52"/>
-                        <segue destination="cDE-ux-JJx" kind="modal" identifier="segue_welcome2menu" id="aAq-fW-t78"/>
+                        <segue destination="cDE-ux-JJx" kind="modal" identifier="segue_welcome2menu" id="2A6-92-HKe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q84-cS-QwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
