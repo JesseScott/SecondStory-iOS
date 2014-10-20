@@ -96,7 +96,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Idq-d0-yvd" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywB-xf-b1A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywB-xf-b1A">
                                 <rect key="frame" x="0.0" y="400" width="320" height="168"/>
                                 <color key="backgroundColor" white="0.25" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
@@ -108,7 +108,7 @@
                                     <segue destination="ZRS-bL-Z9C" kind="modal" id="TZp-oe-crs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFQ-0X-2Ty">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFQ-0X-2Ty">
                                 <rect key="frame" x="0.0" y="72" width="320" height="60"/>
                                 <color key="backgroundColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.0" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -123,7 +123,7 @@
                                     <segue destination="Biq-Qy-Yep" kind="push" id="xJS-1O-Uh8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj2-jJ-DwK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj2-jJ-DwK">
                                 <rect key="frame" x="0.0" y="140" width="320" height="60"/>
                                 <color key="backgroundColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.0" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -138,7 +138,7 @@
                                     <segue destination="zYn-Cj-DIP" kind="push" id="lKn-3c-1Lf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBk-b8-7wf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBk-b8-7wf">
                                 <rect key="frame" x="0.0" y="208" width="320" height="60"/>
                                 <color key="backgroundColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.0" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -153,7 +153,7 @@
                                     <segue destination="R6f-Jg-64d" kind="push" id="JBm-bP-k2m"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUq-DK-6ze">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUq-DK-6ze">
                                 <rect key="frame" x="0.0" y="276" width="320" height="60"/>
                                 <color key="backgroundColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.0" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -501,7 +501,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="D72-3Z-dSr" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGg-wA-ekn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGg-wA-ekn">
                                 <rect key="frame" x="20" y="234" width="280" height="41"/>
                                 <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
