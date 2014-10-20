@@ -26,6 +26,12 @@
 {
     [super viewDidLoad];
     
+    [self.progressView setHidden:YES];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
     // PATHS
     LOCAL_MEDIA_PATH = @"/SecondStory/BloodAlley/MEDIA";
     REMOTE_MEDIA_PATH = @"http://jesses.co.tt/projects/second_story/blood_alley/media/";
@@ -38,12 +44,12 @@
         [self showStreamOrDownloadDialog];
     }
     
-    // SESSION
-    [self setupURLSessions];
-    
-    [self.progressView setHidden:YES];
+    // Counter
+    downloadCounter = 0;
     
 }
+
+
 
 - (void) segue {
     [self performSegueWithIdentifier:@"segue_welcome2menu" sender:self];
@@ -101,12 +107,12 @@
             NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dataPath error:&error];
             if (error == nil) {
                 NSInteger files = [contents count];
-                if (files > 0) {
+                if (files > 5) {
                     NSLog(@"DIRECTORY HAS %i FILES", [contents count]);
                     return YES;
                 }
                 else {
-                    NSLog(@"NO FILES EXIST");
+                    NSLog(@"ONLY %i FILES EXIST", files);
                     return NO;
                 }
             }
@@ -198,9 +204,22 @@
 
 #pragma mark NET
 
-- (void) setupURLSessions {
-    backgroundConfigObject = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier: @"SecondStoryBackgroundSessionIdentifier"];
-    self.backgroundSession = [NSURLSession sessionWithConfiguration: backgroundConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
+- (void) instantiateURLSessions : (int) size {
+    
+    NSMutableArray *configurations = [NSMutableArray array];
+    NSMutableArray *sessions = [NSMutableArray array];
+    
+    for (int i = 0; i < size; i++) {
+        NSString *index = [NSString stringWithFormat:@"%i", i];
+        NSString *UniqueIdentifier = @"SecondStoryBackgroundSessionIdentifier_";
+        UniqueIdentifier = [UniqueIdentifier stringByAppendingString:index];
+        
+        [configurations addObject: [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:UniqueIdentifier]];
+        [sessions addObject:[NSURLSession sessionWithConfiguration: [configurations objectAtIndex:i]  delegate: self delegateQueue: [NSOperationQueue mainQueue]]];
+    }
+    
+    NSURL_BACKGROUND_CONFIGURATIONS = [NSArray arrayWithArray:configurations];
+    NSURL_BACKGROUND_SESSIONS = [NSArray arrayWithArray:sessions];
 }
 
 
@@ -231,29 +250,32 @@
                 NSString *stringFromData = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
                 NSLog(@"DATA:\n%@\nEND DATA\n", stringFromData);
                 
+                // Populate Arrays
                 REMOTE_MEDIA_FILE_PATHS = [stringFromData componentsSeparatedByString:@"\n"];
+                [self instantiateURLSessions:[REMOTE_MEDIA_FILE_PATHS count]];
+                 
                 NSLog(@"THERE ARE %i MEDIA FILES", [REMOTE_MEDIA_FILE_PATHS count]);
                 for (int i = 0; i < [REMOTE_MEDIA_FILE_PATHS count]; i++) {
                     NSLog(@"FILE %i IS %@", i, [REMOTE_MEDIA_FILE_PATHS objectAtIndex:i]);
                 }
-                //[self getFile:[REMOTE_MEDIA_LIST objectAtIndex:0]];
+                
+                // Start First File
+                [self getFile:[REMOTE_MEDIA_FILE_PATHS objectAtIndex:downloadCounter]:downloadCounter];
             }]
      resume];
 }
 
-- (void) getFile : (NSString*) file {
+- (void) getFile : (NSString*) file :(int) index {
     NSLog(@"PASSED FILE IS %@", file);
     NSString *fullPathToFile = REMOTE_MEDIA_PATH;
     fullPathToFile = [fullPathToFile stringByAppendingString:file];
     NSLog(@"FULL PATH IS %@", fullPathToFile);
     
     NSURL *url = [NSURL URLWithString:fullPathToFile];
-    NSURLSessionDownloadTask *downloadTask = [self.backgroundSession downloadTaskWithURL: url];
+    NSURLSessionDownloadTask *downloadTask = [[NSURL_BACKGROUND_SESSIONS objectAtIndex:index ] downloadTaskWithURL: url];
     [downloadTask resume];
     
     [self.progressView setHidden:NO];
-    
-    // http://stackoverflow.com/questions/25762034/ios-7-nsurlsession-download-multiple-files-in-background
 }
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
@@ -266,25 +288,35 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:LOCAL_MEDIA_PATH];
-    //NSURL *customDirectory = [[NSURL alloc] initWithString:dataPath];
     NSURL *customDirectory = [NSURL fileURLWithPath:dataPath];
     
     // Get the file name and create a destination URL
     NSString *sendingFileName = [downloadTask.originalRequest.URL lastPathComponent];
     NSURL *destinationUrl = [customDirectory URLByAppendingPathComponent:sendingFileName];
     
-    // Hold this file as an NSData and write it to the new location
-    //NSData *fileData = [NSData dataWithContentsOfURL:location];
-    //[fileData writeToURL:destinationUrl atomically:NO];
-    
     // Move the file
     NSError *error = nil;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager moveItemAtURL:location toURL:destinationUrl error: &error]) {
         NSLog(@"Moving File To %@", destinationUrl);
-        /* Store some reference to the new URL */
-    } else {
-        /* Handle the error. */
+        
+        // List
+        [self listCustomDirectory];
+        
+        if(downloadCounter < [REMOTE_MEDIA_FILE_PATHS count] -1) {
+            // Increment Counter
+            downloadCounter++;
+            NSLog(@"Ready to start File #%i", downloadCounter);
+        
+            // Start Next File
+            [self getFile:[REMOTE_MEDIA_FILE_PATHS objectAtIndex:downloadCounter]:downloadCounter];
+        }
+        else {
+            NSLog(@"ALL DONE !!");
+            [self segue];
+        }
+    }
+    else {
         NSLog(@"Damn. Error %@", error);
     }
     
@@ -292,7 +324,7 @@
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
 {
-    //NSLog(@"Session %@ download task %@ wrote an additional %lld bytes (total %lld bytes) out of an expected %lld bytes.\n", session, downloadTask, bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
+    NSLog(@"Session %@ download task %@ wrote an additional %lld bytes (total %lld bytes) out of an expected %lld bytes.\n", session, downloadTask, bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
     
     float progress = (double)totalBytesWritten / (double)totalBytesExpectedToWrite;
     dispatch_async(dispatch_get_main_queue(), ^{
