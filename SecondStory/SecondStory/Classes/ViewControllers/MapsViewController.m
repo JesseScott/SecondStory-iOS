@@ -47,17 +47,30 @@
         shouldPlayLocal = NO;
     }
     
-    // YT
+    // Arrays
     youtubeIDS = [NSArray arrayWithObjects:
                     @"N0L1xyy8tqA", // BEEF
                     @"5npVxU_FMxg", // BIKE
-                    @"ZaM6fWMAu", // COPPER
+                    @"-zHUf_d3tUM", // ALLEY
+                    @"ZaM6fWMAu-Q",   // COPPER
                     @"VqKuwHpkI4o", // GUN
                     @"UA_T7eHy8mM", // PENNIES
                     @"YDkUmpZYcXc", // SHROOMS
                     @"F4BiLpAxFTs", // SWEEPING
                     @"vwLm44Og9xU", // UMBRELLAS
                   nil];
+    
+    fileNames = [NSArray arrayWithObjects:
+                    @"beef.mp4",
+                    @"bicycles.mp4",
+                    @"bloodalley.mp4",
+                    @"copperthief.mp4",
+                    @"gun.mp4",
+                    @"pennies.mp4",
+                    @"shrooms.mp4",
+                    @"sweeping.mp4",
+                    @"umbrellas.mp4",
+                 nil];
 
     // Alloc Player
     moviePlayer = [[MPMoviePlayerController alloc] init];

@@ -13,6 +13,7 @@
 @interface MapsViewController : UIViewController {
     NSString *videoURL;
     NSArray *youtubeIDS;
+    NSArray *fileNames;
     MPMoviePlayerController *moviePlayer;
     
     BOOL movieIsPlaying;
