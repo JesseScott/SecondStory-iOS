@@ -77,6 +77,10 @@
 		2D71620319E79E3D00B00989 /* guide.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D71620019E79E3D00B00989 /* guide.mp3 */; };
 		2D71620419E79E3D00B00989 /* map.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D71620119E79E3D00B00989 /* map.mp3 */; };
 		2D71620519E79E3D00B00989 /* map.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D71620119E79E3D00B00989 /* map.mp3 */; };
+		2D95825C19F49F7F004A46A8 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D95825B19F49F7F004A46A8 /* YTPlayerView.m */; };
+		2D95825D19F49F7F004A46A8 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D95825B19F49F7F004A46A8 /* YTPlayerView.m */; };
+		2D95826019F49F8C004A46A8 /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = 2D95825F19F49F8C004A46A8 /* YTPlayerView-iframe-player.html */; };
+		2D95826119F49F8C004A46A8 /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = 2D95825F19F49F8C004A46A8 /* YTPlayerView-iframe-player.html */; };
 		2DE8486B19A173700019053E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486A19A173700019053E /* Foundation.framework */; };
 		2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486C19A173700019053E /* CoreGraphics.framework */; };
 		2DE8486F19A173700019053E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486E19A173700019053E /* UIKit.framework */; };
@@ -221,6 +225,9 @@
 		2D626A5D19C7B37A00E9E6D7 /* about_pg4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_pg4.png; sourceTree = "<group>"; };
 		2D71620019E79E3D00B00989 /* guide.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guide.mp3; sourceTree = "<group>"; };
 		2D71620119E79E3D00B00989 /* map.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = map.mp3; sourceTree = "<group>"; };
+		2D95825A19F49F7F004A46A8 /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
+		2D95825B19F49F7F004A46A8 /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
+		2D95825F19F49F8C004A46A8 /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
 		2DE8486719A173700019053E /* SecondStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE8486A19A173700019053E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DE8486C19A173700019053E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -449,6 +456,25 @@
 			path = Assets/audio;
 			sourceTree = "<group>";
 		};
+		2D95825919F49F7F004A46A8 /* youtube */ = {
+			isa = PBXGroup;
+			children = (
+				2D95825A19F49F7F004A46A8 /* YTPlayerView.h */,
+				2D95825B19F49F7F004A46A8 /* YTPlayerView.m */,
+			);
+			name = youtube;
+			path = Classes/youtube;
+			sourceTree = "<group>";
+		};
+		2D95825E19F49F8C004A46A8 /* youtube */ = {
+			isa = PBXGroup;
+			children = (
+				2D95825F19F49F8C004A46A8 /* YTPlayerView-iframe-player.html */,
+			);
+			name = youtube;
+			path = Assets/youtube;
+			sourceTree = "<group>";
+		};
 		2DE8485E19A173700019053E = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +561,7 @@
 		2DE8489F19A17B220019053E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2D95825E19F49F8C004A46A8 /* youtube */,
 				2D7161FF19E79E3D00B00989 /* audio */,
 				2D35BFD919C23CE5003731E7 /* about */,
 				2D35BFCE19C238E2003731E7 /* global */,
@@ -553,6 +580,7 @@
 		2DE848A019A17B3A0019053E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2D95825919F49F7F004A46A8 /* youtube */,
 				2DE848FB19A17FF20019053E /* Delegate */,
 				2DE848FC19A17FFB0019053E /* ViewControllers */,
 				2DE8495A19A1B2080019053E /* QCAR */,
@@ -818,6 +846,7 @@
 				2D35BFC619C238C6003731E7 /* guide_explore_icon.png in Resources */,
 				2D35BF9C19C232F7003731E7 /* splash_bg@2x.png in Resources */,
 				2D35BFDB19C23CE5003731E7 /* about_bg.png in Resources */,
+				2D95826019F49F8C004A46A8 /* YTPlayerView-iframe-player.html in Resources */,
 				2DE848EF19A17D220019053E /* VuforiaSizzleReel_1.m4v in Resources */,
 				2D35BFD719C238E2003731E7 /* map_pin.png in Resources */,
 				2DE8487519A173700019053E /* InfoPlist.strings in Resources */,
@@ -875,6 +904,7 @@
 				2D35BFC519C238C6003731E7 /* guide_ear_icon.png in Resources */,
 				2D626A6119C7B37A00E9E6D7 /* about_pg2.png in Resources */,
 				2D35BFBF19C238C6003731E7 /* guide_bg.png in Resources */,
+				2D95826119F49F8C004A46A8 /* YTPlayerView-iframe-player.html in Resources */,
 				2D35BF9D19C232F7003731E7 /* splash_bg@2x.png in Resources */,
 				2DE8499D19A1B2080019053E /* SampleAppAboutViewController.xib in Resources */,
 				2D35BFB419C2369C003731E7 /* menu_bg.png in Resources */,
@@ -904,6 +934,7 @@
 				2D4D628719C5FA82007A75C2 /* MenuViewController.m in Sources */,
 				2DE8498619A1B2080019053E /* VideoPlayerHelper.mm in Sources */,
 				2DE849A019A1B2080019053E /* SampleAppMenu.m in Sources */,
+				2D95825C19F49F7F004A46A8 /* YTPlayerView.m in Sources */,
 				2D4D629319C5FABE007A75C2 /* AboutViewController.m in Sources */,
 				2DE8499A19A1B2080019053E /* SampleAppAboutViewController.m in Sources */,
 				2DE8498219A1B2080019053E /* VideoPlaybackEAGLView.mm in Sources */,
@@ -938,6 +969,7 @@
 				2DE8498919A1B2080019053E /* SampleApplication3DModel.m in Sources */,
 				2DE8498119A1B2080019053E /* SampleMath.cpp in Sources */,
 				2DE8489619A173710019053E /* SecondStoryTests.m in Sources */,
+				2D95825D19F49F7F004A46A8 /* YTPlayerView.m in Sources */,
 				2DE8498319A1B2080019053E /* VideoPlaybackEAGLView.mm in Sources */,
 				2DE8499F19A1B2080019053E /* SampleAppLeftMenuViewController.m in Sources */,
 				2DE8498F19A1B2080019053E /* SampleApplicationUtils.cpp in Sources */,
