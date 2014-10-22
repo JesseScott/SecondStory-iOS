@@ -162,12 +162,16 @@
 
 - (BOOL) videoIsLocal: (int) index {
     NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:nil];
-    if([contents count] < index) {
-        return NO;
+    NSString *fileNameToMatch = [fileNames objectAtIndex:index];
+    BOOL match = NO;
+    for (int i = 0; i < [contents count]; i++) {
+        NSLog(@"Item #%i is %@", i, [contents objectAtIndex:i]);
+        if ([[contents objectAtIndex:i] isEqualToString:fileNameToMatch]) {
+            NSLog(@"MATCH");
+            return YES;
+        }
     }
-    else  {
-        return YES;
-    }
+    return match;
 }
 
 - (NSURL*) returnPathofFileForIndex :(int) index {
@@ -204,7 +208,7 @@
     if(!movieIsPlaying) {
         NSURL *url;
         NSInteger index = [sender tag];
-        if(![self videoIsLocal:index]) {
+        if([self videoIsLocal:index]) {
             url = [self returnPathofFileForIndex:index];
             [self loadVideo:url];
         }
