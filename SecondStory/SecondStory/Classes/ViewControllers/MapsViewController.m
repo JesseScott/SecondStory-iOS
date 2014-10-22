@@ -39,11 +39,16 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     LOCAL_MEDIA_PATH = [documentsDirectory stringByAppendingPathComponent:customPath];
     
+    [self listCustomDirectory];
+    
     shouldPlayLocal = YES;
     if([self returnSizeOfDirectory] == 0) {
         shouldPlayLocal = NO;
     }
 
+    // Alloc Player
+    moviePlayer = [[MPMoviePlayerController alloc] init];
+                   
     // Hide Video View
     [self.view addSubview:self.videoView];
     [self.videoView setHidden:YES];
@@ -83,9 +88,9 @@
     
     // Show View
     [self.videoView setHidden:NO];
-    
-    //Set Player
-    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:videoUrl];
+
+    //Set URL
+    [moviePlayer setContentURL:videoUrl];
     
     //Set Frame
     moviePlayer.view.frame = CGRectMake(40, 203, 240, 128);
@@ -96,6 +101,9 @@
     
     // Loop Video
     moviePlayer.repeatMode = MPMovieRepeatModeNone;
+    
+    // Prepare
+    [moviePlayer prepareToPlay];
     
     // Play
     [moviePlayer play];
@@ -128,7 +136,7 @@
     NSString *file = [LOCAL_MEDIA_PATH stringByAppendingString:@"/"];
     file = [file stringByAppendingString:[contents objectAtIndex:index]];
     
-    NSURL *url = [NSURL URLWithString:file];
+    NSURL *url = [NSURL fileURLWithPath:file];
     return url;
 }
 
@@ -157,16 +165,17 @@
 # pragma mark IBACTION
 
 
-- (IBAction)clickedBeef:(id)sender {
+- (IBAction) clickedPin:(id)sender {
     if(!movieIsPlaying) {
         NSURL *url;
-        if(![self videoIsLocal:0] && shouldPlayLocal == YES) {
-            url = [[NSBundle mainBundle] URLForResource:@"beef" withExtension:@"mp4"];
+        NSInteger index = [sender tag];
+        if([self videoIsLocal:index]) {
+            url = [self returnPathofFileForIndex:index];
+            [self LoadVideo:url];
         }
         else {
-            url = [self returnPathofFileForIndex:0];
+            NSLog(@"NOT LOCAL");
         }
-        [self LoadVideo:url];
     }
     else {
         [moviePlayer stop];
@@ -174,85 +183,6 @@
     }
 }
 
-- (IBAction)clickedPennies:(id)sender {
-    if(!movieIsPlaying) {
-        NSURL *url = [[NSBundle mainBundle] URLForResource:@"pennies" withExtension:@"mp4"];
-        [self LoadVideo:url];
-    }
-    else {
-        [moviePlayer stop];
-        self.videoView.hidden = YES;
-    }
-}
-
-- (IBAction)clickedSweeping:(id)sender {
-    if(!movieIsPlaying) {
-        NSURL *url = [[NSBundle mainBundle] URLForResource:@"sweeping" withExtension:@"mp4"];
-        [self LoadVideo:url];
-    }
-    else {
-        [moviePlayer stop];
-        self.videoView.hidden = YES;
-    }
-}
-
-- (IBAction)clickedCopper:(id)sender {
-    if(!movieIsPlaying) {
-        NSURL *url = [[NSBundle mainBundle] URLForResource:@"copper" withExtension:@"mp4"];
-        [self LoadVideo:url];
-    }
-    else {
-        [moviePlayer stop];
-        self.videoView.hidden = YES;
-    }
-}
-
-- (IBAction)clickedMacrame:(id)sender {
-    if(!movieIsPlaying) {
-        NSURL *url = [[NSBundle mainBundle] URLForResource:@"shrooms" withExtension:@"mp4"];
-        [self LoadVideo:url];
-    }
-    else {
-        [moviePlayer stop];
-        self.videoView.hidden = YES;
-    }
-}
-
-- (IBAction)clickedUmbrellas:(id)sender {
-    if(!movieIsPlaying) {
-        NSURL *url = [[NSBundle mainBundle] URLForResource:@"umbrellas" withExtension:@"mp4"];
-        [self LoadVideo:url];
-    }
-}
-
-- (IBAction)clickedAlley:(id)sender {
-    if(!movieIsPlaying) {
-        NSURL *url = [[NSBundle mainBundle] URLForResource:@"bloodalley" withExtension:@"mp4"];
-        [self LoadVideo:url];
-    }
-}
-
-- (IBAction)clickedBike:(id)sender {
-    if(!movieIsPlaying) {
-        NSURL *url = [[NSBundle mainBundle] URLForResource:@"bicycles" withExtension:@"mp4"];
-        [self LoadVideo:url];
-    }
-    else {
-        [moviePlayer stop];
-        self.videoView.hidden = YES;
-    }
-}
-
-- (IBAction)clickedGun:(id)sender {
-    if(!movieIsPlaying) {
-        NSURL *url = [[NSBundle mainBundle] URLForResource:@"gun" withExtension:@"mp4"];
-        [self LoadVideo:url];
-    }
-    else {
-        [moviePlayer stop];
-        self.videoView.hidden = YES;
-    }
-}
 
 - (IBAction)tapped:(id)sender {
     //NSLog(@"TAPPED IBA");
