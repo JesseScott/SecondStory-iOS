@@ -11,9 +11,10 @@
 #import "YTPlayerView.h"
 
 @interface MapsViewController : UIViewController {
-    NSString *videoURL;
     NSArray *youtubeIDS;
     NSArray *fileNames;
+    NSString *matchedFile;
+
     MPMoviePlayerController *moviePlayer;
     
     BOOL movieIsPlaying;

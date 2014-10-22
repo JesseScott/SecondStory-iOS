@@ -168,16 +168,17 @@
         NSLog(@"Item #%i is %@", i, [contents objectAtIndex:i]);
         if ([[contents objectAtIndex:i] isEqualToString:fileNameToMatch]) {
             NSLog(@"MATCH");
+            LOCAL_FILE = fileNameToMatch;
             return YES;
         }
     }
     return match;
 }
 
-- (NSURL*) returnPathofFileForIndex :(int) index {
-    NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:nil];
+
+- (NSURL*) prepLocalURL {
     NSString *file = [LOCAL_MEDIA_PATH stringByAppendingString:@"/"];
-    file = [file stringByAppendingString:[contents objectAtIndex:index]];
+    file = [file stringByAppendingString:LOCAL_FILE];
     NSURL *url = [NSURL fileURLWithPath:file];
     return url;
 }
@@ -206,15 +207,12 @@
 
 - (IBAction) clickedPin:(id)sender {
     if(!movieIsPlaying) {
-        NSURL *url;
-        NSInteger index = [sender tag];
-        if([self videoIsLocal:index]) {
-            url = [self returnPathofFileForIndex:index];
-            [self loadVideo:url];
+        if([self videoIsLocal:[sender tag]]) {
+            [self loadVideo:[self prepLocalURL]];
         }
         else {
             NSLog(@"NOT LOCAL");
-            [self loadStream:index];
+            [self loadStream:[sender tag]];
         }
     }
     else {
