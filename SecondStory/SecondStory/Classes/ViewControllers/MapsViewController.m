@@ -24,6 +24,7 @@
 @synthesize gunButton;
 
 @synthesize videoView;
+@synthesize youtubeView;
 @synthesize backgroundView;
 @synthesize tap;
 
@@ -45,6 +46,18 @@
     if([self returnSizeOfDirectory] == 0) {
         shouldPlayLocal = NO;
     }
+    
+    // YT
+    youtubeIDS = [NSArray arrayWithObjects:
+                    @"N0L1xyy8tqA", // BEEF
+                    @"5npVxU_FMxg", // BIKE
+                    @"ZaM6fWMAu", // COPPER
+                    @"VqKuwHpkI4o", // GUN
+                    @"UA_T7eHy8mM", // PENNIES
+                    @"YDkUmpZYcXc", // SHROOMS
+                    @"F4BiLpAxFTs", // SWEEPING
+                    @"vwLm44Og9xU", // UMBRELLAS
+                  nil];
 
     // Alloc Player
     moviePlayer = [[MPMoviePlayerController alloc] init];
@@ -52,6 +65,9 @@
     // Hide Video View
     [self.view addSubview:self.videoView];
     [self.videoView setHidden:YES];
+    [self.view addSubview:youtubeView];
+    [self.youtubeView setHidden:YES];
+    
     
     // Set Playback State
     movieIsPlaying = NO;
@@ -84,10 +100,13 @@
 
 # pragma mark VIDEO
 
-- (void)LoadVideo: (NSURL*) videoUrl {
+- (void)loadVideo: (NSURL*) videoUrl {
     
     // Show View
     [self.videoView setHidden:NO];
+    
+    // Hide Youtube
+    [self.youtubeView setHidden:YES];
 
     //Set URL
     [moviePlayer setContentURL:videoUrl];
@@ -110,7 +129,6 @@
     
     // Finish
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished) name: MPMoviePlayerPlaybackDidFinishNotification object:moviePlayer];
-    
 }
 
 - (void)playbackFinished {
@@ -118,10 +136,18 @@
     [self.videoView setHidden:YES];
 }
 
+- (void)loadStream: (int) index {
+    // Hide Video View
+    [self.videoView setHidden:YES];
+    
+    // Show Youtube View
+    [self.youtubeView setHidden:NO];
+    [self.youtubeView loadWithVideoId:[youtubeIDS objectAtIndex:index]];
+}
+
 # pragma mark FILE
 
 - (BOOL) videoIsLocal: (int) index {
-
     NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:nil];
     if([contents count] < index) {
         return NO;
@@ -135,13 +161,11 @@
     NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:nil];
     NSString *file = [LOCAL_MEDIA_PATH stringByAppendingString:@"/"];
     file = [file stringByAppendingString:[contents objectAtIndex:index]];
-    
     NSURL *url = [NSURL fileURLWithPath:file];
     return url;
 }
 
 - (void) listCustomDirectory {
-    
     NSError *error = nil;
     NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:&error];
     NSLog(@"DIRECTORY HAS %i FILES", [contents count]);
@@ -151,13 +175,11 @@
 }
 
 - (int) returnSizeOfDirectory {
-    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:LOCAL_MEDIA_PATH];
     NSError *error = nil;
     NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dataPath error:&error];
-    
     return [contents count];
 }
 
@@ -169,12 +191,13 @@
     if(!movieIsPlaying) {
         NSURL *url;
         NSInteger index = [sender tag];
-        if([self videoIsLocal:index]) {
+        if(![self videoIsLocal:index]) {
             url = [self returnPathofFileForIndex:index];
-            [self LoadVideo:url];
+            [self loadVideo:url];
         }
         else {
             NSLog(@"NOT LOCAL");
+            [self loadStream:index];
         }
     }
     else {
