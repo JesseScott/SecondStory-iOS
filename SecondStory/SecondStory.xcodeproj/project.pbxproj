@@ -82,6 +82,10 @@
 		2D95826019F49F8C004A46A8 /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = 2D95825F19F49F8C004A46A8 /* YTPlayerView-iframe-player.html */; };
 		2D95826119F49F8C004A46A8 /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = 2D95825F19F49F8C004A46A8 /* YTPlayerView-iframe-player.html */; };
 		2DB2874C1A0AE96E005892A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DE8488219A173710019053E /* Images.xcassets */; };
+		2DB2874F1A0AEE31005892A2 /* SecondStory.dat in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2874D1A0AEE31005892A2 /* SecondStory.dat */; };
+		2DB287501A0AEE31005892A2 /* SecondStory.dat in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2874D1A0AEE31005892A2 /* SecondStory.dat */; };
+		2DB287511A0AEE31005892A2 /* SecondStory.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2874E1A0AEE31005892A2 /* SecondStory.xml */; };
+		2DB287521A0AEE31005892A2 /* SecondStory.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2874E1A0AEE31005892A2 /* SecondStory.xml */; };
 		2DE8486B19A173700019053E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486A19A173700019053E /* Foundation.framework */; };
 		2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486C19A173700019053E /* CoreGraphics.framework */; };
 		2DE8486F19A173700019053E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486E19A173700019053E /* UIKit.framework */; };
@@ -229,6 +233,8 @@
 		2D95825A19F49F7F004A46A8 /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
 		2D95825B19F49F7F004A46A8 /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
 		2D95825F19F49F8C004A46A8 /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
+		2DB2874D1A0AEE31005892A2 /* SecondStory.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = SecondStory.dat; sourceTree = "<group>"; };
+		2DB2874E1A0AEE31005892A2 /* SecondStory.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SecondStory.xml; sourceTree = "<group>"; };
 		2DE8486719A173700019053E /* SecondStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE8486A19A173700019053E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DE8486C19A173700019053E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -600,6 +606,8 @@
 		2DE848CC19A17D220019053E /* Vuforia */ = {
 			isa = PBXGroup;
 			children = (
+				2DB2874D1A0AEE31005892A2 /* SecondStory.dat */,
+				2DB2874E1A0AEE31005892A2 /* SecondStory.xml */,
 				2DE848CD19A17D220019053E /* icon_error.png */,
 				2DE848CE19A17D220019053E /* icon_loading.png */,
 				2DE848CF19A17D220019053E /* icon_play.png */,
@@ -820,6 +828,7 @@
 				2D35BFB319C2369C003731E7 /* menu_bg.png in Resources */,
 				2D35BFD319C238E2003731E7 /* global_back_icon.png in Resources */,
 				2D35BF9A19C232F7003731E7 /* icon-splotlight-ios7@2x.png in Resources */,
+				2DB2874F1A0AEE31005892A2 /* SecondStory.dat in Resources */,
 				2DE8499C19A1B2080019053E /* SampleAppAboutViewController.xib in Resources */,
 				2DE8499419A1B2080019053E /* Simple.fragsh in Resources */,
 				2D71620219E79E3D00B00989 /* guide.mp3 in Resources */,
@@ -854,6 +863,7 @@
 				2D35BFAB19C235D9003731E7 /* Default-568h@2x.png in Resources */,
 				2DE848E919A17D220019053E /* StonesAndChips.dat in Resources */,
 				2DE8487E19A173710019053E /* Main.storyboard in Resources */,
+				2DB287511A0AEE31005892A2 /* SecondStory.xml in Resources */,
 				2DE848F119A17D220019053E /* VuforiaSizzleReel_1.png in Resources */,
 				2D35BF9619C232F7003731E7 /* icon-retina@2x.png in Resources */,
 				2DE848DB19A17D220019053E /* icon_error.png in Resources */,
@@ -869,6 +879,8 @@
 			files = (
 				2DE8489419A173710019053E /* InfoPlist.strings in Resources */,
 				2DE8499119A1B2080019053E /* Line.fragsh in Resources */,
+				2DB287501A0AEE31005892A2 /* SecondStory.dat in Resources */,
+				2DB287521A0AEE31005892A2 /* SecondStory.xml in Resources */,
 				2D35BFCD19C238C6003731E7 /* guide_toggle_icon.png in Resources */,
 				2D35BFAE19C235D9003731E7 /* Default.png in Resources */,
 				2DE848F019A17D220019053E /* VuforiaSizzleReel_1.m4v in Resources */,
