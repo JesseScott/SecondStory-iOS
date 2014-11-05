@@ -424,7 +424,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="MAPS" id="fYx-Ri-Qle"/>
+                    <navigationItem key="navigationItem" title="MAPS" id="fYx-Ri-Qle">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="d3Z-Zh-5Ej">
+                            <connections>
+                                <segue destination="ZRS-bL-Z9C" kind="modal" id="jZx-hv-I1G"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="alleyButton" destination="Ykt-3i-A5y" id="jhK-Yf-HL0"/>
                         <outlet property="backgroundView" destination="1BZ-Y7-fwD" id="0J3-0G-sTu"/>
@@ -555,4 +561,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="jZx-hv-I1G"/>
+    </inferredMetricsTieBreakers>
 </document>

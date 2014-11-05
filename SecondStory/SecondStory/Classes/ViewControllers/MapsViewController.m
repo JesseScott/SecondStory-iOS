@@ -226,5 +226,8 @@
     //NSLog(@"TAPPED IBA");
 }
 
+- (IBAction)clickedCamera:(id)sender {
+}
+
 
 @end
