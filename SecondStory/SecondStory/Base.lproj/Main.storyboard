@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="jjl-li-ZLg" userLabel="background">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="jjl-li-ZLg" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="uIN-fJ-x3E" userLabel="logo">
@@ -38,7 +38,6 @@
                             <constraint firstItem="uIN-fJ-x3E" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="8D5-YJ-G02"/>
                             <constraint firstItem="AyB-uF-iaA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="34" id="FnU-ZX-X1G"/>
                             <constraint firstAttribute="trailing" secondItem="AyB-uF-iaA" secondAttribute="trailing" constant="20" symbolic="YES" id="KMX-QJ-RUq"/>
-                            <constraint firstItem="uIN-fJ-x3E" firstAttribute="centerX" secondItem="jjl-li-ZLg" secondAttribute="centerX" id="Yi1-3k-35C"/>
                             <constraint firstItem="uIN-fJ-x3E" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="lFr-AZ-bcP"/>
                         </constraints>
                     </view>
@@ -286,7 +285,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="GUIDE" id="LjX-X0-93Y">
-                        <barButtonItem key="rightBarButtonItem" image="guide_replay_icon.png" style="plain" id="bug-kw-S5m">
+                        <barButtonItem key="rightBarButtonItem" image="guide_replay_icon.png" id="bug-kw-S5m">
                             <connections>
                                 <action selector="replayAudio:" destination="Biq-Qy-Yep" id="CGM-MP-eXK"/>
                             </connections>
