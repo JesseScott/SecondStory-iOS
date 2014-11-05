@@ -26,6 +26,19 @@
     // Audio
     [self performSelector:@selector(playAudio) withObject:self afterDelay:2.0];
     
+    // Lifecycle
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(pauseAudio)
+     name:UIApplicationWillResignActiveNotification
+     object:nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(resumeAudio)
+     name:UIApplicationDidBecomeActiveNotification
+     object:nil];
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -56,6 +69,14 @@
     [player play];
 }
 
+
+- (void) pauseAudio {
+    //NSLog(@"PAUSE");
+}
+
+- (void) resumeAudio {
+    //NSLog(@"RESUME");
+}
 
 - (IBAction)replayAudio:(id)sender {
     [self playAudio];

@@ -88,6 +88,19 @@
     // Tap
     UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     [self.view addGestureRecognizer:singleFingerTap];
+    
+    // Lifecycle
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(pauseVideo)
+     name:UIApplicationWillResignActiveNotification
+     object:nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(resumeVideo)
+     name:UIApplicationDidBecomeActiveNotification
+     object:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -156,6 +169,20 @@
     // Show Youtube View
     [self.youtubeView setHidden:NO];
     [self.youtubeView loadWithVideoId:[youtubeIDS objectAtIndex:index]];
+}
+
+- (void) pauseVideo {
+    NSLog(@"PAUSE");
+    if([moviePlayer playbackState] == MPMoviePlaybackStatePlaying ) {
+        [moviePlayer pause];
+    }
+}
+
+- (void) resumeVideo {
+    NSLog(@"RESUME");
+    if([moviePlayer playbackState] == MPMoviePlaybackStatePaused ) {
+        [moviePlayer play];
+    }
 }
 
 # pragma mark FILE
