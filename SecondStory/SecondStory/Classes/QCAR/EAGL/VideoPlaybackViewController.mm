@@ -111,7 +111,6 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     // Create the EAGLView
     eaglView = [[VideoPlaybackEAGLView alloc] initWithFrame:viewFrame  rootViewController:self appSession:vapp];
     [self setView:eaglView];
-    //[self.view addSubview:eaglView];
     
     CGRect mainBounds = [[UIScreen mainScreen] bounds];
     CGRect indicatorBounds = CGRectMake(mainBounds.size.width / 2 - 12,
@@ -126,8 +125,11 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     
     backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    backButton.frame = CGRectMake(20.0, 20.0, 44.0, 44.0);
+    backButton.frame = CGRectMake(15.0, 25.0, 25.0, 29.0);
+    //[backButton setBackgroundColor:[UIColor redColor]];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"global_back_icon"] forState:UIControlStateNormal];
     [self.view addSubview:backButton];
+    
     
     [vapp initAR:QCAR::GL_20 ARViewBoundsSize:viewFrame.size orientation:UIInterfaceOrientationPortrait];
     
