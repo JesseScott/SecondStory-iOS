@@ -111,6 +111,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     // Create the EAGLView
     eaglView = [[VideoPlaybackEAGLView alloc] initWithFrame:viewFrame  rootViewController:self appSession:vapp];
     [self setView:eaglView];
+    //[self.view addSubview:eaglView];
     
     CGRect mainBounds = [[UIScreen mainScreen] bounds];
     CGRect indicatorBounds = CGRectMake(mainBounds.size.width / 2 - 12,
@@ -122,6 +123,11 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
     [eaglView addSubview:loadingIndicator];
     [loadingIndicator startAnimating];
+    
+    backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    backButton.frame = CGRectMake(20.0, 20.0, 44.0, 44.0);
+    [self.view addSubview:backButton];
     
     [vapp initAR:QCAR::GL_20 ARViewBoundsSize:viewFrame.size orientation:UIInterfaceOrientationPortrait];
     
@@ -240,6 +246,11 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 
 
 // Present a view controller using the root view controller (eaglViewController)
+- (void)back:(id)sender {
+    [self dimissController: self];
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
 - (void)rootViewControllerPresentViewController:(UIViewController*)viewController inContext:(BOOL)currentContext
 {
 //    if (YES == currentContext) {

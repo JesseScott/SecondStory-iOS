@@ -18,12 +18,11 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     SampleApplicationSession * vapp;
     
     BOOL fullScreenPlayerPlaying;
-    
+    UIButton *backButton;
     UINavigationController * navController;
 }
 
-- (void)rootViewControllerPresentViewController:(UIViewController*)viewController inContext:(BOOL)currentContext;
-- (void)rootViewControllerDismissPresentedViewController;
-
+- (void) rootViewControllerPresentViewController:(UIViewController*)viewController inContext:(BOOL)currentContext;
+- (void) rootViewControllerDismissPresentedViewController;
 - (void) setNavigationController:(UINavigationController *) navController;
 @end
