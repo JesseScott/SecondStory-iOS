@@ -126,7 +126,6 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     backButton.frame = CGRectMake(15.0, 25.0, 25.0, 29.0);
-    //[backButton setBackgroundColor:[UIColor redColor]];
     [backButton setBackgroundImage:[UIImage imageNamed:@"global_back_icon"] forState:UIControlStateNormal];
     [self.view addSubview:backButton];
     
@@ -220,6 +219,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    NSLog(@"VideoPlaybackViewController :: didReceiveMemoryWarning");
 }
 
 // double tap handler
@@ -322,7 +322,8 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 
 // load the data associated to the trackers
 - (bool) doLoadTrackersData {
-    return [self loadAndActivateImageTrackerDataSet:@"StonesAndChips.xml"];
+    //return [self loadAndActivateImageTrackerDataSet:@"StonesAndChips.xml"];
+    return [self loadAndActivateImageTrackerDataSet:@"SecondStory.xml"];
 }
 
 // start the application trackers
