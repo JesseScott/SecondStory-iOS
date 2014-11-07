@@ -55,8 +55,17 @@ namespace {
         "icon_play.png",
         "icon_loading.png",
         "icon_error.png",
-        "VuforiaSizzleReel_1.png",
-        "VuforiaSizzleReel_2.png"
+        //"VuforiaSizzleReel_1.png",
+        //"VuforiaSizzleReel_2.png"
+        "alley.jpg",
+        "beef.jpg",
+        "bicycles.jpg",
+        "copper.jpg",
+        "gun.jpg",
+        "pennies.jpg",
+        "shrooms.jpg",
+        "sweeping.jpg",
+        "umbrellas.jpg"
     };
     
     enum tagObjectIndex {
@@ -195,17 +204,43 @@ namespace {
     
     // For each video-augmented target
     for (int i = 0; i < NUM_VIDEO_TARGETS; ++i) {
-        // Load a local file for playback and resume playback if video was
-        // playing when the app went into the background
+        // Load a local file for playback and resume playback if video was playing when the app went into the background
         VideoPlayerHelper* player = [self getVideoPlayerHelper:i];
         NSString* filename;
         
         switch (i) {
             case 0:
-            filename = @"VuforiaSizzleReel_1.m4v";
+                filename = @"VuforiaSizzleReel_1.m4v";
             break;
+            case 1:
+                filename = @"VuforiaSizzleReel_1.m4v";
+                break;
+            case 2:
+                filename = @"VuforiaSizzleReel_1.m4v";
+                break;
+            case 3:
+                filename = @"VuforiaSizzleReel_1.m4v";
+                break;
+            case 4:
+                filename = @"VuforiaSizzleReel_1.m4v";
+                break;
+            case 5:
+                filename = @"VuforiaSizzleReel_1.m4v";
+                break;
+            case 6:
+                filename = @"VuforiaSizzleReel_1.m4v";
+                break;
+            case 7:
+                filename = @"VuforiaSizzleReel_1.m4v";
+                break;
+            case 8:
+                filename = @"VuforiaSizzleReel_1.m4v";
+                break;
+            case 9:
+                filename = @"VuforiaSizzleReel_1.m4v";
+                break;
             default:
-            filename = @"VuforiaSizzleReel_2.m4v";
+                filename = @"VuforiaSizzleReel_2.m4v";
             break;
         }
         
@@ -430,11 +465,35 @@ namespace {
         
         // VideoPlayerHelper to use for current target
         int playerIndex = 0;    // stones
-        
-        if (strcmp(imageTarget.getName(), "chips") == 0)
-        {
+
+        if (strcmp(imageTarget.getName(), "ba_alley") == 0) {
+            playerIndex = 0;
+        }
+        else if (strcmp(imageTarget.getName(), "ba_beef") == 0) {
             playerIndex = 1;
         }
+        else if (strcmp(imageTarget.getName(), "ba_bicycles") == 0) {
+            playerIndex = 2;
+        }
+        else if (strcmp(imageTarget.getName(), "ba_copper") == 0) {
+            playerIndex = 3;
+        }
+        else if (strcmp(imageTarget.getName(), "ba_gun") == 0) {
+            playerIndex = 4;
+        }
+        else if (strcmp(imageTarget.getName(), "ba_pennies") == 0) {
+            playerIndex = 5;
+        }
+        else if (strcmp(imageTarget.getName(), "ba_shrooms") == 0) {
+            playerIndex = 6;
+        }
+        else if (strcmp(imageTarget.getName(), "ba_sweeping") == 0) {
+            playerIndex = 7;
+        }
+        else if (strcmp(imageTarget.getName(), "ba_umbrellas") == 0) {
+            playerIndex = 8;
+        }
+        
         
         // Mark this video (target) as active
         videoData[playerIndex].isActive = YES;
