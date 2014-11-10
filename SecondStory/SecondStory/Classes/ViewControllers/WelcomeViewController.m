@@ -249,8 +249,9 @@
         NSString *index = [NSString stringWithFormat:@"%i", i];
         NSString *UniqueIdentifier = @"SecondStoryBackgroundSessionIdentifier_";
         UniqueIdentifier = [UniqueIdentifier stringByAppendingString:index];
-        
-        [configurations addObject: [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:UniqueIdentifier]];
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration backgroundSessionConfiguration:UniqueIdentifier];
+        config.allowsCellularAccess = NO;
+        [configurations addObject: config];
         [sessions addObject:[NSURLSession sessionWithConfiguration: [configurations objectAtIndex:i]  delegate: self delegateQueue: [NSOperationQueue mainQueue]]];
     }
     
@@ -377,6 +378,8 @@
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
     NSLog(@"SessionTask %@ gave error %@.\n", task, error);
 }
+
+
 
 
 
