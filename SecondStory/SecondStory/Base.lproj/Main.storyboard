@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Splash-->
@@ -62,10 +63,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-ce-ZLW" userLabel="background">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-ce-ZLW" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rbm-Sk-V92">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rbm-Sk-V92">
                                 <rect key="frame" x="85" y="283" width="150" height="2"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2L6-Rj-YJE">
@@ -86,11 +87,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2L6-Rj-YJE" firstAttribute="centerX" secondItem="rbm-Sk-V92" secondAttribute="centerX" id="4LG-9M-jnt"/>
-                            <constraint firstItem="2L6-Rj-YJE" firstAttribute="trailing" secondItem="vuU-ce-ZLW" secondAttribute="trailing" id="9jb-Mp-BfI"/>
+                            <constraint firstItem="rbm-Sk-V92" firstAttribute="centerY" secondItem="gn5-w2-xmK" secondAttribute="centerY" id="8JR-a8-cqR"/>
+                            <constraint firstItem="vuU-ce-ZLW" firstAttribute="leading" secondItem="2L6-Rj-YJE" secondAttribute="leading" id="ERN-lv-nma"/>
+                            <constraint firstItem="vuU-ce-ZLW" firstAttribute="bottom" secondItem="gfx-wC-K5m" secondAttribute="top" id="gvn-qc-EDv"/>
+                            <constraint firstItem="vuU-ce-ZLW" firstAttribute="trailing" secondItem="2L6-Rj-YJE" secondAttribute="trailing" id="hDt-tI-x3H"/>
+                            <constraint firstItem="vuU-ce-ZLW" firstAttribute="centerY" secondItem="rbm-Sk-V92" secondAttribute="centerY" id="lqO-Pz-1Tg"/>
                             <constraint firstItem="gfx-wC-K5m" firstAttribute="top" secondItem="2L6-Rj-YJE" secondAttribute="bottom" constant="108" id="nbj-k1-wqa"/>
+                            <constraint firstItem="rbm-Sk-V92" firstAttribute="centerX" secondItem="2L6-Rj-YJE" secondAttribute="centerX" id="plA-6s-Kla"/>
+                            <constraint firstItem="rbm-Sk-V92" firstAttribute="leading" secondItem="gn5-w2-xmK" secondAttribute="leadingMargin" constant="69" id="qOl-4f-W02"/>
                             <constraint firstItem="2L6-Rj-YJE" firstAttribute="leading" secondItem="gn5-w2-xmK" secondAttribute="leading" id="xtQ-V2-HLu"/>
-                            <constraint firstItem="2L6-Rj-YJE" firstAttribute="leading" secondItem="vuU-ce-ZLW" secondAttribute="leading" id="xwO-69-rjg"/>
                         </constraints>
                     </view>
                     <connections>
