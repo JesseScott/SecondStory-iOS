@@ -19,6 +19,7 @@
 // Synthesize
 @synthesize progressView;
 @synthesize backgroundSession;
+@synthesize skipButton;
 
 #pragma mark VIEW
 
@@ -27,6 +28,7 @@
     [super viewDidLoad];
     
     [self.progressView setHidden:YES];
+    [self.skipButton setHidden:YES];
     
 }
 
@@ -72,11 +74,22 @@
 - (void) showNotEnoughSpaceDialog
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not Enough Space"
-                                                    message:@"this app requires 500mb of space in order to download the content"
+                                                    message:@"this app requires 500mb of space in order to download the content. You can skip for now and stream the content, or come back when you have enough space."
                                                    delegate:self
-                                          cancelButtonTitle:@":("
-                                          otherButtonTitles:nil];
+                                          cancelButtonTitle:@"Skip"
+                                          otherButtonTitles:@"Quit"];
     alert.tag = 200;
+    [alert show];
+}
+
+- (void) showSkipOrWaitDialog
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"In Progress"
+                                                    message:@"this app is currently downloading the content... feel free to press the skip button and it will continue in the background."
+                                                   delegate:self
+                                          cancelButtonTitle:@"Skip"
+                                          otherButtonTitles:@"Wait"];
+    alert.tag = 300;
     [alert show];
 }
                                               
@@ -87,8 +100,31 @@
         }
         else if(buttonIndex == 1) { // Download
             [self prepDownload];
+            [self.skipButton setHidden:NO];
         }
     }
+    else if (alertView.tag == 200) {
+        if(buttonIndex == 0) { // Skip
+            // Set Stream Defaults
+            [self segue];
+        }
+        else if(buttonIndex == 1) { // Quit
+            
+        }
+    }
+    else if (alertView.tag == 300) {
+        if(buttonIndex == 0) { // Skip
+            [self segue];
+        }
+        else if(buttonIndex == 1) { // Wait
+            [self.skipButton setHidden:NO];
+        }
+    }
+}
+
+
+- (IBAction)skip:(id)sender {
+    [self segue];
 }
 
 
