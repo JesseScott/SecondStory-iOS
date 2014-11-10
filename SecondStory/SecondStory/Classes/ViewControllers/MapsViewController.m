@@ -118,6 +118,11 @@
     [self.navigationController.navigationBar setTitleTextAttributes:textAttributes];
 }
 
+- (void) viewWillDisappear:(BOOL)animated {
+    [moviePlayer stop];
+    [self.videoView setHidden:YES];
+}
+
 - (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
     [moviePlayer stop];
     [self.videoView setHidden:YES];
