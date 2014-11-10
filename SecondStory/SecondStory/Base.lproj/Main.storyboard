@@ -62,17 +62,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-ce-ZLW" userLabel="background">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-ce-ZLW" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rbm-Sk-V92">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rbm-Sk-V92">
                                 <rect key="frame" x="85" y="283" width="150" height="2"/>
                             </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2L6-Rj-YJE">
+                                <rect key="frame" x="0.0" y="400" width="320" height="60"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.0" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="hsM-9D-uPm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="SKIP">
+                                    <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skip:" destination="Vuc-oS-ZNc" eventType="touchUpInside" id="Ran-UN-aIC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2L6-Rj-YJE" firstAttribute="centerX" secondItem="rbm-Sk-V92" secondAttribute="centerX" id="4LG-9M-jnt"/>
+                            <constraint firstItem="2L6-Rj-YJE" firstAttribute="trailing" secondItem="vuU-ce-ZLW" secondAttribute="trailing" id="9jb-Mp-BfI"/>
+                            <constraint firstItem="gfx-wC-K5m" firstAttribute="top" secondItem="2L6-Rj-YJE" secondAttribute="bottom" constant="108" id="nbj-k1-wqa"/>
+                            <constraint firstItem="2L6-Rj-YJE" firstAttribute="leading" secondItem="gn5-w2-xmK" secondAttribute="leading" id="xtQ-V2-HLu"/>
+                            <constraint firstItem="2L6-Rj-YJE" firstAttribute="leading" secondItem="vuU-ce-ZLW" secondAttribute="leading" id="xwO-69-rjg"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="progressView" destination="rbm-Sk-V92" id="vuR-gn-E52"/>
+                        <outlet property="skipButton" destination="2L6-Rj-YJE" id="aac-aJ-30x"/>
                         <segue destination="cDE-ux-JJx" kind="modal" identifier="segue_welcome2menu" id="2A6-92-HKe"/>
                     </connections>
                 </viewController>
@@ -561,6 +584,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jZx-hv-I1G"/>
+        <segue reference="TZp-oe-crs"/>
     </inferredMetricsTieBreakers>
 </document>
