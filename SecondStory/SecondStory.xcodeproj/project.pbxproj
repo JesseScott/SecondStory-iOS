@@ -103,6 +103,10 @@
 		2DB2876C1A0AEEFD005892A2 /* sweeping.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2875B1A0AEEFD005892A2 /* sweeping.jpg */; };
 		2DB2876D1A0AEEFD005892A2 /* umbrellas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2875C1A0AEEFD005892A2 /* umbrellas.jpg */; };
 		2DB2876E1A0AEEFD005892A2 /* umbrellas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2875C1A0AEEFD005892A2 /* umbrellas.jpg */; };
+		2DC37FD01A13F4F100E3D592 /* bloodalley_filenames_local.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DC37FCF1A13F4F100E3D592 /* bloodalley_filenames_local.plist */; };
+		2DC37FD11A13F4F100E3D592 /* bloodalley_filenames_local.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DC37FCF1A13F4F100E3D592 /* bloodalley_filenames_local.plist */; };
+		2DC37FD31A13F5E300E3D592 /* bloodalley_filenames_remote.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DC37FD21A13F5E300E3D592 /* bloodalley_filenames_remote.plist */; };
+		2DC37FD41A13F5E300E3D592 /* bloodalley_filenames_remote.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DC37FD21A13F5E300E3D592 /* bloodalley_filenames_remote.plist */; };
 		2DE8486B19A173700019053E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486A19A173700019053E /* Foundation.framework */; };
 		2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486C19A173700019053E /* CoreGraphics.framework */; };
 		2DE8486F19A173700019053E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE8486E19A173700019053E /* UIKit.framework */; };
@@ -260,6 +264,8 @@
 		2DB2875A1A0AEEFD005892A2 /* shrooms.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shrooms.jpg; sourceTree = "<group>"; };
 		2DB2875B1A0AEEFD005892A2 /* sweeping.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sweeping.jpg; sourceTree = "<group>"; };
 		2DB2875C1A0AEEFD005892A2 /* umbrellas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = umbrellas.jpg; sourceTree = "<group>"; };
+		2DC37FCF1A13F4F100E3D592 /* bloodalley_filenames_local.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = bloodalley_filenames_local.plist; path = Assets/plists/bloodalley_filenames_local.plist; sourceTree = "<group>"; };
+		2DC37FD21A13F5E300E3D592 /* bloodalley_filenames_remote.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = bloodalley_filenames_remote.plist; path = Assets/plists/bloodalley_filenames_remote.plist; sourceTree = "<group>"; };
 		2DE8486719A173700019053E /* SecondStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DE8486A19A173700019053E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DE8486C19A173700019053E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -523,6 +529,15 @@
 			path = Assets/frames;
 			sourceTree = "<group>";
 		};
+		2DC37FCE1A13F4D100E3D592 /* plists */ = {
+			isa = PBXGroup;
+			children = (
+				2DC37FD21A13F5E300E3D592 /* bloodalley_filenames_remote.plist */,
+				2DC37FCF1A13F4F100E3D592 /* bloodalley_filenames_local.plist */,
+			);
+			name = plists;
+			sourceTree = "<group>";
+		};
 		2DE8485E19A173700019053E = {
 			isa = PBXGroup;
 			children = (
@@ -609,6 +624,7 @@
 		2DE8489F19A17B220019053E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2DC37FCE1A13F4D100E3D592 /* plists */,
 				2D35BF8F19C232F7003731E7 /* icons */,
 				2D35BFA719C235D9003731E7 /* launch */,
 				2D95825E19F49F8C004A46A8 /* youtube */,
@@ -862,6 +878,7 @@
 				2DE848DD19A17D220019053E /* icon_loading.png in Resources */,
 				2D35BFC019C238C6003731E7 /* guide_cars_icon.png in Resources */,
 				2DE8499219A1B2080019053E /* Line.vertsh in Resources */,
+				2DC37FD01A13F4F100E3D592 /* bloodalley_filenames_local.plist in Resources */,
 				2DB2876B1A0AEEFD005892A2 /* sweeping.jpg in Resources */,
 				2DE848E519A17D220019053E /* start_medium.png in Resources */,
 				2DE848F319A17D220019053E /* VuforiaSizzleReel_2.m4v in Resources */,
@@ -890,6 +907,7 @@
 				2DB287651A0AEEFD005892A2 /* gun.jpg in Resources */,
 				2DE848DF19A17D220019053E /* icon_play.png in Resources */,
 				2D35BFAF19C235D9003731E7 /* Default@2x.png in Resources */,
+				2DC37FD31A13F5E300E3D592 /* bloodalley_filenames_remote.plist in Resources */,
 				2D35BFD519C238E2003731E7 /* map_bg.png in Resources */,
 				2DE8499019A1B2080019053E /* Line.fragsh in Resources */,
 				2DE848ED19A17D220019053E /* VP_about.html in Resources */,
@@ -931,6 +949,7 @@
 				2DE8489419A173710019053E /* InfoPlist.strings in Resources */,
 				2DE8499119A1B2080019053E /* Line.fragsh in Resources */,
 				2DB287501A0AEE31005892A2 /* SecondStory.dat in Resources */,
+				2DC37FD11A13F4F100E3D592 /* bloodalley_filenames_local.plist in Resources */,
 				2DB287521A0AEE31005892A2 /* SecondStory.xml in Resources */,
 				2D35BFCD19C238C6003731E7 /* guide_toggle_icon.png in Resources */,
 				2D35BFAE19C235D9003731E7 /* Default.png in Resources */,
@@ -959,6 +978,7 @@
 				2D35BFB019C235D9003731E7 /* Default@2x.png in Resources */,
 				2D35BFCB19C238C6003731E7 /* guide_replay_icon@2x.png in Resources */,
 				2D35BF9719C232F7003731E7 /* icon-retina@2x.png in Resources */,
+				2DC37FD41A13F5E300E3D592 /* bloodalley_filenames_remote.plist in Resources */,
 				2D35BFA619C2337A003731E7 /* din alternate medium.ttf in Resources */,
 				2DE848E819A17D220019053E /* start_medium_press.png in Resources */,
 				2DE848E019A17D220019053E /* icon_play.png in Resources */,
