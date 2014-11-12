@@ -361,8 +361,14 @@ static NSString* const kRateKey = @"rate";
             // ----- Info: additional player threads not running at this point -----
             
             // Use an MPMoviePlayerController to play the media, owned by our
-            // own MovieViewContrllerClass
+            // own MovieViewControllerClass
             movieViewController = [[MovieViewController alloc] init];
+            
+            // LANDSCAPE
+            //[movieViewController setOrientation:UIInterfaceOrientationLandscapeLeft];
+            //[movieViewController shouldAutorotate:YES];
+            //[movieViewController shouldAutorotateToInterfaceOrientation:UIInterfaceOrientationLandscapeLeft:YES];
+            //[movieViewController shouldAutorotateToInterfaceOrientation:UIInterfaceOrientationLandscapeRight:YES];
 
             // Set up observations
             [[NSNotificationCenter defaultCenter] addObserver:self

@@ -265,27 +265,6 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 
 - (void)rootViewControllerPresentViewController:(UIViewController*)viewController inContext:(BOOL)currentContext
 {
-//    if (YES == currentContext) {
-//        // Use UIModalPresentationCurrentContext so the root view is not hidden
-//        // when presenting another view controller
-//        [self setModalPresentationStyle:UIModalPresentationCurrentContext];
-//    }
-//    else {
-//        // Use UIModalPresentationFullScreen so the presented view controller
-//        // covers the screen
-//        [self setModalPresentationStyle:UIModalPresentationFullScreen];
-//    }
-//    
-//    if ([self respondsToSelector:@selector(presentViewController:animated:completion:)]) {
-//        // iOS > 4
-//        [self presentViewController:viewController animated:NO completion:nil];
-//    }
-//    else {
-//        // iOS 4
-//        [self presentModalViewController:viewController animated:NO];
-//    }
-    
-    NSLog(@"navigationController is:%@", [navController description]);
     fullScreenPlayerPlaying = YES;
     [self.navigationController pushViewController:viewController animated:YES];
 }
@@ -294,21 +273,8 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 // (eaglViewController)
 - (void)rootViewControllerDismissPresentedViewController
 {
-//    // Dismiss the presented view controller (return to the root view
-//    // controller)
-//    if ([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
-//        // iOS > 4
-//        [self dismissViewControllerAnimated:NO completion:nil];
-//    }
-//    else {
-//        // iOS 4
-//        [self dismissModalViewControllerAnimated:NO];
-//    }
-//
-    NSLog(@"navigationController is:%@", [navController description]);
     fullScreenPlayerPlaying = NO;
     [self.navigationController popViewControllerAnimated:YES];
-
 }
 
 
