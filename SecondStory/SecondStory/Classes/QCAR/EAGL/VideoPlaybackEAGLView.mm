@@ -243,7 +243,8 @@ namespace {
         VideoPlayerHelper* player = [self getVideoPlayerHelper:i];
         NSString* filename;
         NSString *file = [LOCAL_MEDIA_PATH stringByAppendingString:@"/"];
-
+        filename = @"VuforiaSizzleReel_2.m4v";
+        /*
         switch (i) {
             case 0:
                 if([self videoIsLocal:i]) {
@@ -299,7 +300,7 @@ namespace {
                 filename = @"VuforiaSizzleReel_2.m4v";
             break;
         }
-        
+        */
         if (NO == [player load:filename playImmediately:NO fromPosition:videoPlaybackTime[i]]) {
             NSLog(@"Failed to load media");
         }
