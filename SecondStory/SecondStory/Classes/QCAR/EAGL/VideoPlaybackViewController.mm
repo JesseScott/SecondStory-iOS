@@ -19,6 +19,8 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 
 @implementation VideoPlaybackViewController
 
+@synthesize rootViewController=_rootViewController;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -42,6 +44,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     }
     return self;
 }
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -50,6 +53,13 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     //[eaglView release];
     
     //[super dealloc];
+}
+
+- (id)initWithRootViewController:(UIViewController*) controller {
+    if ((self = [super init])) {
+        self.rootViewController = controller;
+    }
+    return self;
 }
 
 - (void) setNavigationController:(UINavigationController *) theNavController {
@@ -162,7 +172,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     [tap requireGestureRecognizerToFail:doubleTap];
 
 
-  // Do any additional setup after loading the view.
+    [self.rootViewController performSelector:@selector(setNavigationController:) withObject:self.navigationController afterDelay:0];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
     
@@ -277,7 +287,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     
     NSLog(@"navigationController is:%@", [navController description]);
     fullScreenPlayerPlaying = YES;
-    [navController pushViewController:viewController animated:YES];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 // Dismiss a view controller presented by the root view controller
@@ -297,7 +307,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 //
     NSLog(@"navigationController is:%@", [navController description]);
     fullScreenPlayerPlaying = NO;
-    [navController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 
 }
 
@@ -518,7 +528,7 @@ typedef enum {
     [group addSelectionItem:@"Autofocus" command:C_AUTOFOCUS isSelected:true];
     [group addSelectionItem:@"Flash" command:C_FLASH isSelected:false];
     [group addSelectionItem:@"Play Fullscreen" command:C_VIDEO_FULLSCREEN isSelected:false];
-    [eaglView willPlayVideoFullScreen:NO];
+    [eaglView willPlayVideoFullScreen:YES];
 
     group = [menu addSelectionGroup:@"CAMERA"];
     [group addSelectionItem:@"Front" command:C_CAMERA_FRONT isSelected:false];

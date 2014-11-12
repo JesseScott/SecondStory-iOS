@@ -52,6 +52,7 @@ static const float VIDEO_PLAYBACK_CURRENT_POSITION = -1.0f;
     
     // Native playback
     MovieViewController* movieViewController;
+    //MPMoviePlayerViewController* movieViewController;
     BOOL resumeOnTexturePlayback;
     
     // Timing

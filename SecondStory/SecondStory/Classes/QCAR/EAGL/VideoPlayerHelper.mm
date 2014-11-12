@@ -711,7 +711,7 @@ static NSString* const kRateKey = @"rate";
                 // If immediate on-texture playback has been requested, start
                 // playback
                 if (YES == playImmediately) {
-                    [self play:NO fromPosition:VIDEO_PLAYBACK_CURRENT_POSITION];
+                    [self play:YES fromPosition:VIDEO_PLAYBACK_CURRENT_POSITION];
                 }
                 
                 break;

@@ -132,7 +132,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZRS-bL-Z9C" kind="modal" id="TZp-oe-crs"/>
+                                    <segue destination="1FH-EX-f8W" kind="modal" id="TZp-oe-crs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFQ-0X-2Ty">
@@ -249,10 +249,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3qF-co-nfE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="saO-D5-wRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192" y="1419"/>
+            <point key="canvasLocation" x="1724" y="1419"/>
         </scene>
         <!--Guide-->
         <scene sceneID="QVf-2j-p38">
@@ -454,7 +455,7 @@
                     <navigationItem key="navigationItem" title="MAPS" id="fYx-Ri-Qle">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="d3Z-Zh-5Ej">
                             <connections>
-                                <segue destination="ZRS-bL-Z9C" kind="modal" id="jZx-hv-I1G"/>
+                                <segue destination="1FH-EX-f8W" kind="modal" id="jZx-hv-I1G"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -566,7 +567,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1s-XU-7Xn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2197" y="1419"/>
+            <point key="canvasLocation" x="2729" y="1419"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UKt-9T-OQx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1FH-EX-f8W" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ohu-Bh-BpT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZRS-bL-Z9C" kind="relationship" relationship="rootViewController" id="xgC-SB-3mw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bom-wc-n8A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1192" y="1419"/>
         </scene>
     </scenes>
     <resources>
