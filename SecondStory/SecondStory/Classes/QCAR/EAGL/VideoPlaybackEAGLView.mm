@@ -176,6 +176,8 @@ namespace {
         }
 
         [self initShaders];
+        
+        
     }
     
     return self;
@@ -185,7 +187,40 @@ namespace {
     playVideoFullScreen = fullScreen;
 }
 
+- (void) setPaths {
+    NSString *customPath = @"/SecondStory/BloodAlley/MEDIA";
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    LOCAL_MEDIA_PATH = [documentsDirectory stringByAppendingPathComponent:customPath];
+    
+    // Load PList For Files
+    NSString *pathToLocalPlist = [[NSBundle mainBundle] pathForResource:@"bloodalley_filenames_local" ofType:@"plist"];
+    localFiles = [[NSArray alloc] initWithContentsOfFile:pathToLocalPlist];
+    
+    NSString *pathToRemotePlist = [[NSBundle mainBundle] pathForResource:@"bloodalley_filenames_remote" ofType:@"plist"];
+    remoteFiles = [[NSArray alloc] initWithContentsOfFile:pathToRemotePlist];
+}
+
+- (BOOL) videoIsLocal: (int) index {
+    NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:nil];
+    NSString *fileNameToMatch = [localFiles objectAtIndex:index];
+    BOOL match = NO;
+    for (int i = 0; i < [contents count]; i++) {
+        //NSLog(@"Item #%i is %@", i, [contents objectAtIndex:i]);
+        if ([[contents objectAtIndex:i] isEqualToString:fileNameToMatch]) {
+            NSLog(@"MATCH: %@", fileNameToMatch);
+            LOCAL_FILE = fileNameToMatch;
+            match = YES;
+        }
+    }
+    return match;
+}
+
+
 - (void) prepare {
+    // Set
+    [self setPaths];
+    
     // For each target, create a VideoPlayerHelper object and zero the
     // target dimensions
     // For each target, create a VideoPlayerHelper object and zero the
@@ -207,37 +242,58 @@ namespace {
         // Load a local file for playback and resume playback if video was playing when the app went into the background
         VideoPlayerHelper* player = [self getVideoPlayerHelper:i];
         NSString* filename;
-        
+        NSString *file = [LOCAL_MEDIA_PATH stringByAppendingString:@"/"];
+
         switch (i) {
             case 0:
-                filename = @"VuforiaSizzleReel_1.m4v";
+                if([self videoIsLocal:i]) {
+                    filename = [file stringByAppendingString:LOCAL_FILE];
+                }
             break;
             case 1:
-                filename = @"VuforiaSizzleReel_1.m4v";
+                if([self videoIsLocal:i]) {
+                    filename = [file stringByAppendingString:LOCAL_FILE];
+                }
                 break;
             case 2:
-                filename = @"VuforiaSizzleReel_1.m4v";
+                if([self videoIsLocal:i]) {
+                    filename = [file stringByAppendingString:LOCAL_FILE];
+                }
                 break;
             case 3:
-                filename = @"VuforiaSizzleReel_1.m4v";
+                if([self videoIsLocal:i]) {
+                    filename = [file stringByAppendingString:LOCAL_FILE];
+                }
                 break;
             case 4:
-                filename = @"VuforiaSizzleReel_1.m4v";
+                if([self videoIsLocal:i]) {
+                    filename = [file stringByAppendingString:LOCAL_FILE];
+                }
                 break;
             case 5:
-                filename = @"VuforiaSizzleReel_1.m4v";
+                if([self videoIsLocal:i]) {
+                    filename = [file stringByAppendingString:LOCAL_FILE];
+                }
                 break;
             case 6:
-                filename = @"VuforiaSizzleReel_1.m4v";
+                if([self videoIsLocal:i]) {
+                    filename = [file stringByAppendingString:LOCAL_FILE];
+                }
                 break;
             case 7:
-                filename = @"VuforiaSizzleReel_1.m4v";
+                if([self videoIsLocal:i]) {
+                    filename = [file stringByAppendingString:LOCAL_FILE];
+                }
                 break;
             case 8:
-                filename = @"VuforiaSizzleReel_1.m4v";
+                if([self videoIsLocal:i]) {
+                    filename = [file stringByAppendingString:LOCAL_FILE];
+                }
                 break;
             case 9:
-                filename = @"VuforiaSizzleReel_1.m4v";
+                if([self videoIsLocal:i]) {
+                    filename = [file stringByAppendingString:LOCAL_FILE];
+                }
                 break;
             default:
                 filename = @"VuforiaSizzleReel_2.m4v";
@@ -347,6 +403,7 @@ namespace {
     }
 }
 - (void) preparePlayers {
+    
     [self prepare];
 }
 

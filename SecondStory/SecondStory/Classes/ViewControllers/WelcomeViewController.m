@@ -343,7 +343,7 @@
         if(downloadCounter < [REMOTE_MEDIA_FILE_PATHS count] -1) {
             // Increment Counter
             downloadCounter++;
-            NSLog(@"Ready to start File #%i", downloadCounter);
+            NSLog(@"\nREADY TO START FILE #%i \n", downloadCounter);
         
             // Start Next File
             [self getFile:[REMOTE_MEDIA_FILE_PATHS objectAtIndex:downloadCounter]:downloadCounter];

@@ -27,6 +27,12 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     VideoPlayerHelper* videoPlayerHelper[NUM_VIDEO_TARGETS];
     float videoPlaybackTime[NUM_VIDEO_TARGETS];
     
+    // Paths
+    NSArray *remoteFiles;
+    NSArray *localFiles;
+    NSString *LOCAL_MEDIA_PATH;
+    NSString *LOCAL_FILE;
+    
     VideoPlaybackViewController * videoPlaybackViewController ;
     
     // Timer to pause on-texture video playback after tracking has been lost.
