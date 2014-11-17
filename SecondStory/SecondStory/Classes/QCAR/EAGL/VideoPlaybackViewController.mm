@@ -133,11 +133,13 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     [eaglView addSubview:loadingIndicator];
     [loadingIndicator startAnimating];
     
+//
     backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     backButton.frame = CGRectMake(15.0, 25.0, 25.0, 29.0);
     [backButton setBackgroundImage:[UIImage imageNamed:@"global_back_icon"] forState:UIControlStateNormal];
-    [self.view addSubview:backButton];
+    //[backButton setHidden:YES];
+    
     
     
     [vapp initAR:QCAR::GL_20 ARViewBoundsSize:viewFrame.size orientation:UIInterfaceOrientationPortrait];
@@ -175,7 +177,11 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     [self.rootViewController performSelector:@selector(setNavigationController:) withObject:self.navigationController afterDelay:0];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
-    
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.view addSubview:backButton];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     // This is called when the full time player is being displayed
     // so we check the boolean to avoid shutting down AR
