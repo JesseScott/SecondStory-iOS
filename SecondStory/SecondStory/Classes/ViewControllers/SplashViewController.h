@@ -15,7 +15,7 @@
 
 }
 
-@property (nonatomic, retain) NSTimer *timer;
+@property (nonatomic, strong) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end

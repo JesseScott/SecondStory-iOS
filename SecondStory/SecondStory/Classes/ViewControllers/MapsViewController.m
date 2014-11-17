@@ -120,6 +120,9 @@
 
 - (void) viewWillDisappear:(BOOL)animated {
     [moviePlayer stop];
+    moviePlayer = nil;
+    youtubeIDS = nil;
+    
     [self.videoView setHidden:YES];
 }
 

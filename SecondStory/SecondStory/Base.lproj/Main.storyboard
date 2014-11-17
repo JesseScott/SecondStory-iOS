@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="q3D-aw-NIW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -20,7 +20,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="jjl-li-ZLg" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="uIN-fJ-x3E" userLabel="logo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="splash_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="uIN-fJ-x3E" userLabel="logo">
                                 <rect key="frame" x="10" y="100" width="300" height="225"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AN AUGMENTED REALITY EXPERIENCE" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="266" translatesAutoresizingMaskIntoConstraints="NO" id="AyB-uF-iaA">
@@ -42,14 +42,15 @@
                             <constraint firstItem="uIN-fJ-x3E" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="lFr-AZ-bcP"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="f8Q-LD-y0U"/>
                     <connections>
                         <outlet property="label" destination="AyB-uF-iaA" id="IR3-34-Aim"/>
-                        <segue destination="Vuc-oS-ZNc" kind="modal" identifier="segue_splash2welcome" id="zOZ-5o-SMj"/>
+                        <segue destination="Vuc-oS-ZNc" kind="push" identifier="segue_splash2welcome" id="zOZ-5o-SMj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-302" y="421"/>
+            <point key="canvasLocation" x="230" y="421"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="fRU-Eo-RzG">
@@ -98,6 +99,7 @@
                             <constraint firstItem="2L6-Rj-YJE" firstAttribute="leading" secondItem="gn5-w2-xmK" secondAttribute="leading" id="xtQ-V2-HLu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="9Zi-aa-BYG"/>
                     <connections>
                         <outlet property="progressView" destination="rbm-Sk-V92" id="vuR-gn-E52"/>
                         <outlet property="skipButton" destination="2L6-Rj-YJE" id="aac-aJ-30x"/>
@@ -106,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q84-cS-QwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="198" y="421"/>
+            <point key="canvasLocation" x="730" y="421"/>
         </scene>
         <!--Menu-->
         <scene sceneID="2FH-Np-MUI">
@@ -234,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UST-r4-mHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192" y="421"/>
+            <point key="canvasLocation" x="1724" y="421"/>
         </scene>
         <!--Camera-->
         <scene sceneID="5u8-cv-7LP">
@@ -333,6 +335,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cDE-ux-JJx" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="sek-7o-lTU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FcL-SN-9Wz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -344,7 +347,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ML-de-J6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="666" y="421"/>
+            <point key="canvasLocation" x="1198" y="421"/>
         </scene>
         <!--Maps-->
         <scene sceneID="YhC-ne-EWv">
@@ -482,7 +485,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2197" y="88"/>
+            <point key="canvasLocation" x="2729" y="88"/>
         </scene>
         <!--About-->
         <scene sceneID="Kfp-yf-qtC">
@@ -523,7 +526,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2197" y="744"/>
+            <point key="canvasLocation" x="2729" y="744"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="WjL-fe-XxQ">
@@ -587,6 +590,24 @@
             </objects>
             <point key="canvasLocation" x="1192" y="1419"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4VS-xB-eqL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q3D-aw-NIW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BLU-Ud-31Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="9JS-DL-4jV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eab-J0-dpy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-302" y="421"/>
+        </scene>
     </scenes>
     <resources>
         <image name="guide_bg.png" width="640" height="1136"/>
@@ -598,7 +619,7 @@
         <image name="guide_replay_icon.png" width="22" height="19"/>
         <image name="map_bg.png" width="640" height="1136"/>
         <image name="map_pin.png" width="45" height="45"/>
-        <image name="menu_bg.png" width="1080" height="1920"/>
+        <image name="menu_bg.png" width="640" height="1138"/>
         <image name="splash_bg.png" width="320" height="569"/>
         <image name="splash_logo.png" width="300" height="225"/>
     </resources>
@@ -608,6 +629,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jZx-hv-I1G"/>
+        <segue reference="TZp-oe-crs"/>
     </inferredMetricsTieBreakers>
 </document>

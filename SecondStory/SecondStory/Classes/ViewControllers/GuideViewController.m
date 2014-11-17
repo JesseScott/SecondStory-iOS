@@ -58,6 +58,8 @@
 
 - (void) viewWillDisappear:(BOOL)animated {
     [player stop];
+    player = nil;
+    replayBtn = nil;
 }
 
 - (void) playAudio {

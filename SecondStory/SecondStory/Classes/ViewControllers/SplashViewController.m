@@ -33,12 +33,21 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
+}
+
 - (void) segue
 {
     // Segue
     [self performSegueWithIdentifier:@"segue_splash2welcome" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     
     // Kill Timer
+    [self.timer invalidate];
     self.timer = nil;
 }
 

@@ -57,6 +57,29 @@
     [self performSegueWithIdentifier:@"segue_welcome2menu" sender:self];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Kill Stuff
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Nil Stuff
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    if ([self.view window] == nil)
+    {
+        self.view = nil;
+    }
+}
+    
+
+
+
 #pragma mark ALERTS
 
 - (void) showStreamOrDownloadDialog
