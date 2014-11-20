@@ -134,7 +134,7 @@
             [self segue];
         }
         else if(buttonIndex == 1) { // Quit
-            
+
         }
     }
     else if (alertView.tag == 300) {
@@ -143,6 +143,7 @@
         }
         else if(buttonIndex == 1) { // Wait
             [self.skipButton setHidden:NO];
+            [self.progressView setHidden:NO];
         }
     }
 }
@@ -165,15 +166,27 @@
         if (isDir) {
             NSLog(@"DIRECTORY EXISTS - TRYING TO READ CONTENTS");
             NSError *error = nil;
-            NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dataPath error:&error];
+            NSArray  *existing = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dataPath error:&error];
+            NSString *pathToLocalPlist = [[NSBundle mainBundle] pathForResource:@"bloodalley_filenames_local" ofType:@"plist"];
+            NSArray  *matching = [[NSArray alloc] initWithContentsOfFile:pathToLocalPlist];
             if (error == nil) {
-                NSInteger files = [contents count];
-                if (files > 5) {
-                    NSLog(@"DIRECTORY HAS %i FILES", [contents count]);
+                if ([existing count] == [matching count]) {
+                    NSLog(@"DIRECTORY HAS ALL THE FILES");
                     return YES;
                 }
                 else {
-                    NSLog(@"ONLY %i FILES EXIST", files);
+                    NSLog(@"ONLY %i FILES EXIST", [existing count]);
+                    for (int i = 0; i < [existing count]; i++) {
+                        NSLog(@"Local #%i is %@", i, [existing objectAtIndex:i]);
+                        if( [[matching objectAtIndex:i] isEqualToString:[existing objectAtIndex:i]] ) {
+                            NSLog(@"MATCH: %@ Exists", [existing objectAtIndex:i]);
+                        }
+                    }
+                    int numFilesToGet = [matching count] - [existing count];
+                    REMOTE_MEDIA_FILE_PATHS = [[NSMutableArray alloc] initWithCapacity:numFilesToGet];
+                    for (int i = [existing count]; i < [matching count]; i++) {
+                        [REMOTE_MEDIA_FILE_PATHS addObject:[matching objectAtIndex:i]];
+                    }
                     return NO;
                 }
             }
@@ -274,7 +287,7 @@
         NSString *index = [NSString stringWithFormat:@"%i", i];
         NSString *UniqueIdentifier = @"SecondStoryBackgroundSessionIdentifier_";
         UniqueIdentifier = [UniqueIdentifier stringByAppendingString:index];
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration backgroundSessionConfiguration:UniqueIdentifier];
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:UniqueIdentifier];
         config.allowsCellularAccess = NO;
         [configurations addObject: config];
         [sessions addObject:[NSURLSession sessionWithConfiguration: [configurations objectAtIndex:i]  delegate: self delegateQueue: [NSOperationQueue mainQueue]]];
@@ -313,7 +326,7 @@
                 NSLog(@"DATA:\n%@\nEND DATA\n", stringFromData);
                 
                 // Populate Arrays
-                REMOTE_MEDIA_FILE_PATHS = [stringFromData componentsSeparatedByString:@"\n"];
+                //REMOTE_MEDIA_FILE_PATHS = [stringFromData componentsSeparatedByString:@"\n"];
                 [self instantiateURLSessions:[REMOTE_MEDIA_FILE_PATHS count]];
                  
                 NSLog(@"THERE ARE %i MEDIA FILES", [REMOTE_MEDIA_FILE_PATHS count]);
@@ -325,26 +338,27 @@
                 [self getFile:[REMOTE_MEDIA_FILE_PATHS objectAtIndex:downloadCounter]:downloadCounter];
             }]
      resume];
+    
+    //[self.progressView setHidden:NO];
+    [self showSkipOrWaitDialog];
 }
 
 - (void) getFile : (NSString*) file :(int) index {
     NSLog(@"PASSED FILE IS %@", file);
     NSString *fullPathToFile = REMOTE_MEDIA_PATH;
     fullPathToFile = [fullPathToFile stringByAppendingString:file];
-    NSLog(@"FULL PATH IS %@", fullPathToFile);
-    
+    NSLog(@"FULL PATH IS %@ \n\n\n", fullPathToFile);
+
     NSURL *url = [NSURL URLWithString:fullPathToFile];
     NSURLSessionDownloadTask *downloadTask = [[NSURL_BACKGROUND_SESSIONS objectAtIndex:index ] downloadTaskWithURL: url];
     [downloadTask resume];
-    
-    [self.progressView setHidden:NO];
 }
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
 {
     NSLog(@"Session %@ download task %@ finished downloading to URL %@\n", session, downloadTask, location);
     
-    [self.progressView setHidden:YES];
+    //[self.progressView setHidden:YES];
     
     // Get the documents directory URL
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -379,7 +393,7 @@
         }
     }
     else {
-        NSLog(@"Damn. Error %@", error);
+        NSLog(@"\n\n\nDamn. Error %@", error);
     }
     
 }
@@ -403,11 +417,6 @@
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
     NSLog(@"SessionTask %@ gave error %@.\n", task, error);
 }
-
-
-
-
-
 
 
 @end
