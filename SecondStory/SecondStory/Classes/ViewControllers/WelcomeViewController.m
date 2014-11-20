@@ -100,7 +100,8 @@
                                                     message:@"this app requires 500mb of space in order to download the content. You can skip for now and stream the content, or come back when you have enough space."
                                                    delegate:self
                                           cancelButtonTitle:@"Skip"
-                                          otherButtonTitles:@"Quit"];
+                                          otherButtonTitles:@"Quit",
+                          nil];
     alert.tag = 200;
     [alert show];
 }
@@ -111,7 +112,8 @@
                                                     message:@"this app is currently downloading the content... feel free to press the skip button and it will continue in the background."
                                                    delegate:self
                                           cancelButtonTitle:@"Skip"
-                                          otherButtonTitles:@"Wait"];
+                                          otherButtonTitles:@"Wait",
+                          nil];
     alert.tag = 300;
     [alert show];
 }
