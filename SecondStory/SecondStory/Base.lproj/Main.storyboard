@@ -20,9 +20,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="jjl-li-ZLg" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="splash_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="uIN-fJ-x3E" userLabel="logo">
-                                <rect key="frame" x="10" y="100" width="300" height="225"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AN AUGMENTED REALITY EXPERIENCE" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="266" translatesAutoresizingMaskIntoConstraints="NO" id="AyB-uF-iaA">
                                 <rect key="frame" x="34" y="437" width="266" height="111"/>
                                 <constraints>
@@ -32,11 +29,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="uIN-fJ-x3E" userLabel="logo">
+                                <rect key="frame" x="10" y="171" width="300" height="225"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="AyB-uF-iaA" secondAttribute="bottom" constant="20" symbolic="YES" id="4m4-kl-G2b"/>
-                            <constraint firstItem="uIN-fJ-x3E" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="8D5-YJ-G02"/>
+                            <constraint firstItem="uIN-fJ-x3E" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="107" id="8D5-YJ-G02"/>
                             <constraint firstItem="AyB-uF-iaA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="34" id="FnU-ZX-X1G"/>
                             <constraint firstAttribute="trailing" secondItem="AyB-uF-iaA" secondAttribute="trailing" constant="20" symbolic="YES" id="KMX-QJ-RUq"/>
                             <constraint firstItem="uIN-fJ-x3E" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="lFr-AZ-bcP"/>
@@ -445,11 +445,8 @@
                                     <action selector="clickedPin:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="1ZP-x0-Ctn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCh-he-C4i" userLabel="Video View">
-                                <rect key="frame" x="40" y="203" width="240" height="128"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCh-he-C4i" userLabel="Video View"/>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2v-97-lkV" userLabel="Youtube View" customClass="YTPlayerView">
-                                <rect key="frame" x="40" y="203" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -499,9 +496,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mq6-gW-b9h" userLabel="slideshow">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mq6-gW-b9h" userLabel="slideshow"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
