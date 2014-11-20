@@ -133,13 +133,10 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     [eaglView addSubview:loadingIndicator];
     [loadingIndicator startAnimating];
     
-//
     backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     backButton.frame = CGRectMake(15.0, 25.0, 25.0, 29.0);
     [backButton setBackgroundImage:[UIImage imageNamed:@"global_back_icon"] forState:UIControlStateNormal];
-    //[backButton setHidden:YES];
-    
     
     
     [vapp initAR:QCAR::GL_20 ARViewBoundsSize:viewFrame.size orientation:UIInterfaceOrientationPortrait];
@@ -160,7 +157,8 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     
     /* https://developer.vuforia.com/forum/ios/video-playback-integration */
     
-    [eaglView prepare];
+    //[eaglView prepare]; // Commenting Out As We Will Load One Helper On Track
+    [eaglView prepareSinglePlayer];
     [self prepareMenu];
     
     

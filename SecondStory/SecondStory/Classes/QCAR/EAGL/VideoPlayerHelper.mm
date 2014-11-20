@@ -526,7 +526,8 @@ static NSString* const kRateKey = @"rate";
         else {
             NSLog(@"Stop control available only when playing video on texture");
         }
-    } else if (PLAYING_FULLSCREEN == mediaState) {
+    }
+    else if (PLAYING_FULLSCREEN == mediaState) {
         // Stop receiving notifications
         [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:movieViewController.moviePlayer];
         [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerLoadStateDidChangeNotification object:movieViewController.moviePlayer];

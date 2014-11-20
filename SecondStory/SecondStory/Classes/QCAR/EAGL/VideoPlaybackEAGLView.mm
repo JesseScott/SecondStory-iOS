@@ -74,10 +74,17 @@ namespace {
         OBJECT_ERROR_ICON,
         OBJECT_KEYFRAME_1,
         OBJECT_KEYFRAME_2,
+        OBJECT_KEYFRAME_3,
+        OBJECT_KEYFRAME_4,
+        OBJECT_KEYFRAME_5,
+        OBJECT_KEYFRAME_6,
+        OBJECT_KEYFRAME_7,
+        OBJECT_KEYFRAME_8,
+        OBJECT_KEYFRAME_9,
     };
     
     const NSTimeInterval DOUBLE_TAP_INTERVAL = 0.3f;
-    const NSTimeInterval TRACKING_LOST_TIMEOUT = 2.0f;
+    const NSTimeInterval TRACKING_LOST_TIMEOUT = 20.0f;
     
     // Playback icon scale factors
     const float SCALE_ICON = 2.0f;
@@ -100,7 +107,7 @@ namespace {
         
         // Currently active flag
         BOOL isActive;
-    } videoData[NUM_VIDEO_TARGETS];
+    } videoData[1]; // was NUM_VIDEO_TARGETS
     
     int touchedTarget = 0;
 }
@@ -149,7 +156,10 @@ namespace {
         }
 
         // Create the OpenGL ES context
-        context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+        context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
+        if (context == nil) {
+            context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+        }
         
         // The EAGLContext must be set for each thread that wishes to use it.
         // Set it the first time this method is called (on the main thread)
@@ -176,8 +186,6 @@ namespace {
         }
 
         [self initShaders];
-        
-        
     }
     
     return self;
@@ -188,10 +196,13 @@ namespace {
 }
 
 - (void) setPaths {
+    
     NSString *customPath = @"/SecondStory/BloodAlley/MEDIA";
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     LOCAL_MEDIA_PATH = [documentsDirectory stringByAppendingPathComponent:customPath];
+    REMOTE_MEDIA_PATH = @"http://jesses.co.tt/projects/second_story/blood_alley/media";
+
     
     // Load PList For Files
     NSString *pathToLocalPlist = [[NSBundle mainBundle] pathForResource:@"bloodalley_filenames_local" ofType:@"plist"];
@@ -202,7 +213,9 @@ namespace {
 }
 
 - (BOOL) videoIsLocal: (int) index {
-    NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:nil];
+    NSError *error;
+    NSLog(@"PATH IS %@", LOCAL_MEDIA_PATH);
+    NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:&error];
     NSString *fileNameToMatch = [localFiles objectAtIndex:index];
     BOOL match = NO;
     for (int i = 0; i < [contents count]; i++) {
@@ -216,10 +229,51 @@ namespace {
     return match;
 }
 
+- (void) setPathForMovie: (int) index {
+    
+    NSString *customPath = @"/SecondStory/BloodAlley/MEDIA/";
+    NSArray *defaultPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [defaultPaths objectAtIndex:0];
+    NSString *localDirPath = [documentsDirectory stringByAppendingPathComponent:customPath];
+    localDirPath = [localDirPath stringByAppendingString:@"/"];
+    NSString *remoteDirPath = @"http://jesses.co.tt/projects/second_story/blood_alley/media/";
+    NSString *pathToLocalPlist = [[NSBundle mainBundle] pathForResource:@"bloodalley_filenames_local" ofType:@"plist"];
+    localFiles = [[NSArray alloc] initWithContentsOfFile:pathToLocalPlist];
+    NSString *filename;
+    
+    
+    BOOL isDirectory;
+    BOOL dirExistsAtPath = [[NSFileManager defaultManager] fileExistsAtPath:localDirPath isDirectory:&isDirectory];
+    if (dirExistsAtPath) {
+        if (isDirectory) {
+            NSString *fileNameToMatch = [localDirPath stringByAppendingString:[localFiles objectAtIndex:index]];
+            BOOL fileExistsAtPath = [[NSFileManager defaultManager] fileExistsAtPath:fileNameToMatch];
+            if(fileExistsAtPath) {
+                filename = fileNameToMatch;
+            }
+            else {
+                filename = [remoteDirPath stringByAppendingString:[localFiles objectAtIndex:index]];
+            }
+        }
+        else {
+            NSLog(@"NOT A DIR ????");
+        }
+    }
+
+    // Unload & Load Movie
+    [singleVideoPlayerHelper unload];
+    if (NO == [singleVideoPlayerHelper load:filename playImmediately:NO fromPosition:videoPlaybackTime[0]]) {
+        NSLog(@"Failed to load media");
+    }
+}
+
+- (void) prepareSinglePlayer {
+    singleVideoPlayerHelper = [[VideoPlayerHelper alloc] initWithRootViewController:videoPlaybackViewController];
+    videoData[SINGLE_HELPER].targetPositiveDimensions.data[0] = 0.0f;
+    videoData[SINGLE_HELPER].targetPositiveDimensions.data[1] = 0.0f;
+}
 
 - (void) prepare {
-    // Set
-    [self setPaths];
     
     // For each target, create a VideoPlayerHelper object and zero the
     // target dimensions
@@ -230,6 +284,8 @@ namespace {
         videoData[i].targetPositiveDimensions.data[0] = 0.0f;
         videoData[i].targetPositiveDimensions.data[1] = 0.0f;
     }
+    
+
     
     // Start video playback from the current position (the beginning) on the
     // first run of the app
@@ -242,7 +298,7 @@ namespace {
         // Load a local file for playback and resume playback if video was playing when the app went into the background
         VideoPlayerHelper* player = [self getVideoPlayerHelper:i];
         NSString* filename;
-        NSString *file = [LOCAL_MEDIA_PATH stringByAppendingString:@"/"];
+        //NSString *file = [LOCAL_MEDIA_PATH stringByAppendingString:@"/"];
         filename = @"VuforiaSizzleReel_2.m4v";
         /*
         switch (i) {
@@ -315,6 +371,11 @@ namespace {
         [videoPlayerHelper[i] release];
         videoPlayerHelper[i] = nil;
     }
+    
+    // SINGLE
+    [singleVideoPlayerHelper unload];
+    [singleVideoPlayerHelper release];
+    singleVideoPlayerHelper = nil;
 }
 
 - (void)dealloc
@@ -403,8 +464,8 @@ namespace {
         return false;
     }
 }
+
 - (void) preparePlayers {
-    
     [self prepare];
 }
 
@@ -552,37 +613,41 @@ namespace {
             playerIndex = 8;
         }
         
+        // Set Filename
+        [self setPathForMovie:playerIndex];
+        
         
         // Mark this video (target) as active
-        videoData[playerIndex].isActive = YES;
+        videoData[SINGLE_HELPER].isActive = YES;
         
         // Get the target size (used to determine if taps are within the target)
-        if (0.0f == videoData[playerIndex].targetPositiveDimensions.data[0] ||
-            0.0f == videoData[playerIndex].targetPositiveDimensions.data[1]) {
+        if (0.0f == videoData[SINGLE_HELPER].targetPositiveDimensions.data[0] ||
+            0.0f == videoData[SINGLE_HELPER].targetPositiveDimensions.data[1]) {
             const QCAR::ImageTarget& imageTarget = (const QCAR::ImageTarget&) trackableResult->getTrackable();
             
-            videoData[playerIndex].targetPositiveDimensions = imageTarget.getSize();
+            videoData[SINGLE_HELPER].targetPositiveDimensions = imageTarget.getSize();
             // The pose delivers the centre of the target, thus the dimensions
             // go from -width / 2 to width / 2, and -height / 2 to height / 2
-            videoData[playerIndex].targetPositiveDimensions.data[0] /= 2.0f;
-            videoData[playerIndex].targetPositiveDimensions.data[1] /= 2.0f;
+            videoData[SINGLE_HELPER].targetPositiveDimensions.data[0] /= 2.0f;
+            videoData[SINGLE_HELPER].targetPositiveDimensions.data[1] /= 2.0f;
         }
         
         // Get the current trackable pose
         const QCAR::Matrix34F& trackablePose = trackableResult->getPose();
         
         // This matrix is used to calculate the location of the screen tap
-        videoData[playerIndex].modelViewMatrix = QCAR::Tool::convertPose2GLMatrix(trackablePose);
+        videoData[SINGLE_HELPER].modelViewMatrix = QCAR::Tool::convertPose2GLMatrix(trackablePose);
         
         float aspectRatio;
         const GLvoid* texCoords;
-        GLuint frameTextureID;
+        GLuint frameTextureID = 0; // EDIT
         BOOL displayVideoFrame = YES;
         
         // Retain value between calls
-        static GLuint videoTextureID[NUM_VIDEO_TARGETS] = {0};
+        static GLuint videoTextureID[NUM_VIDEO_TARGETS] = {0}; // was NUM_VIDEO_TARGETS
         
-        MEDIA_STATE currentStatus = [videoPlayerHelper[playerIndex] getStatus];
+        //MEDIA_STATE currentStatus = [videoPlayerHelper[playerIndex] getStatus];
+        MEDIA_STATE currentStatus = [singleVideoPlayerHelper getStatus];
         
         // NSLog(@"MEDIA_STATE for %d is %d", playerIndex, currentStatus);
         
@@ -598,23 +663,22 @@ namespace {
             case PLAYING: {
                 // If the tracking lost timer is scheduled, terminate it
                 if (nil != trackingLostTimer) {
-                    // Timer termination must occur on the same thread on which
-                    // it was installed
+                    // Timer termination must occur on the same thread on which it was installed
                     [self performSelectorOnMainThread:@selector(terminateTrackingLostTimer) withObject:nil waitUntilDone:YES];
                 }
                 
-                // Upload the decoded video data for the latest frame to OpenGL
-                // and obtain the video texture ID
-                GLuint videoTexID = [videoPlayerHelper[playerIndex] updateVideoData];
+                // Upload the decoded video data for the latest frame to OpenGL and obtain the video texture ID
+                //GLuint videoTexID = [videoPlayerHelper[playerIndex] updateVideoData];
+                GLuint videoTexID = [singleVideoPlayerHelper updateVideoData];
                 
-                if (0 == videoTextureID[playerIndex]) {
-                    videoTextureID[playerIndex] = videoTexID;
+                if (0 == videoTextureID[SINGLE_HELPER]) {
+                    videoTextureID[SINGLE_HELPER] = videoTexID;
                 }
                 
                 // Fallthrough
             }
             case PAUSED:
-                if (0 == videoTextureID[playerIndex]) {
+                if (0 == videoTextureID[SINGLE_HELPER]) {
                     // No video texture available, display keyframe
                     displayVideoFrame = NO;
                 }
@@ -627,14 +691,14 @@ namespace {
                 break;
                 
             default:
-                videoTextureID[playerIndex] = 0;
+                videoTextureID[SINGLE_HELPER] = 0;
                 displayVideoFrame = NO;
                 break;
         }
         
         if (YES == displayVideoFrame) {
             // ---- Display the video frame -----
-            aspectRatio = (float)[videoPlayerHelper[playerIndex] getVideoHeight] / (float)[videoPlayerHelper[playerIndex] getVideoWidth];
+            aspectRatio = (float)[singleVideoPlayerHelper getVideoHeight] / (float)[singleVideoPlayerHelper getVideoWidth];
             texCoords = videoQuadTextureCoords;
         }
         else {
@@ -658,9 +722,9 @@ namespace {
 //            SampleApplicationUtils::translatePoseMatrix(0.0f, 0.0f, videoData[playerIndex].targetPositiveDimensions.data[0],
 //                                             &modelViewMatrixVideo.data[0]);
             
-            SampleApplicationUtils::scalePoseMatrix(videoData[playerIndex].targetPositiveDimensions.data[0],
-                                         videoData[playerIndex].targetPositiveDimensions.data[0] * aspectRatio,
-                                         videoData[playerIndex].targetPositiveDimensions.data[0],
+            SampleApplicationUtils::scalePoseMatrix(videoData[SINGLE_HELPER].targetPositiveDimensions.data[0],
+                                         videoData[SINGLE_HELPER].targetPositiveDimensions.data[0] * aspectRatio,
+                                         videoData[SINGLE_HELPER].targetPositiveDimensions.data[0],
                                          &modelViewMatrixVideo.data[0]);
             
             SampleApplicationUtils::multiplyMatrix(projMatrix.data,
@@ -778,8 +842,8 @@ namespace {
     // timer on the main thread that will pause video playback after
     // TRACKING_LOST_TIMEOUT seconds
     for (int i = 0; i < NUM_VIDEO_TARGETS; ++i) {
-        if (nil == trackingLostTimer && NO == videoData[i].isActive && PLAYING == [videoPlayerHelper[i] getStatus]) {
-            [self performSelectorOnMainThread:@selector(createTrackingLostTimer) withObject:nil waitUntilDone:YES];
+        if (nil == trackingLostTimer && NO == videoData[SINGLE_HELPER].isActive && PLAYING == [singleVideoPlayerHelper getStatus]) {
+            //[self performSelectorOnMainThread:@selector(createTrackingLostTimer) withObject:nil waitUntilDone:YES];
             break;
         }
     }
@@ -818,6 +882,7 @@ namespace {
     for (int i = 0; i < NUM_VIDEO_TARGETS; ++i) {
         [videoPlayerHelper[i] pause];
     }
+    [singleVideoPlayerHelper pause];
     trackingLostTimer = nil;
 }
 

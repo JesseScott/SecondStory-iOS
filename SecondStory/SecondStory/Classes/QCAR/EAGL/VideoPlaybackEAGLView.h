@@ -17,20 +17,22 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 // was 5 + 2
 #define NUM_VIDEO_TARGETS 9
 #define NUM_AUGMENTATION_TEXTURES NUM_VIDEO_TARGETS + 3
-
+#define SINGLE_HELPER 0
 
 // VideoPlayback is a subclass of UIView and conforms to the informal protocol
 // UIGLViewProtocol
 @interface VideoPlaybackEAGLView : UIView <UIGLViewProtocol> {
 @private
     // Instantiate one VideoPlayerHelper per target
-    VideoPlayerHelper* videoPlayerHelper[NUM_VIDEO_TARGETS];
+    VideoPlayerHelper *videoPlayerHelper[NUM_VIDEO_TARGETS];
+    VideoPlayerHelper *singleVideoPlayerHelper;
     float videoPlaybackTime[NUM_VIDEO_TARGETS];
     
     // Paths
-    NSArray *remoteFiles;
-    NSArray *localFiles;
+    NSArray  *remoteFiles;
+    NSArray  *localFiles;
     NSString *LOCAL_MEDIA_PATH;
+    NSString *REMOTE_MEDIA_PATH;
     NSString *LOCAL_FILE;
     
     VideoPlaybackViewController * videoPlaybackViewController ;
@@ -77,6 +79,8 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 
 - (void) willPlayVideoFullScreen:(BOOL) fullScreen;
 
+- (void) setPaths;
+- (void) prepareSinglePlayer;
 - (void) prepare;
 - (void) dismiss;
 
