@@ -287,7 +287,16 @@
         NSString *index = [NSString stringWithFormat:@"%i", i];
         NSString *UniqueIdentifier = @"SecondStoryBackgroundSessionIdentifier_";
         UniqueIdentifier = [UniqueIdentifier stringByAppendingString:index];
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:UniqueIdentifier];
+        NSURLSessionConfiguration *config;
+        if([[UIDevice currentDevice].systemVersion floatValue] >= 8)
+        {
+            config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:UniqueIdentifier];
+        }
+        else
+        {
+            config = [NSURLSessionConfiguration backgroundSessionConfiguration:UniqueIdentifier];
+        }
+        
         config.allowsCellularAccess = NO;
         [configurations addObject: config];
         [sessions addObject:[NSURLSession sessionWithConfiguration: [configurations objectAtIndex:i]  delegate: self delegateQueue: [NSOperationQueue mainQueue]]];
@@ -320,28 +329,38 @@
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:[NSURL URLWithString:list]
             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                NSLog(@"Got response %@ with error %@.\n", response, error);
-                
-                NSString *stringFromData = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-                NSLog(@"DATA:\n%@\nEND DATA\n", stringFromData);
-                
-                // Populate Arrays
-                //REMOTE_MEDIA_FILE_PATHS = [stringFromData componentsSeparatedByString:@"\n"];
-                [self instantiateURLSessions:[REMOTE_MEDIA_FILE_PATHS count]];
-                 
-                NSLog(@"THERE ARE %i MEDIA FILES", [REMOTE_MEDIA_FILE_PATHS count]);
-                for (int i = 0; i < [REMOTE_MEDIA_FILE_PATHS count]; i++) {
-                    NSLog(@"FILE %i IS %@", i, [REMOTE_MEDIA_FILE_PATHS objectAtIndex:i]);
+                if(!error) {
+                    NSLog(@"Got response %@ with error %@.\n", response, error);
+                    
+                    NSString *stringFromData = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+                    NSLog(@"DATA:\n%@\nEND DATA\n", stringFromData);
+                    
+                    // Populate Arrays
+                    //REMOTE_MEDIA_FILE_PATHS = [stringFromData componentsSeparatedByString:@"\n"];
+                    [self instantiateURLSessions:[REMOTE_MEDIA_FILE_PATHS count]];
+                     
+                    NSLog(@"THERE ARE %i MEDIA FILES", [REMOTE_MEDIA_FILE_PATHS count]);
+                    for (int i = 0; i < [REMOTE_MEDIA_FILE_PATHS count]; i++) {
+                        NSLog(@"FILE %i IS %@", i, [REMOTE_MEDIA_FILE_PATHS objectAtIndex:i]);
+                    }
                 }
-                
-                // Start First File
-                [self getFile:[REMOTE_MEDIA_FILE_PATHS objectAtIndex:downloadCounter]:downloadCounter];
+//                else {
+//                    NSLog(@"Error Fetching File List, Going With Local Version...");
+//                    // Load LocalPList For Files
+//                    NSString *pathToLocalPlist = [[NSBundle mainBundle] pathForResource:@"bloodalley_filenames_local" ofType:@"plist"];
+//                    REMOTE_MEDIA_FILE_PATHS = [[NSMutableArray alloc] initWithContentsOfFile:pathToLocalPlist];
+//                }
             }]
      resume];
+    
+    // Start First File
+    [self getFile:[REMOTE_MEDIA_FILE_PATHS objectAtIndex:downloadCounter]:downloadCounter];
     
     //[self.progressView setHidden:NO];
     [self showSkipOrWaitDialog];
 }
+
+
 
 - (void) getFile : (NSString*) file :(int) index {
     NSLog(@"PASSED FILE IS %@", file);
