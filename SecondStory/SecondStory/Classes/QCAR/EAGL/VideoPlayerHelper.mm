@@ -199,7 +199,8 @@ static NSString* const kRateKey = @"rate";
                 fullPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:filename];
             }
             
-            mediaURL = [[NSURL alloc] initFileURLWithPath:fullPath];
+            //mediaURL = [[NSURL alloc] initFileURLWithPath:fullPath];
+            mediaURL = [NSURL fileURLWithPath:fullPath];
             
             if (YES == playOnTextureImmediately) {
                 playImmediately = playOnTextureImmediately;
