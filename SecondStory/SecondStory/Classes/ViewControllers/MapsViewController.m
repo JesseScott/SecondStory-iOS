@@ -36,9 +36,11 @@
     
     // PATHS
     NSString *customPath = @"/SecondStory/BloodAlley/MEDIA";
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    LOCAL_MEDIA_PATH = [documentsDirectory stringByAppendingPathComponent:customPath];
+    LOCAL_MEDIA_PATH = [[self returnDocumentsDirectory] stringByAppendingPathComponent:customPath];
+
+    //NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    //NSString *documentsDirectory = [paths objectAtIndex:0];
+    //LOCAL_MEDIA_PATH = [documentsDirectory stringByAppendingPathComponent:customPath];
     
     [self listCustomDirectory];
     
@@ -136,6 +138,26 @@
 
 - (void)loadVideo: (NSURL*) videoUrl {
     
+     //filename	NSString *	@"/var/mobile/Containers/Data/Application/21078F3B-12C5-4D42-8B8B-3C85CB7A0A91/Documents/SecondStory/BloodAlley/MEDIA/copperthief.mp4"	0x147cbb20
+     //fullPath	NSString *	@"/var/mobile/Containers/Data/Application/21078F3B-12C5-4D42-8B8B-3C85CB7A0A91/Documents/SecondStory/BloodAlley/MEDIA/copperthief.mp4"	0x147cbb20
+     //url	NSURL *	@"file:///var/mobile/Containers/Data/Application/21078F3B-12C5-4D42-8B8B-3C85CB7A0A91/Documents/SecondStory/BloodAlley/MEDIA/copperthief.mp4"	0x159ee2b0
+    
+    //NSURL *url = @"file:///var/mobile/Containers/Data/Application/D4BDCED0-7EB8-4C67-AE83-FD16B25E9E4E/Documents/SecondStory/BloodAlley/MEDIA/copperthief.mp4";
+    
+    NSString *tmpString = @"/var/mobile/Containers/Data/Application/21078F3B-12C5-4D42-8B8B-3C85CB7A0A91/Documents/SecondStory/BloodAlley/MEDIA/copperthief.mp4";
+    NSURL *tmpURL = [NSURL fileURLWithPath:tmpString];
+
+    /*
+     tmpUrl	NSURL *	@"file:///var/mobile/Containers/Data/Application/21078F3B-12C5-4D42-8B8B-3C85CB7A0A91/Documents/SecondStory/BloodAlley/MEDIA/copperthief.mp4"
+     */
+    
+    /*
+     videoUrl	NSURL *	@"file:///var/mobile/Containers/Data/Application/5600DF36-247E-40D1-944F-E98E80D41CE5/Documents/SecondStory/BloodAlley/MEDIA/shrooms.mp4"
+     */
+    
+    //videoUrl = tmpURL;
+    
+    
     // Show View
     [self.videoView setHidden:NO];
     
@@ -210,12 +232,16 @@
     return match;
 }
 
+- (NSString*) returnDocumentsDirectory {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *doc = [paths objectAtIndex:0];
+    return doc;
+}
 
 - (NSURL*) prepLocalURL {
     NSString *file = [LOCAL_MEDIA_PATH stringByAppendingString:@"/"];
     file = [file stringByAppendingString:LOCAL_FILE];
-    NSURL *url = [NSURL fileURLWithPath:file];
-    return url;
+    return [NSURL fileURLWithPath:file];
 }
 
 - (void) listCustomDirectory {

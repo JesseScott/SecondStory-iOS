@@ -166,6 +166,15 @@ static NSString* const kRateKey = @"rate";
     [super dealloc];
 }
 
+- (NSString*) returnDocumentsDirectory {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [paths objectAtIndex:0];
+}
+
+- (NSString*) returnCustomDirectory {
+    return [[self returnDocumentsDirectory] stringByAppendingPathComponent:@"/SecondStory/BloodAlley/MEDIA"];
+}
+
 
 //------------------------------------------------------------------------------
 #pragma mark - Class API
@@ -194,13 +203,22 @@ static NSString* const kRateKey = @"rate";
                 fullPath = [NSString stringWithString:filename];
             }
             else {
-                // filename is a relative path, play media from this app's
-                // resources folder
+                // filename is a relative path, play media from this app's resources folder
                 fullPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:filename];
             }
             
-            //mediaURL = [[NSURL alloc] initFileURLWithPath:fullPath];
-            mediaURL = [NSURL fileURLWithPath:fullPath];
+            NSString *file = [[self returnCustomDirectory] stringByAppendingString:@"/"];
+            file = [file stringByAppendingString:filename];
+            mediaURL = [NSURL fileURLWithPath:file];
+            
+            
+            //NSString *tmpPath = @"var/mobile/Containers/Data/Application/21078F3B-12C5-4D42-8B8B-3C85CB7A0A91/Documents/SecondStory/BloodAlley/MEDIA/copperthief.mp4";
+            //mediaURL = [[NSURL alloc] initFileURLWithPath:tmpPath];
+            // file:///var/mobile/Containers/Data/Application/10E8E3B1-4191-4D7F-B1A5-3C7B93DA44A0/Documents/SecondStory/BloodAlley/MEDIA/copperthief.mp4
+            //mediaURL = [NSURL fileURLWithPath:fullPath];
+            // file:///var/mobile/Containers/Data/Application/5600DF36-247E-40D1-944F-E98E80D41CE5/Documents/SecondStory/BloodAlley/MEDIA/copperthief.mp4
+            
+            
             
             if (YES == playOnTextureImmediately) {
                 playImmediately = playOnTextureImmediately;
@@ -213,6 +231,7 @@ static NSString* const kRateKey = @"rate";
                 [self updatePlayerCursorPosition:seekPosition];
             }
             
+            //mediaURL = [NSURL fileURLWithPath:fullPath];
             ret = [self loadLocalMediaFromURL:mediaURL];
         }
         else {
@@ -879,17 +898,17 @@ static NSString* const kRateKey = @"rate";
     [player removeObserver:self forKeyPath:kRateKey];
     
     // Release AVPlayer, AVAsset, etc.
-    [player release];
+    //[player release];
     player = nil;
-    [asset release];
+    //[asset release];
     asset = nil;
-    [assetReader release];
+    //[assetReader release];
     assetReader = nil;
-    [assetReaderTrackOutputVideo release];
+    //[assetReaderTrackOutputVideo release];
     assetReaderTrackOutputVideo = nil;
-    [movieViewController release];
+    //[movieViewController release];
     movieViewController = nil;
-    [mediaURL release];
+    //[mediaURL release];
     mediaURL = nil;
 }
 
@@ -929,6 +948,9 @@ static NSString* const kRateKey = @"rate";
                                 }
                             });
          }];
+    }
+    else {
+        NSLog(@"NIL ASSET");
     }
     
     return ret;
@@ -976,7 +998,7 @@ static NSString* const kRateKey = @"rate";
     // Get the first video track
     AVAssetTrack* assetTrackVideo = nil;
     NSArray* arrayTracks = [asset tracksWithMediaType:AVMediaTypeVideo];
-    if (0 < [arrayTracks count]) {
+    if (0 < [arrayTracks count] && asset != nil) {
         playVideo = YES;
         assetTrackVideo = [arrayTracks objectAtIndex:0];
         videoFrameRate = [assetTrackVideo nominalFrameRate];
