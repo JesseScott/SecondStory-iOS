@@ -209,17 +209,12 @@ static NSString* const kRateKey = @"rate";
             
             NSString *file = [[self returnCustomDirectory] stringByAppendingString:@"/"];
             file = [file stringByAppendingString:filename];
-            mediaURL = [NSURL fileURLWithPath:file];
-            
-            
-            //NSString *tmpPath = @"var/mobile/Containers/Data/Application/21078F3B-12C5-4D42-8B8B-3C85CB7A0A91/Documents/SecondStory/BloodAlley/MEDIA/copperthief.mp4";
-            //mediaURL = [[NSURL alloc] initFileURLWithPath:tmpPath];
-            // file:///var/mobile/Containers/Data/Application/10E8E3B1-4191-4D7F-B1A5-3C7B93DA44A0/Documents/SecondStory/BloodAlley/MEDIA/copperthief.mp4
-            //mediaURL = [NSURL fileURLWithPath:fullPath];
-            // file:///var/mobile/Containers/Data/Application/5600DF36-247E-40D1-944F-E98E80D41CE5/Documents/SecondStory/BloodAlley/MEDIA/copperthief.mp4
-            
-            
-            
+            BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:file];
+            if(fileExists) {
+                mediaURL = [[NSURL alloc] initFileURLWithPath:file];
+                //mediaURL = [NSURL fileURLWithPath:file];
+            }
+
             if (YES == playOnTextureImmediately) {
                 playImmediately = playOnTextureImmediately;
             }
@@ -898,17 +893,17 @@ static NSString* const kRateKey = @"rate";
     [player removeObserver:self forKeyPath:kRateKey];
     
     // Release AVPlayer, AVAsset, etc.
-    //[player release];
+    [player release];
     player = nil;
-    //[asset release];
+    [asset release];
     asset = nil;
-    //[assetReader release];
+    [assetReader release];
     assetReader = nil;
-    //[assetReaderTrackOutputVideo release];
+    [assetReaderTrackOutputVideo release];
     assetReaderTrackOutputVideo = nil;
-    //[movieViewController release];
+    [movieViewController release];
     movieViewController = nil;
-    //[mediaURL release];
+    [mediaURL release];
     mediaURL = nil;
 }
 
@@ -917,6 +912,7 @@ static NSString* const kRateKey = @"rate";
 {
     BOOL ret = NO;
     asset = [[AVURLAsset alloc] initWithURL:url options:nil];
+    NSLog(@"asset metadata: %@", [asset commonMetadata]);
     
     if (nil != asset) {
         // We can now attempt to load the media, so report success.  We will
@@ -1065,17 +1061,19 @@ static NSString* const kRateKey = @"rate";
 - (void)prepareAVPlayer
 {
     // Create a player item
-    AVPlayerItem* item = [AVPlayerItem playerItemWithAsset:asset];
-    
-    // Add player item status KVO observer
-    NSKeyValueObservingOptions opts = NSKeyValueObservingOptionNew;
-    [item addObserver:self forKeyPath:kStatusKey options:opts context:AVPlayerItemStatusObservationContext];
-    
-    // Create an AV player
-    player = [[AVPlayer alloc] initWithPlayerItem:item];
-    
-    // Add player rate KVO observer
-    [player addObserver:self forKeyPath:kRateKey options:opts context:AVPlayerRateObservationContext];
+    if(asset.playable) {
+        AVPlayerItem* item = [AVPlayerItem playerItemWithAsset:asset];
+        
+        // Add player item status KVO observer
+        NSKeyValueObservingOptions opts = NSKeyValueObservingOptionNew;
+        [item addObserver:self forKeyPath:kStatusKey options:opts context:AVPlayerItemStatusObservationContext];
+        
+        // Create an AV player
+        player = [[AVPlayer alloc] initWithPlayerItem:item];
+        
+        // Add player rate KVO observer
+        [player addObserver:self forKeyPath:kRateKey options:opts context:AVPlayerRateObservationContext];
+    }
 }
 
 
