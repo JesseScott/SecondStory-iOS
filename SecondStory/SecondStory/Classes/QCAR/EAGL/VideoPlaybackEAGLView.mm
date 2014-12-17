@@ -201,6 +201,7 @@ namespace {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     LOCAL_MEDIA_PATH = [documentsDirectory stringByAppendingPathComponent:customPath];
+    
     REMOTE_MEDIA_PATH = @"http://jesses.co.tt/projects/second_story/blood_alley/media";
 
     
@@ -229,6 +230,12 @@ namespace {
     return match;
 }
 
+- (NSString*) returnDocumentsDirectory {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *doc = [paths objectAtIndex:0];
+    return doc;
+}
+
 - (void) setPathForMovie: (int) index {
     
     NSString *customPath = @"/SecondStory/BloodAlley/MEDIA/";
@@ -249,7 +256,8 @@ namespace {
             NSString *fileNameToMatch = [localDirPath stringByAppendingString:[localFiles objectAtIndex:index]];
             BOOL fileExistsAtPath = [[NSFileManager defaultManager] fileExistsAtPath:fileNameToMatch];
             if(fileExistsAtPath) {
-                filename = fileNameToMatch;
+                //filename = fileNameToMatch;
+                filename = [localFiles objectAtIndex:index];
             }
             else {
                 filename = [remoteDirPath stringByAppendingString:[localFiles objectAtIndex:index]];

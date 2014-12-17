@@ -166,6 +166,15 @@ static NSString* const kRateKey = @"rate";
     [super dealloc];
 }
 
+- (NSString*) returnDocumentsDirectory {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [paths objectAtIndex:0];
+}
+
+- (NSString*) returnCustomDirectory {
+    return [[self returnDocumentsDirectory] stringByAppendingPathComponent:@"/SecondStory/BloodAlley/MEDIA"];
+}
+
 
 //------------------------------------------------------------------------------
 #pragma mark - Class API
@@ -194,13 +203,18 @@ static NSString* const kRateKey = @"rate";
                 fullPath = [NSString stringWithString:filename];
             }
             else {
-                // filename is a relative path, play media from this app's
-                // resources folder
+                // filename is a relative path, play media from this app's resources folder
                 fullPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:filename];
             }
             
-            mediaURL = [[NSURL alloc] initFileURLWithPath:fullPath];
-            
+            NSString *file = [[self returnCustomDirectory] stringByAppendingString:@"/"];
+            file = [file stringByAppendingString:filename];
+            BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:file];
+            if(fileExists) {
+                mediaURL = [[NSURL alloc] initFileURLWithPath:file];
+                //mediaURL = [NSURL fileURLWithPath:file];
+            }
+
             if (YES == playOnTextureImmediately) {
                 playImmediately = playOnTextureImmediately;
             }
@@ -212,6 +226,7 @@ static NSString* const kRateKey = @"rate";
                 [self updatePlayerCursorPosition:seekPosition];
             }
             
+            //mediaURL = [NSURL fileURLWithPath:fullPath];
             ret = [self loadLocalMediaFromURL:mediaURL];
         }
         else {
@@ -897,6 +912,7 @@ static NSString* const kRateKey = @"rate";
 {
     BOOL ret = NO;
     asset = [[AVURLAsset alloc] initWithURL:url options:nil];
+    NSLog(@"asset metadata: %@", [asset commonMetadata]);
     
     if (nil != asset) {
         // We can now attempt to load the media, so report success.  We will
@@ -928,6 +944,9 @@ static NSString* const kRateKey = @"rate";
                                 }
                             });
          }];
+    }
+    else {
+        NSLog(@"NIL ASSET");
     }
     
     return ret;
@@ -975,7 +994,7 @@ static NSString* const kRateKey = @"rate";
     // Get the first video track
     AVAssetTrack* assetTrackVideo = nil;
     NSArray* arrayTracks = [asset tracksWithMediaType:AVMediaTypeVideo];
-    if (0 < [arrayTracks count]) {
+    if (0 < [arrayTracks count] && asset != nil) {
         playVideo = YES;
         assetTrackVideo = [arrayTracks objectAtIndex:0];
         videoFrameRate = [assetTrackVideo nominalFrameRate];
@@ -1042,17 +1061,19 @@ static NSString* const kRateKey = @"rate";
 - (void)prepareAVPlayer
 {
     // Create a player item
-    AVPlayerItem* item = [AVPlayerItem playerItemWithAsset:asset];
-    
-    // Add player item status KVO observer
-    NSKeyValueObservingOptions opts = NSKeyValueObservingOptionNew;
-    [item addObserver:self forKeyPath:kStatusKey options:opts context:AVPlayerItemStatusObservationContext];
-    
-    // Create an AV player
-    player = [[AVPlayer alloc] initWithPlayerItem:item];
-    
-    // Add player rate KVO observer
-    [player addObserver:self forKeyPath:kRateKey options:opts context:AVPlayerRateObservationContext];
+    if(asset.playable) {
+        AVPlayerItem* item = [AVPlayerItem playerItemWithAsset:asset];
+        
+        // Add player item status KVO observer
+        NSKeyValueObservingOptions opts = NSKeyValueObservingOptionNew;
+        [item addObserver:self forKeyPath:kStatusKey options:opts context:AVPlayerItemStatusObservationContext];
+        
+        // Create an AV player
+        player = [[AVPlayer alloc] initWithPlayerItem:item];
+        
+        // Add player rate KVO observer
+        [player addObserver:self forKeyPath:kRateKey options:opts context:AVPlayerRateObservationContext];
+    }
 }
 
 

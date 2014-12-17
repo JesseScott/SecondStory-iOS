@@ -30,15 +30,18 @@
 
 # pragma mark VIEW
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     // PATHS
     NSString *customPath = @"/SecondStory/BloodAlley/MEDIA";
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    LOCAL_MEDIA_PATH = [documentsDirectory stringByAppendingPathComponent:customPath];
+    LOCAL_MEDIA_PATH = [[self returnDocumentsDirectory] stringByAppendingPathComponent:customPath];
+
+    //NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    //NSString *documentsDirectory = [paths objectAtIndex:0];
+    //LOCAL_MEDIA_PATH = [documentsDirectory stringByAppendingPathComponent:customPath];
     
     [self listCustomDirectory];
     
@@ -48,28 +51,28 @@
     }
     
     // Arrays
-    youtubeIDS = [NSArray arrayWithObjects:
-                    @"N0L1xyy8tqA", // BEEF
-                    @"5npVxU_FMxg", // BIKE
-                    @"-zHUf_d3tUM", // ALLEY
-                    @"ZaM6fWMAu-Q",   // COPPER
-                    @"VqKuwHpkI4o", // GUN
-                    @"UA_T7eHy8mM", // PENNIES
-                    @"YDkUmpZYcXc", // SHROOMS
-                    @"F4BiLpAxFTs", // SWEEPING
-                    @"vwLm44Og9xU", // UMBRELLAS
-                  nil];
+//    youtubeIDS = [NSArray arrayWithObjects:
+//                  @"N0L1xyy8tqA", // BEEF
+//                  @"5npVxU_FMxg", // BIKE
+//                  @"-zHUf_d3tUM", // ALLEY
+//                  @"ZaM6fWMAu-Q", // COPPER
+//                  @"VqKuwHpkI4o", // GUN
+//                  @"UA_T7eHy8mM", // PENNIES
+//                  @"YDkUmpZYcXc", // SHROOMS
+//                  @"F4BiLpAxFTs", // SWEEPING
+//                  @"vwLm44Og9xU", // UMBRELLAS
+//                  nil];
     
     fileNames = [NSArray arrayWithObjects:
-                    @"beef.mp4",
-                    @"bicycles.mp4",
-                    @"bloodalley.mp4",
-                    @"copperthief.mp4",
-                    @"gun.mp4",
-                    @"pennies.mp4",
-                    @"shrooms.mp4",
-                    @"sweeping.mp4",
-                    @"umbrellas.mp4",
+                 @"beef.mp4",
+                 @"bicycles.mp4",
+                 @"bloodalley.mp4",
+                 @"copperthief.mp4",
+                 @"gun.mp4",
+                 @"pennies.mp4",
+                 @"shrooms.mp4",
+                 @"sweeping.mp4",
+                 @"umbrellas.mp4",
                  nil];
 
     // Alloc Player
@@ -116,13 +119,26 @@
     self.navigationController.navigationBar.tintColor = fontColor;
     [self.navigationController.navigationBar setBackgroundColor:bgColor];
     [self.navigationController.navigationBar setTitleTextAttributes:textAttributes];
+    
+    youtubeIDS = [NSArray arrayWithObjects:
+                  @"N0L1xyy8tqA", // BEEF
+                  @"5npVxU_FMxg", // BIKE
+                  @"-zHUf_d3tUM", // ALLEY
+                  @"ZaM6fWMAu-Q", // COPPER
+                  @"VqKuwHpkI4o", // GUN
+                  @"UA_T7eHy8mM", // PENNIES
+                  @"YDkUmpZYcXc", // SHROOMS
+                  @"F4BiLpAxFTs", // SWEEPING
+                  @"vwLm44Og9xU", // UMBRELLAS
+                  nil];
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
-    [moviePlayer stop];
-    moviePlayer = nil;
-    youtubeIDS = nil;
-    
+    if(!movieIsPlaying) {
+        [moviePlayer stop];
+        moviePlayer = nil;
+        youtubeIDS = nil;
+    }
     [self.videoView setHidden:YES];
 }
 
@@ -161,6 +177,9 @@
     // Play
     [moviePlayer play];
     
+    // Set Playback State
+    movieIsPlaying = YES;
+    
     // Finish
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished) name: MPMoviePlayerPlaybackDidFinishNotification object:moviePlayer];
 }
@@ -168,15 +187,28 @@
 - (void)playbackFinished {
     // Hide Video View
     [self.videoView setHidden:YES];
+    // Set Playback State
+    movieIsPlaying = NO;
 }
 
 - (void)loadStream: (int) index {
-    // Hide Video View
-    [self.videoView setHidden:YES];
-    
-    // Show Youtube View
-    [self.youtubeView setHidden:NO];
-    [self.youtubeView loadWithVideoId:[youtubeIDS objectAtIndex:index]];
+    if (youtubeIDS != nil) {
+        // Hide Video View
+        [self.videoView setHidden:YES];
+        
+        // Show Youtube View
+        [self.youtubeView setHidden:NO];
+        
+        if ([self.youtubeView loadWithVideoId:[youtubeIDS objectAtIndex:index]]) {
+            NSLog(@"Loaded Youtube");
+            if(self.youtubeView.playerState != kYTPlayerStatePlaying){
+                [self.youtubeView playVideo];
+            }
+        }
+        else {
+            NSLog(@"Error Youtube");
+        }
+    }
 }
 
 - (void) pauseVideo {
@@ -210,12 +242,16 @@
     return match;
 }
 
+- (NSString*) returnDocumentsDirectory {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *doc = [paths objectAtIndex:0];
+    return doc;
+}
 
 - (NSURL*) prepLocalURL {
     NSString *file = [LOCAL_MEDIA_PATH stringByAppendingString:@"/"];
     file = [file stringByAppendingString:LOCAL_FILE];
-    NSURL *url = [NSURL fileURLWithPath:file];
-    return url;
+    return [NSURL fileURLWithPath:file];
 }
 
 - (void) listCustomDirectory {
