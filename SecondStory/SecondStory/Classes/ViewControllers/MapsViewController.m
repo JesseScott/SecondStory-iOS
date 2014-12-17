@@ -134,10 +134,11 @@
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
-    [moviePlayer stop];
-    moviePlayer = nil;
-    youtubeIDS = nil;
-    
+    if(!movieIsPlaying) {
+        [moviePlayer stop];
+        moviePlayer = nil;
+        youtubeIDS = nil;
+    }
     [self.videoView setHidden:YES];
 }
 
@@ -176,6 +177,9 @@
     // Play
     [moviePlayer play];
     
+    // Set Playback State
+    movieIsPlaying = YES;
+    
     // Finish
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished) name: MPMoviePlayerPlaybackDidFinishNotification object:moviePlayer];
 }
@@ -183,6 +187,8 @@
 - (void)playbackFinished {
     // Hide Video View
     [self.videoView setHidden:YES];
+    // Set Playback State
+    movieIsPlaying = NO;
 }
 
 - (void)loadStream: (int) index {
