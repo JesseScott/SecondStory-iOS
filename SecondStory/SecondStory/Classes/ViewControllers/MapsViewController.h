@@ -26,7 +26,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIImageView *videoView;
-@property (weak, nonatomic) IBOutlet YTPlayerView *youtubeView;
+@property (nonatomic, strong) IBOutlet YTPlayerView *youtubeView;
 @property (weak, nonatomic) IBOutlet UITapGestureRecognizer *tap;
 
 @property (weak, nonatomic) IBOutlet UIButton *beefButton;

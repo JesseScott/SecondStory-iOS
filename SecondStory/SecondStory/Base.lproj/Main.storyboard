@@ -445,8 +445,13 @@
                                     <action selector="clickedPin:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="1ZP-x0-Ctn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCh-he-C4i" userLabel="Video View"/>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2v-97-lkV" userLabel="Youtube View" customClass="YTPlayerView">
+                                <rect key="frame" x="10" y="190" width="300" height="168"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCh-he-C4i" userLabel="Video View">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="168"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -624,6 +629,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="TZp-oe-crs"/>
+        <segue reference="jZx-hv-I1G"/>
     </inferredMetricsTieBreakers>
 </document>

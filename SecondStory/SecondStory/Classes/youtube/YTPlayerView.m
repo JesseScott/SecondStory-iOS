@@ -625,18 +625,10 @@ NSString static *const kYTPlayerEmbedUrlRegexPattern = @"^http(s)://(www.)youtub
 
   NSError *error = nil;
     
-  /* 
-   
-  NSString *path = [[NSBundle mainBundle] pathForResource:@"YTPlayerView-iframe-player"
-                                                   ofType:@"html"
-                                              inDirectory:@"Assets"];
-   */
-    
-    // EDIT - as per http://stackoverflow.com/a/23827308/1226095
+  // EDIT - as per http://stackoverflow.com/a/23827308/1226095
   NSString *path = [[NSBundle mainBundle] pathForResource:@"YTPlayerView-iframe-player" ofType:@"html"];
     
-  NSString *embedHTMLTemplate =
-      [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+  NSString *embedHTMLTemplate = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
 
   if (error) {
     NSLog(@"Received error rendering template: %@", error);
