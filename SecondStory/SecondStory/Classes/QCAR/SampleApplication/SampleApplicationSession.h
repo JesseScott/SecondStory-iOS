@@ -10,6 +10,9 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 #import <QCAR/CameraDevice.h>
 #import <QCAR/State.h>
 
+#define LICENSE_KEY     "AblBwrL/////AAAAARIGZSX7q0iJpCeD7HvnIU8G+luCoP4hMCYZQtanEubq8hMK1iDRbfCKIjOj+hjQUQlvVTbJQEdmRGbMNZb+XYasgq63D1UuagLatsYqJCBZqwu0kKStmkss1wSef5mPICrPLnvyGDcrC2Q637JuZRs9OhguePIBAMR6XgLgQ6HU8mdR+9AiQCpb+XIABScAZTKKlsZulpdeYMOURcBhKqC236IveOonK8oSBX4UaL4r7oAq90WicMdA0qu2y0yw3ovEOaTZUUCwVsbA5DOKSri1xZfQzae5DMviBIU/zqsFpAna0jlf/9cd4YYPGH59HPP8ErDOT/2dF0VnvV22d+9HBKrGCdlREKe8JT4PWyVY"
+
+
 #define E_INITIALIZING_QCAR         100
 
 #define E_INITIALIZING_CAMERA       110
