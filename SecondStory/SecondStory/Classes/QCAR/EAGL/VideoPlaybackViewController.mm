@@ -8,7 +8,8 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 #import "VideoPlaybackViewController.h"
 #import <QCAR/QCAR.h>
 #import <QCAR/TrackerManager.h>
-#import <QCAR/ImageTracker.h>
+//#import <QCAR/ImageTracker.h>
+#import <QCAR/ObjectTracker.h>
 #import <QCAR/DataSet.h>
 #import <QCAR/Trackable.h>
 #import <QCAR/CameraDevice.h>
@@ -291,7 +292,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     QCAR::TrackerManager& trackerManager = QCAR::TrackerManager::getInstance();
     
     // Image Tracker...
-    QCAR::Tracker* trackerBase = trackerManager.initTracker(QCAR::ImageTracker::getClassType());
+    QCAR::Tracker* trackerBase = trackerManager.initTracker(QCAR::ObjectTracker::getClassType());
     if (trackerBase == NULL)
     {
         NSLog(@"Failed to initialize ImageTracker.");
@@ -312,7 +313,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     QCAR::setHint(QCAR::HINT_MAX_SIMULTANEOUS_IMAGE_TARGETS, NUM_VIDEO_TARGETS);
     
     QCAR::TrackerManager& trackerManager = QCAR::TrackerManager::getInstance();
-    QCAR::Tracker* tracker = trackerManager.getTracker(QCAR::ImageTracker::getClassType());
+    QCAR::Tracker* tracker = trackerManager.getTracker(QCAR::ObjectTracker::getClassType());
     if(tracker == 0) {
         return false;
     }
@@ -347,7 +348,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 // stop your trackerts
 - (bool) doStopTrackers {
     QCAR::TrackerManager& trackerManager = QCAR::TrackerManager::getInstance();
-    QCAR::Tracker* tracker = trackerManager.getTracker(QCAR::ImageTracker::getClassType());
+    QCAR::Tracker* tracker = trackerManager.getTracker(QCAR::ObjectTracker::getClassType());
     
     if (NULL == tracker) {
         NSLog(@"ERROR: failed to get the tracker from the tracker manager");
@@ -363,7 +364,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     if (dataSet != NULL) {
         // Get the image tracker:
         QCAR::TrackerManager& trackerManager = QCAR::TrackerManager::getInstance();
-        QCAR::ImageTracker* imageTracker = static_cast<QCAR::ImageTracker*>(trackerManager.getTracker(QCAR::ImageTracker::getClassType()));
+        QCAR::ObjectTracker* imageTracker = static_cast<QCAR::ObjectTracker*>(trackerManager.getTracker(QCAR::ObjectTracker::getClassType()));
         
         if (imageTracker == NULL)
         {
@@ -389,7 +390,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 // deinitialize your trackers
 - (bool) doDeinitTrackers {
     QCAR::TrackerManager& trackerManager = QCAR::TrackerManager::getInstance();
-    trackerManager.deinitTracker(QCAR::ImageTracker::getClassType());
+    trackerManager.deinitTracker(QCAR::ObjectTracker::getClassType());
     return true;
 }
 
@@ -412,7 +413,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     
     // Get the QCAR tracker manager image tracker
     QCAR::TrackerManager& trackerManager = QCAR::TrackerManager::getInstance();
-    QCAR::ImageTracker* imageTracker = static_cast<QCAR::ImageTracker*>(trackerManager.getTracker(QCAR::ImageTracker::getClassType()));
+    QCAR::ObjectTracker* imageTracker = static_cast<QCAR::ObjectTracker*>(trackerManager.getTracker(QCAR::ObjectTracker::getClassType()));
     
     if (NULL == imageTracker) {
         NSLog(@"ERROR: failed to get the ImageTracker from the tracker manager");
