@@ -633,7 +633,12 @@ namespace {
             0.0f == videoData[SINGLE_HELPER].targetPositiveDimensions.data[1]) {
             const QCAR::ImageTarget& imageTarget = (const QCAR::ImageTarget&) trackableResult->getTrackable();
             
-            videoData[SINGLE_HELPER].targetPositiveDimensions = imageTarget.getSize();
+            //videoData[SINGLE_HELPER].targetPositiveDimensions = imageTarget.getSize();
+            QCAR::Vec3F size = imageTarget.getSize();
+            videoData[SINGLE_HELPER].targetPositiveDimensions.data[0] = size.data[0];
+            videoData[SINGLE_HELPER].targetPositiveDimensions.data[1] = size.data[1];
+            
+            
             // The pose delivers the centre of the target, thus the dimensions
             // go from -width / 2 to width / 2, and -height / 2 to height / 2
             videoData[SINGLE_HELPER].targetPositiveDimensions.data[0] /= 2.0f;
