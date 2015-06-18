@@ -476,6 +476,13 @@
 			name = Vendor;
 			sourceTree = "<group>";
 		};
+		2D6E1BA71B327F27001B2F70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		2D7161FF19E79E3D00B00989 /* audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,9 +645,10 @@
 		2DE848A019A17B3A0019053E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2D6E1BA61B327B72001B2F70 /* Vendor */,
 				2DE848FB19A17FF20019053E /* Delegate */,
-				2DE848FC19A17FFB0019053E /* ViewControllers */,
+				2D6E1BA71B327F27001B2F70 /* Model */,
+				2DE848FC19A17FFB0019053E /* Controllers */,
+				2D6E1BA61B327B72001B2F70 /* Vendor */,
 				2DE8495A19A1B2080019053E /* QCAR */,
 			);
 			name = Classes;
@@ -682,7 +690,7 @@
 			name = Delegate;
 			sourceTree = "<group>";
 		};
-		2DE848FC19A17FFB0019053E /* ViewControllers */ = {
+		2DE848FC19A17FFB0019053E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				2DE8487F19A173710019053E /* SplashViewController.h */,
@@ -700,7 +708,7 @@
 				2D4D629519C5FACD007A75C2 /* FeedbackViewController.h */,
 				2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */,
 			);
-			name = ViewControllers;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		2DE8494919A1AE9C0019053E /* External */ = {

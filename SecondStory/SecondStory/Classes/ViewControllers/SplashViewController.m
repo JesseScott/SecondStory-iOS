@@ -8,8 +8,12 @@
 
 #import "SplashViewController.h"
 
-#pragma mark - INTERFACE -
+#pragma mark - CONSTANTS -
 
+#define SPLASH_SEGUE @"segue_splash2welcome"
+
+
+#pragma mark - INTERFACE -
 
 @interface SplashViewController ()
 
@@ -53,12 +57,12 @@
 
 - (void) segue
 {
-    [self performSegueWithIdentifier:@"segue_splash2welcome" sender:self];
+    [self performSegueWithIdentifier:SPLASH_SEGUE sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"segue_splash2welcome"]) {
+    if ([segue.identifier isEqualToString:SPLASH_SEGUE]) {
         [_timer invalidate];
         _timer = nil;
     }
