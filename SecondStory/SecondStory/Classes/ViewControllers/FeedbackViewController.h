@@ -7,12 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MessageUI/MessageUI.h>
 
-@interface FeedbackViewController : UIViewController <MFMailComposeViewControllerDelegate, UITextFieldDelegate> {
-    
-}
-
-- (IBAction)sendfeedback:(id)sender;
+@interface FeedbackViewController : UIViewController 
 
 @end

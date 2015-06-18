@@ -7,12 +7,29 @@
 //
 
 #import "FeedbackViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface FeedbackViewController ()
+
+#pragma mark - CONSTANTS -
+
+#define EMAIL_SUBJECT   @"Feedback - 2nd Story"
+#define EMAIL_RECIPIENT @"info@theonlyanimal.com"
+
+#pragma mark - INTERFACE -
+
+@interface FeedbackViewController () <MFMailComposeViewControllerDelegate, UITextFieldDelegate> 
 
 @end
 
+
+#pragma mark - IMPLEMENTATION -
+
+
 @implementation FeedbackViewController
+
+
+#pragma mark - LIFECYCLE -
+
 
 - (void)viewDidLoad
 {
@@ -34,17 +51,24 @@
     [self.navigationController.navigationBar setTitleTextAttributes:textAttributes];
 }
 
+
+#pragma mark - ACTIONS -
+
+
 - (IBAction)sendfeedback:(id)sender {
     [self startEmail];
 }
+
+#pragma mark - EMAIL -
+
 
 - (void) startEmail {
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
         mailer.mailComposeDelegate = self;
         
-        [mailer setSubject:@"Feedback - 2nd Story"];
-        NSArray *toRecipients = [NSArray arrayWithObjects:@"info@theonlyanimal.com", nil];
+        [mailer setSubject:EMAIL_SUBJECT];
+        NSArray *toRecipients = [NSArray arrayWithObjects:EMAIL_RECIPIENT, nil];
         [mailer setToRecipients:toRecipients];
         
         [self presentViewController:mailer animated:YES completion:nil];
