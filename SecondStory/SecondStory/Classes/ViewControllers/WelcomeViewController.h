@@ -21,10 +21,6 @@
     int downloadCounter;
 }
 
-@property NSURLSession *backgroundSession;
-@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
-@property (weak, nonatomic) IBOutlet UIButton *skipButton;
-- (IBAction)skip:(id)sender;
 
 
 @end

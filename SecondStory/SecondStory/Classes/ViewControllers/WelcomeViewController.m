@@ -8,20 +8,29 @@
 
 #import "WelcomeViewController.h"
 
-//
+#pragma mark - CONSTANTS -
+
 #define MB (1024*1024)
 #define GB (MB*1024)
+#define LOCAL_MEDIA_PATH  @"/SecondStory/BloodAlley/MEDIA"
+#define REMOTE_MEDIA_PATH @"http://jesses.co.tt/projects/second_story/blood_alley/media/"
+
+#pragma mark - INTERFACE -
+
+@interface WelcomeViewController ()
+
+@property NSURLSession *backgroundSession;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@property (weak, nonatomic) IBOutlet UIButton *skipButton;
+
+@end
+
+#pragma mark - IMPLEMENTATION -
 
 @implementation WelcomeViewController
 
-#pragma mark SYNTHESIZE
 
-// Synthesize
-@synthesize progressView;
-@synthesize backgroundSession;
-@synthesize skipButton;
-
-#pragma mark VIEW
+#pragma mark - LIFECYCLE -
 
 - (void)viewDidLoad
 {
@@ -35,8 +44,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     // PATHS
-    LOCAL_MEDIA_PATH = @"/SecondStory/BloodAlley/MEDIA";
-    REMOTE_MEDIA_PATH = @"http://jesses.co.tt/projects/second_story/blood_alley/media/";
+
     
     // CHECK
     if ([self checkForContent]) {
@@ -49,17 +57,6 @@
     // Counter
     downloadCounter = 0;
     
-}
-
-
-
-- (void) segue {
-    [self performSegueWithIdentifier:@"segue_welcome2menu" sender:self];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Kill Stuff
 }
 
 - (void)viewDidUnload
@@ -76,11 +73,24 @@
         self.view = nil;
     }
 }
+
+#pragma mark - SEGUE -
+
+- (void) segue {
+    [self performSegueWithIdentifier:@"segue_welcome2menu" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Kill Stuff
+}
+
+
     
 
 
 
-#pragma mark ALERTS
+#pragma mark - ALERTS - 
 
 - (void) showStreamOrDownloadDialog
 {
@@ -154,7 +164,7 @@
 }
 
 
-#pragma mark DIR
+#pragma mark - DIR -
 
 - (NSString*) returnDocumentsDirectory {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
