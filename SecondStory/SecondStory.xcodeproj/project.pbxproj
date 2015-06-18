@@ -468,6 +468,14 @@
 			path = Assets/about;
 			sourceTree = "<group>";
 		};
+		2D6E1BA61B327B72001B2F70 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				2D95825919F49F7F004A46A8 /* youtube */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
 		2D7161FF19E79E3D00B00989 /* audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,7 +638,7 @@
 		2DE848A019A17B3A0019053E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2D95825919F49F7F004A46A8 /* youtube */,
+				2D6E1BA61B327B72001B2F70 /* Vendor */,
 				2DE848FB19A17FF20019053E /* Delegate */,
 				2DE848FC19A17FFB0019053E /* ViewControllers */,
 				2DE8495A19A1B2080019053E /* QCAR */,
