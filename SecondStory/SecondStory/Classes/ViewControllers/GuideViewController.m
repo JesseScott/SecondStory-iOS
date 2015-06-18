@@ -7,17 +7,28 @@
 //
 
 #import "GuideViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
+
+#pragma mark - CONSTANTS -
 
 
+#pragma mark - INTERFACE -
+
+@interface GuideViewController () <AVAudioPlayerDelegate>
+
+@property (strong, nonatomic) AVAudioPlayer *player;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *replayBtn;
+
+@end
+
+#pragma mark - IMPLEMENTATION -
 
 @implementation GuideViewController
 
-@synthesize replayBtn;
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
+#pragma mark - LIFECYCLE -
+
 
 - (void)viewDidLoad
 {
@@ -25,19 +36,12 @@
     
     // Audio
     [self performSelector:@selector(playAudio) withObject:self afterDelay:2.0];
+
     
     // Lifecycle
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(pauseAudio)
-     name:UIApplicationWillResignActiveNotification
-     object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pauseAudio) name:UIApplicationWillResignActiveNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(resumeAudio)
-     name:UIApplicationDidBecomeActiveNotification
-     object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resumeAudio) name:UIApplicationDidBecomeActiveNotification object:nil];
     
 }
 
@@ -57,30 +61,55 @@
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
-    [player stop];
-    player = nil;
-    replayBtn = nil;
+    [_player stop];
+    _player = nil;
+    _replayBtn = nil;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void) playAudio {
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+#pragma mark - AUDIO -
+
+- (void) playAudio
+{
     NSURL *soundFileURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"guide" ofType:@"mp3"]];
-    player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
-    player.numberOfLoops = 0;
-    [player setCurrentTime:0.0];
-    [player play];
+    _player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+    _player.numberOfLoops = 0;
+    [_player setCurrentTime:0.0];
+    [_player play];
 }
 
 
-- (void) pauseAudio {
+- (void) pauseAudio
+{
     //NSLog(@"PAUSE");
+    if (_player != nil) {
+        [_player pause];
+    }
 }
 
-- (void) resumeAudio {
+- (void) resumeAudio
+{
     //NSLog(@"RESUME");
+    if (_player != nil) {
+        [_player play];
+    }
 }
 
-- (IBAction)replayAudio:(id)sender {
+- (IBAction)replayAudio:(id)sender
+{
     [self playAudio];
+}
+
+
+- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    NSLog(@"DONE");
 }
 
 
