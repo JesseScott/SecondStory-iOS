@@ -8,48 +8,62 @@
 
 #import "MenuViewController.h"
 
+#pragma mark - CONSTANTS -
+
+
+#pragma mark - INTERFACE -
+
+@interface MenuViewController ()
+
+@property (weak, nonatomic) UIFont *buttonFont;
+@property (weak, nonatomic) UIFont *liveFont;
+
+@property (weak, nonatomic) IBOutlet UIButton *guideBtn;
+@property (weak, nonatomic) IBOutlet UIButton *mapsBtn;
+@property (weak, nonatomic) IBOutlet UIButton *aboutBtn;
+@property (weak, nonatomic) IBOutlet UIButton *feedBtn;
+@property (weak, nonatomic) IBOutlet UIButton *liveBtn;
+
+@end
+
+#pragma mark - IMPLEMENTATION -
 
 @implementation MenuViewController
 
-@synthesize guideBtn, mapsBtn, aboutBtn, feedBtn, liveBtn;
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
+#pragma mark - LIFECYCLE -
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    
     // Font
-    buttonFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
-    liveFont = [UIFont fontWithName:@"Din Alternate Black" size:32];
+    _buttonFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
+    _liveFont = [UIFont fontWithName:@"Din Alternate Black" size:32];
     
     // Colors
     UIColor *buttonBgColor = [UIColor colorWithRed:(255/255.0f) green:(255/255.0f) blue:(204/255.0f) alpha:(204/255.0f)];
     UIColor *buttonTextColor = [UIColor colorWithRed:(5/255.0f) green:(5/255.0f) blue:(5/255.0f) alpha:(204/255.0f)];
 
-    
     // Buttons
-    [guideBtn.titleLabel setFont:buttonFont];
-    [guideBtn.titleLabel setTextColor:buttonTextColor];
-    [guideBtn setBackgroundColor:buttonBgColor];
+    [_guideBtn.titleLabel setFont:_buttonFont];
+    [_guideBtn.titleLabel setTextColor:buttonTextColor];
+    [_guideBtn setBackgroundColor:buttonBgColor];
     
-    [mapsBtn.titleLabel setFont:buttonFont];
-    [mapsBtn.titleLabel setTextColor:buttonTextColor];
-    [mapsBtn setBackgroundColor:buttonBgColor];
+    [_mapsBtn.titleLabel setFont:_buttonFont];
+    [_mapsBtn.titleLabel setTextColor:buttonTextColor];
+    [_mapsBtn setBackgroundColor:buttonBgColor];
     
-    [aboutBtn.titleLabel setFont:buttonFont];
-    [aboutBtn.titleLabel setTextColor:buttonTextColor];
-    [aboutBtn setBackgroundColor:buttonBgColor];
+    [_aboutBtn.titleLabel setFont:_buttonFont];
+    [_aboutBtn.titleLabel setTextColor:buttonTextColor];
+    [_aboutBtn setBackgroundColor:buttonBgColor];
     
-    [feedBtn.titleLabel setFont:buttonFont];
-    [feedBtn.titleLabel setTextColor:buttonTextColor];
-    [feedBtn setBackgroundColor:buttonBgColor];
+    [_feedBtn.titleLabel setFont:_buttonFont];
+    [_feedBtn.titleLabel setTextColor:buttonTextColor];
+    [_feedBtn setBackgroundColor:buttonBgColor];
     
-    [liveBtn.titleLabel setFont:liveFont];
+    [_liveBtn.titleLabel setFont:_liveFont];
     
 }
 
@@ -59,5 +73,12 @@
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
 }
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+
 
 @end
