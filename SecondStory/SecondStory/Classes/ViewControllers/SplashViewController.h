@@ -8,14 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SplashViewController : UIViewController {
-    
-    // Font
-    UIFont *labelFont;
+@interface SplashViewController : UIViewController
 
-}
-
-@property (nonatomic, strong) NSTimer *timer;
-@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end

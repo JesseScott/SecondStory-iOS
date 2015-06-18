@@ -8,47 +8,60 @@
 
 #import "SplashViewController.h"
 
+#pragma mark - INTERFACE -
+
+
+@interface SplashViewController ()
+
+@property (nonatomic, weak) UIFont *labelFont;
+@property (nonatomic, weak) IBOutlet UILabel *label;
+@property (nonatomic, strong) NSTimer *timer;
+
+@end
+
+#pragma mark - IMPLEMENTATION -
+
 
 @implementation SplashViewController
 
-@synthesize label;
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
+#pragma mark - LIFECYCLE -
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
-    // Timer
-    if(self.timer == nil) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(segue) userInfo:nil repeats:NO];
+    if(_timer == nil) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(segue) userInfo:nil repeats:NO];
     }
     
-    // Font
-    labelFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
-    label.font = labelFont;
-    
+    _labelFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
+    _label.font = _labelFont;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = YES;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+#pragma mark - SEGUE -
+
+
 - (void) segue
 {
-    // Segue
     [self performSegueWithIdentifier:@"segue_splash2welcome" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
-    // Kill Timer
-    [self.timer invalidate];
-    self.timer = nil;
+    if ([segue.identifier isEqualToString:@"segue_splash2welcome"]) {
+        [_timer invalidate];
+        _timer = nil;
+    }
 }
 
 @end
