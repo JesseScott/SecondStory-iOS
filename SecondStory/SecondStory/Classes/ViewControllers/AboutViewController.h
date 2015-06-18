@@ -8,21 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AboutViewController : UIViewController {
-    
-    NSInteger swipeCount;
-    
-}
-
-// Image View
-@property (weak, nonatomic) IBOutlet UIImageView *slideshow;
-@property (copy,nonatomic) NSArray *slides;
-
-// Swipe
-@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftSwipe;
-@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *rightSwipe;
-
-- (IBAction)previousImage:(UISwipeGestureRecognizer *)sender;
-- (IBAction)nextImage:(UISwipeGestureRecognizer *)sender;
+@interface AboutViewController : UIViewController
 
 @end

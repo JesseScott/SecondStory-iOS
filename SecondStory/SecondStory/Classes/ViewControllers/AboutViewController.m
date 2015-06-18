@@ -8,18 +8,41 @@
 
 #import "AboutViewController.h"
 
+
+#pragma mark - CONSTANTS -
+
+
+
+#pragma mark - INTERFACE -
+
+@interface AboutViewController ()
+
+@property NSInteger swipeCount;
+
+@property (weak, nonatomic) IBOutlet UIImageView *slideshow;
+@property (copy,nonatomic) NSArray *slides;
+
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftSwipe;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *rightSwipe;
+
+
+@end
+
+
+#pragma mark - IMPLEMENTATION -
+
+
 @implementation AboutViewController
 
-@synthesize slideshow;
-@synthesize slides;
-@synthesize leftSwipe, rightSwipe;
+
+#pragma mark - LIFECYCLE -
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     // Load Images
-    
     self.slides = [[NSArray alloc] init];
     self.slides = [NSArray arrayWithObjects:
                         [UIImage imageNamed:@"about_pg1"],
@@ -29,8 +52,8 @@
                    nil];
     
     // Load Array
-    swipeCount = 0;
-    [slideshow setImage:[self.slides objectAtIndex:swipeCount]];
+    _swipeCount = 0;
+    [_slideshow setImage:[self.slides objectAtIndex:_swipeCount]];
     
     // Add Swipe Detection
     [self.view addGestureRecognizer:self.leftSwipe];
@@ -55,26 +78,21 @@
     [self.navigationController.navigationBar setTitleTextAttributes:textAttributes];
 }
 
-- (IBAction)previousImage:(UISwipeGestureRecognizer *)sender {
-    if(swipeCount > 0) {
-        
-        // Set Index
-        swipeCount = swipeCount - 1;
-        
-        // Set Image
-        [slideshow setImage:[self.slides objectAtIndex:swipeCount]];
-    }
 
+#pragma mark - ACTIONS -
+
+
+- (IBAction)previousImage:(UISwipeGestureRecognizer *)sender {
+    if(_swipeCount > 0) {
+        _swipeCount = _swipeCount - 1;
+        [_slideshow setImage:[self.slides objectAtIndex:_swipeCount]];
+    }
 }
 
 - (IBAction)nextImage:(UISwipeGestureRecognizer *)sender {
-    if(swipeCount < self.slides.count - 1) {
-        
-        // Set Index
-        swipeCount = swipeCount + 1;
-        
-        // Set Image
-        [slideshow setImage:[self.slides objectAtIndex:swipeCount]];
+    if(_swipeCount < self.slides.count - 1) {
+        _swipeCount = _swipeCount + 1;
+        [_slideshow setImage:[self.slides objectAtIndex:_swipeCount]];
     }
 }
 
