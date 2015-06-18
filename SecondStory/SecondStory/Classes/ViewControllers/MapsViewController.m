@@ -7,28 +7,56 @@
 //
 
 #import "MapsViewController.h"
+#import <MediaPlayer/MPMoviePlayerController.h>
+#import "YTPlayerView.h"
+
+
+#pragma mark - CONSTANTS -
+
+
+
+#pragma mark - INTERFACE -
+
+@interface MapsViewController ()
+
+@property (weak, nonatomic) NSArray *youtubeIDS;
+@property (weak, nonatomic) NSArray *fileNames;
+@property (weak, nonatomic) NSString *matchedFile;
+
+@property BOOL movieIsPlaying;
+@property BOOL shouldPlayLocal;
+
+@property (weak, nonatomic) NSString *LOCAL_MEDIA_PATH;
+@property (weak, nonatomic) NSString *LOCAL_FILE;
+
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIImageView *videoView;
+
+@property (nonatomic, strong) IBOutlet YTPlayerView *youtubeView;
+@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
+
+@property (weak, nonatomic) IBOutlet UITapGestureRecognizer *tap;
+
+@property (weak, nonatomic) IBOutlet UIButton *beefButton;
+@property (weak, nonatomic) IBOutlet UIButton *penniesButton;
+@property (weak, nonatomic) IBOutlet UIButton *sweepingButton;
+@property (weak, nonatomic) IBOutlet UIButton *copperButton;
+@property (weak, nonatomic) IBOutlet UIButton *macrameButton;
+@property (weak, nonatomic) IBOutlet UIButton *umbrellasButton;
+@property (weak, nonatomic) IBOutlet UIButton *alleyButton;
+@property (weak, nonatomic) IBOutlet UIButton *bikeButton;
+@property (weak, nonatomic) IBOutlet UIButton *gunButton;
+
+@end
+
+
+#pragma mark - IMPLEMENTATION -
 
 
 @implementation MapsViewController
 
-# pragma mark SYNTHESIZE
 
-@synthesize beefButton;
-@synthesize penniesButton;
-@synthesize sweepingButton;
-@synthesize copperButton;
-@synthesize macrameButton;
-@synthesize umbrellasButton;
-@synthesize alleyButton;
-@synthesize bikeButton;
-@synthesize gunButton;
-
-@synthesize videoView;
-@synthesize youtubeView;
-@synthesize backgroundView;
-@synthesize tap;
-
-# pragma mark VIEW
+#pragma mark - LIFECYCLE -
 
 
 - (void)viewDidLoad
@@ -37,7 +65,7 @@
     
     // PATHS
     NSString *customPath = @"/SecondStory/BloodAlley/MEDIA";
-    LOCAL_MEDIA_PATH = [[self returnDocumentsDirectory] stringByAppendingPathComponent:customPath];
+    _LOCAL_MEDIA_PATH = [[self returnDocumentsDirectory] stringByAppendingPathComponent:customPath];
 
     //NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     //NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -45,9 +73,9 @@
     
     [self listCustomDirectory];
     
-    shouldPlayLocal = YES;
+    _shouldPlayLocal = YES;
     if([self returnSizeOfDirectory] == 0) {
-        shouldPlayLocal = NO;
+        _shouldPlayLocal = NO;
     }
     
     // Arrays
@@ -63,7 +91,7 @@
 //                  @"vwLm44Og9xU", // UMBRELLAS
 //                  nil];
     
-    fileNames = [NSArray arrayWithObjects:
+    _fileNames = [NSArray arrayWithObjects:
                  @"beef.mp4",
                  @"bicycles.mp4",
                  @"bloodalley.mp4",
@@ -76,17 +104,17 @@
                  nil];
 
     // Alloc Player
-    moviePlayer = [[MPMoviePlayerController alloc] init];
+    _moviePlayer = [[MPMoviePlayerController alloc] init];
                    
     // Hide Video View
     [self.view addSubview:self.videoView];
     [self.videoView setHidden:YES];
-    [self.view addSubview:youtubeView];
+    [self.view addSubview:_youtubeView];
     [self.youtubeView setHidden:YES];
     
     
     // Set Playback State
-    movieIsPlaying = NO;
+    _movieIsPlaying = NO;
     
     // Tap
     UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
@@ -120,7 +148,7 @@
     [self.navigationController.navigationBar setBackgroundColor:bgColor];
     [self.navigationController.navigationBar setTitleTextAttributes:textAttributes];
     
-    youtubeIDS = [NSArray arrayWithObjects:
+    _youtubeIDS = [NSArray arrayWithObjects:
                   @"N0L1xyy8tqA", // BEEF
                   @"5npVxU_FMxg", // BIKE
                   @"-zHUf_d3tUM", // ALLEY
@@ -134,21 +162,16 @@
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
-    if(!movieIsPlaying) {
-        [moviePlayer stop];
-        moviePlayer = nil;
-        youtubeIDS = nil;
+    if(!_movieIsPlaying) {
+        [_moviePlayer stop];
+        _moviePlayer = nil;
+        _youtubeIDS = nil;
     }
     [self.videoView setHidden:YES];
 }
 
-- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
-    [moviePlayer stop];
-    [self.videoView setHidden:YES];
-}
 
-
-# pragma mark VIDEO
+# pragma mark - VIDEO -
 
 - (void)loadVideo: (NSURL*) videoUrl {
     
@@ -159,47 +182,47 @@
     [self.youtubeView setHidden:YES];
 
     //Set URL
-    [moviePlayer setContentURL:videoUrl];
+    [_moviePlayer setContentURL:videoUrl];
     
     //Set Frame
-    moviePlayer.view.frame = CGRectMake(40, 203, 240, 128);
-    [self.view addSubview:[moviePlayer view]];
+    _moviePlayer.view.frame = CGRectMake(40, 203, 240, 128);
+    [self.view addSubview:[_moviePlayer view]];
     
     // Controls
-    moviePlayer.controlStyle = MPMovieControlStyleDefault;
+    _moviePlayer.controlStyle = MPMovieControlStyleDefault;
     
     // Loop Video
-    moviePlayer.repeatMode = MPMovieRepeatModeNone;
+    _moviePlayer.repeatMode = MPMovieRepeatModeNone;
     
     // Prepare
-    [moviePlayer prepareToPlay];
+    [_moviePlayer prepareToPlay];
     
     // Play
-    [moviePlayer play];
+    [_moviePlayer play];
     
     // Set Playback State
-    movieIsPlaying = YES;
+    _movieIsPlaying = YES;
     
     // Finish
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished) name: MPMoviePlayerPlaybackDidFinishNotification object:moviePlayer];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished) name: MPMoviePlayerPlaybackDidFinishNotification object:_moviePlayer];
 }
 
 - (void)playbackFinished {
     // Hide Video View
     [self.videoView setHidden:YES];
     // Set Playback State
-    movieIsPlaying = NO;
+    _movieIsPlaying = NO;
 }
 
 - (void)loadStream: (int) index {
-    if (youtubeIDS != nil) {
+    if (_youtubeIDS != nil) {
         // Hide Video View
         [self.videoView setHidden:YES];
         
         // Show Youtube View
         [self.youtubeView setHidden:NO];
         
-        if ([self.youtubeView loadWithVideoId:[youtubeIDS objectAtIndex:index]]) {
+        if ([self.youtubeView loadWithVideoId:[_youtubeIDS objectAtIndex:index]]) {
             NSLog(@"Loaded Youtube");
             if(self.youtubeView.playerState != kYTPlayerStatePlaying){
                 [self.youtubeView playVideo];
@@ -213,29 +236,31 @@
 
 - (void) pauseVideo {
     NSLog(@"PAUSE");
-    if([moviePlayer playbackState] == MPMoviePlaybackStatePlaying ) {
-        [moviePlayer pause];
+    if([_moviePlayer playbackState] == MPMoviePlaybackStatePlaying ) {
+        [_moviePlayer pause];
     }
 }
 
 - (void) resumeVideo {
     NSLog(@"RESUME");
-    if([moviePlayer playbackState] == MPMoviePlaybackStatePaused ) {
-        [moviePlayer play];
+    if([_moviePlayer playbackState] == MPMoviePlaybackStatePaused ) {
+        [_moviePlayer play];
     }
 }
 
-# pragma mark FILE
+
+# pragma mark - FILES -
+
 
 - (BOOL) videoIsLocal: (int) index {
-    NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:nil];
-    NSString *fileNameToMatch = [fileNames objectAtIndex:index];
+    NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_LOCAL_MEDIA_PATH error:nil];
+    NSString *fileNameToMatch = [_fileNames objectAtIndex:index];
     BOOL match = NO;
     for (int i = 0; i < [contents count]; i++) {
         NSLog(@"Item #%i is %@", i, [contents objectAtIndex:i]);
         if ([[contents objectAtIndex:i] isEqualToString:fileNameToMatch]) {
             NSLog(@"MATCH");
-            LOCAL_FILE = fileNameToMatch;
+            _LOCAL_FILE = fileNameToMatch;
             return YES;
         }
     }
@@ -249,15 +274,15 @@
 }
 
 - (NSURL*) prepLocalURL {
-    NSString *file = [LOCAL_MEDIA_PATH stringByAppendingString:@"/"];
-    file = [file stringByAppendingString:LOCAL_FILE];
+    NSString *file = [_LOCAL_MEDIA_PATH stringByAppendingString:@"/"];
+    file = [file stringByAppendingString:_LOCAL_FILE];
     return [NSURL fileURLWithPath:file];
 }
 
 - (void) listCustomDirectory {
     NSError *error = nil;
-    NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:LOCAL_MEDIA_PATH error:&error];
-    NSLog(@"DIRECTORY HAS %i FILES", [contents count]);
+    NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:_LOCAL_MEDIA_PATH error:&error];
+    NSLog(@"DIRECTORY HAS %lu FILES", (unsigned long)[contents count]);
     for (int i = 0; i < [contents count]; i++) {
         NSLog(@"Item #%i is %@", i, [contents objectAtIndex:i]);
     }
@@ -266,38 +291,43 @@
 - (int) returnSizeOfDirectory {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:LOCAL_MEDIA_PATH];
+    NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:_LOCAL_MEDIA_PATH];
     NSError *error = nil;
     NSArray  *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dataPath error:&error];
-    return [contents count];
+    return (int)[contents count];
 }
 
 
-# pragma mark IBACTION
+# pragma mark - ACTIONS -
 
 
 - (IBAction) clickedPin:(id)sender {
-    if(!movieIsPlaying) {
-        if([self videoIsLocal:[sender tag]]) {
+    if(!_movieIsPlaying) {
+        if([self videoIsLocal:(int)[sender tag]]) {
             [self loadVideo:[self prepLocalURL]];
         }
         else {
             NSLog(@"NOT LOCAL");
-            [self loadStream:[sender tag]];
+            [self loadStream:(int)[sender tag]];
         }
     }
     else {
-        [moviePlayer stop];
+        [_moviePlayer stop];
         self.videoView.hidden = YES;
     }
 }
 
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+    [_moviePlayer stop];
+    [self.videoView setHidden:YES];
+}
 
 - (IBAction)tapped:(id)sender {
     //NSLog(@"TAPPED IBA");
 }
 
 - (IBAction)clickedCamera:(id)sender {
+    //
 }
 
 

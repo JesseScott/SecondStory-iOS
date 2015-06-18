@@ -7,40 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MediaPlayer/MPMoviePlayerController.h>
-#import "YTPlayerView.h"
+
 
 @interface MapsViewController : UIViewController {
-    NSArray *youtubeIDS;
-    NSArray *fileNames;
-    NSString *matchedFile;
 
-    MPMoviePlayerController *moviePlayer;
-    
-    BOOL movieIsPlaying;
-    BOOL shouldPlayLocal;
-    
-    NSString *LOCAL_MEDIA_PATH;
-    NSString *LOCAL_FILE;
 }
-
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
-@property (weak, nonatomic) IBOutlet UIImageView *videoView;
-@property (nonatomic, strong) IBOutlet YTPlayerView *youtubeView;
-@property (weak, nonatomic) IBOutlet UITapGestureRecognizer *tap;
-
-@property (weak, nonatomic) IBOutlet UIButton *beefButton;
-@property (weak, nonatomic) IBOutlet UIButton *penniesButton;
-@property (weak, nonatomic) IBOutlet UIButton *sweepingButton;
-@property (weak, nonatomic) IBOutlet UIButton *copperButton;
-@property (weak, nonatomic) IBOutlet UIButton *macrameButton;
-@property (weak, nonatomic) IBOutlet UIButton *umbrellasButton;
-@property (weak, nonatomic) IBOutlet UIButton *alleyButton;
-@property (weak, nonatomic) IBOutlet UIButton *bikeButton;
-@property (weak, nonatomic) IBOutlet UIButton *gunButton;
-
-- (IBAction)clickedPin:(id)sender;
-- (IBAction)tapped:(id)sender;
 
 
 
