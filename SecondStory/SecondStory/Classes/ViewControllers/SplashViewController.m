@@ -41,6 +41,10 @@
     
     _labelFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
     _label.font = _labelFont;
+    _label.alpha = 0.0f;
+    [UIView animateWithDuration:1.5 animations:^(void) {
+        _label.alpha = 1.0f;
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
