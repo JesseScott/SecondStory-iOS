@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D0E230719EE2D0B00C61E82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8487A19A173710019053E /* AppDelegate.m */; };
+		2D30DFF41B694FC100D003AD /* _splash_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D30DFF31B694FC100D003AD /* _splash_bg@2x.png */; };
+		2D30DFF71B69587E00D003AD /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D30DFF61B69587E00D003AD /* GalleryViewController.m */; };
 		2D35BF9619C232F7003731E7 /* icon-retina@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9019C232F7003731E7 /* icon-retina@2x.png */; };
 		2D35BF9719C232F7003731E7 /* icon-retina@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9019C232F7003731E7 /* icon-retina@2x.png */; };
 		2D35BF9A19C232F7003731E7 /* icon-splotlight-ios7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9219C232F7003731E7 /* icon-splotlight-ios7@2x.png */; };
@@ -20,12 +22,6 @@
 		2D35BFA419C2337A003731E7 /* din alternate black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFA119C2337A003731E7 /* din alternate black.ttf */; };
 		2D35BFA519C2337A003731E7 /* din alternate medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFA219C2337A003731E7 /* din alternate medium.ttf */; };
 		2D35BFA619C2337A003731E7 /* din alternate medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFA219C2337A003731E7 /* din alternate medium.ttf */; };
-		2D35BFAB19C235D9003731E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFA819C235D9003731E7 /* Default-568h@2x.png */; };
-		2D35BFAC19C235D9003731E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFA819C235D9003731E7 /* Default-568h@2x.png */; };
-		2D35BFAD19C235D9003731E7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFA919C235D9003731E7 /* Default.png */; };
-		2D35BFAE19C235D9003731E7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFA919C235D9003731E7 /* Default.png */; };
-		2D35BFAF19C235D9003731E7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFAA19C235D9003731E7 /* Default@2x.png */; };
-		2D35BFB019C235D9003731E7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFAA19C235D9003731E7 /* Default@2x.png */; };
 		2D35BFB319C2369C003731E7 /* menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFB219C2369C003731E7 /* menu_bg.png */; };
 		2D35BFB419C2369C003731E7 /* menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFB219C2369C003731E7 /* menu_bg.png */; };
 		2D35BFBE19C238C6003731E7 /* guide_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFB619C238C6003731E7 /* guide_bg.png */; };
@@ -202,15 +198,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D30DFF31B694FC100D003AD /* _splash_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "_splash_bg@2x.png"; sourceTree = "<group>"; };
+		2D30DFF51B69587E00D003AD /* GalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GalleryViewController.h; path = Classes/ViewControllers/GalleryViewController.h; sourceTree = "<group>"; };
+		2D30DFF61B69587E00D003AD /* GalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GalleryViewController.m; path = Classes/ViewControllers/GalleryViewController.m; sourceTree = "<group>"; };
 		2D35BF9019C232F7003731E7 /* icon-retina@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-retina@2x.png"; sourceTree = "<group>"; };
 		2D35BF9219C232F7003731E7 /* icon-splotlight-ios7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-splotlight-ios7@2x.png"; sourceTree = "<group>"; };
 		2D35BF9419C232F7003731E7 /* splash_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_bg@2x.png"; sourceTree = "<group>"; };
 		2D35BF9519C232F7003731E7 /* splash_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_logo@2x.png"; sourceTree = "<group>"; };
 		2D35BFA119C2337A003731E7 /* din alternate black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din alternate black.ttf"; sourceTree = "<group>"; };
 		2D35BFA219C2337A003731E7 /* din alternate medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din alternate medium.ttf"; sourceTree = "<group>"; };
-		2D35BFA819C235D9003731E7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		2D35BFA919C235D9003731E7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		2D35BFAA19C235D9003731E7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2D35BFB219C2369C003731E7 /* menu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_bg.png; sourceTree = "<group>"; };
 		2D35BFB619C238C6003731E7 /* guide_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide_bg.png; sourceTree = "<group>"; };
 		2D35BFB719C238C6003731E7 /* guide_cars_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide_cars_icon.png; sourceTree = "<group>"; };
@@ -383,6 +379,7 @@
 		2D35BF9319C232F7003731E7 /* splash */ = {
 			isa = PBXGroup;
 			children = (
+				2D30DFF31B694FC100D003AD /* _splash_bg@2x.png */,
 				2D35BF9419C232F7003731E7 /* splash_bg@2x.png */,
 				2D35BF9519C232F7003731E7 /* splash_logo@2x.png */,
 			);
@@ -398,17 +395,6 @@
 			);
 			name = fonts;
 			path = Assets/fonts;
-			sourceTree = "<group>";
-		};
-		2D35BFA719C235D9003731E7 /* launch */ = {
-			isa = PBXGroup;
-			children = (
-				2D35BFA819C235D9003731E7 /* Default-568h@2x.png */,
-				2D35BFA919C235D9003731E7 /* Default.png */,
-				2D35BFAA19C235D9003731E7 /* Default@2x.png */,
-			);
-			name = launch;
-			path = Assets/launch;
 			sourceTree = "<group>";
 		};
 		2D35BFB119C2369C003731E7 /* menu */ = {
@@ -626,7 +612,6 @@
 			children = (
 				2DC37FCE1A13F4D100E3D592 /* plists */,
 				2D35BF8F19C232F7003731E7 /* icons */,
-				2D35BFA719C235D9003731E7 /* launch */,
 				2D95825E19F49F8C004A46A8 /* youtube */,
 				2D7161FF19E79E3D00B00989 /* audio */,
 				2D35BFD919C23CE5003731E7 /* about */,
@@ -707,6 +692,8 @@
 				2D4D629219C5FABE007A75C2 /* AboutViewController.m */,
 				2D4D629519C5FACD007A75C2 /* FeedbackViewController.h */,
 				2D4D629619C5FACD007A75C2 /* FeedbackViewController.m */,
+				2D30DFF51B69587E00D003AD /* GalleryViewController.h */,
+				2D30DFF61B69587E00D003AD /* GalleryViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -877,7 +864,6 @@
 				2DC37FD01A13F4F100E3D592 /* bloodalley_filenames_local.plist in Resources */,
 				2DB2876B1A0AEEFD005892A2 /* sweeping.jpg in Resources */,
 				2DE848F319A17D220019053E /* VuforiaSizzleReel_2.m4v in Resources */,
-				2D35BFAD19C235D9003731E7 /* Default.png in Resources */,
 				2D71620419E79E3D00B00989 /* map.mp3 in Resources */,
 				2D35BF9E19C232F7003731E7 /* splash_logo@2x.png in Resources */,
 				2D35BFB319C2369C003731E7 /* menu_bg.png in Resources */,
@@ -900,7 +886,6 @@
 				2DE8499619A1B2080019053E /* Simple.vertsh in Resources */,
 				2DB287651A0AEEFD005892A2 /* gun.jpg in Resources */,
 				2DE848DF19A17D220019053E /* icon_play.png in Resources */,
-				2D35BFAF19C235D9003731E7 /* Default@2x.png in Resources */,
 				2DC37FD31A13F5E300E3D592 /* bloodalley_filenames_remote.plist in Resources */,
 				2D35BFD519C238E2003731E7 /* map_bg.png in Resources */,
 				2DE8499019A1B2080019053E /* Line.fragsh in Resources */,
@@ -919,8 +904,8 @@
 				2DB287691A0AEEFD005892A2 /* shrooms.jpg in Resources */,
 				2DB287631A0AEEFD005892A2 /* copper.jpg in Resources */,
 				2D35BFD719C238E2003731E7 /* map_pin.png in Resources */,
+				2D30DFF41B694FC100D003AD /* _splash_bg@2x.png in Resources */,
 				2DE8487519A173700019053E /* InfoPlist.strings in Resources */,
-				2D35BFAB19C235D9003731E7 /* Default-568h@2x.png in Resources */,
 				2DE8487E19A173710019053E /* Main-iPhone.storyboard in Resources */,
 				2DB287511A0AEE31005892A2 /* SecondStory.xml in Resources */,
 				2DB2875D1A0AEEFD005892A2 /* alley.jpg in Resources */,
@@ -943,7 +928,6 @@
 				2DC37FD11A13F4F100E3D592 /* bloodalley_filenames_local.plist in Resources */,
 				2DB287521A0AEE31005892A2 /* SecondStory.xml in Resources */,
 				2D35BFCD19C238C6003731E7 /* guide_toggle_icon.png in Resources */,
-				2D35BFAE19C235D9003731E7 /* Default.png in Resources */,
 				2DE848F019A17D220019053E /* VuforiaSizzleReel_1.m4v in Resources */,
 				2D626A6519C7B37A00E9E6D7 /* about_pg4.png in Resources */,
 				2DB287681A0AEEFD005892A2 /* pennies.jpg in Resources */,
@@ -957,7 +941,6 @@
 				2DE8499519A1B2080019053E /* Simple.fragsh in Resources */,
 				2DB2875E1A0AEEFD005892A2 /* alley.jpg in Resources */,
 				2D71620319E79E3D00B00989 /* guide.mp3 in Resources */,
-				2D35BFAC19C235D9003731E7 /* Default-568h@2x.png in Resources */,
 				2DE848EE19A17D220019053E /* VP_about.html in Resources */,
 				2DB2876A1A0AEEFD005892A2 /* shrooms.jpg in Resources */,
 				2D35BFC119C238C6003731E7 /* guide_cars_icon.png in Resources */,
@@ -965,7 +948,6 @@
 				2D35BFA419C2337A003731E7 /* din alternate black.ttf in Resources */,
 				2D35BFD619C238E2003731E7 /* map_bg.png in Resources */,
 				2DB287601A0AEEFD005892A2 /* beef.jpg in Resources */,
-				2D35BFB019C235D9003731E7 /* Default@2x.png in Resources */,
 				2D35BFCB19C238C6003731E7 /* guide_replay_icon@2x.png in Resources */,
 				2D35BF9719C232F7003731E7 /* icon-retina@2x.png in Resources */,
 				2DC37FD41A13F5E300E3D592 /* bloodalley_filenames_remote.plist in Resources */,
@@ -1023,6 +1005,7 @@
 				2DE8491619A185B60019053E /* WelcomeViewController.m in Sources */,
 				2DE8499819A1B2080019053E /* Texture.mm in Sources */,
 				2D4D629719C5FACD007A75C2 /* FeedbackViewController.m in Sources */,
+				2D30DFF71B69587E00D003AD /* GalleryViewController.m in Sources */,
 				2DE8498819A1B2080019053E /* SampleApplication3DModel.m in Sources */,
 				2DE8498C19A1B2080019053E /* SampleApplicationShaderUtils.m in Sources */,
 				2D4D628B19C5FAA0007A75C2 /* GuideViewController.m in Sources */,
