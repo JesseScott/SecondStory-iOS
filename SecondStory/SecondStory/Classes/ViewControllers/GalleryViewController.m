@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftSwiperecognizer;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *rightSwipRecognizer;
-@property (weak, nonatomic) IBOutlet UILabel *countLabel;
 
 
 @end
@@ -43,20 +42,34 @@
     _rightSwipRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     _rightSwipRecognizer.delegate = self;
     [self.view addGestureRecognizer:_rightSwipRecognizer];
+    
+    imageArray = [NSArray arrayWithObjects:
+                   [UIImage imageNamed:@"amy.jpg"],
+                   [UIImage imageNamed:@"claire.jpg"],
+                   [UIImage imageNamed:@"jess.jpg"],
+                   [UIImage imageNamed:@"kiki.jpg"],
+                   [UIImage imageNamed:@"marci.jpg"],
+                   [UIImage imageNamed:@"mily.jpg"],
+                   [UIImage imageNamed:@"sultan.jpg"],
+                   nil];
+    
+    [_imageView setImage:[imageArray objectAtIndex:currentIndex]];
 
 }
 
 #pragma mark - ACTIONS -
 
 -(void)swipeLeft:(UISwipeGestureRecognizer *)recognizer {
-    currentIndex++;
-    [_countLabel setText:[NSString stringWithFormat:@"%i", currentIndex]];
+    if (currentIndex < [imageArray count] -1) {
+        currentIndex++;
+        [_imageView setImage:[imageArray objectAtIndex:currentIndex]];
+    }
 }
 
 -(void)swipeRight:(UISwipeGestureRecognizer *)recognizer {
     if(currentIndex > 0) {
         currentIndex--;
-        [_countLabel setText:[NSString stringWithFormat:@"%i", currentIndex]];
+        [_imageView setImage:[imageArray objectAtIndex:currentIndex]];
     }
 }
 
