@@ -7,6 +7,7 @@
 //
 
 #import "GalleryViewController.h"
+#import <MediaPlayer/MPMoviePlayerController.h>
 
 
 #pragma mark - CONSTANTS -
@@ -21,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistLabel;
 
+@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
+@property BOOL movieIsPlaying;
 
 @end
 
@@ -32,6 +35,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Alloc Player
+    _moviePlayer = [[MPMoviePlayerController alloc] init];
 
     currentIndex = 0;
     
@@ -105,6 +111,83 @@
         self.artistLabel.text = [artistArray objectAtIndex:currentIndex];
     }
 }
+
+# pragma mark - VIDEO -
+
+- (void)loadVideo: (NSURL *) videoUrl {
+    
+    
+    //Set URL
+    [_moviePlayer setContentURL:videoUrl];
+    
+    //Set Frame
+    _moviePlayer.view.frame = CGRectMake(40, 203, 240, 128);
+    [self.view addSubview:[_moviePlayer view]];
+    
+    // Controls
+    _moviePlayer.controlStyle = MPMovieControlStyleDefault;
+    
+    // Loop Video
+    _moviePlayer.repeatMode = MPMovieRepeatModeNone;
+    
+    // Prepare
+    [_moviePlayer prepareToPlay];
+    
+    // Play
+    [_moviePlayer play];
+    
+    // Set Playback State
+    _movieIsPlaying = YES;
+    
+    // Finish
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished) name: MPMoviePlayerPlaybackDidFinishNotification object:_moviePlayer];
+}
+
+- (void)playbackFinished {
+    _movieIsPlaying = NO;
+}
+
+- (IBAction)fireVideo:(id)sender {
+    NSString *movie = [self getMoviePath:currentIndex];
+    NSString *path = [[NSBundle mainBundle]pathForResource:movie ofType:@"mp4"];
+    [self loadVideo:[NSURL fileURLWithPath:path]];
+}
+
+-(NSString *) getMoviePath:(int)index {
+    NSString *mMovieName = @"";
+    switch (index) {
+            //            case 0: // Beef
+            //                mMovieName = MEDIA_PATH + "beef.mp4";
+            //                break;
+        case 1: // Pennies
+            mMovieName = @"exhibita";
+            break;
+        case 2: // Sweeping
+            mMovieName = @"leaving";
+            break;
+        case 3: // Copper
+            mMovieName = @"letter pt1";
+            break;
+        case 4: // Shrooms
+            mMovieName = @"letter pt2";
+            break;
+        case 5: // Umbrellas
+            mMovieName = @"plant";
+            break;
+        case 6: // Alley
+            mMovieName = @"portability";
+            break;
+        case 7: // Bicycles
+            mMovieName = @"stall";
+            break;
+
+        default:
+            mMovieName = @"";
+    }
+    return mMovieName;
+;
+}
+
 
 
 

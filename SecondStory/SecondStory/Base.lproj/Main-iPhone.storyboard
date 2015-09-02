@@ -371,6 +371,15 @@
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8Y-M1-B9H">
+                                <rect key="frame" x="128" y="252" width="64" height="64"/>
+                                <state key="normal" title="Button" image="icon_play.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireVideo:" destination="zYn-Cj-DIP" eventType="touchUpInside" id="7Rs-1H-eyG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -654,6 +663,7 @@
         <image name="guide_explore_icon.png" width="158" height="75"/>
         <image name="guide_live_icon.png" width="80" height="75"/>
         <image name="guide_replay_icon.png" width="22" height="19"/>
+        <image name="icon_play.png" width="256" height="256"/>
         <image name="map_bg.png" width="640" height="1136"/>
         <image name="map_pin.png" width="45" height="45"/>
         <image name="menu_bg.png" width="608" height="1080"/>
