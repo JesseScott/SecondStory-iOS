@@ -10,7 +10,7 @@
 
 @interface GalleryViewController : UIViewController {
     NSInteger currentIndex;
-    NSArray *imageArray;
+    NSArray *imageArray, *titleArray, *artistArray;
 }
 
 @end

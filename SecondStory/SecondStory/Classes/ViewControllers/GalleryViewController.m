@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftSwiperecognizer;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *rightSwipRecognizer;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *artistLabel;
 
 
 @end
@@ -55,6 +57,33 @@
     
     [_imageView setImage:[imageArray objectAtIndex:currentIndex]];
 
+    titleArray = [NSArray arrayWithObjects:
+                  @"Cirque Dystopic",
+                  @"Exhibit A",
+                  @"Leaving the House",
+                  @"A Letter Too Late Pt1",
+                  @"A Letter Too Late Pt2",
+                  @"Plant",
+                  @"Portability",
+                  @"Stall 43",
+                  nil];
+    
+    self.titleLabel.text = [titleArray objectAtIndex:currentIndex];
+    
+    artistArray = [NSArray arrayWithObjects:
+                  @"Milly Mumford",
+                  @"Claire Love Wilson",
+                  @"Amy Dauer",
+                  @"Sultan Owaisi",
+                  @"Sultan Owaisi",
+                  @"Marcela Amaya",
+                  @"Jess Amy Shead",
+                  @"Baraka Ramini",
+                  nil];
+    
+    self.artistLabel.text = [artistArray objectAtIndex:currentIndex];
+
+    
 }
 
 #pragma mark - ACTIONS -
@@ -63,6 +92,8 @@
     if (currentIndex < [imageArray count] -1) {
         currentIndex++;
         [_imageView setImage:[imageArray objectAtIndex:currentIndex]];
+        self.titleLabel.text = [titleArray objectAtIndex:currentIndex];
+        self.artistLabel.text = [artistArray objectAtIndex:currentIndex];
     }
 }
 
@@ -70,6 +101,8 @@
     if(currentIndex > 0) {
         currentIndex--;
         [_imageView setImage:[imageArray objectAtIndex:currentIndex]];
+        self.titleLabel.text = [titleArray objectAtIndex:currentIndex];
+        self.artistLabel.text = [artistArray objectAtIndex:currentIndex];
     }
 }
 
