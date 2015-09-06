@@ -77,7 +77,7 @@
     self.titleLabel.text = [titleArray objectAtIndex:currentIndex];
     
     artistArray = [NSArray arrayWithObjects:
-                  @"Milly Mumford",
+                  @"Mily Mumford",
                   @"Claire Love Wilson",
                   @"Amy Dauer",
                   @"Sultan Owaisi",
