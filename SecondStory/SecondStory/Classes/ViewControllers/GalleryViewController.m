@@ -150,6 +150,7 @@
 - (IBAction)fireVideo:(id)sender {
     NSString *movie = [self getMoviePath:currentIndex];
     NSString *path = [[NSBundle mainBundle]pathForResource:movie ofType:@"mp4"];
+    NSLog(@"Full Path for Asset: %@", path);
     [self loadVideo:[NSURL fileURLWithPath:path]];
 }
 

@@ -204,9 +204,13 @@ static NSString* const kRateKey = @"rate";
             }
             else {
                 // filename is a relative path, play media from this app's resources folder
-                fullPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:filename];
+                //fullPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:filename];
+                fullPath = [[NSBundle mainBundle]pathForResource:filename ofType:@"mp4"];
+                NSLog(@"Full Path for Asset: %@", fullPath);
+                // 2015-09-06 15:11:58.402 SecondStory[650:29567] Full Path for Asset: /private/var/mobile/Containers/Bundle/Application/6E05156F-F876-4C69-93F8-29021749216F/SecondStory.app/letter pt2.mp4
             }
             
+            /*
             NSString *file = [[self returnCustomDirectory] stringByAppendingString:@"/"];
             file = [file stringByAppendingString:filename];
             BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:file];
@@ -214,6 +218,7 @@ static NSString* const kRateKey = @"rate";
                 mediaURL = [[NSURL alloc] initFileURLWithPath:file];
                 //mediaURL = [NSURL fileURLWithPath:file];
             }
+             */
 
             if (YES == playOnTextureImmediately) {
                 playImmediately = playOnTextureImmediately;
@@ -226,7 +231,7 @@ static NSString* const kRateKey = @"rate";
                 [self updatePlayerCursorPosition:seekPosition];
             }
             
-            //mediaURL = [NSURL fileURLWithPath:fullPath];
+            mediaURL = [NSURL fileURLWithPath:fullPath];
             ret = [self loadLocalMediaFromURL:mediaURL];
         }
         else {
@@ -930,8 +935,7 @@ static NSString* const kRateKey = @"rate";
                                 AVKeyValueStatus status = [asset statusOfValueForKey:kTracksKey error:&error];
                                 
                                 if (status == AVKeyValueStatusLoaded) {
-                                    // Asset loaded, retrieve info and prepare
-                                    // for playback
+                                    // Asset loaded, retrieve info and prepare for playback
                                     if (NO == [self prepareAssetForPlayback]) {
                                         NSLog(@"Error - Unable to prepare media for playback");
                                         mediaState = ERROR;

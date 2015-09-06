@@ -258,7 +258,7 @@ namespace {
     localFiles = [[NSArray alloc] initWithContentsOfFile:pathToLocalPlist];
     NSString *filename;
     
-    
+    /*
     BOOL isDirectory;
     BOOL dirExistsAtPath = [[NSFileManager defaultManager] fileExistsAtPath:localDirPath isDirectory:&isDirectory];
     if (dirExistsAtPath) {
@@ -278,10 +278,47 @@ namespace {
             NSLog(@"NOT A DIR ????");
         }
     }
+    */
+    
+    NSString *mMovieName = @"";
+    switch (index) {
+            //            case 0: // Beef
+            //                mMovieName = MEDIA_PATH + "beef.mp4";
+            //                break;
+        case 0: // AMY
+            mMovieName = @"leaving";
+            break;
+        case 1: // CLAIRE
+            mMovieName = @"exhibita";
+            break;
+        case 2: // JESS
+            mMovieName = @"portability";
+            break;
+        case 3: // KIKI
+            mMovieName = @"stall";
+            break;
+        case 4: // MARCI
+            mMovieName = @"plant";
+            break;
+        case 5: // MILY
+            mMovieName = @"cirque";
+            break;
+        case 6: // SULTAN1
+            mMovieName = @"letter pt2";
+            break;
+        case 7: // SULTAN2
+            mMovieName = @"letter pt2";
+            break;
+            
+        default:
+            mMovieName = @"";
+    }
+    
+    
 
     // Unload & Load Movie
     [singleVideoPlayerHelper unload];
-    if (NO == [singleVideoPlayerHelper load:filename playImmediately:NO fromPosition:videoPlaybackTime[0]]) {
+    if (NO == [singleVideoPlayerHelper load:mMovieName playImmediately:NO fromPosition:videoPlaybackTime[0]]) {
         NSLog(@"Failed to load media");
     }
 }
