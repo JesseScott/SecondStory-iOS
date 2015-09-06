@@ -57,6 +57,7 @@ namespace {
         "icon_error.png",
         //"VuforiaSizzleReel_1.png",
         //"VuforiaSizzleReel_2.png"
+        /*
         "alley.jpg",
         "beef.jpg",
         "bicycles.jpg",
@@ -66,6 +67,19 @@ namespace {
         "shrooms.jpg",
         "sweeping.jpg",
         "umbrellas.jpg"
+         */
+        "amy.jpg",
+        "claire.jpg",
+        "jess.jpg",
+        "kiki.jpg",
+        "marci.jpg",
+        "mily.jpg",
+        "sultan1.jpg",
+        "sultan2.jpg",
+        ".jpg",
+        ".jpg",
+        ".jpg",
+        
     };
     
     enum tagObjectIndex {
@@ -662,7 +676,7 @@ namespace {
         //MEDIA_STATE currentStatus = [videoPlayerHelper[playerIndex] getStatus];
         MEDIA_STATE currentStatus = [singleVideoPlayerHelper getStatus];
         
-        // NSLog(@"MEDIA_STATE for %d is %d", playerIndex, currentStatus);
+        NSLog(@"MEDIA_STATE for %d is %d", playerIndex, currentStatus);
         
         // --- INFORMATION ---
         // One could trigger automatic playback of a video at this point.  This

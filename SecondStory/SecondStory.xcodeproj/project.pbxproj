@@ -25,7 +25,6 @@
 		2D30E0161B69643F00D003AD /* kiki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D30E00F1B69643F00D003AD /* kiki.jpg */; };
 		2D30E0171B69643F00D003AD /* marci.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D30E0101B69643F00D003AD /* marci.jpg */; };
 		2D30E0181B69643F00D003AD /* mily.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D30E0111B69643F00D003AD /* mily.jpg */; };
-		2D30E0191B69643F00D003AD /* sultan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D30E0121B69643F00D003AD /* sultan.jpg */; };
 		2D35BF9619C232F7003731E7 /* icon-retina@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9019C232F7003731E7 /* icon-retina@2x.png */; };
 		2D35BF9719C232F7003731E7 /* icon-retina@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9019C232F7003731E7 /* icon-retina@2x.png */; };
 		2D35BF9A19C232F7003731E7 /* icon-splotlight-ios7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BF9219C232F7003731E7 /* icon-splotlight-ios7@2x.png */; };
@@ -64,6 +63,8 @@
 		2D35BFD819C238E2003731E7 /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFD219C238E2003731E7 /* map_pin.png */; };
 		2D35BFDB19C23CE5003731E7 /* about_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFDA19C23CE5003731E7 /* about_bg.png */; };
 		2D35BFDC19C23CE5003731E7 /* about_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFDA19C23CE5003731E7 /* about_bg.png */; };
+		2D3F2C021B9CDC7500A5D2EA /* sultan1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3F2C001B9CDC7500A5D2EA /* sultan1.jpg */; };
+		2D3F2C031B9CDC7500A5D2EA /* sultan2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3F2C011B9CDC7500A5D2EA /* sultan2.jpg */; };
 		2D4D628719C5FA82007A75C2 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D628619C5FA82007A75C2 /* MenuViewController.m */; };
 		2D4D628819C5FA82007A75C2 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D628619C5FA82007A75C2 /* MenuViewController.m */; };
 		2D4D628B19C5FAA0007A75C2 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D628A19C5FAA0007A75C2 /* GuideViewController.m */; };
@@ -222,7 +223,6 @@
 		2D30E00F1B69643F00D003AD /* kiki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kiki.jpg; sourceTree = "<group>"; };
 		2D30E0101B69643F00D003AD /* marci.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = marci.jpg; sourceTree = "<group>"; };
 		2D30E0111B69643F00D003AD /* mily.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mily.jpg; sourceTree = "<group>"; };
-		2D30E0121B69643F00D003AD /* sultan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sultan.jpg; sourceTree = "<group>"; };
 		2D35BF9019C232F7003731E7 /* icon-retina@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-retina@2x.png"; sourceTree = "<group>"; };
 		2D35BF9219C232F7003731E7 /* icon-splotlight-ios7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-splotlight-ios7@2x.png"; sourceTree = "<group>"; };
 		2D35BF9419C232F7003731E7 /* splash_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_bg@2x.png"; sourceTree = "<group>"; };
@@ -242,6 +242,8 @@
 		2D35BFD119C238E2003731E7 /* map_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_bg.png; sourceTree = "<group>"; };
 		2D35BFD219C238E2003731E7 /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin.png; sourceTree = "<group>"; };
 		2D35BFDA19C23CE5003731E7 /* about_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_bg.png; sourceTree = "<group>"; };
+		2D3F2C001B9CDC7500A5D2EA /* sultan1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sultan1.jpg; sourceTree = "<group>"; };
+		2D3F2C011B9CDC7500A5D2EA /* sultan2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sultan2.jpg; sourceTree = "<group>"; };
 		2D4D628519C5FA82007A75C2 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Classes/ViewControllers/MenuViewController.h; sourceTree = "<group>"; };
 		2D4D628619C5FA82007A75C2 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Classes/ViewControllers/MenuViewController.m; sourceTree = "<group>"; };
 		2D4D628919C5FAA0007A75C2 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuideViewController.h; path = Classes/ViewControllers/GuideViewController.h; sourceTree = "<group>"; };
@@ -412,7 +414,8 @@
 				2D30E00F1B69643F00D003AD /* kiki.jpg */,
 				2D30E0101B69643F00D003AD /* marci.jpg */,
 				2D30E0111B69643F00D003AD /* mily.jpg */,
-				2D30E0121B69643F00D003AD /* sultan.jpg */,
+				2D3F2C001B9CDC7500A5D2EA /* sultan1.jpg */,
+				2D3F2C011B9CDC7500A5D2EA /* sultan2.jpg */,
 			);
 			path = dareu;
 			sourceTree = "<group>";
@@ -938,6 +941,7 @@
 			files = (
 				2DE848DD19A17D220019053E /* icon_loading.png in Resources */,
 				2DF3DAC71B97B7A000E35A3B /* portability.mp4 in Resources */,
+				2D3F2C021B9CDC7500A5D2EA /* sultan1.jpg in Resources */,
 				2D35BFC019C238C6003731E7 /* guide_cars_icon.png in Resources */,
 				2DE8499219A1B2080019053E /* Line.vertsh in Resources */,
 				2DF3DAC21B97B7A000E35A3B /* exhibita.mp4 in Resources */,
@@ -956,7 +960,6 @@
 				2DB2874F1A0AEE31005892A2 /* SecondStory.dat in Resources */,
 				2DE8499C19A1B2080019053E /* SampleAppAboutViewController.xib in Resources */,
 				2D30E0041B69600300D003AD /* bicycles.jpg in Resources */,
-				2D30E0191B69643F00D003AD /* sultan.jpg in Resources */,
 				2DE8499419A1B2080019053E /* Simple.fragsh in Resources */,
 				2DF3DAB81B97B1AA00E35A3B /* icon_play.png in Resources */,
 				2D30E0151B69643F00D003AD /* jess.jpg in Resources */,
@@ -995,6 +998,7 @@
 				2D30DFF41B694FC100D003AD /* _splash_bg@2x.png in Resources */,
 				2DE8487519A173700019053E /* InfoPlist.strings in Resources */,
 				2DE8487E19A173710019053E /* Main-iPhone.storyboard in Resources */,
+				2D3F2C031B9CDC7500A5D2EA /* sultan2.jpg in Resources */,
 				2D30E0161B69643F00D003AD /* kiki.jpg in Resources */,
 				2D30E0131B69643F00D003AD /* amy.jpg in Resources */,
 				2DB287511A0AEE31005892A2 /* SecondStory.xml in Resources */,
