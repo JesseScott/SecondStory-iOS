@@ -75,11 +75,7 @@ namespace {
         "marci.jpg",
         "mily.jpg",
         "sultan1.jpg",
-        "sultan2.jpg",
-        ".jpg",
-        ".jpg",
-        ".jpg",
-        
+        "sultan2.jpg"
     };
     
     enum tagObjectIndex {
@@ -272,6 +268,7 @@ namespace {
             if(fileExistsAtPath) {
                 //filename = fileNameToMatch;
                 filename = [localFiles objectAtIndex:index];
+                NSLog(@"Filename of movie is %@", filename);
             }
             else {
                 filename = [remoteDirPath stringByAppendingString:[localFiles objectAtIndex:index]];
@@ -604,36 +601,44 @@ namespace {
         const QCAR::TrackableResult* trackableResult = state.getTrackableResult(i);
         const QCAR::ImageTarget& imageTarget = (const QCAR::ImageTarget&) trackableResult->getTrackable();
         
-        // VideoPlayerHelper to use for current target
-        int playerIndex = 0;    // stones
+        NSString *name = [NSString stringWithCString:imageTarget.getName() encoding:NSUTF8StringEncoding];
+        NSLog(@"Image Target Name is %@", name);
+        NSString *trimmedName = [name substringToIndex:[name length]-3];
+        NSLog(@"Trimmed Target Name is %@", trimmedName);
 
-        if (strcmp(imageTarget.getName(), "ba_alley") == 0) {
+        
+        // VideoPlayerHelper to use for current target
+        int playerIndex = 0;
+
+        if ([trimmedName isEqualToString:@"AMY"]) {
             playerIndex = 0;
         }
-        else if (strcmp(imageTarget.getName(), "ba_beef") == 0) {
+        else if ([trimmedName isEqualToString:@"CLAIRE"]) {
             playerIndex = 1;
         }
-        else if (strcmp(imageTarget.getName(), "ba_bicycles") == 0) {
+        else if ([trimmedName isEqualToString:@"JESS"]) {
             playerIndex = 2;
         }
-        else if (strcmp(imageTarget.getName(), "ba_copper") == 0) {
+        else if ([trimmedName isEqualToString:@"KIKI"]) {
             playerIndex = 3;
         }
-        else if (strcmp(imageTarget.getName(), "ba_gun") == 0) {
+        else if ([trimmedName isEqualToString:@"MARCI"]) {
             playerIndex = 4;
         }
-        else if (strcmp(imageTarget.getName(), "ba_pennies") == 0) {
+        else if ([trimmedName isEqualToString:@"MILY"]) {
             playerIndex = 5;
         }
-        else if (strcmp(imageTarget.getName(), "ba_shrooms") == 0) {
+        else if ([trimmedName isEqualToString:@"SULTAN1"]) {
             playerIndex = 6;
         }
-        else if (strcmp(imageTarget.getName(), "ba_sweeping") == 0) {
+        else if ([trimmedName isEqualToString:@"SULTAN2"]) {
             playerIndex = 7;
         }
-        else if (strcmp(imageTarget.getName(), "ba_umbrellas") == 0) {
-            playerIndex = 8;
+        else {
+            playerIndex = 0;
         }
+        
+        NSLog(@"Player Index is %i", playerIndex);
         
         // Set Filename
         [self setPathForMovie:playerIndex];

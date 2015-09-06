@@ -15,7 +15,7 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 
 
 // was 5 + 2
-#define NUM_VIDEO_TARGETS 9
+#define NUM_VIDEO_TARGETS 8
 #define NUM_AUGMENTATION_TEXTURES NUM_VIDEO_TARGETS + 3
 #define SINGLE_HELPER 0
 
