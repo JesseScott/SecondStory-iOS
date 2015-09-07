@@ -7,7 +7,7 @@
 //
 
 #import "FullScreenVideoControllerViewController.h"
-#import <MediaPlayer/MPMoviePlayerController.h>
+#import "SSMoviePlayerController.h"
 
 
 
@@ -24,27 +24,45 @@
 
 @implementation FullScreenVideoControllerViewController
 
+#pragma mark - LIFECYCLE -
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-
-    
-    _backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [_backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    _backButton.frame = CGRectMake(15.0, 25.0, 25.0, 29.0);
-    [_backButton setBackgroundImage:[UIImage imageNamed:@"global_back_icon"] forState:UIControlStateNormal];
-    [self.view addSubview:_backButton];
     
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
-    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+    //NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
+    //[[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+
+    CGFloat offset = self.view.frame.size.height - self.view.frame.size.width;
+    self.view.transform = CGAffineTransformMakeRotation(90 * M_PI/180);
+    self.view.frame = CGRectMake(-offset, 0, self.view.frame.size.width, self.view.frame.size.height);
+    
+    [self initMoviePlayerWithIndex:self.currentIndex];
+    
+    [self addBackButton];
+    
 }
 
-- (void)back:(id)sender {
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+
+-(void)addBackButton {
+    _backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [_backButton addTarget:self action:@selector(backButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    _backButton.frame = CGRectMake(25.0, 25.0, 25.0, 25.0);
+    [_backButton setBackgroundImage:[UIImage imageNamed:@"global_back_icon"] forState:UIControlStateNormal];
+    [self.view addSubview:_backButton];
+}
+
+- (void)backButtonPressed:(id)sender {
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
@@ -77,7 +95,7 @@
     [self.view addSubview:[_moviePlayer view]];
     
     // Controls
-    _moviePlayer.controlStyle = MPMovieControlStyleDefault;
+    _moviePlayer.controlStyle = MPMovieControlStyleNone;
     
     // Loop Video
     _moviePlayer.repeatMode = MPMovieRepeatModeNone;
@@ -128,12 +146,10 @@
         case 7: // SULTAN2
             mMovieName = @"letter pt2";
             break;
-            
         default:
             mMovieName = @"";
     }
     return mMovieName;
-    ;
 }
 
 
