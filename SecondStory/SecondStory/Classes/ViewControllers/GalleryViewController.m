@@ -7,6 +7,7 @@
 //
 
 #import "GalleryViewController.h"
+#import "FullScreenVideoControllerViewController.h"
 #import <MediaPlayer/MPMoviePlayerController.h>
 
 
@@ -148,10 +149,18 @@
 }
 
 - (IBAction)fireVideo:(id)sender {
+    FullScreenVideoControllerViewController *vc = [[FullScreenVideoControllerViewController alloc] initWithNibName:@"FullScreenVideoControllerViewController" bundle:nil];
+    //[self.navigationController pushViewController:vc animated:YES];
+    [vc initMoviePlayerWithIndex:&(currentIndex)];
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
+
+    
+    /*
     NSString *movie = [self getMoviePath:currentIndex];
     NSString *path = [[NSBundle mainBundle]pathForResource:movie ofType:@"mp4"];
     NSLog(@"Full Path for Asset: %@", path);
     [self loadVideo:[NSURL fileURLWithPath:path]];
+     */
 }
 
 -(NSString *) getMoviePath:(int)index {
