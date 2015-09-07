@@ -231,8 +231,13 @@ static NSString* const kRateKey = @"rate";
                 [self updatePlayerCursorPosition:seekPosition];
             }
             
-            mediaURL = [NSURL fileURLWithPath:fullPath];
-            ret = [self loadLocalMediaFromURL:mediaURL];
+            if(fullPath) {
+                mediaURL = [NSURL fileURLWithPath:fullPath];
+                ret = [self loadLocalMediaFromURL:mediaURL];
+            }
+            else {
+                ret = NO;
+            }
         }
         else {
             // FULLSCREEN only
