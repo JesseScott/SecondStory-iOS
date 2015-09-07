@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-
+#import <ParseCrashReporting/ParseCrashReporting.h>
 
 @implementation AppDelegate
 
@@ -16,6 +16,7 @@
 
     
     // Parse
+    [ParseCrashReporting enable];
     [Parse setApplicationId:@"wNJe92RjX5LznjcIFRz94jQ6zg2APdhHpW4EzXKQ"
                   clientKey:@"O5xx4wPtLvZPpgyxU8cM5BHCzPPIaM4pYP42jhp0"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];

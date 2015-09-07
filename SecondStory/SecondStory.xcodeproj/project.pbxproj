@@ -74,6 +74,8 @@
 		2D39EE941B9D7BDF00FAD2EA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE931B9D7BDF00FAD2EA /* Accounts.framework */; };
 		2D39EE961B9D7BE600FAD2EA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE951B9D7BE600FAD2EA /* Social.framework */; };
 		2D39EE991B9D834200FAD2EA /* feedback_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D39EE981B9D834200FAD2EA /* feedback_bg.png */; };
+		2D39EE9B1B9D85AA00FAD2EA /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE9A1B9D85AA00FAD2EA /* ParseCrashReporting.framework */; };
+		2D39EE9D1B9D85CD00FAD2EA /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE9C1B9D85CD00FAD2EA /* libstdc++.6.dylib */; };
 		2D3F2C021B9CDC7500A5D2EA /* sultan1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3F2C001B9CDC7500A5D2EA /* sultan1.jpg */; };
 		2D3F2C031B9CDC7500A5D2EA /* sultan2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3F2C011B9CDC7500A5D2EA /* sultan2.jpg */; };
 		2D4D628719C5FA82007A75C2 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D628619C5FA82007A75C2 /* MenuViewController.m */; };
@@ -265,6 +267,8 @@
 		2D39EE931B9D7BDF00FAD2EA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		2D39EE951B9D7BE600FAD2EA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		2D39EE981B9D834200FAD2EA /* feedback_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback_bg.png; sourceTree = "<group>"; };
+		2D39EE9A1B9D85AA00FAD2EA /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		2D39EE9C1B9D85CD00FAD2EA /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		2D3F2C001B9CDC7500A5D2EA /* sultan1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sultan1.jpg; sourceTree = "<group>"; };
 		2D3F2C011B9CDC7500A5D2EA /* sultan2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sultan2.jpg; sourceTree = "<group>"; };
 		2D4D628519C5FA82007A75C2 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Classes/ViewControllers/MenuViewController.h; sourceTree = "<group>"; };
@@ -380,6 +384,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D39EE9D1B9D85CD00FAD2EA /* libstdc++.6.dylib in Frameworks */,
 				2D39EE961B9D7BE600FAD2EA /* Social.framework in Frameworks */,
 				2D39EE941B9D7BDF00FAD2EA /* Accounts.framework in Frameworks */,
 				2D39EE921B9D7BC500FAD2EA /* libsqlite3.dylib in Frameworks */,
@@ -387,6 +392,7 @@
 				2D39EE8E1B9D7BAC00FAD2EA /* StoreKit.framework in Frameworks */,
 				2DE8493C19A1AE1A0019053E /* Security.framework in Frameworks */,
 				2DE8493819A1AE020019053E /* AudioToolbox.framework in Frameworks */,
+				2D39EE9B1B9D85AA00FAD2EA /* ParseCrashReporting.framework in Frameworks */,
 				2DE8494419A1AE470019053E /* AVFoundation.framework in Frameworks */,
 				2DE848FE19A184F10019053E /* CFNetwork.framework in Frameworks */,
 				2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */,
@@ -626,13 +632,14 @@
 		2DE8486919A173700019053E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D39EE9C1B9D85CD00FAD2EA /* libstdc++.6.dylib */,
+				2DE8494919A1AE9C0019053E /* External */,
 				2D39EE951B9D7BE600FAD2EA /* Social.framework */,
 				2D39EE931B9D7BDF00FAD2EA /* Accounts.framework */,
 				2D39EE911B9D7BC500FAD2EA /* libsqlite3.dylib */,
 				2D39EE8F1B9D7BBC00FAD2EA /* libz.dylib */,
 				2D39EE8D1B9D7BAC00FAD2EA /* StoreKit.framework */,
 				2D39EE8B1B9D7B8600FAD2EA /* CoreLocation.framework */,
-				2DE8494919A1AE9C0019053E /* External */,
 				2DE8493719A1AE020019053E /* AudioToolbox.framework */,
 				2DE8494319A1AE470019053E /* AVFoundation.framework */,
 				2DE8494719A1AE5A0019053E /* CoreVideo.framework */,
@@ -792,6 +799,7 @@
 		2DE8494919A1AE9C0019053E /* External */ = {
 			isa = PBXGroup;
 			children = (
+				2D39EE9A1B9D85AA00FAD2EA /* ParseCrashReporting.framework */,
 				2D39EE891B9D7B5800FAD2EA /* Bolts.framework */,
 				2D39EE871B9D7B4C00FAD2EA /* Parse.framework */,
 				2DE8494A19A1AEB70019053E /* libVuforia.a */,
