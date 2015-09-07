@@ -650,7 +650,7 @@ namespace {
 
         
         // VideoPlayerHelper to use for current target
-        int playerIndex = 0;
+        NSInteger playerIndex = 0;
 
         if ([trimmedName isEqualToString:@"AMY"]) {
             playerIndex = 0;
@@ -680,13 +680,14 @@ namespace {
             playerIndex = -1;
         }
         
-        NSLog(@"Player Index is %i", playerIndex);
+        NSLog(@"Player Index is %li", (long)playerIndex);
         
         // Set Filename
         //[self setPathForMovie:playerIndex];
         
         FullScreenVideoControllerViewController *vc = [[FullScreenVideoControllerViewController alloc] initWithNibName:@"FullScreenVideoControllerViewController" bundle:nil];
         vc.currentIndex = &(playerIndex);
+        //vc.currentIndex = &(playerIndex);
         //[self.navigationController presentViewController:vc animated:YES completion:nil];
         [videoPlaybackViewController.navigationController presentViewController:vc animated:YES completion:nil];
         
