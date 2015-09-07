@@ -37,6 +37,10 @@
 
 #pragma mark - LIFECYCLE -
 
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
 
 - (void)viewDidLoad
 {
