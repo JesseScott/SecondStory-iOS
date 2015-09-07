@@ -53,8 +53,8 @@
 -(void)addBackButton {
     _backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [_backButton addTarget:self action:@selector(backButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    _backButton.frame = CGRectMake(25.0, 25.0, 25.0, 25.0);
-    [_backButton setBackgroundImage:[UIImage imageNamed:@"global_back_icon"] forState:UIControlStateNormal];
+    _backButton.frame = CGRectMake(30, 30, 30, 30);
+    [_backButton setBackgroundImage:[UIImage imageNamed:@"nav_close"] forState:UIControlStateNormal];
     [self.view addSubview:_backButton];
 }
 
