@@ -1292,7 +1292,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "3a4057b7-1e87-4bb4-8dc9-17a4020423cb";
+				PROVISIONING_PROFILE = "67eeac28-e339-44da-976b-71237df8023b";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -1337,7 +1337,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "3a4057b7-1e87-4bb4-8dc9-17a4020423cb";
+				PROVISIONING_PROFILE = "67eeac28-e339-44da-976b-71237df8023b";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";
@@ -1374,7 +1374,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3a4057b7-1e87-4bb4-8dc9-17a4020423cb";
+				PROVISIONING_PROFILE = "67eeac28-e339-44da-976b-71237df8023b";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
@@ -1411,7 +1411,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3a4057b7-1e87-4bb4-8dc9-17a4020423cb";
+				PROVISIONING_PROFILE = "67eeac28-e339-44da-976b-71237df8023b";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
