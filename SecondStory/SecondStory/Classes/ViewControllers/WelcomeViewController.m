@@ -51,14 +51,18 @@
     // PATHS
 
     
+    [self segue];
+    
     // CHECK
+    /* 
+     // DISABLING
     if ([self checkForContent]) {
         [self segue];
     }
     else {
         [self showStreamOrDownloadDialog];
     }
-    
+    */
     // Counter
     downloadCounter = 0;
     
