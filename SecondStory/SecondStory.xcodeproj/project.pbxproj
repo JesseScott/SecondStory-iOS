@@ -66,6 +66,14 @@
 		2D39EE821B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D39EE801B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.m */; };
 		2D39EE831B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D39EE811B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.xib */; };
 		2D39EE861B9D2CD800FAD2EA /* SSMoviePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D39EE851B9D2CD800FAD2EA /* SSMoviePlayerController.m */; };
+		2D39EE881B9D7B4C00FAD2EA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE871B9D7B4C00FAD2EA /* Parse.framework */; };
+		2D39EE8A1B9D7B5800FAD2EA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE891B9D7B5800FAD2EA /* Bolts.framework */; };
+		2D39EE8C1B9D7B8600FAD2EA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE8B1B9D7B8600FAD2EA /* CoreLocation.framework */; };
+		2D39EE8E1B9D7BAC00FAD2EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE8D1B9D7BAC00FAD2EA /* StoreKit.framework */; };
+		2D39EE901B9D7BBC00FAD2EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE8F1B9D7BBC00FAD2EA /* libz.dylib */; };
+		2D39EE921B9D7BC500FAD2EA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE911B9D7BC500FAD2EA /* libsqlite3.dylib */; };
+		2D39EE941B9D7BDF00FAD2EA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE931B9D7BDF00FAD2EA /* Accounts.framework */; };
+		2D39EE961B9D7BE600FAD2EA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE951B9D7BE600FAD2EA /* Social.framework */; };
 		2D3F2C021B9CDC7500A5D2EA /* sultan1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3F2C001B9CDC7500A5D2EA /* sultan1.jpg */; };
 		2D3F2C031B9CDC7500A5D2EA /* sultan2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3F2C011B9CDC7500A5D2EA /* sultan2.jpg */; };
 		2D4D628719C5FA82007A75C2 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D628619C5FA82007A75C2 /* MenuViewController.m */; };
@@ -250,6 +258,14 @@
 		2D39EE811B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FullScreenVideoControllerViewController.xib; path = Classes/ViewControllers/FullScreenVideoControllerViewController.xib; sourceTree = "<group>"; };
 		2D39EE841B9D2CD800FAD2EA /* SSMoviePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMoviePlayerController.h; path = Classes/Model/SSMoviePlayerController.h; sourceTree = "<group>"; };
 		2D39EE851B9D2CD800FAD2EA /* SSMoviePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMoviePlayerController.m; path = Classes/Model/SSMoviePlayerController.m; sourceTree = "<group>"; };
+		2D39EE871B9D7B4C00FAD2EA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		2D39EE891B9D7B5800FAD2EA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		2D39EE8B1B9D7B8600FAD2EA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2D39EE8D1B9D7BAC00FAD2EA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2D39EE8F1B9D7BBC00FAD2EA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		2D39EE911B9D7BC500FAD2EA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2D39EE931B9D7BDF00FAD2EA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		2D39EE951B9D7BE600FAD2EA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		2D3F2C001B9CDC7500A5D2EA /* sultan1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sultan1.jpg; sourceTree = "<group>"; };
 		2D3F2C011B9CDC7500A5D2EA /* sultan2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sultan2.jpg; sourceTree = "<group>"; };
 		2D4D628519C5FA82007A75C2 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Classes/ViewControllers/MenuViewController.h; sourceTree = "<group>"; };
@@ -365,18 +381,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D39EE961B9D7BE600FAD2EA /* Social.framework in Frameworks */,
+				2D39EE941B9D7BDF00FAD2EA /* Accounts.framework in Frameworks */,
+				2D39EE921B9D7BC500FAD2EA /* libsqlite3.dylib in Frameworks */,
+				2D39EE901B9D7BBC00FAD2EA /* libz.dylib in Frameworks */,
+				2D39EE8E1B9D7BAC00FAD2EA /* StoreKit.framework in Frameworks */,
+				2DE8493C19A1AE1A0019053E /* Security.framework in Frameworks */,
 				2DE8493819A1AE020019053E /* AudioToolbox.framework in Frameworks */,
 				2DE8494419A1AE470019053E /* AVFoundation.framework in Frameworks */,
 				2DE848FE19A184F10019053E /* CFNetwork.framework in Frameworks */,
 				2DE8486D19A173700019053E /* CoreGraphics.framework in Frameworks */,
+				2D39EE8C1B9D7B8600FAD2EA /* CoreLocation.framework in Frameworks */,
 				2DE8494619A1AE520019053E /* CoreMedia.framework in Frameworks */,
 				2DE8493E19A1AE220019053E /* CoreMotion.framework in Frameworks */,
 				2DE8494819A1AE5A0019053E /* CoreVideo.framework in Frameworks */,
+				2D39EE881B9D7B4C00FAD2EA /* Parse.framework in Frameworks */,
 				2DE8486B19A173700019053E /* Foundation.framework in Frameworks */,
 				2DE8493619A1ADF60019053E /* MediaPlayer.framework in Frameworks */,
 				2DE8494019A1AE2C0019053E /* OpenGLES.framework in Frameworks */,
 				2DE8494219A1AE3C0019053E /* SystemConfiguration.framework in Frameworks */,
-				2DE8493C19A1AE1A0019053E /* Security.framework in Frameworks */,
+				2D39EE8A1B9D7B5800FAD2EA /* Bolts.framework in Frameworks */,
 				2DE8493A19A1AE0F0019053E /* QuartzCore.framework in Frameworks */,
 				2DE8486F19A173700019053E /* UIKit.framework in Frameworks */,
 				2DE849D719A1B8AE0019053E /* libVuforia.a in Frameworks */,
@@ -603,6 +627,12 @@
 		2DE8486919A173700019053E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D39EE951B9D7BE600FAD2EA /* Social.framework */,
+				2D39EE931B9D7BDF00FAD2EA /* Accounts.framework */,
+				2D39EE911B9D7BC500FAD2EA /* libsqlite3.dylib */,
+				2D39EE8F1B9D7BBC00FAD2EA /* libz.dylib */,
+				2D39EE8D1B9D7BAC00FAD2EA /* StoreKit.framework */,
+				2D39EE8B1B9D7B8600FAD2EA /* CoreLocation.framework */,
 				2DE8494919A1AE9C0019053E /* External */,
 				2DE8493719A1AE020019053E /* AudioToolbox.framework */,
 				2DE8494319A1AE470019053E /* AVFoundation.framework */,
@@ -763,6 +793,8 @@
 		2DE8494919A1AE9C0019053E /* External */ = {
 			isa = PBXGroup;
 			children = (
+				2D39EE891B9D7B5800FAD2EA /* Bolts.framework */,
+				2D39EE871B9D7B4C00FAD2EA /* Parse.framework */,
 				2DE8494A19A1AEB70019053E /* libVuforia.a */,
 			);
 			name = External;
@@ -1301,6 +1333,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SecondStory/SecondStory-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1334,6 +1370,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SecondStory/SecondStory-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
