@@ -621,6 +621,15 @@
 			name = plists;
 			sourceTree = "<group>";
 		};
+		2DDA5A551B9E046A0074866F /* logo */ = {
+			isa = PBXGroup;
+			children = (
+				2DDA5A561B9E046A0074866F /* dareu_logo.png */,
+			);
+			name = logo;
+			path = Assets/logo;
+			sourceTree = "<group>";
+		};
 		2DE8485E19A173700019053E = {
 			isa = PBXGroup;
 			children = (
@@ -714,6 +723,7 @@
 		2DE8489F19A17B220019053E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2DDA5A551B9E046A0074866F /* logo */,
 				2D39EE971B9D834200FAD2EA /* feedback */,
 				2DF3DAB61B97B1AA00E35A3B /* gallery */,
 				2DC37FCE1A13F4D100E3D592 /* plists */,
@@ -1037,6 +1047,7 @@
 				2D626A5E19C7B37A00E9E6D7 /* about_pg1.png in Resources */,
 				2DE8488319A173710019053E /* Images.xcassets in Resources */,
 				2D626A6219C7B37A00E9E6D7 /* about_pg3.png in Resources */,
+				2DDA5A571B9E046A0074866F /* dareu_logo.png in Resources */,
 				2D626A6019C7B37A00E9E6D7 /* about_pg2.png in Resources */,
 				2D30E0071B69600300D003AD /* pennies.jpg in Resources */,
 				2D35BFC419C238C6003731E7 /* guide_ear_icon.png in Resources */,
