@@ -26,6 +26,11 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
 #import "SampleMath.h"
 #import "Quad.h"
 
+#import "FullScreenVideoControllerViewController.h"
+#import "VideoPlaybackViewController.h"
+
+
+
 //******************************************************************************
 // *** OpenGL ES thread safety ***
 //
@@ -672,13 +677,23 @@ namespace {
             playerIndex = 7;
         }
         else {
-            playerIndex = 0;
+            playerIndex = -1;
         }
         
         NSLog(@"Player Index is %i", playerIndex);
         
         // Set Filename
-        [self setPathForMovie:playerIndex];
+        //[self setPathForMovie:playerIndex];
+        
+        FullScreenVideoControllerViewController *vc = [[FullScreenVideoControllerViewController alloc] initWithNibName:@"FullScreenVideoControllerViewController" bundle:nil];
+        vc.currentIndex = &(playerIndex);
+        //[self.navigationController presentViewController:vc animated:YES completion:nil];
+        [videoPlaybackViewController.navigationController presentViewController:vc animated:YES completion:nil];
+        
+        
+        
+        
+        
         
         
         // Mark this video (target) as active

@@ -63,6 +63,7 @@
 }
 
 - (void)backButtonPressed:(id)sender {
+    [_moviePlayer stop];
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
