@@ -7,17 +7,18 @@
 //
 
 #import "FeedbackViewController.h"
-#import <MessageUI/MessageUI.h>
+#import <Parse/Parse.h>
 
 
-#pragma mark - CONSTANTS -
-
-#define EMAIL_SUBJECT   @"Feedback - 2nd Story"
-#define EMAIL_RECIPIENT @"info@theonlyanimal.com"
 
 #pragma mark - INTERFACE -
 
-@interface FeedbackViewController () <MFMailComposeViewControllerDelegate, UITextFieldDelegate> 
+@interface FeedbackViewController () <UITextFieldDelegate, UITextViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextView *messageField;
+
 
 @end
 
@@ -38,6 +39,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Delegates
+    self.nameField.delegate = self;
+    self.emailField.delegate = self;
+    self.messageField.delegate = self;
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -60,54 +67,44 @@
 
 
 - (IBAction)sendfeedback:(id)sender {
-    [self startEmail];
-}
-
-#pragma mark - EMAIL -
-
-
-- (void) startEmail {
-    if ([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
-        mailer.mailComposeDelegate = self;
-        
-        [mailer setSubject:EMAIL_SUBJECT];
-        NSArray *toRecipients = [NSArray arrayWithObjects:EMAIL_RECIPIENT, nil];
-        [mailer setToRecipients:toRecipients];
-        
-        [self presentViewController:mailer animated:YES completion:nil];
-    }
-    else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
-                                                        message:@"Your device doesn't have a mail account setup"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-}
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
-    switch (result) {
-        case MFMailComposeResultCancelled:
-            //NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
-            break;
-        case MFMailComposeResultSaved:
-            //NSLog(@"Mail saved: you saved the email message in the drafts folder.");
-            break;
-        case MFMailComposeResultSent:
-            //NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
-            break;
-        case MFMailComposeResultFailed:
-            //NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
-            break;
-        default:
-            //NSLog(@"Mail not sent.");
-            break;
-    }
     
-    // Remove the mail view
-    [self dismissViewControllerAnimated:YES completion:nil];
+    PFObject *feedback = [PFObject objectWithClassName:@"FEEDBACK"];
+    feedback[@"name"] = self.nameField.text;
+    feedback[@"email"] = self.emailField.text;
+    feedback[@"message"] = self.messageField.text;
+    [feedback saveEventually];
+    
+    NSLog(@"Feedback Submitted");
+    
+    self.nameField.text = @"";
+    self.emailField.text = @"";
+    self.messageField.text = @"";
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank You"
+                                                    message:@"Your feedback has been submitted"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
 }
+
+#pragma mark - DELEGATES -
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
+
 
 @end

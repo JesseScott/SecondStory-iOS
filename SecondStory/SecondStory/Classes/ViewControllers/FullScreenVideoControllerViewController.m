@@ -7,9 +7,7 @@
 //
 
 #import "FullScreenVideoControllerViewController.h"
-#import "SSMoviePlayerController.h"
-
-
+#import <MediaPlayer/MediaPlayer.h>
 
 
 @interface FullScreenVideoControllerViewController ()
@@ -17,8 +15,6 @@
 @property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
 @property BOOL movieIsPlaying;
 @property (nonatomic, weak) UIButton *backButton;
-
-
 
 @end
 

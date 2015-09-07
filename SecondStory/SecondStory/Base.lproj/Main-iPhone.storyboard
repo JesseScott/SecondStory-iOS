@@ -457,11 +457,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGg-wA-ekn">
-                                <rect key="frame" x="20" y="263" width="280" height="41"/>
-                                <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="feedback_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sne-pA-8ca">
+                                <rect key="frame" x="0.0" y="48" width="320" height="520"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cde-aB-X0W">
+                                <rect key="frame" x="85" y="133" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ISD-ts-acC" id="C8L-Fi-V2q"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NAc-w2-LDj">
+                                <rect key="frame" x="85" y="171" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ISD-ts-acC" id="Ug5-Ec-uWy"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Feedback" translatesAutoresizingMaskIntoConstraints="NO" id="1l0-ok-dbx">
+                                <rect key="frame" x="51" y="209" width="219" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ISD-ts-acC" id="Ipv-wY-Epr"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGg-wA-ekn">
+                                <rect key="frame" x="85" y="507" width="150" height="41"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="GIVE FEEDBACK">
+                                <state key="normal" title="SUBMIT">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -471,13 +499,13 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="KGg-wA-ekn" firstAttribute="leading" secondItem="XH1-rZ-3iE" secondAttribute="leading" constant="20" symbolic="YES" id="M4j-Xt-iMD"/>
-                            <constraint firstAttribute="trailing" secondItem="KGg-wA-ekn" secondAttribute="trailing" constant="20" symbolic="YES" id="cp9-cC-BHa"/>
-                            <constraint firstItem="KGg-wA-ekn" firstAttribute="top" secondItem="Cdc-su-6kg" secondAttribute="bottom" constant="199" id="viP-bn-FG7"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="FEEDBACK" id="Cdq-wz-aBB"/>
+                    <connections>
+                        <outlet property="emailField" destination="NAc-w2-LDj" id="SRY-9X-MeH"/>
+                        <outlet property="messageField" destination="1l0-ok-dbx" id="Fwh-iG-egl"/>
+                        <outlet property="nameField" destination="cde-aB-X0W" id="eIl-so-w53"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1s-XU-7Xn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -656,6 +684,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="feedback_bg.png" width="640" height="1136"/>
         <image name="guide_bg.png" width="608" height="1080"/>
         <image name="guide_cars_icon.png" width="94" height="75"/>
         <image name="guide_device_icon.png" width="53" height="75"/>

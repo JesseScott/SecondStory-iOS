@@ -65,7 +65,6 @@
 		2D35BFDC19C23CE5003731E7 /* about_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D35BFDA19C23CE5003731E7 /* about_bg.png */; };
 		2D39EE821B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D39EE801B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.m */; };
 		2D39EE831B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D39EE811B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.xib */; };
-		2D39EE861B9D2CD800FAD2EA /* SSMoviePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D39EE851B9D2CD800FAD2EA /* SSMoviePlayerController.m */; };
 		2D39EE881B9D7B4C00FAD2EA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE871B9D7B4C00FAD2EA /* Parse.framework */; };
 		2D39EE8A1B9D7B5800FAD2EA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE891B9D7B5800FAD2EA /* Bolts.framework */; };
 		2D39EE8C1B9D7B8600FAD2EA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE8B1B9D7B8600FAD2EA /* CoreLocation.framework */; };
@@ -74,6 +73,7 @@
 		2D39EE921B9D7BC500FAD2EA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE911B9D7BC500FAD2EA /* libsqlite3.dylib */; };
 		2D39EE941B9D7BDF00FAD2EA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE931B9D7BDF00FAD2EA /* Accounts.framework */; };
 		2D39EE961B9D7BE600FAD2EA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39EE951B9D7BE600FAD2EA /* Social.framework */; };
+		2D39EE991B9D834200FAD2EA /* feedback_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D39EE981B9D834200FAD2EA /* feedback_bg.png */; };
 		2D3F2C021B9CDC7500A5D2EA /* sultan1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3F2C001B9CDC7500A5D2EA /* sultan1.jpg */; };
 		2D3F2C031B9CDC7500A5D2EA /* sultan2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3F2C011B9CDC7500A5D2EA /* sultan2.jpg */; };
 		2D4D628719C5FA82007A75C2 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D628619C5FA82007A75C2 /* MenuViewController.m */; };
@@ -256,8 +256,6 @@
 		2D39EE7F1B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FullScreenVideoControllerViewController.h; path = Classes/ViewControllers/FullScreenVideoControllerViewController.h; sourceTree = "<group>"; };
 		2D39EE801B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FullScreenVideoControllerViewController.m; path = Classes/ViewControllers/FullScreenVideoControllerViewController.m; sourceTree = "<group>"; };
 		2D39EE811B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FullScreenVideoControllerViewController.xib; path = Classes/ViewControllers/FullScreenVideoControllerViewController.xib; sourceTree = "<group>"; };
-		2D39EE841B9D2CD800FAD2EA /* SSMoviePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMoviePlayerController.h; path = Classes/Model/SSMoviePlayerController.h; sourceTree = "<group>"; };
-		2D39EE851B9D2CD800FAD2EA /* SSMoviePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMoviePlayerController.m; path = Classes/Model/SSMoviePlayerController.m; sourceTree = "<group>"; };
 		2D39EE871B9D7B4C00FAD2EA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		2D39EE891B9D7B5800FAD2EA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		2D39EE8B1B9D7B8600FAD2EA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -266,6 +264,7 @@
 		2D39EE911B9D7BC500FAD2EA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		2D39EE931B9D7BDF00FAD2EA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		2D39EE951B9D7BE600FAD2EA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		2D39EE981B9D834200FAD2EA /* feedback_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback_bg.png; sourceTree = "<group>"; };
 		2D3F2C001B9CDC7500A5D2EA /* sultan1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sultan1.jpg; sourceTree = "<group>"; };
 		2D3F2C011B9CDC7500A5D2EA /* sultan2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sultan2.jpg; sourceTree = "<group>"; };
 		2D4D628519C5FA82007A75C2 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Classes/ViewControllers/MenuViewController.h; sourceTree = "<group>"; };
@@ -540,21 +539,21 @@
 			path = Assets/about;
 			sourceTree = "<group>";
 		};
+		2D39EE971B9D834200FAD2EA /* feedback */ = {
+			isa = PBXGroup;
+			children = (
+				2D39EE981B9D834200FAD2EA /* feedback_bg.png */,
+			);
+			name = feedback;
+			path = Assets/feedback;
+			sourceTree = "<group>";
+		};
 		2D6E1BA61B327B72001B2F70 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
 				2D95825919F49F7F004A46A8 /* youtube */,
 			);
 			name = Vendor;
-			sourceTree = "<group>";
-		};
-		2D6E1BA71B327F27001B2F70 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2D39EE841B9D2CD800FAD2EA /* SSMoviePlayerController.h */,
-				2D39EE851B9D2CD800FAD2EA /* SSMoviePlayerController.m */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		2D7161FF19E79E3D00B00989 /* audio */ = {
@@ -697,6 +696,7 @@
 		2DE8489F19A17B220019053E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2D39EE971B9D834200FAD2EA /* feedback */,
 				2DF3DAB61B97B1AA00E35A3B /* gallery */,
 				2DC37FCE1A13F4D100E3D592 /* plists */,
 				2D35BF8F19C232F7003731E7 /* icons */,
@@ -720,7 +720,6 @@
 			isa = PBXGroup;
 			children = (
 				2DE848FB19A17FF20019053E /* Delegate */,
-				2D6E1BA71B327F27001B2F70 /* Model */,
 				2DE848FC19A17FFB0019053E /* Controllers */,
 				2D6E1BA61B327B72001B2F70 /* Vendor */,
 				2DE8495A19A1B2080019053E /* QCAR */,
@@ -1027,6 +1026,7 @@
 				2DE8499019A1B2080019053E /* Line.fragsh in Resources */,
 				2DF3DAC51B97B7A000E35A3B /* letter pt2.mp4 in Resources */,
 				2D30E0051B69600300D003AD /* copper.jpg in Resources */,
+				2D39EE991B9D834200FAD2EA /* feedback_bg.png in Resources */,
 				2D30E0091B69600300D003AD /* sweeping.jpg in Resources */,
 				2DE848ED19A17D220019053E /* VP_about.html in Resources */,
 				2D39EE831B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.xib in Resources */,
@@ -1129,7 +1129,6 @@
 				2D4D628719C5FA82007A75C2 /* MenuViewController.m in Sources */,
 				2DE8498619A1B2080019053E /* VideoPlayerHelper.mm in Sources */,
 				2D39EE821B9D20EF00FAD2EA /* FullScreenVideoControllerViewController.m in Sources */,
-				2D39EE861B9D2CD800FAD2EA /* SSMoviePlayerController.m in Sources */,
 				2DE849A019A1B2080019053E /* SampleAppMenu.m in Sources */,
 				2D95825C19F49F7F004A46A8 /* YTPlayerView.m in Sources */,
 				2D4D629319C5FABE007A75C2 /* AboutViewController.m in Sources */,
