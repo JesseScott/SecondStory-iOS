@@ -652,28 +652,30 @@ namespace {
         // VideoPlayerHelper to use for current target
         NSInteger playerIndex = 0;
 
-        if ([trimmedName isEqualToString:@"AMY"]) {
+        if ([trimmedName isEqualToString:@"KIKI"]) {
             playerIndex = 0;
         }
-        else if ([trimmedName isEqualToString:@"CLAIRE"]) {
+        if ([trimmedName isEqualToString:@"AMY"]) {
             playerIndex = 1;
         }
-        else if ([trimmedName isEqualToString:@"JESS"]) {
+        else if ([trimmedName isEqualToString:@"CLAIRE"]) {
             playerIndex = 2;
         }
-        else if ([trimmedName isEqualToString:@"KIKI"]) {
+
+        else if ([trimmedName isEqualToString:@"SULTAN1"]) {
             playerIndex = 3;
         }
-        else if ([trimmedName isEqualToString:@"MARCI"]) {
+        else if ([trimmedName isEqualToString:@"SULTAN2"]) {
             playerIndex = 4;
         }
         else if ([trimmedName isEqualToString:@"MILY"]) {
             playerIndex = 5;
         }
-        else if ([trimmedName isEqualToString:@"SULTAN1"]) {
+        
+        else if ([trimmedName isEqualToString:@"JESS"]) {
             playerIndex = 6;
         }
-        else if ([trimmedName isEqualToString:@"SULTAN2"]) {
+        else if ([trimmedName isEqualToString:@"MARCI"]) {
             playerIndex = 7;
         }
         else {

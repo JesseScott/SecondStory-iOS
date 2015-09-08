@@ -49,40 +49,40 @@
     [self.view addGestureRecognizer:_rightSwipRecognizer];
     
     imageArray = [NSArray arrayWithObjects:
-                   [UIImage imageNamed:@"amy.jpg"],
-                   [UIImage imageNamed:@"claire.jpg"],
-                   [UIImage imageNamed:@"jess.jpg"],
-                   [UIImage imageNamed:@"kiki.jpg"],
-                   [UIImage imageNamed:@"marci.jpg"],
-                   [UIImage imageNamed:@"mily.jpg"],
-                   [UIImage imageNamed:@"sultan1.jpg"],
-                   [UIImage imageNamed:@"sultan2.jpg"],
+                    [UIImage imageNamed:@"kiki.jpg"],
+                    [UIImage imageNamed:@"amy.jpg"],
+                    [UIImage imageNamed:@"claire.jpg"],
+                    [UIImage imageNamed:@"sultan1.jpg"],
+                    [UIImage imageNamed:@"sultan2.jpg"],
+                    [UIImage imageNamed:@"mily.jpg"],
+                    [UIImage imageNamed:@"jess.jpg"],
+                    [UIImage imageNamed:@"marci.jpg"],
                    nil];
     
     [_imageView setImage:[imageArray objectAtIndex:currentIndex]];
 
     titleArray = [NSArray arrayWithObjects:
+                  @"Stall 43",
                   @"Leaving the House",
                   @"Exhibit A",
-                  @"Portability",
-                  @"Stall 43",
-                  @"Plant",
-                  @"Cirque Dystopic",
                   @"A Letter Too Late Pt1",
                   @"A Letter Too Late Pt2",
+                  @"Cirque Dystopic",
+                  @"Portability",
+                  @"Plant",
                   nil];
     
     self.titleLabel.text = [titleArray objectAtIndex:currentIndex];
     
     artistArray = [NSArray arrayWithObjects:
+                   @"Baraka Ramini",
                    @"Amy Dauer",
                    @"Claire Love Wilson",
-                   @"Jess Amy Shead",
-                   @"Baraka Ramini",
-                   @"Marcela Amaya",
+                   @"Sultan Owaisi",
+                   @"Sultan Owaisi",
                    @"Mily Mumford",
-                   @"Sultan Owaisi",
-                   @"Sultan Owaisi",
+                   @"Jess Amy Shead",
+                   @"Marcela Amaya",
                    nil];
     
     self.artistLabel.text = [artistArray objectAtIndex:currentIndex];
