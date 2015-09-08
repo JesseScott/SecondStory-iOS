@@ -119,30 +119,33 @@
 -(NSString *) getMoviePath:(NSInteger)index {
     NSString *mMovieName = @"";
     switch (index) {
-        case 0: // AMY
-            mMovieName = @"leaving";
-            break;
-        case 1: // CLAIRE
-            mMovieName = @"exhibita";
-            break;
-        case 2: // JESS
-            mMovieName = @"portability";
-            break;
-        case 3: // KIKI
+        case 0: // KIKI
             mMovieName = @"stall";
             break;
-        case 4: // MARCI
-            mMovieName = @"plant";
+        case 1: // AMY
+            mMovieName = @"leaving";
+            break;
+        case 2: // CLAIRE
+            mMovieName = @"exhibita";
+            break;
+        case 3: // SULTAN1
+            mMovieName = @"letter pt1";
+            break;
+        case 4: // SULTAN2
+            mMovieName = @"letter pt2";
             break;
         case 5: // MILY
             mMovieName = @"cirque";
             break;
-        case 6: // SULTAN1
-            mMovieName = @"letter pt1";
+        case 6: // JESS
+            mMovieName = @"portability";
             break;
-        case 7: // SULTAN2
-            mMovieName = @"letter pt2";
+
+        case 7: // MARCI
+            mMovieName = @"plant";
             break;
+
+
         default:
             mMovieName = @"";
     }
