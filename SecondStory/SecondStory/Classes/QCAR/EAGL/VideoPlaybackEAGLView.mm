@@ -655,13 +655,12 @@ namespace {
         if ([trimmedName isEqualToString:@"KIKI"]) {
             playerIndex = 0;
         }
-        if ([trimmedName isEqualToString:@"AMY"]) {
+        else if ([trimmedName isEqualToString:@"AMY"]) {
             playerIndex = 1;
         }
         else if ([trimmedName isEqualToString:@"CLAIRE"]) {
             playerIndex = 2;
         }
-
         else if ([trimmedName isEqualToString:@"SULTAN1"]) {
             playerIndex = 3;
         }
@@ -671,7 +670,6 @@ namespace {
         else if ([trimmedName isEqualToString:@"MILY"]) {
             playerIndex = 5;
         }
-        
         else if ([trimmedName isEqualToString:@"JESS"]) {
             playerIndex = 6;
         }
