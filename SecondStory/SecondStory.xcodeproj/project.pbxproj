@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D087F2D1B9F54F600494C32 /* cirque.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D087F2B1B9F54F600494C32 /* cirque.mp4 */; };
+		2D087F2E1B9F54F600494C32 /* promo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2D087F2C1B9F54F600494C32 /* promo.mp4 */; };
 		2D0E230719EE2D0B00C61E82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8487A19A173710019053E /* AppDelegate.m */; };
 		2D30DFF41B694FC100D003AD /* _splash_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D30DFF31B694FC100D003AD /* _splash_bg@2x.png */; };
 		2D30DFF71B69587E00D003AD /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D30DFF61B69587E00D003AD /* GalleryViewController.m */; };
@@ -222,6 +224,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D087F2B1B9F54F600494C32 /* cirque.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cirque.mp4; sourceTree = "<group>"; };
+		2D087F2C1B9F54F600494C32 /* promo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = promo.mp4; sourceTree = "<group>"; };
 		2D30DFF31B694FC100D003AD /* _splash_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "_splash_bg@2x.png"; sourceTree = "<group>"; };
 		2D30DFF51B69587E00D003AD /* GalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GalleryViewController.h; path = Classes/ViewControllers/GalleryViewController.h; sourceTree = "<group>"; };
 		2D30DFF61B69587E00D003AD /* GalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GalleryViewController.m; path = Classes/ViewControllers/GalleryViewController.m; sourceTree = "<group>"; };
@@ -922,6 +926,8 @@
 		2DF3DABA1B97B7A000E35A3B /* dareu */ = {
 			isa = PBXGroup;
 			children = (
+				2D087F2B1B9F54F600494C32 /* cirque.mp4 */,
+				2D087F2C1B9F54F600494C32 /* promo.mp4 */,
 				2DF3DABB1B97B7A000E35A3B /* exhibita.mp4 */,
 				2DF3DABC1B97B7A000E35A3B /* leaving.mp4 */,
 				2DF3DABD1B97B7A000E35A3B /* letter pt1.mp4 */,
@@ -1014,6 +1020,7 @@
 			files = (
 				2DE848DD19A17D220019053E /* icon_loading.png in Resources */,
 				2DF3DAC71B97B7A000E35A3B /* portability.mp4 in Resources */,
+				2D087F2D1B9F54F600494C32 /* cirque.mp4 in Resources */,
 				2D3F2C021B9CDC7500A5D2EA /* sultan1.jpg in Resources */,
 				2D35BFC019C238C6003731E7 /* guide_cars_icon.png in Resources */,
 				2DE8499219A1B2080019053E /* Line.vertsh in Resources */,
@@ -1034,6 +1041,7 @@
 				2DF3DAC61B97B7A000E35A3B /* plant.mp4 in Resources */,
 				2DB2874F1A0AEE31005892A2 /* SecondStory.dat in Resources */,
 				2DE8499C19A1B2080019053E /* SampleAppAboutViewController.xib in Resources */,
+				2D087F2E1B9F54F600494C32 /* promo.mp4 in Resources */,
 				2D30E0041B69600300D003AD /* bicycles.jpg in Resources */,
 				2DE8499419A1B2080019053E /* Simple.fragsh in Resources */,
 				2DF3DAB81B97B1AA00E35A3B /* icon_play.png in Resources */,
