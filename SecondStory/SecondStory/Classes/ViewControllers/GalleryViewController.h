@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GalleryViewController : UIViewController {
-    NSInteger currentIndex;
+    int currentIndex;
     NSArray *imageArray, *titleArray, *artistArray;
 }
 

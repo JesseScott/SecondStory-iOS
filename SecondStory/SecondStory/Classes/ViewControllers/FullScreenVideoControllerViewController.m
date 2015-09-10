@@ -67,8 +67,8 @@
 # pragma mark - VIDEO -
 
 
--(void)initMoviePlayerWithIndex:(NSInteger* )index {
-    NSString *movie = [self getMoviePath:*index];
+-(void)initMoviePlayerWithIndex:(int )index {
+    NSString *movie = [self getMoviePath:index];
     if([movie length] > 0) {
         NSString *path = [[NSBundle mainBundle]pathForResource:movie ofType:@"mp4"];
         NSLog(@"Loading Asset: %@", path);
@@ -76,6 +76,8 @@
     }
     else {
         NSLog(@"ERROR - failed to find movie by index");
+        _movieIsPlaying = NO;
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -116,7 +118,7 @@
 }
 
 
--(NSString *) getMoviePath:(NSInteger)index {
+-(NSString *) getMoviePath:(int )index {
     NSString *mMovieName = @"";
     switch (index) {
         case 0: // KIKI
@@ -140,12 +142,9 @@
         case 6: // JESS
             mMovieName = @"portability";
             break;
-
         case 7: // MARCI
             mMovieName = @"plant";
             break;
-
-
         default:
             mMovieName = @"";
     }

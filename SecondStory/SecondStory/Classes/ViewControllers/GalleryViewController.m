@@ -86,7 +86,10 @@
                    nil];
     
     self.artistLabel.text = [artistArray objectAtIndex:currentIndex];
-
+    
+    //CGFloat offset = self.view.frame.size.height - self.view.frame.size.width;
+    //self.view.transform = CGAffineTransformMakeRotation(90 * M_PI/180);
+    //self.view.frame = CGRectMake(-offset, 0, self.view.frame.size.width, self.view.frame.size.height);
     
 }
 
@@ -110,13 +113,18 @@
     }
 }
 
+- (IBAction)close:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
 # pragma mark - VIDEO -
 
 
 
 - (IBAction)fireVideo:(id)sender {
     FullScreenVideoControllerViewController *vc = [[FullScreenVideoControllerViewController alloc] initWithNibName:@"FullScreenVideoControllerViewController" bundle:nil];
-    vc.currentIndex = &(currentIndex);
+    vc.currentIndex = currentIndex;
     [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 

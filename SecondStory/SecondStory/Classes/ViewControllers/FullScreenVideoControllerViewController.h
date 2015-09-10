@@ -8,12 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FullScreenVideoControllerViewController : UIViewController {
-    //NSInteger *currentIndex;
-}
+@interface FullScreenVideoControllerViewController : UIViewController
 
-@property NSInteger *currentIndex;
+@property (nonatomic, assign) int currentIndex;
 
--(void)initMoviePlayerWithIndex:(NSInteger* )index;
 
 @end

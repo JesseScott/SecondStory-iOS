@@ -152,6 +152,16 @@ namespace {
 //------------------------------------------------------------------------------
 #pragma mark - Lifecycle
 
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (id)initWithFrame:(CGRect)frame rootViewController:(VideoPlaybackViewController *) rootViewController appSession:(SampleApplicationSession *) app
 {
     self = [super initWithFrame:frame];
@@ -650,7 +660,7 @@ namespace {
 
         
         // VideoPlayerHelper to use for current target
-        NSInteger playerIndex = 0;
+        int playerIndex = 0;
 
         if ([trimmedName isEqualToString:@"KIKI"]) {
             playerIndex = 0;
@@ -686,7 +696,7 @@ namespace {
         //[self setPathForMovie:playerIndex];
         
         FullScreenVideoControllerViewController *vc = [[FullScreenVideoControllerViewController alloc] initWithNibName:@"FullScreenVideoControllerViewController" bundle:nil];
-        vc.currentIndex = &(playerIndex);
+        vc.currentIndex = playerIndex;
         //vc.currentIndex = &(playerIndex);
         //[self.navigationController presentViewController:vc animated:YES completion:nil];
         [videoPlaybackViewController.navigationController presentViewController:vc animated:YES completion:nil];

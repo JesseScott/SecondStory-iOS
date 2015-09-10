@@ -65,8 +65,6 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
-
-    
 }
 
 - (BOOL)prefersStatusBarHidden
