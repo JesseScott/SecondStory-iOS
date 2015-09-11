@@ -146,21 +146,6 @@
                                     <segue destination="1FH-EX-f8W" kind="modal" id="TZp-oe-crs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFQ-0X-2Ty">
-                                <rect key="frame" x="0.0" y="212" width="320" height="60"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="R9t-Um-8d4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="GUIDE">
-                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Biq-Qy-Yep" kind="push" id="xJS-1O-Uh8"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj2-jJ-DwK">
                                 <rect key="frame" x="0.0" y="142" width="320" height="60"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -194,15 +179,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kj2-jJ-DwK" firstAttribute="leading" secondItem="qFQ-0X-2Ty" secondAttribute="leading" id="0S6-1M-Fjd"/>
-                            <constraint firstItem="qFQ-0X-2Ty" firstAttribute="trailing" secondItem="kj2-jJ-DwK" secondAttribute="trailing" id="5ey-XY-a0g"/>
                             <constraint firstItem="SUq-DK-6ze" firstAttribute="leading" secondItem="Idq-d0-yvd" secondAttribute="leading" id="DPi-GO-vbv"/>
                             <constraint firstItem="SUq-DK-6ze" firstAttribute="centerX" secondItem="ywB-xf-b1A" secondAttribute="centerX" id="IhK-xa-dg3"/>
                             <constraint firstAttribute="trailing" secondItem="ywB-xf-b1A" secondAttribute="trailing" id="Q8r-0R-mX8"/>
                             <constraint firstAttribute="trailing" secondItem="Idq-d0-yvd" secondAttribute="trailing" id="Qyh-Ue-WE1"/>
                             <constraint firstItem="SUq-DK-6ze" firstAttribute="trailing" secondItem="Idq-d0-yvd" secondAttribute="trailing" id="TYX-4T-qUf"/>
                             <constraint firstItem="kj2-jJ-DwK" firstAttribute="leading" secondItem="SUq-DK-6ze" secondAttribute="leading" id="Taf-SW-oLc"/>
-                            <constraint firstItem="qFQ-0X-2Ty" firstAttribute="top" secondItem="kj2-jJ-DwK" secondAttribute="bottom" constant="10" id="Wlk-0E-2fm"/>
                             <constraint firstAttribute="bottom" secondItem="Idq-d0-yvd" secondAttribute="bottom" id="Xxr-UW-H09"/>
                             <constraint firstItem="Idq-d0-yvd" firstAttribute="top" secondItem="dgq-GU-IWK" secondAttribute="top" id="cKG-bb-MlS"/>
                             <constraint firstAttribute="bottom" secondItem="ywB-xf-b1A" secondAttribute="bottom" id="coG-J2-IPq"/>
@@ -217,7 +199,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="feedBtn" destination="SUq-DK-6ze" id="OLI-rv-IBF"/>
-                        <outlet property="guideBtn" destination="qFQ-0X-2Ty" id="dEq-fp-VJW"/>
                         <outlet property="liveBtn" destination="ywB-xf-b1A" id="4af-Hb-aun"/>
                         <outlet property="mapsBtn" destination="kj2-jJ-DwK" id="sQq-jR-G5X"/>
                     </connections>
@@ -383,19 +364,6 @@
         <!--About-->
         <scene sceneID="Kfp-yf-qtC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MKp-RF-vB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="gMQ-mS-TeF">
-                    <connections>
-                        <action selector="nextImage:" destination="R6f-Jg-64d" id="Vyx-SL-q9P"/>
-                        <outlet property="delegate" destination="R6f-Jg-64d" id="11b-ah-Qtw"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="UuA-Wh-zZw">
-                    <connections>
-                        <action selector="previousImage:" destination="R6f-Jg-64d" id="11W-Om-jlE"/>
-                        <outlet property="delegate" destination="R6f-Jg-64d" id="KWS-0P-HZH"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <viewController storyboardIdentifier="About" title="About" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R6f-Jg-64d" userLabel="About" customClass="AboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="emx-Q7-HfG"/>
@@ -425,6 +393,19 @@
                         <outlet property="slideshow" destination="Mq6-gW-b9h" id="u62-Nj-Q1G"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MKp-RF-vB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="gMQ-mS-TeF">
+                    <connections>
+                        <action selector="nextImage:" destination="R6f-Jg-64d" id="Vyx-SL-q9P"/>
+                        <outlet property="delegate" destination="R6f-Jg-64d" id="11b-ah-Qtw"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="UuA-Wh-zZw">
+                    <connections>
+                        <action selector="previousImage:" destination="R6f-Jg-64d" id="11W-Om-jlE"/>
+                        <outlet property="delegate" destination="R6f-Jg-64d" id="KWS-0P-HZH"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2729" y="742"/>
         </scene>

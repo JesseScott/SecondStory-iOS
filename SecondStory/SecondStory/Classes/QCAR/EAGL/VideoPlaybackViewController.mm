@@ -136,7 +136,11 @@ and other countries. Trademarks of QUALCOMM Incorporated are used with permissio
     
     backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    backButton.frame = CGRectMake(30, 30, 30, 30);
+    CGFloat sz = 30;
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        sz = 60;
+    }
+    backButton.frame = CGRectMake(sz, sz, 30, 30);
     [backButton setBackgroundImage:[UIImage imageNamed:@"nav_close"] forState:UIControlStateNormal];
     
     

@@ -49,7 +49,7 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     // Colours
-    UIColor *bgColor = [UIColor colorWithRed:(39/255.0f) green:(49/255.0f) blue:(59/255.0f) alpha:(165/255.0f)];
+    //UIColor *bgColor = [UIColor colorWithRed:(39/255.0f) green:(49/255.0f) blue:(59/255.0f) alpha:(165/255.0f)];
     UIColor *fontColor = [UIColor colorWithRed:(213/255.0f) green:(220/255.0f) blue:(225/255.0f) alpha:(255/255.0f)];
     
     // Font
@@ -58,7 +58,7 @@
     
     // Nav Bar
     self.navigationController.navigationBar.tintColor = fontColor;
-    [self.navigationController.navigationBar setBackgroundColor:bgColor];
+    //[self.navigationController.navigationBar setBackgroundColor:bgColor];
     [self.navigationController.navigationBar setTitleTextAttributes:textAttributes];
 }
 

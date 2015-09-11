@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
 @property BOOL movieIsPlaying;
-@property (nonatomic, weak) UIButton *backButton;
+@property (nonatomic, strong) UIButton *backButton;
 
 @end
 
@@ -51,17 +51,15 @@
 
 
 -(void)addBackButton {
-    _backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [_backButton addTarget:self action:@selector(backButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    self.backButton = [[UIButton alloc] init];
+    [self.backButton addTarget:self action:@selector(backButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    CGFloat sz = 30;
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        _backButton.frame = CGRectMake(90, 90, 90, 90);
+        sz = 60;
     }
-    else {
-        _backButton.frame = CGRectMake(30, 30, 30, 30);
-    }
-    _backButton.frame = CGRectMake(30, 30, 30, 30);
-    [_backButton setBackgroundImage:[UIImage imageNamed:@"nav_close"] forState:UIControlStateNormal];
-    [self.view addSubview:_backButton];
+    self.backButton.frame = CGRectMake(sz, sz, 30, 30);
+    [self.backButton setBackgroundImage:[UIImage imageNamed:@"nav_close"] forState:UIControlStateNormal];
+    [self.view addSubview:self.backButton];
 }
 
 - (void)backButtonPressed:(id)sender {
