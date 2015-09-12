@@ -7,22 +7,19 @@
 //
 
 #import "MenuViewController.h"
-
-#pragma mark - CONSTANTS -
+#import <QuartzCore/QuartzCore.h>
 
 
 #pragma mark - INTERFACE -
 
 @interface MenuViewController ()
 
-@property (weak, nonatomic) UIFont *buttonFont;
-@property (weak, nonatomic) UIFont *liveFont;
+@property (weak, nonatomic) UIFont *mFont;
 
-@property (weak, nonatomic) IBOutlet UIButton *guideBtn;
-@property (weak, nonatomic) IBOutlet UIButton *mapsBtn;
-@property (weak, nonatomic) IBOutlet UIButton *aboutBtn;
-@property (weak, nonatomic) IBOutlet UIButton *feedBtn;
 @property (weak, nonatomic) IBOutlet UIButton *liveBtn;
+@property (weak, nonatomic) IBOutlet UIButton *galleryBtn;
+@property (weak, nonatomic) IBOutlet UIButton *creditsBtn;
+@property (weak, nonatomic) IBOutlet UIButton *feedbackBtn;
 
 @end
 
@@ -48,23 +45,32 @@
     [super viewDidLoad];
     
     // Font
-    _buttonFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
-    _liveFont = [UIFont fontWithName:@"Din Alternate Black" size:32];
+    self.mFont = [UIFont fontWithName:@"Din Alternate Medium" size:24];
 
+    
     // Buttons
-    [_guideBtn.titleLabel setFont:_buttonFont];
-    [_mapsBtn.titleLabel setFont:_buttonFont];
-    [_aboutBtn.titleLabel setFont:_buttonFont];
-    [_feedBtn.titleLabel setFont:_buttonFont];
-    [_liveBtn.titleLabel setFont:_liveFont];
+    
+    [_liveBtn.titleLabel setFont:_mFont];
+    _liveBtn.layer.borderWidth = 3.0f;
+    _liveBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
+    
+    [_galleryBtn.titleLabel setFont:_mFont];
+    _galleryBtn.layer.borderWidth = 3.0f;
+    _galleryBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
+    
+    [_creditsBtn.titleLabel setFont:_mFont];
+    _creditsBtn.layer.borderWidth = 3.0f;
+    _creditsBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
+    
+    [_feedbackBtn.titleLabel setFont:_mFont];
+    _feedbackBtn.layer.borderWidth = 3.0f;
+    _feedbackBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
     
 }
 
 
 - (void) viewWillAppear:(BOOL)animated {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (BOOL)prefersStatusBarHidden

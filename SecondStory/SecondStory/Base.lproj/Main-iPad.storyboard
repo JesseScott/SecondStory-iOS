@@ -191,9 +191,9 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="z5E-Bw-JCv"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="feedBtn" destination="SUq-DK-6ze" id="OLI-rv-IBF"/>
+                        <outlet property="feedbackBtn" destination="SUq-DK-6ze" id="f2f-mK-FtB"/>
+                        <outlet property="galleryBtn" destination="kj2-jJ-DwK" id="j1B-39-ww1"/>
                         <outlet property="liveBtn" destination="ywB-xf-b1A" id="4af-Hb-aun"/>
-                        <outlet property="mapsBtn" destination="kj2-jJ-DwK" id="sQq-jR-G5X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UST-r4-mHr" userLabel="First Responder" sceneMemberID="firstResponder"/>

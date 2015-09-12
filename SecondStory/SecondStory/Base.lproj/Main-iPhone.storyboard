@@ -23,24 +23,20 @@
                                     <constraint firstAttribute="height" constant="111" id="Us3-Jb-0VH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dareu_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="jjl-li-ZLg" userLabel="background">
-                                <rect key="frame" x="32" y="156" width="256" height="256"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="256" id="PbS-zp-3fl"/>
-                                    <constraint firstAttribute="height" constant="256" id="tSI-7F-Hj9"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header.png" translatesAutoresizingMaskIntoConstraints="NO" id="jjl-li-ZLg" userLabel="background">
+                                <rect key="frame" x="10" y="159" width="300" height="250"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.25098039215686274" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="jjl-li-ZLg" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="36b-aV-PLa"/>
                             <constraint firstAttribute="bottom" secondItem="AyB-uF-iaA" secondAttribute="bottom" constant="20" symbolic="YES" id="4m4-kl-G2b"/>
                             <constraint firstItem="AyB-uF-iaA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="FnU-ZX-X1G"/>
                             <constraint firstAttribute="trailing" secondItem="AyB-uF-iaA" secondAttribute="trailing" constant="25" id="KMX-QJ-RUq"/>
-                            <constraint firstItem="jjl-li-ZLg" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="vRg-3a-5ee"/>
-                            <constraint firstItem="jjl-li-ZLg" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="vb9-O6-roE"/>
+                            <constraint firstItem="jjl-li-ZLg" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="mxQ-ew-sMD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f8Q-LD-y0U"/>
@@ -68,40 +64,35 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rbm-Sk-V92">
                                 <rect key="frame" x="85" y="283" width="150" height="2"/>
                             </progressView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header.png" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-ce-ZLW" userLabel="background">
+                                <rect key="frame" x="10" y="159" width="300" height="250"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2L6-Rj-YJE">
                                 <rect key="frame" x="0.0" y="488" width="320" height="60"/>
-                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.0" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Bg0-8I-xSt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="SKIP">
-                                    <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="skip:" destination="Vuc-oS-ZNc" eventType="touchUpInside" id="Ran-UN-aIC"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dareu_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-ce-ZLW" userLabel="background">
-                                <rect key="frame" x="32" y="156" width="256" height="256"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="256" id="7JZ-pO-Rgx"/>
-                                    <constraint firstAttribute="width" constant="256" id="sbw-LL-vaq"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.25098039215686274" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2L6-Rj-YJE" firstAttribute="leading" secondItem="gn5-w2-xmK" secondAttribute="leading" id="8CE-S3-jAz"/>
                             <constraint firstItem="rbm-Sk-V92" firstAttribute="centerY" secondItem="gn5-w2-xmK" secondAttribute="centerY" id="8JR-a8-cqR"/>
                             <constraint firstItem="2L6-Rj-YJE" firstAttribute="leading" secondItem="gn5-w2-xmK" secondAttribute="leadingMargin" constant="-16" id="9TY-H0-RYj"/>
-                            <constraint firstItem="vuU-ce-ZLW" firstAttribute="centerX" secondItem="rbm-Sk-V92" secondAttribute="centerX" id="AXW-aV-WoH"/>
                             <constraint firstItem="2L6-Rj-YJE" firstAttribute="centerX" secondItem="rbm-Sk-V92" secondAttribute="centerX" id="Bdc-di-Mz9"/>
-                            <constraint firstItem="vuU-ce-ZLW" firstAttribute="centerY" secondItem="rbm-Sk-V92" secondAttribute="centerY" id="PrJ-bm-1is"/>
                             <constraint firstAttribute="bottom" secondItem="2L6-Rj-YJE" secondAttribute="bottom" constant="20" symbolic="YES" id="UTj-gg-uf0"/>
-                            <constraint firstItem="vuU-ce-ZLW" firstAttribute="centerX" secondItem="gn5-w2-xmK" secondAttribute="centerX" id="VvF-2w-CaR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2L6-Rj-YJE" secondAttribute="trailing" constant="-16" id="Wr7-BP-1g2"/>
+                            <constraint firstItem="vuU-ce-ZLW" firstAttribute="centerY" secondItem="rbm-Sk-V92" secondAttribute="centerY" id="dAp-cS-9JH"/>
+                            <constraint firstItem="vuU-ce-ZLW" firstAttribute="centerX" secondItem="rbm-Sk-V92" secondAttribute="centerX" id="kBy-rl-MVh"/>
                             <constraint firstItem="rbm-Sk-V92" firstAttribute="leading" secondItem="gn5-w2-xmK" secondAttribute="leadingMargin" constant="69" id="qOl-4f-W02"/>
                         </constraints>
                     </view>
@@ -128,79 +119,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Idq-d0-yvd" userLabel="background">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywB-xf-b1A">
-                                <rect key="frame" x="0.0" y="400" width="320" height="168"/>
-                                <color key="backgroundColor" white="0.25" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="168" id="dR5-ED-yxX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <state key="normal" title="LIVE VIEW">
-                                    <color key="titleColor" red="0.52114556760204089" green="0.52055110575485419" blue="0.001077861686664093" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1FH-EX-f8W" kind="modal" id="TZp-oe-crs"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj2-jJ-DwK">
-                                <rect key="frame" x="0.0" y="142" width="320" height="60"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="220" width="280" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="u4j-w0-QFe"/>
+                                    <constraint firstAttribute="height" constant="60" id="Des-mX-hsM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="GALLERY">
-                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="VIEW GALLERY">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="zYn-Cj-DIP" kind="push" id="iFG-JM-7NC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUq-DK-6ze">
-                                <rect key="frame" x="0.0" y="72" width="320" height="60"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8n-Gl-iJA">
+                                <rect key="frame" x="20" y="288" width="280" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="6zf-Ix-p6D"/>
+                                    <constraint firstAttribute="height" constant="60" id="8lH-bb-STv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="FEEDBACK">
-                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="READ CREDITS">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header.png" translatesAutoresizingMaskIntoConstraints="NO" id="jH8-Tq-1zD">
+                                <rect key="frame" x="85" y="0.0" width="150" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="PUr-dd-AWC"/>
+                                    <constraint firstAttribute="width" constant="150" id="xTc-Js-tXz"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUq-DK-6ze">
+                                <rect key="frame" x="20" y="356" width="280" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="I5L-xC-1zj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="GIVE FEEDBACK">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="ISD-ts-acC" kind="push" id="DEL-OO-zLU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywB-xf-b1A">
+                                <rect key="frame" x="20" y="152" width="280" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="NuD-tQ-1yT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="AUGMENT REALITY">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1FH-EX-f8W" kind="modal" id="TZp-oe-crs"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.25098039215686274" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SUq-DK-6ze" firstAttribute="leading" secondItem="Idq-d0-yvd" secondAttribute="leading" id="DPi-GO-vbv"/>
-                            <constraint firstItem="SUq-DK-6ze" firstAttribute="centerX" secondItem="ywB-xf-b1A" secondAttribute="centerX" id="IhK-xa-dg3"/>
-                            <constraint firstAttribute="trailing" secondItem="ywB-xf-b1A" secondAttribute="trailing" id="Q8r-0R-mX8"/>
-                            <constraint firstAttribute="trailing" secondItem="Idq-d0-yvd" secondAttribute="trailing" id="Qyh-Ue-WE1"/>
-                            <constraint firstItem="SUq-DK-6ze" firstAttribute="trailing" secondItem="Idq-d0-yvd" secondAttribute="trailing" id="TYX-4T-qUf"/>
-                            <constraint firstItem="kj2-jJ-DwK" firstAttribute="leading" secondItem="SUq-DK-6ze" secondAttribute="leading" id="Taf-SW-oLc"/>
-                            <constraint firstAttribute="bottom" secondItem="Idq-d0-yvd" secondAttribute="bottom" id="Xxr-UW-H09"/>
-                            <constraint firstItem="Idq-d0-yvd" firstAttribute="top" secondItem="dgq-GU-IWK" secondAttribute="top" id="cKG-bb-MlS"/>
-                            <constraint firstAttribute="bottom" secondItem="ywB-xf-b1A" secondAttribute="bottom" id="coG-J2-IPq"/>
-                            <constraint firstItem="ywB-xf-b1A" firstAttribute="leading" secondItem="dgq-GU-IWK" secondAttribute="leading" id="dCT-3e-MMX"/>
-                            <constraint firstItem="kj2-jJ-DwK" firstAttribute="top" secondItem="SUq-DK-6ze" secondAttribute="bottom" constant="10" id="jWM-3s-UYS"/>
-                            <constraint firstItem="kj2-jJ-DwK" firstAttribute="trailing" secondItem="SUq-DK-6ze" secondAttribute="trailing" id="pkJ-Cj-uZu"/>
-                            <constraint firstItem="kj2-jJ-DwK" firstAttribute="top" secondItem="dgq-GU-IWK" secondAttribute="top" constant="142" id="w0P-kc-cmv"/>
+                            <constraint firstItem="kj2-jJ-DwK" firstAttribute="leading" secondItem="q8n-Gl-iJA" secondAttribute="leading" id="0hb-yf-aWp"/>
+                            <constraint firstItem="kj2-jJ-DwK" firstAttribute="top" secondItem="ywB-xf-b1A" secondAttribute="bottom" constant="8" symbolic="YES" id="9d3-VF-7Wb"/>
+                            <constraint firstItem="kj2-jJ-DwK" firstAttribute="trailing" secondItem="q8n-Gl-iJA" secondAttribute="trailing" id="AEh-Uu-etu"/>
+                            <constraint firstItem="ow3-ed-Umq" firstAttribute="top" secondItem="SUq-DK-6ze" secondAttribute="bottom" constant="152" id="AmH-FU-En1"/>
+                            <constraint firstItem="ywB-xf-b1A" firstAttribute="trailing" secondItem="kj2-jJ-DwK" secondAttribute="trailing" id="JTk-en-kBP"/>
+                            <constraint firstItem="SUq-DK-6ze" firstAttribute="trailing" secondItem="q8n-Gl-iJA" secondAttribute="trailing" id="K2w-BQ-AqE"/>
+                            <constraint firstItem="ywB-xf-b1A" firstAttribute="leading" secondItem="dgq-GU-IWK" secondAttribute="leadingMargin" constant="4" id="KCT-Hv-S9v"/>
+                            <constraint firstItem="kj2-jJ-DwK" firstAttribute="leading" secondItem="ywB-xf-b1A" secondAttribute="leading" id="OPN-3h-Jdo"/>
+                            <constraint firstItem="jH8-Tq-1zD" firstAttribute="centerX" secondItem="ywB-xf-b1A" secondAttribute="centerX" id="PhC-nu-nye"/>
+                            <constraint firstItem="q8n-Gl-iJA" firstAttribute="top" secondItem="kj2-jJ-DwK" secondAttribute="bottom" constant="8" symbolic="YES" id="TcR-Nd-ieK"/>
+                            <constraint firstItem="SUq-DK-6ze" firstAttribute="leading" secondItem="q8n-Gl-iJA" secondAttribute="leading" id="WJL-iy-MO9"/>
+                            <constraint firstItem="kj2-jJ-DwK" firstAttribute="centerX" secondItem="dgq-GU-IWK" secondAttribute="centerX" id="Zrl-MM-nLj"/>
+                            <constraint firstItem="SUq-DK-6ze" firstAttribute="top" secondItem="q8n-Gl-iJA" secondAttribute="bottom" constant="8" symbolic="YES" id="lQt-b8-wgz"/>
+                            <constraint firstAttribute="trailing" secondItem="jH8-Tq-1zD" secondAttribute="trailing" constant="85" id="phf-eG-X1b"/>
+                            <constraint firstItem="jH8-Tq-1zD" firstAttribute="top" secondItem="dgq-GU-IWK" secondAttribute="top" id="qm2-0t-CHO"/>
+                            <constraint firstItem="jH8-Tq-1zD" firstAttribute="leading" secondItem="dgq-GU-IWK" secondAttribute="leadingMargin" constant="69" id="sLm-F9-kHw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4n2-8X-RhM">
                         <barButtonItem key="backBarButtonItem" title=" " id="z5E-Bw-JCv"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="feedBtn" destination="SUq-DK-6ze" id="OLI-rv-IBF"/>
+                        <outlet property="creditsBtn" destination="q8n-Gl-iJA" id="BOz-Vo-o2m"/>
+                        <outlet property="feedbackBtn" destination="SUq-DK-6ze" id="Agc-Y3-Yqs"/>
+                        <outlet property="galleryBtn" destination="kj2-jJ-DwK" id="zZU-EE-obs"/>
                         <outlet property="liveBtn" destination="ywB-xf-b1A" id="4af-Hb-aun"/>
-                        <outlet property="mapsBtn" destination="kj2-jJ-DwK" id="sQq-jR-G5X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UST-r4-mHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -534,12 +541,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dareu_logo.png" width="512" height="512"/>
         <image name="feedback_bg.png" width="640" height="1136"/>
         <image name="guide_bg.png" width="608" height="1080"/>
         <image name="guide_replay_icon.png" width="22" height="19"/>
+        <image name="header.png" width="300" height="250"/>
         <image name="icon_play.png" width="256" height="256"/>
-        <image name="menu_bg.png" width="608" height="1080"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

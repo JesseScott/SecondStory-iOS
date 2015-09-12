@@ -7,6 +7,7 @@
 //
 
 #import "WelcomeViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 #pragma mark - CONSTANTS -
 
@@ -43,6 +44,8 @@
     
     [self.progressView setHidden:YES];
     [self.skipButton setHidden:YES];
+    self.skipButton.layer.borderWidth = 3.0f;
+    self.skipButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     
 }
 
