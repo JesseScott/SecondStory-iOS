@@ -44,6 +44,8 @@
 {
     [super viewDidLoad];
     
+     NSLog(@" --- MENU ---- ");
+    
     // Font
     self.mFont = [UIFont fontWithName:@"Din Alternate Medium" size:24];
 

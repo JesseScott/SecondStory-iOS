@@ -42,6 +42,8 @@
 {
     [super viewDidLoad];
     
+     NSLog(@" --- WELCOME ---- ");
+    
     [self.progressView setHidden:YES];
     [self.skipButton setHidden:YES];
     self.skipButton.layer.borderWidth = 3.0f;
