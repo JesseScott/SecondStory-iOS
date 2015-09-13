@@ -16,6 +16,7 @@
 
 @interface GalleryViewController ()  <UIGestureRecognizerDelegate>
 
+@property (weak, nonatomic) UIFont *mFont;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftSwiperecognizer;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *rightSwipRecognizer;
@@ -35,6 +36,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@" --- GALLERY ---- ");
+    
+    // Font
+    self.mFont = [UIFont fontWithName:@"Din Alternate Medium" size:24];
 
     currentIndex = 0;
     
@@ -95,16 +101,15 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     // Colours
-    //UIColor *bgColor = [UIColor colorWithRed:(39/255.0f) green:(49/255.0f) blue:(59/255.0f) alpha:(165/255.0f)];
-    UIColor *fontColor = [UIColor colorWithRed:(213/255.0f) green:(220/255.0f) blue:(225/255.0f) alpha:(255/255.0f)];
+    UIColor *duRed = [UIColor colorWithRed:(239/255.0f) green:(64/255.0f) blue:(54/255.0f) alpha:(255/255.0f)];
     
     // Font
-    UIFont *navFont = [UIFont fontWithName:@"Din Alternate Black" size:24];
-    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys: fontColor, NSForegroundColorAttributeName, navFont, NSFontAttributeName, nil];
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIColor whiteColor], NSForegroundColorAttributeName, self.mFont, NSFontAttributeName, nil];
     
     // Nav Bar
-    self.navigationController.navigationBar.tintColor = fontColor;
-    //[self.navigationController.navigationBar setBackgroundColor:bgColor];
+    [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController.navigationBar setBarTintColor:duRed];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setTitleTextAttributes:textAttributes];
 }
 

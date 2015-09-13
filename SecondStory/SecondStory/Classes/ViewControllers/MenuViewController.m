@@ -15,7 +15,6 @@
 @interface MenuViewController ()
 
 @property (weak, nonatomic) UIFont *mFont;
-
 @property (weak, nonatomic) IBOutlet UIButton *liveBtn;
 @property (weak, nonatomic) IBOutlet UIButton *galleryBtn;
 @property (weak, nonatomic) IBOutlet UIButton *creditsBtn;
