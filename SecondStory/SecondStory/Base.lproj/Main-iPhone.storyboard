@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header.png" translatesAutoresizingMaskIntoConstraints="NO" id="jjl-li-ZLg" userLabel="background">
-                                <rect key="frame" x="10" y="159" width="300" height="250"/>
+                                <rect key="frame" x="-3" y="151" width="326" height="267"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.25098039215686274" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,10 +65,10 @@
                                 <rect key="frame" x="85" y="283" width="134" height="2"/>
                             </progressView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header.png" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-ce-ZLW" userLabel="background">
-                                <rect key="frame" x="2" y="159" width="300" height="250"/>
+                                <rect key="frame" x="-11" y="151" width="326" height="267"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2L6-Rj-YJE">
-                                <rect key="frame" x="20" y="488" width="280" height="60"/>
+                                <rect key="frame" x="20" y="497" width="280" height="51"/>
                                 <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="SKIP">
@@ -143,6 +143,10 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header.png" translatesAutoresizingMaskIntoConstraints="NO" id="jH8-Tq-1zD">
                                 <rect key="frame" x="85" y="0.0" width="150" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="NSx-v8-MIU"/>
+                                    <constraint firstAttribute="width" constant="150" id="fuO-NE-Oxq"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUq-DK-6ze">
                                 <rect key="frame" x="20" y="356" width="280" height="60"/>
@@ -178,7 +182,6 @@
                             <constraint firstItem="kj2-jJ-DwK" firstAttribute="leading" secondItem="q8n-Gl-iJA" secondAttribute="leading" id="0hb-yf-aWp"/>
                             <constraint firstItem="kj2-jJ-DwK" firstAttribute="top" secondItem="ywB-xf-b1A" secondAttribute="bottom" constant="8" symbolic="YES" id="9d3-VF-7Wb"/>
                             <constraint firstItem="kj2-jJ-DwK" firstAttribute="trailing" secondItem="q8n-Gl-iJA" secondAttribute="trailing" id="AEh-Uu-etu"/>
-                            <constraint firstItem="ow3-ed-Umq" firstAttribute="top" secondItem="SUq-DK-6ze" secondAttribute="bottom" constant="152" id="AmH-FU-En1"/>
                             <constraint firstItem="ywB-xf-b1A" firstAttribute="trailing" secondItem="kj2-jJ-DwK" secondAttribute="trailing" id="JTk-en-kBP"/>
                             <constraint firstItem="SUq-DK-6ze" firstAttribute="trailing" secondItem="q8n-Gl-iJA" secondAttribute="trailing" id="K2w-BQ-AqE"/>
                             <constraint firstItem="ywB-xf-b1A" firstAttribute="leading" secondItem="dgq-GU-IWK" secondAttribute="leadingMargin" constant="4" id="KCT-Hv-S9v"/>
@@ -500,7 +503,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="header.png" width="300" height="250"/>
+        <image name="header.png" width="325" height="267"/>
         <image name="icon_play.png" width="256" height="256"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
